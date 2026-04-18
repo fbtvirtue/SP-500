@@ -164,6 +164,27 @@ a {
   background: white;
 }
 
+.membership-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.reset-button {
+  padding: 14px 18px;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #10233d;
+  font-weight: 700;
+}
+
+.reset-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .method-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -184,7 +205,7 @@ a {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 860px;
+  min-width: 1020px;
 }
 
 th,
@@ -205,6 +226,95 @@ th {
   top: 0;
 }
 
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.sort-button:hover,
+.sort-button.active {
+  color: #10233d;
+}
+
+.sort-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 14px;
+}
+
+.sort-arrow {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  opacity: 0.28;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.sort-arrow-up {
+  border-bottom: 6px solid #5d7390;
+}
+
+.sort-arrow-down {
+  border-top: 6px solid #5d7390;
+}
+
+.sort-arrow.active {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+.membership-table {
+  min-width: 1180px;
+}
+
+.membership-table .ticker-column {
+  min-width: 88px;
+}
+
+.membership-table .company-column {
+  min-width: 240px;
+}
+
+.membership-table .sticky-col {
+  position: sticky;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.membership-table th.sticky-col {
+  background: rgba(235, 242, 250, 0.95);
+  z-index: 3;
+}
+
+.membership-table td.sticky-col {
+  z-index: 1;
+}
+
+.membership-table .sticky-col-1 {
+  left: 0;
+}
+
+.membership-table .sticky-col-2 {
+  left: 88px;
+}
+
+.membership-table tbody tr:hover .sticky-col {
+  background: rgba(227, 238, 252, 0.98);
+}
+
 tr:hover td {
   background: rgba(15, 91, 214, 0.04);
 }
@@ -214,6 +324,15 @@ tr:hover td {
   .two-up,
   .method-grid {
     grid-template-columns: 1fr;
+  }
+
+  .membership-toolbar {
+    justify-content: stretch;
+  }
+
+  .search,
+  .reset-button {
+    width: 100%;
   }
 
   .app-shell {

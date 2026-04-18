@@ -1,6 +1,38 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { CompanyRecord, RankedCompany, SnapshotData } from './types';
 
+type MembershipSortKey =
+  | 'ticker'
+  | 'security'
+  | 'sector'
+  | 'currentMemberSince'
+  | 'lastLeftAt'
+  | 'dividendRate'
+  | 'dividendYield'
+  | 'marketCap'
+  | 'forwardPE'
+  | 'price';
+
+type MembershipSortState = {
+  key: MembershipSortKey;
+  direction: 'asc' | 'desc';
+};
+
+const defaultMembershipSort: MembershipSortState = { key: 'marketCap', direction: 'desc' };
+
+const membershipColumns: Array<{ key: MembershipSortKey; label: string; className?: string }> = [
+  { key: 'ticker', label: 'Ticker', className: 'sticky-col sticky-col-1 ticker-column' },
+  { key: 'security', label: 'Company', className: 'sticky-col sticky-col-2 company-column' },
+  { key: 'sector', label: 'Sector' },
+  { key: 'currentMemberSince', label: 'Member since' },
+  { key: 'lastLeftAt', label: 'Last left' },
+  { key: 'dividendRate', label: 'Dividend' },
+  { key: 'dividendYield', label: 'Yield' },
+  { key: 'marketCap', label: 'Market cap' },
+  { key: 'forwardPE', label: 'Forward P/E' },
+  { key: 'price', label: 'Current price' },
+];
+
 function formatDate(value: string | null): string {
   if (!value) return 'Unknown';
   const date = new Date(value);
@@ -88,13 +120,96 @@ function RankedTable({
   );
 }
 
+function getMembershipSortValue(row: CompanyRecord, key: MembershipSortKey): number | string | null {
+  switch (key) {
+    case 'ticker':
+      return row.ticker;
+    case 'security':
+      return row.security;
+    case 'sector':
+      return row.sector;
+    case 'currentMemberSince':
+      return row.currentMemberSince ? Date.parse(row.currentMemberSince) : null;
+    case 'lastLeftAt':
+      return row.lastLeftAt ? Date.parse(row.lastLeftAt) : null;
+    case 'dividendRate':
+      return row.dividend.hasDividend ? row.dividend.dividendRate : null;
+    case 'dividendYield':
+      return row.dividend.dividendYield;
+    case 'marketCap':
+      return row.metrics.marketCap;
+    case 'forwardPE':
+      return row.metrics.forwardPE;
+    case 'price':
+      return row.metrics.price;
+    default:
+      return null;
+  }
+}
+
+function compareMembershipValues(
+  left: number | string | null,
+  right: number | string | null,
+  direction: MembershipSortState['direction'],
+): number {
+  if (left === null && right === null) return 0;
+  if (left === null) return 1;
+  if (right === null) return -1;
+
+  const modifier = direction === 'asc' ? 1 : -1;
+
+  if (typeof left === 'string' && typeof right === 'string') {
+    return left.localeCompare(right, undefined, { sensitivity: 'base' }) * modifier;
+  }
+
+  if (left < right) return -1 * modifier;
+  if (left > right) return 1 * modifier;
+  return 0;
+}
+
+function getInitialMembershipSortDirection(key: MembershipSortKey): MembershipSortState['direction'] {
+  switch (key) {
+    case 'ticker':
+    case 'security':
+    case 'sector':
+      return 'asc';
+    default:
+      return 'desc';
+  }
+}
+
 function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
   const [query, setQuery] = useState('');
+  const [sort, setSort] = useState<MembershipSortState>(defaultMembershipSort);
+
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     if (!normalized) return rows;
     return rows.filter((row) => [row.ticker, row.security, row.sector, row.subIndustry].join(' ').toLowerCase().includes(normalized));
   }, [query, rows]);
+
+  const sorted = useMemo(() => {
+    return [...filtered].sort((left, right) => {
+      const comparison = compareMembershipValues(
+        getMembershipSortValue(left, sort.key),
+        getMembershipSortValue(right, sort.key),
+        sort.direction,
+      );
+
+      if (comparison !== 0) return comparison;
+      return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
+    });
+  }, [filtered, sort]);
+
+  function toggleSort(key: MembershipSortKey) {
+    setSort((current) => {
+      if (current.key === key) {
+        return { key, direction: current.direction === 'asc' ? 'desc' : 'asc' };
+      }
+
+      return { key, direction: getInitialMembershipSortDirection(key) };
+    });
+  }
 
   return (
     <section className="panel">
@@ -103,33 +218,55 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
           <h2>Current S&amp;P 500 members</h2>
           <p>Includes current member since date, last known exit date, dividend status, and dividend amount.</p>
         </div>
-        <input
-          className="search"
-          placeholder="Search company, ticker, or sector"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
+        <div className="membership-toolbar">
+          <input
+            className="search"
+            placeholder="Search company, ticker, or sector"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+          <button
+            type="button"
+            className="reset-button"
+            onClick={() => setSort(defaultMembershipSort)}
+            disabled={sort.key === defaultMembershipSort.key && sort.direction === defaultMembershipSort.direction}
+          >
+            Reset sort
+          </button>
+        </div>
       </div>
       <div className="table-wrap tall">
-        <table>
+        <table className="membership-table">
           <thead>
             <tr>
-              <th>Ticker</th>
-              <th>Company</th>
-              <th>Sector</th>
-              <th>Member since</th>
-              <th>Last left</th>
-              <th>Dividend</th>
-              <th>Yield</th>
-              <th>Market cap</th>
-              <th>Forward P/E</th>
+              {membershipColumns.map((column) => {
+                const isActive = sort.key === column.key;
+                const ariaSort = isActive ? (sort.direction === 'asc' ? 'ascending' : 'descending') : 'none';
+
+                return (
+                  <th key={column.key} className={column.className} aria-sort={ariaSort}>
+                    <button
+                      type="button"
+                      className={`sort-button${isActive ? ' active' : ''}`}
+                      onClick={() => toggleSort(column.key)}
+                      aria-label={`Sort by ${column.label}${isActive ? ` (${sort.direction})` : ''}`}
+                    >
+                      <span>{column.label}</span>
+                      <span className="sort-indicator" aria-hidden="true">
+                        <span className={`sort-arrow sort-arrow-up${isActive && sort.direction === 'asc' ? ' active' : ''}`} />
+                        <span className={`sort-arrow sort-arrow-down${isActive && sort.direction === 'desc' ? ' active' : ''}`} />
+                      </span>
+                    </button>
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>
-            {filtered.map((row) => (
+            {sorted.map((row) => (
               <tr key={row.ticker}>
-                <td>{row.ticker}</td>
-                <td>{row.security}</td>
+                <td className={membershipColumns[0].className}>{row.ticker}</td>
+                <td className={membershipColumns[1].className}>{row.security}</td>
                 <td>{row.sector}</td>
                 <td>{formatDate(row.currentMemberSince)}</td>
                 <td>{formatDate(row.lastLeftAt)}</td>
@@ -137,6 +274,7 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
                 <td>{formatPercent(row.dividend.dividendYield)}</td>
                 <td>{formatCurrency(row.metrics.marketCap, row.metrics.currency || 'USD')}</td>
                 <td>{formatNumber(row.metrics.forwardPE, { maximumFractionDigits: 2 })}</td>
+                <td>{formatCurrency(row.metrics.price, row.metrics.currency || 'USD')}</td>
               </tr>
             ))}
           </tbody>

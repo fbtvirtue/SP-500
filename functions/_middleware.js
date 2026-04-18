@@ -1,5 +1,4 @@
 const COOKIE_NAME = 'sp500_session';
-const LOGIN_PATH = '/__auth/login';
 const LOGOUT_PATH = '/__auth/logout';
 const DEFAULT_SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
 
@@ -15,21 +14,6 @@ export async function onRequest(context) {
     });
   }
 
-  if (url.pathname === LOGIN_PATH) {
-    if (request.method === 'POST') {
-      return handleLogin(request, env);
-    }
-
-    if (await isAuthenticated(request, env)) {
-      return Response.redirect(new URL(getSafeRedirect(url.searchParams.get('redirect')), request.url), 302);
-    }
-
-    return renderLoginPage({
-      redirectTo: getSafeRedirect(url.searchParams.get('redirect')),
-      hasError: false,
-    });
-  }
-
   if (url.pathname === LOGOUT_PATH) {
     return handleLogout(request);
   }
@@ -38,7 +22,16 @@ export async function onRequest(context) {
     return next();
   }
 
-  return Response.redirect(new URL(`${LOGIN_PATH}?redirect=${encodeURIComponent(url.pathname + url.search)}`, request.url), 302);
+  const redirectTo = getSafeRedirect(url.pathname + url.search);
+
+  if (request.method === 'POST') {
+    return handleLogin(request, env, redirectTo);
+  }
+
+  return renderLoginPage({
+    redirectTo,
+    hasError: false,
+  });
 }
 
 function getConfigError(env) {
@@ -48,9 +41,9 @@ function getConfigError(env) {
   return '';
 }
 
-async function handleLogin(request, env) {
+async function handleLogin(request, env, fallbackRedirect = '/') {
   const form = await request.formData();
-  const redirectTo = getSafeRedirect(form.get('redirect'));
+  const redirectTo = getSafeRedirect(form.get('redirect')) || fallbackRedirect;
   const submittedEmail = String(form.get('email') ?? '').trim().toLowerCase();
   const submittedPassword = String(form.get('password') ?? '');
   const expectedEmail = String(env.PROTECTED_EMAIL).trim().toLowerCase();
@@ -71,8 +64,8 @@ async function handleLogin(request, env) {
 }
 
 function handleLogout(request) {
-  const loginUrl = new URL(LOGIN_PATH, request.url);
-  const headers = new Headers({ Location: loginUrl.toString() });
+  const homeUrl = new URL('/', request.url);
+  const headers = new Headers({ Location: homeUrl.toString() });
   headers.append('Set-Cookie', `${COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
 
   return new Response(null, {
@@ -288,7 +281,7 @@ function renderLoginPage({ redirectTo, hasError }, status = 200) {
       <h1>S&P 500 Monitor</h1>
       <p>Every route and asset is blocked until a valid email and password are submitted.</p>
       <div class="message">${message}</div>
-      <form method="post" action="${LOGIN_PATH}">
+      <form method="post" action="${escapeHtml(redirectTo)}">
         <input type="hidden" name="redirect" value="${escapeHtml(redirectTo)}" />
         <label>
           Email

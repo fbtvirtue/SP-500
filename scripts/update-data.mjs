@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as cheerio from 'cheerio';
@@ -6,6 +6,7 @@ import * as cheerio from 'cheerio';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
+const publicDataDirectory = path.join(projectRoot, 'public', 'data');
 const latestSnapshotPath = path.join(projectRoot, 'public', 'data', 'latest.json');
 const snapshotDirectory = path.join(projectRoot, 'public', 'data', 'snapshots');
 const fundamentalsCachePath = path.join(projectRoot, 'public', 'data', 'fundamentals-cache.json');
@@ -201,6 +202,43 @@ function parseChanges(html) {
       removedSecurity: cleanText($(cells[4]).text()),
     };
   }).get().filter((entry) => entry && entry.date);
+}
+
+function getNextSnapshotAt(generatedAt) {
+  const next = new Date(generatedAt);
+  next.setUTCMinutes(0, 0, 0);
+  next.setUTCHours(next.getUTCHours() + 1);
+  return next.toISOString();
+}
+
+function getRecentChanges(changes, generatedAt) {
+  const cutoff = new Date(generatedAt);
+  cutoff.setUTCDate(cutoff.getUTCDate() - 7);
+  cutoff.setUTCHours(0, 0, 0, 0);
+
+  const recent = changes
+    .filter((change) => {
+      const timestamp = Date.parse(`${change.date}T00:00:00Z`);
+      return Number.isFinite(timestamp) && timestamp >= cutoff.getTime();
+    })
+    .sort((left, right) => String(right.date).localeCompare(String(left.date)));
+
+  return {
+    joinedLast7Days: recent
+      .filter((change) => change.addedTicker)
+      .map((change) => ({
+        date: change.date,
+        ticker: change.addedTicker,
+        security: change.addedSecurity,
+      })),
+    leftLast7Days: recent
+      .filter((change) => change.removedTicker)
+      .map((change) => ({
+        date: change.date,
+        ticker: change.removedTicker,
+        security: change.removedSecurity,
+      })),
+  };
 }
 
 function buildMembershipMap(currentConstituents, changes) {
@@ -486,6 +524,7 @@ async function main() {
   ]);
 
   const currentMembersRaw = parseConstituents(sp500Html, 'S&P 500');
+  const changes = parseChanges(sp500Html);
   const candidateUniverseRaw = [
     ...parseConstituents(sp400Html, 'S&P 400'),
     ...parseConstituents(sp600Html, 'S&P 600'),
@@ -496,8 +535,9 @@ async function main() {
     if (!candidate?.ticker || dedupedCandidates.has(candidate.ticker)) continue;
     dedupedCandidates.set(candidate.ticker, candidate);
   }
-  const membershipMap = buildMembershipMap(currentMembersRaw, parseChanges(sp500Html));
+  const membershipMap = buildMembershipMap(currentMembersRaw, changes);
   const fundamentalsCache = await loadFundamentalsCache();
+  const recentChanges = getRecentChanges(changes, generatedAt);
 
   const allTickers = [...new Set([...currentMembersRaw, ...dedupedCandidates.values()].map((company) => company.ticker).filter(Boolean))];
   const metricsEntries = await runWithConcurrency(allTickers, 1, async (ticker) => {
@@ -582,6 +622,9 @@ async function main() {
 
   const snapshot = {
     generatedAt,
+    schedule: {
+      nextSnapshotAt: getNextSnapshotAt(generatedAt),
+    },
     methodology: {
       disclaimer: 'This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.',
       fallOutFactors: [
@@ -619,6 +662,7 @@ async function main() {
       { label: 'Wikipedia: Nasdaq-100', url: SOURCE_URLS.nasdaq100 },
       { label: 'Finviz quote pages for fundamentals and dividend fields', url: 'https://finviz.com/' },
     ],
+    recentChanges,
     currentMembers,
     candidateUniverse,
     possibleFallOut: rankCompanies(currentMembers, 'fallOutRisk', describeFallOut, 25),
@@ -627,11 +671,10 @@ async function main() {
     overvalued: rankCompanies(currentMembers, 'overvaluedScore', describeOvervalued, 25),
   };
 
-  await mkdir(snapshotDirectory, { recursive: true });
-  const timestamp = generatedAt.replace(/[:.]/g, '-');
+  await mkdir(publicDataDirectory, { recursive: true });
   await writeFile(latestSnapshotPath, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
-  await writeFile(path.join(snapshotDirectory, `${timestamp}.json`), `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
   await writeFile(fundamentalsCachePath, `${JSON.stringify(fundamentalsCache, null, 2)}\n`, 'utf8');
+  await rm(snapshotDirectory, { recursive: true, force: true });
 
   console.log(`Snapshot written: ${latestSnapshotPath}`);
 }

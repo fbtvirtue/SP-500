@@ -1,5 +1,8 @@
 {
-  "generatedAt": "2026-04-18T18:45:15.304Z",
+  "generatedAt": "2026-04-18T20:41:59.043Z",
+  "schedule": {
+    "nextSnapshotAt": "2026-04-18T21:00:00.000Z"
+  },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
     "fallOutFactors": [
@@ -52,6 +55,10 @@
       "url": "https://finviz.com/"
     }
   ],
+  "recentChanges": {
+    "joinedLast7Days": [],
+    "leftLast7Days": []
+  },
   "currentMembers": [
     {
       "ticker": "MMM",

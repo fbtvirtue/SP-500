@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { CompanyRecord, RankedCompany, SnapshotData } from './types';
+import type { CompanyRecord, MembershipChange, RankedCompany, SnapshotData } from './types';
+
+type RankedPanelKey = 'fallOut' | 'entrants' | 'undervalued' | 'overvalued';
 
 type MembershipSortKey =
   | 'ticker'
@@ -42,6 +44,13 @@ function formatDate(value: string | null): string {
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(date);
 }
 
+function formatDateTime(value: string | null): string {
+  if (!value) return 'Unknown';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
+}
+
 function formatNumber(value: number | null, options?: Intl.NumberFormatOptions): string {
   if (value === null || Number.isNaN(value)) return 'N/A';
   return new Intl.NumberFormat('en-US', options).format(value);
@@ -72,21 +81,26 @@ function RankedTable({
   description,
   rows,
   scoreKey,
+  isOpen,
+  onToggle,
 }: {
   title: string;
   description: string;
   rows: RankedCompany[];
   scoreKey: keyof RankedCompany['scores'];
+  isOpen: boolean;
+  onToggle: () => void;
 }) {
   return (
-    <section className="panel">
-      <div className="panel-header">
+    <section className={`panel accordion-panel${isOpen ? ' open' : ''}`}>
+      <button type="button" className="accordion-toggle" onClick={onToggle} aria-expanded={isOpen}>
         <div>
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-      </div>
-      <div className="table-wrap">
+        <span className={`accordion-chevron${isOpen ? ' open' : ''}`} aria-hidden="true">+</span>
+      </button>
+      {isOpen ? <div className="table-wrap">
         <table>
           <thead>
             <tr>
@@ -117,6 +131,63 @@ function RankedTable({
             ))}
           </tbody>
         </table>
+      </div> : null}
+    </section>
+  );
+}
+
+function ChangeList({ title, rows, emptyMessage }: { title: string; rows: MembershipChange[]; emptyMessage: string }) {
+  return (
+    <div className="change-card">
+      <h3>{title}</h3>
+      {rows.length ? (
+        <ul className="change-list">
+          {rows.map((row) => (
+            <li key={`${title}-${row.date}-${row.ticker}`} className="change-item">
+              <div>
+                <strong>{row.ticker}</strong>
+                <span>{row.security}</span>
+              </div>
+              <time dateTime={row.date}>{formatDate(row.date)}</time>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="empty-copy">{emptyMessage}</p>
+      )}
+    </div>
+  );
+}
+
+function SnapshotWatch({
+  nextSnapshotAt,
+  joinedLast7Days,
+  leftLast7Days,
+}: {
+  nextSnapshotAt: string;
+  joinedLast7Days: MembershipChange[];
+  leftLast7Days: MembershipChange[];
+}) {
+  return (
+    <section className="panel snapshot-watch">
+      <div className="panel-header">
+        <div>
+          <h2>Snapshot watch</h2>
+          <p>Tracks the next scheduled refresh time plus the last seven days of published S&amp;P 500 membership changes.</p>
+        </div>
+      </div>
+      <div className="watch-grid">
+        <MetricCard label="Next snapshot" value={formatDate(nextSnapshotAt)} hint={formatDateTime(nextSnapshotAt)} />
+        <ChangeList
+          title="Joined in 7 days"
+          rows={joinedLast7Days}
+          emptyMessage="No new S&P 500 additions were published in the last 7 days."
+        />
+        <ChangeList
+          title="Left in 7 days"
+          rows={leftLast7Days}
+          emptyMessage="No S&P 500 removals were published in the last 7 days."
+        />
       </div>
     </section>
   );
@@ -318,6 +389,7 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
 export default function App() {
   const [data, setData] = useState<SnapshotData | null>(null);
   const [error, setError] = useState('');
+  const [activeRankedPanel, setActiveRankedPanel] = useState<RankedPanelKey | null>('fallOut');
   const canLogout = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname);
 
   useEffect(() => {
@@ -352,6 +424,10 @@ export default function App() {
     );
   }
 
+  const toggleRankedPanel = (panel: RankedPanelKey) => {
+    setActiveRankedPanel((current) => (current === panel ? null : panel));
+  };
+
   return (
     <main className="app-shell">
       <section className="hero panel">
@@ -375,18 +451,28 @@ export default function App() {
         </div>
       </section>
 
+      <SnapshotWatch
+        nextSnapshotAt={data.schedule.nextSnapshotAt}
+        joinedLast7Days={data.recentChanges.joinedLast7Days}
+        leftLast7Days={data.recentChanges.leftLast7Days}
+      />
+
       <section className="grid two-up">
         <RankedTable
           title="25 possible fall outs"
           description="Heuristic ranking based on low market cap, weak profitability, earnings pressure, balance-sheet strain, and reduced liquidity."
           rows={data.possibleFallOut}
           scoreKey="fallOutRisk"
+          isOpen={activeRankedPanel === 'fallOut'}
+          onToggle={() => toggleRankedPanel('fallOut')}
         />
         <RankedTable
           title="25 possible entrants"
           description="Heuristic ranking based on size, profitability, growth, and balance-sheet strength across S&P 400, S&P 600, and Nasdaq-100 candidates."
           rows={data.possibleEntrants}
           scoreKey="entryScore"
+          isOpen={activeRankedPanel === 'entrants'}
+          onToggle={() => toggleRankedPanel('entrants')}
         />
       </section>
 
@@ -396,12 +482,16 @@ export default function App() {
           description="Sector-relative heuristic using lower forward and trailing multiples, dividend support, and quality factors."
           rows={data.undervalued}
           scoreKey="undervaluedScore"
+          isOpen={activeRankedPanel === 'undervalued'}
+          onToggle={() => toggleRankedPanel('undervalued')}
         />
         <RankedTable
           title="25 most overvalued"
           description="Sector-relative heuristic using premium multiples plus weaker quality support to surface stretched names."
           rows={data.overvalued}
           scoreKey="overvaluedScore"
+          isOpen={activeRankedPanel === 'overvalued'}
+          onToggle={() => toggleRankedPanel('overvalued')}
         />
       </section>
 

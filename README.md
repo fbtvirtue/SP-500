@@ -36,7 +36,9 @@ npm run dev
 
 ## Hourly refresh
 
-The repo includes `.github/workflows/hourly-refresh.yml`, which runs every hour and commits refreshed snapshot data back to the repository.
+The repo includes `.github/workflows/hourly-refresh.yml`, which runs every hour and commits refreshed data back to the repository.
+Visitors do not generate snapshots by loading the page. The snapshot is created only by the scheduled refresh job or by running `npm run update:data` manually.
+Only `public/data/latest.json` is kept for the live site so old timestamped snapshots do not bloat deploys or bandwidth.
 
 ## Cloudflare Pages deployment
 

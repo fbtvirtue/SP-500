@@ -56,8 +56,17 @@ export type RankedCompany = CompanyRecord & {
   commentary: string;
 };
 
+export type MembershipChange = {
+  date: string;
+  ticker: string;
+  security: string;
+};
+
 export type SnapshotData = {
   generatedAt: string;
+  schedule: {
+    nextSnapshotAt: string;
+  };
   methodology: {
     disclaimer: string;
     fallOutFactors: string[];
@@ -74,6 +83,10 @@ export type SnapshotData = {
     label: string;
     url: string;
   }>;
+  recentChanges: {
+    joinedLast7Days: MembershipChange[];
+    leftLast7Days: MembershipChange[];
+  };
   currentMembers: CompanyRecord[];
   candidateUniverse: CompanyRecord[];
   possibleFallOut: RankedCompany[];

@@ -58,6 +58,13 @@ a {
   line-height: 0.98;
 }
 
+.hero-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
 .hero-copy p {
   max-width: 72ch;
   margin: 0;
@@ -70,6 +77,25 @@ a {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: #0f5bd6;
+}
+
+.logout-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #10233d;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logout-button:hover {
+  border-color: rgba(15, 91, 214, 0.28);
   color: #0f5bd6;
 }
 
@@ -278,7 +304,7 @@ th {
 }
 
 .membership-table {
-  min-width: 1180px;
+  min-width: 1300px;
 }
 
 .membership-table .ticker-column {
@@ -326,12 +352,18 @@ tr:hover td {
     grid-template-columns: 1fr;
   }
 
+  .hero-topline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .membership-toolbar {
     justify-content: stretch;
   }
 
   .search,
-  .reset-button {
+  .reset-button,
+  .logout-button {
     width: 100%;
   }
 

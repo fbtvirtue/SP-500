@@ -37,3 +37,70 @@ npm run dev
 ## Hourly refresh
 
 The repo includes `.github/workflows/hourly-refresh.yml`, which runs every hour and commits refreshed snapshot data back to the repository.
+
+## Cloudflare Pages deployment
+
+This repo can be deployed on Cloudflare Pages with all content protected behind an email and password.
+
+### What is configured in this repo
+
+- `functions/_middleware.js` blocks every route and asset until the visitor signs in.
+- The login gate is enforced server-side on Cloudflare Pages, not in client-side React code.
+- Sessions are stored in an HTTP-only cookie signed with `AUTH_SESSION_SECRET`.
+- `wrangler.toml` sets the Pages output directory to `dist`.
+
+### Cloudflare Pages build settings
+
+- Framework preset: `Vite`
+- Build command: `npm ci && npm run build`
+- Build output directory: `dist`
+- Production branch: `master`
+
+This repo also includes a GitHub Actions deploy workflow for direct uploads to Cloudflare Pages on every push to `master`.
+Use that workflow instead of Git-based Pages builds if you want the hourly snapshot refresh commits to deploy without depending on Cloudflare's own build pipeline.
+
+### Required Cloudflare Pages secrets
+
+Add these as environment variables in the Cloudflare Pages project settings for both Preview and Production:
+
+- `PROTECTED_EMAIL`: the single allowed login email.
+- `PROTECTED_PASSWORD`: the password paired with that email.
+- `AUTH_SESSION_SECRET`: a long random secret used to sign the session cookie.
+- `AUTH_SESSION_TTL_SECONDS`: optional, defaults to `604800` (7 days).
+
+### Required GitHub Actions secrets
+
+Add these repository secrets in GitHub so `.github/workflows/deploy-cloudflare-pages.yml` can deploy on push:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_PAGES_PROJECT_NAME`
+
+The token only needs Pages deployment permissions for the target account.
+
+### Recommended deployment mode
+
+Prefer direct upload from GitHub Actions for this repo.
+If you also connect the repo directly in Cloudflare Pages, you may end up with duplicate deploys for the same commit.
+For this setup, keep GitHub Actions as the deploy path and use Cloudflare Pages mainly as the hosting target plus environment-secret store.
+
+### Local Pages-style testing
+
+For local testing with Cloudflare Pages Functions, create a `.dev.vars` file:
+
+```bash
+PROTECTED_EMAIL=you@example.com
+PROTECTED_PASSWORD=change-this-password
+AUTH_SESSION_SECRET=replace-with-a-long-random-string
+```
+
+Then build and run the Pages preview:
+
+```bash
+npm run build
+npx wrangler pages dev dist
+```
+
+### Security note
+
+Do not put the email, password, or session secret in the React app or in committed `.env` files. Keep them only in Cloudflare Pages secrets or your local `.dev.vars` file.

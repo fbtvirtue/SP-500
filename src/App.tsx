@@ -5,6 +5,7 @@ type MembershipSortKey =
   | 'ticker'
   | 'security'
   | 'sector'
+  | 'sectorDominance'
   | 'currentMemberSince'
   | 'lastLeftAt'
   | 'dividendRate'
@@ -24,6 +25,7 @@ const membershipColumns: Array<{ key: MembershipSortKey; label: string; classNam
   { key: 'ticker', label: 'Ticker', className: 'sticky-col sticky-col-1 ticker-column' },
   { key: 'security', label: 'Company', className: 'sticky-col sticky-col-2 company-column' },
   { key: 'sector', label: 'Sector' },
+  { key: 'sectorDominance', label: 'Dominance' },
   { key: 'currentMemberSince', label: 'Member since' },
   { key: 'lastLeftAt', label: 'Last left' },
   { key: 'dividendRate', label: 'Dividend' },
@@ -120,7 +122,21 @@ function RankedTable({
   );
 }
 
-function getMembershipSortValue(row: CompanyRecord, key: MembershipSortKey): number | string | null {
+function getSectorDominance(row: CompanyRecord, sectorMarketCaps: Map<string, number>): number | null {
+  const marketCap = row.metrics.marketCap;
+  if (marketCap === null || Number.isNaN(marketCap)) return null;
+
+  const sectorTotal = sectorMarketCaps.get(row.sector);
+  if (!sectorTotal || Number.isNaN(sectorTotal)) return null;
+
+  return marketCap / sectorTotal;
+}
+
+function getMembershipSortValue(
+  row: CompanyRecord,
+  key: MembershipSortKey,
+  sectorMarketCaps: Map<string, number>,
+): number | string | null {
   switch (key) {
     case 'ticker':
       return row.ticker;
@@ -128,6 +144,8 @@ function getMembershipSortValue(row: CompanyRecord, key: MembershipSortKey): num
       return row.security;
     case 'sector':
       return row.sector;
+    case 'sectorDominance':
+      return getSectorDominance(row, sectorMarketCaps);
     case 'currentMemberSince':
       return row.currentMemberSince ? Date.parse(row.currentMemberSince) : null;
     case 'lastLeftAt':
@@ -182,6 +200,18 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<MembershipSortState>(defaultMembershipSort);
 
+  const sectorMarketCaps = useMemo(() => {
+    const totals = new Map<string, number>();
+
+    for (const row of rows) {
+      const marketCap = row.metrics.marketCap;
+      if (marketCap === null || Number.isNaN(marketCap)) continue;
+      totals.set(row.sector, (totals.get(row.sector) ?? 0) + marketCap);
+    }
+
+    return totals;
+  }, [rows]);
+
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     if (!normalized) return rows;
@@ -191,15 +221,15 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
   const sorted = useMemo(() => {
     return [...filtered].sort((left, right) => {
       const comparison = compareMembershipValues(
-        getMembershipSortValue(left, sort.key),
-        getMembershipSortValue(right, sort.key),
+        getMembershipSortValue(left, sort.key, sectorMarketCaps),
+        getMembershipSortValue(right, sort.key, sectorMarketCaps),
         sort.direction,
       );
 
       if (comparison !== 0) return comparison;
       return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
     });
-  }, [filtered, sort]);
+  }, [filtered, sectorMarketCaps, sort]);
 
   function toggleSort(key: MembershipSortKey) {
     setSort((current) => {
@@ -268,6 +298,7 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
                 <td className={membershipColumns[0].className}>{row.ticker}</td>
                 <td className={membershipColumns[1].className}>{row.security}</td>
                 <td>{row.sector}</td>
+                <td>{formatPercent(getSectorDominance(row, sectorMarketCaps))}</td>
                 <td>{formatDate(row.currentMemberSince)}</td>
                 <td>{formatDate(row.lastLeftAt)}</td>
                 <td>{row.dividend.hasDividend ? formatCurrency(row.dividend.dividendRate, row.dividend.currency || 'USD') : 'No dividend'}</td>
@@ -287,6 +318,7 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
 export default function App() {
   const [data, setData] = useState<SnapshotData | null>(null);
   const [error, setError] = useState('');
+  const canLogout = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname);
 
   useEffect(() => {
     void fetch('/data/latest.json', { cache: 'no-store' })
@@ -324,7 +356,10 @@ export default function App() {
     <main className="app-shell">
       <section className="hero panel">
         <div className="hero-copy">
-          <div className="eyebrow">Hourly market structure monitor</div>
+          <div className="hero-topline">
+            <div className="eyebrow">Hourly market structure monitor</div>
+            {canLogout ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
+          </div>
           <h1>S&amp;P 500 membership, dividend, and valuation dashboard</h1>
           <p>
             Tracks current members, highlights 25 possible removals and 25 possible entrants,

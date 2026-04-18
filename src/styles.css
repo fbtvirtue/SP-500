@@ -65,6 +65,14 @@ a {
   gap: 16px;
 }
 
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .hero-copy p {
   max-width: 72ch;
   margin: 0;
@@ -94,9 +102,32 @@ a {
   font-weight: 700;
 }
 
+.view-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #10233d;
+  font-weight: 700;
+}
+
+.view-button.active {
+  background: #10233d;
+  border-color: #10233d;
+  color: white;
+}
+
 .logout-button:hover {
   border-color: rgba(15, 91, 214, 0.28);
   color: #0f5bd6;
+}
+
+.view-button:hover {
+  border-color: rgba(15, 91, 214, 0.28);
 }
 
 .hero-meta {
@@ -196,6 +227,22 @@ a {
   text-align: left;
 }
 
+.accordion-action {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 16px;
+}
+
+.accordion-state {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5d7390;
+}
+
 .accordion-toggle h2 {
   margin: 0;
   font-size: 1.35rem;
@@ -209,21 +256,16 @@ a {
 
 .accordion-chevron {
   flex: none;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  border: 1px solid rgba(16, 35, 61, 0.08);
-  background: rgba(255, 255, 255, 0.85);
-  font-size: 1.5rem;
-  line-height: 1;
-  color: #0f5bd6;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #0f5bd6;
+  border-bottom: 2px solid #0f5bd6;
+  transform: rotate(45deg);
   transition: transform 160ms ease;
 }
 
 .accordion-chevron.open {
-  transform: rotate(45deg);
+  transform: rotate(-135deg);
 }
 
 .accordion-panel .table-wrap {
@@ -231,6 +273,10 @@ a {
 }
 
 .snapshot-watch {
+  margin-top: 20px;
+}
+
+.prediction-grid {
   margin-top: 20px;
 }
 
@@ -466,12 +512,18 @@ tr:hover td {
     align-items: flex-start;
   }
 
+  .hero-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
   .membership-toolbar {
     justify-content: stretch;
   }
 
   .search,
   .reset-button,
+  .view-button,
   .logout-button {
     width: 100%;
   }

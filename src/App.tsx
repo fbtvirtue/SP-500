@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { CompanyRecord, MembershipChange, RankedCompany, SnapshotData } from './types';
 
 type RankedPanelKey = 'fallOut' | 'entrants' | 'undervalued' | 'overvalued';
+type DashboardView = 'home' | 'prediction';
 
 type MembershipSortKey =
   | 'ticker'
@@ -98,7 +99,10 @@ function RankedTable({
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <span className={`accordion-chevron${isOpen ? ' open' : ''}`} aria-hidden="true">+</span>
+        <span className="accordion-action" aria-hidden="true">
+          <span className="accordion-state">{isOpen ? 'Hide' : 'Show'}</span>
+          <span className={`accordion-chevron${isOpen ? ' open' : ''}`} />
+        </span>
       </button>
       {isOpen ? <div className="table-wrap">
         <table>
@@ -389,7 +393,13 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
 export default function App() {
   const [data, setData] = useState<SnapshotData | null>(null);
   const [error, setError] = useState('');
-  const [activeRankedPanel, setActiveRankedPanel] = useState<RankedPanelKey | null>('fallOut');
+  const [activeView, setActiveView] = useState<DashboardView>('home');
+  const [openRankedPanels, setOpenRankedPanels] = useState<Record<RankedPanelKey, boolean>>({
+    fallOut: false,
+    entrants: false,
+    undervalued: false,
+    overvalued: false,
+  });
   const canLogout = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname);
 
   useEffect(() => {
@@ -425,7 +435,10 @@ export default function App() {
   }
 
   const toggleRankedPanel = (panel: RankedPanelKey) => {
-    setActiveRankedPanel((current) => (current === panel ? null : panel));
+    setOpenRankedPanels((current) => ({
+      ...current,
+      [panel]: !current[panel],
+    }));
   };
 
   return (
@@ -434,7 +447,23 @@ export default function App() {
         <div className="hero-copy">
           <div className="hero-topline">
             <div className="eyebrow">Hourly market structure monitor</div>
-            {canLogout ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
+            <div className="hero-actions">
+              <button
+                type="button"
+                className={`view-button${activeView === 'home' ? ' active' : ''}`}
+                onClick={() => setActiveView('home')}
+              >
+                Home
+              </button>
+              <button
+                type="button"
+                className={`view-button${activeView === 'prediction' ? ' active' : ''}`}
+                onClick={() => setActiveView('prediction')}
+              >
+                Prediction
+              </button>
+              {canLogout ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
+            </div>
           </div>
           <h1>S&amp;P 500 membership, dividend, and valuation dashboard</h1>
           <p>
@@ -451,84 +480,85 @@ export default function App() {
         </div>
       </section>
 
-      <SnapshotWatch
-        nextSnapshotAt={data.schedule.nextSnapshotAt}
-        joinedLast7Days={data.recentChanges.joinedLast7Days}
-        leftLast7Days={data.recentChanges.leftLast7Days}
-      />
+      {activeView === 'home' ? (
+        <>
+          <SnapshotWatch
+            nextSnapshotAt={data.schedule.nextSnapshotAt}
+            joinedLast7Days={data.recentChanges.joinedLast7Days}
+            leftLast7Days={data.recentChanges.leftLast7Days}
+          />
 
-      <section className="grid two-up">
-        <RankedTable
-          title="25 possible fall outs"
-          description="Heuristic ranking based on low market cap, weak profitability, earnings pressure, balance-sheet strain, and reduced liquidity."
-          rows={data.possibleFallOut}
-          scoreKey="fallOutRisk"
-          isOpen={activeRankedPanel === 'fallOut'}
-          onToggle={() => toggleRankedPanel('fallOut')}
-        />
-        <RankedTable
-          title="25 possible entrants"
-          description="Heuristic ranking based on size, profitability, growth, and balance-sheet strength across S&P 400, S&P 600, and Nasdaq-100 candidates."
-          rows={data.possibleEntrants}
-          scoreKey="entryScore"
-          isOpen={activeRankedPanel === 'entrants'}
-          onToggle={() => toggleRankedPanel('entrants')}
-        />
-      </section>
+          <MembershipTable rows={data.currentMembers} />
 
-      <section className="grid two-up">
-        <RankedTable
-          title="25 most undervalued"
-          description="Sector-relative heuristic using lower forward and trailing multiples, dividend support, and quality factors."
-          rows={data.undervalued}
-          scoreKey="undervaluedScore"
-          isOpen={activeRankedPanel === 'undervalued'}
-          onToggle={() => toggleRankedPanel('undervalued')}
-        />
-        <RankedTable
-          title="25 most overvalued"
-          description="Sector-relative heuristic using premium multiples plus weaker quality support to surface stretched names."
-          rows={data.overvalued}
-          scoreKey="overvaluedScore"
-          isOpen={activeRankedPanel === 'overvalued'}
-          onToggle={() => toggleRankedPanel('overvalued')}
-        />
-      </section>
-
-      <MembershipTable rows={data.currentMembers} />
-
-      <section className="panel methodology">
-        <div className="panel-header">
-          <div>
-            <h2>Methodology and caveats</h2>
-            <p>{data.methodology.disclaimer}</p>
-          </div>
-        </div>
-        <div className="method-grid">
-          <div>
-            <h3>Possible fall outs</h3>
-            <ul>{data.methodology.fallOutFactors.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-          <div>
-            <h3>Possible entrants</h3>
-            <ul>{data.methodology.entryFactors.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-          <div>
-            <h3>Valuation screens</h3>
-            <ul>{data.methodology.valuationFactors.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-          <div>
-            <h3>Data sources</h3>
-            <ul>
-              {data.sources.map((source) => (
-                <li key={source.url}>
-                  <a href={source.url} target="_blank" rel="noreferrer">{source.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+          <section className="panel methodology">
+            <div className="panel-header">
+              <div>
+                <h2>Methodology and caveats</h2>
+                <p>{data.methodology.disclaimer}</p>
+              </div>
+            </div>
+            <div className="method-grid">
+              <div>
+                <h3>Possible fall outs</h3>
+                <ul>{data.methodology.fallOutFactors.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+              <div>
+                <h3>Possible entrants</h3>
+                <ul>{data.methodology.entryFactors.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+              <div>
+                <h3>Valuation screens</h3>
+                <ul>{data.methodology.valuationFactors.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+              <div>
+                <h3>Data sources</h3>
+                <ul>
+                  {data.sources.map((source) => (
+                    <li key={source.url}>
+                      <a href={source.url} target="_blank" rel="noreferrer">{source.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
+        <section className="grid two-up prediction-grid">
+          <RankedTable
+            title="25 possible fall outs"
+            description="Heuristic ranking based on low market cap, weak profitability, earnings pressure, balance-sheet strain, and reduced liquidity."
+            rows={data.possibleFallOut}
+            scoreKey="fallOutRisk"
+            isOpen={openRankedPanels.fallOut}
+            onToggle={() => toggleRankedPanel('fallOut')}
+          />
+          <RankedTable
+            title="25 possible entrants"
+            description="Heuristic ranking based on size, profitability, growth, and balance-sheet strength across S&P 400, S&P 600, and Nasdaq-100 candidates."
+            rows={data.possibleEntrants}
+            scoreKey="entryScore"
+            isOpen={openRankedPanels.entrants}
+            onToggle={() => toggleRankedPanel('entrants')}
+          />
+          <RankedTable
+            title="25 most undervalued"
+            description="Sector-relative heuristic using lower forward and trailing multiples, dividend support, and quality factors."
+            rows={data.undervalued}
+            scoreKey="undervaluedScore"
+            isOpen={openRankedPanels.undervalued}
+            onToggle={() => toggleRankedPanel('undervalued')}
+          />
+          <RankedTable
+            title="25 most overvalued"
+            description="Sector-relative heuristic using premium multiples plus weaker quality support to surface stretched names."
+            rows={data.overvalued}
+            scoreKey="overvaluedScore"
+            isOpen={openRankedPanels.overvalued}
+            onToggle={() => toggleRankedPanel('overvalued')}
+          />
+        </section>
+      )}
     </main>
   );
 }

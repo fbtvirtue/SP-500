@@ -54,14 +54,14 @@ This repo can be deployed on Cloudflare Pages with all content protected behind 
 - Framework preset: `Vite`
 - Build command: `npm ci && npm run build`
 - Build output directory: `dist`
-- Production branch: `master`
+- Production branch: `main`
 
-This repo also includes a GitHub Actions deploy workflow for direct uploads to Cloudflare Pages on every push to `master`.
+This repo also includes a GitHub Actions deploy workflow for direct uploads to Cloudflare Pages on every push to `main`.
 Use that workflow instead of Git-based Pages builds if you want the hourly snapshot refresh commits to deploy without depending on Cloudflare's own build pipeline.
 
 ### Required Cloudflare Pages secrets
 
-Add these as environment variables in the Cloudflare Pages project settings for both Preview and Production:
+Add these as environment variables in the Cloudflare Pages project settings for the Production environment:
 
 - `PROTECTED_EMAIL`: the single allowed login email.
 - `PROTECTED_PASSWORD`: the password paired with that email.
@@ -70,7 +70,7 @@ Add these as environment variables in the Cloudflare Pages project settings for 
 
 ### Required GitHub Actions secrets
 
-Add these repository secrets in GitHub so `.github/workflows/deploy-cloudflare-pages.yml` can deploy on push:
+Add these repository secrets in GitHub so `.github/workflows/deploy-cloudflare-pages.yml` can deploy on push to `main`:
 
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
@@ -82,7 +82,7 @@ The token only needs Pages deployment permissions for the target account.
 
 Prefer direct upload from GitHub Actions for this repo.
 If you also connect the repo directly in Cloudflare Pages, you may end up with duplicate deploys for the same commit.
-For this setup, keep GitHub Actions as the deploy path and use Cloudflare Pages mainly as the hosting target plus environment-secret store.
+For this setup, keep `main` as the single live branch, use GitHub Actions as the deploy path, and use Cloudflare Pages mainly as the hosting target plus environment-secret store.
 
 ### Local Pages-style testing
 

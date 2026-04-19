@@ -880,6 +880,23 @@ th {
   background: rgba(227, 238, 252, 0.98);
 }
 
+.membership-table tbody tr.selected td {
+  background: rgba(15, 91, 214, 0.10);
+}
+
+.membership-table tbody tr.selected .sticky-col {
+  background: rgba(227, 238, 252, 0.98);
+}
+
+.membership-table tbody tr {
+  cursor: pointer;
+}
+
+.membership-table tbody tr:focus-visible td {
+  outline: 2px solid rgba(15, 91, 214, 0.24);
+  outline-offset: -2px;
+}
+
 tr:hover td {
   background: rgba(15, 91, 214, 0.04);
 }
@@ -1005,14 +1022,35 @@ tr:hover td {
     position: static;
   }
 
-  .membership-table .sticky-col-1,
+  .membership-table .sticky-col-1 {
+    position: sticky;
+    left: 0;
+    box-shadow: 10px 0 18px rgba(16, 35, 61, 0.08);
+  }
+
   .membership-table .sticky-col-2 {
     left: auto;
   }
 
-  .membership-table th.sticky-col,
-  .membership-table td.sticky-col,
-  .membership-table tbody tr:hover .sticky-col {
+  .membership-table th.sticky-col-1 {
+    z-index: 12;
+    background: rgba(235, 242, 250, 0.98);
+  }
+
+  .membership-table td.sticky-col-1 {
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .membership-table tbody tr:hover .sticky-col-1,
+  .membership-table tbody tr.selected .sticky-col-1 {
+    background: rgba(227, 238, 252, 0.98);
+  }
+
+  .membership-table th.sticky-col-2,
+  .membership-table td.sticky-col-2,
+  .membership-table tbody tr:hover .sticky-col-2,
+  .membership-table tbody tr.selected .sticky-col-2 {
     background: transparent;
   }
 

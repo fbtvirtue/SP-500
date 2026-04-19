@@ -536,10 +536,15 @@ function MembershipTable({
   const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
   const [exportPending, setExportPending] = useState(false);
+  const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
   const [stickyColumnOffset, setStickyColumnOffset] = useState(0);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
   const stickyHeaderCellRefs = useRef<Array<HTMLTableCellElement | null>>([]);
   const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
+
+  useEffect(() => {
+    setSelectedTicker(null);
+  }, [page, query, sort.direction, sort.key]);
 
   useEffect(() => {
     const updateStickyColumnOffset = () => {
@@ -754,6 +759,10 @@ function MembershipTable({
     }
   }
 
+  function toggleSelectedTicker(ticker: string) {
+    setSelectedTicker((current) => current === ticker ? null : ticker);
+  }
+
   return (
     <section
       id="members-table"
@@ -908,7 +917,18 @@ function MembershipTable({
               <td colSpan={membershipColumns.length}>No companies matched the current search.</td>
             </tr> : null}
             {rows.map((row) => (
-              <tr key={row.ticker}>
+              <tr
+                key={row.ticker}
+                className={selectedTicker === row.ticker ? 'selected' : ''}
+                onClick={() => toggleSelectedTicker(row.ticker)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleSelectedTicker(row.ticker);
+                  }
+                }}
+                tabIndex={0}
+              >
                 <td className={membershipColumns[0].className}>{row.ticker}</td>
                 <td className={membershipColumns[1].className}>{row.security}</td>
                 <td>{row.sector}</td>

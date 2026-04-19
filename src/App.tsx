@@ -691,6 +691,9 @@ function MembershipTable({
 
   const visibleRowStart = totalCount ? (page - 1) * pageSize + 1 : 0;
   const visibleRowEnd = totalCount ? visibleRowStart + rows.length - 1 : 0;
+  const unlockExportLabel = supporterAccessDuration
+    ? `Unlock export access for ${supporterAccessDuration} in this browser`
+    : 'Unlock export';
 
   async function loadFullRowsForExport(): Promise<{ rows: CompanyRecord[]; sectorTotals: Map<string, number> }> {
     const response = await fetch('/data/current-members.json', { cache: 'no-store' });
@@ -939,9 +942,6 @@ function MembershipTable({
               onChange={(event) => onQueryChange(event.target.value)}
             />
         </label>
-        {!canExport && supporterAccessDuration ? (
-          <p className="export-note export-note-sticky"><strong>Unlock export access for {supporterAccessDuration} in this browser.</strong></p>
-        ) : null}
       </div>
       {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
@@ -1092,7 +1092,7 @@ function MembershipTable({
               onClick={onStartSupporterCheckout}
               disabled={!supporterEnabled || supporterPending}
             >
-              {supporterPending ? 'Opening checkout…' : 'Unlock export'}
+              {supporterPending ? 'Opening checkout…' : unlockExportLabel}
             </button>
           )}
         </div>

@@ -201,7 +201,6 @@ function handleLogout(request) {
   const homeUrl = new URL('/', request.url);
   const headers = new Headers({ Location: homeUrl.toString() });
   headers.append('Set-Cookie', `${AUTH_COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
-  headers.append('Set-Cookie', `${SUPPORTER_COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
   headers.append('Set-Cookie', `${MEMBER_ACCESS_COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
 
   return new Response(null, {

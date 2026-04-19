@@ -808,8 +808,13 @@ a {
 }
 
 .donate-button {
+  min-height: 46px;
+  padding-inline: 16px;
+  border-radius: 999px;
   background: linear-gradient(135deg, #345bb6 0%, #3f67c8 55%, #6f8fda 100%);
   border-color: transparent;
+  white-space: nowrap;
+  font-size: clamp(0.78rem, 1vw + 0.45rem, 0.92rem);
 }
 
 .export-message {
@@ -826,12 +831,6 @@ a {
   margin: 0 0 16px;
   color: var(--app-muted-strong);
   line-height: 1.6;
-}
-
-.export-note-sticky {
-  margin: 14px 0 0;
-  padding-top: 14px;
-  border-top: 1px solid var(--app-border);
 }
 
 .table-wrap-locked {

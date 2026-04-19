@@ -766,7 +766,7 @@ th {
   background: rgba(235, 242, 250, 0.7);
   position: sticky;
   top: var(--membership-sticky-offset, 0px);
-  z-index: 2;
+  z-index: 10;
 }
 
 .sort-button {
@@ -845,11 +845,11 @@ th {
 
 .membership-table th.sticky-col {
   background: rgba(235, 242, 250, 0.95);
-  z-index: 7;
+  z-index: 11;
 }
 
 .membership-table td.sticky-col {
-  z-index: 2;
+  z-index: 3;
 }
 
 .membership-table .sticky-col-1 {

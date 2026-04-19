@@ -180,6 +180,22 @@ function downloadFile(filename: string, content: BlobPart, mimeType: string): vo
   URL.revokeObjectURL(url);
 }
 
+function getDownloadFilename(contentDisposition: string | null, fallbackFilename: string): string {
+  if (!contentDisposition) return fallbackFilename;
+
+  const utf8Match = contentDisposition.match(/filename\*=UTF-8''([^;]+)/i);
+  if (utf8Match?.[1]) {
+    try {
+      return decodeURIComponent(utf8Match[1]);
+    } catch {
+      return utf8Match[1];
+    }
+  }
+
+  const basicMatch = contentDisposition.match(/filename="?([^";]+)"?/i);
+  return basicMatch?.[1] || fallbackFilename;
+}
+
 async function sha256Hex(value: string): Promise<string> {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
   return Array.from(new Uint8Array(digest)).map((byte) => byte.toString(16).padStart(2, '0')).join('');
@@ -489,6 +505,7 @@ function MembershipTable({
   siteHeaderOffset,
   onQueryChange,
   onSortChange,
+  onResetSort,
   onPageChange,
   onStartSupporterCheckout,
 }: {
@@ -510,6 +527,7 @@ function MembershipTable({
   siteHeaderOffset: number;
   onQueryChange: (value: string) => void;
   onSortChange: (key: MembershipSortKey) => void;
+  onResetSort: () => void;
   onPageChange: (page: number) => void;
   onStartSupporterCheckout: () => void;
 }) {
@@ -517,9 +535,11 @@ function MembershipTable({
   const [exportFormat, setExportFormat] = useState<ExportFormat>('xlsx');
   const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
+  const [exportPending, setExportPending] = useState(false);
   const [stickyColumnOffset, setStickyColumnOffset] = useState(0);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
   const stickyHeaderCellRefs = useRef<Array<HTMLTableCellElement | null>>([]);
+  const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
   useEffect(() => {
     const updateStickyColumnOffset = () => {
@@ -587,7 +607,23 @@ function MembershipTable({
       exportSectorTotals.set(row.sector, (exportSectorTotals.get(row.sector) ?? 0) + marketCap);
     }
 
-    return { rows: exportRows, sectorTotals: exportSectorTotals };
+    const normalizedQuery = query.trim().toLowerCase();
+    const filteredRows = !normalizedQuery
+      ? exportRows
+      : exportRows.filter((row) => [row.ticker, row.security, row.sector, row.subIndustry].join(' ').toLowerCase().includes(normalizedQuery));
+
+    const sortedRows = [...filteredRows].sort((left, right) => {
+      const comparison = compareMembershipValues(
+        getMembershipSortValue(left, sort.key, exportSectorTotals),
+        getMembershipSortValue(right, sort.key, exportSectorTotals),
+        sort.direction,
+      );
+
+      if (comparison !== 0) return comparison;
+      return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
+    });
+
+    return { rows: sortedRows, sectorTotals: exportSectorTotals };
   }
 
   async function exportRowsAsXlsx() {
@@ -654,7 +690,45 @@ function MembershipTable({
       });
   }
 
+  async function downloadServerGeneratedExport() {
+    const exportUrl = new URL('/__members/export', window.location.origin);
+    exportUrl.searchParams.set('format', exportFormat);
+    exportUrl.searchParams.set('decimal', decimalSeparator);
+    exportUrl.searchParams.set('sort', sort.key);
+    exportUrl.searchParams.set('direction', sort.direction);
+    if (query.trim()) {
+      exportUrl.searchParams.set('query', query.trim());
+    }
+
+    setExportPending(true);
+
+    try {
+      const response = await fetch(exportUrl.toString(), { cache: 'no-store' });
+      if (!response.ok) {
+        const details = await response.text();
+        throw new Error(details || 'Could not generate the export file.');
+      }
+
+      const mimeType = response.headers.get('content-type') || (exportFormat === 'csv'
+        ? 'text/csv;charset=utf-8'
+        : 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      const fileBlob = await response.blob();
+      const filename = getDownloadFilename(response.headers.get('content-disposition'), buildExportFilename(exportFormat, snapshotGeneratedAt));
+      downloadFile(filename, fileBlob, mimeType);
+      setExportMessage(`${exportFormat.toUpperCase()} export downloaded.`);
+    } catch (error) {
+      setExportMessage(error instanceof Error ? error.message : 'Could not generate the export file.');
+    } finally {
+      setExportPending(false);
+    }
+  }
+
   function downloadSelectedExport() {
+    if (!isLocalHost) {
+      void downloadServerGeneratedExport();
+      return;
+    }
+
     if (exportFormat === 'csv') {
       exportRowsAsCsv();
       return;
@@ -682,6 +756,7 @@ function MembershipTable({
 
   return (
     <section
+      id="members-table"
       className="panel stack-section membership-section"
       style={{
         '--site-header-offset': `${siteHeaderOffset}px`,
@@ -691,9 +766,6 @@ function MembershipTable({
       <div className="panel-header panel-header-stack membership-sticky-header">
         <div>
           <h2>Current S&amp;P 500 members</h2>
-          {!canExport ? (
-            <p>Donate to unlock CSV and XLSX export access.</p>
-          ) : null}
         </div>
         <div className="membership-toolbar">
           <label className="search-wrap" aria-label="Search companies">
@@ -708,7 +780,7 @@ function MembershipTable({
           <button
             type="button"
             className="reset-button reset-button-subtle"
-            onClick={() => onSortChange(defaultMembershipSort.key)}
+            onClick={onResetSort}
             disabled={sort.key === defaultMembershipSort.key && sort.direction === defaultMembershipSort.direction}
           >
             Reset sort
@@ -761,8 +833,8 @@ function MembershipTable({
                     </label>
                   </div>
                   <div className="export-menu-actions">
-                    <button type="button" className="export-button" onClick={() => { downloadSelectedExport(); setIsExportMenuOpen(false); }}>
-                      Download {exportFormat.toUpperCase()}
+                    <button type="button" className="export-button" disabled={exportPending} onClick={() => { downloadSelectedExport(); setIsExportMenuOpen(false); }}>
+                      {exportPending ? 'Preparing…' : `Download ${exportFormat.toUpperCase()}`}
                     </button>
                   </div>
                 </div> : null}
@@ -776,27 +848,15 @@ function MembershipTable({
                 onClick={onStartSupporterCheckout}
                 disabled={!supporterEnabled || supporterPending}
               >
-                {supporterPending ? 'Opening checkout…' : 'Donate to unlock export'}
+                {supporterPending ? 'Opening checkout…' : 'Unlock export'}
               </button>
             </>
           )}
         </div>
-        {supporterAccessDuration ? (
-          <p className="export-note export-note-sticky">Supporter purchases unlock export access for {supporterAccessDuration} in this browser.</p>
+        {!canExport && supporterAccessDuration ? (
+          <p className="export-note export-note-sticky"><strong>Unlock export access for {supporterAccessDuration} in this browser.</strong></p>
         ) : null}
       </div>
-      {!canExport ? (
-        <div className="export-callout">
-          <div>
-            <strong>Donate to download.</strong>
-            <p>
-              Payment is handled by Lemon Squeezy. After a successful purchase, export unlocks automatically in this browser.
-              {supporterAccessDuration ? ` Supporter export access currently lasts ${supporterAccessDuration}.` : ''}
-            </p>
-          </div>
-          <span className="donate-link donate-link-static">Secure checkout</span>
-        </div>
-      ) : null}
       {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
       <div
@@ -905,6 +965,7 @@ export default function App() {
   const [membersError, setMembersError] = useState('');
   const [membersLoading, setMembersLoading] = useState(false);
   const [activeView, setActiveView] = useState<DashboardView>('home');
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
   const [openRankedPanels, setOpenRankedPanels] = useState<Record<RankedPanelKey, boolean>>({
     fallOut: false,
     entrants: false,
@@ -1162,6 +1223,23 @@ export default function App() {
 
   const supporterAccessDuration = formatSupporterAccessDuration(supporterExportTtlSeconds);
 
+  function showHomeSection(sectionId?: string) {
+    setActiveView('home');
+    setShowLoginForm(false);
+    setIsNavMenuOpen(false);
+
+    if (typeof window === 'undefined') return;
+
+    window.requestAnimationFrame(() => {
+      if (sectionId) {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   function handleMembersQueryChange(value: string) {
     setMembersQuery(value);
     setMembersPage(1);
@@ -1180,6 +1258,11 @@ export default function App() {
 
   function handleMembersPageChange(nextPage: number) {
     setMembersPage((current) => Math.max(1, nextPage === current ? current : nextPage));
+  }
+
+  function handleResetMembersSort() {
+    setMembersPage(1);
+    setMembersSort(defaultMembershipSort);
   }
 
   async function startSupporterCheckout() {
@@ -1209,46 +1292,59 @@ export default function App() {
   return (
     <main className="app-shell">
       <header ref={siteHeaderRef} className="panel site-header">
-        <div className="site-brand">
-          <div className="site-kicker">S&amp;P 500 Monitor</div>
-          <div className="site-title">Market structure dashboard</div>
-        </div>
-        <nav className="site-nav" aria-label="Primary">
+        <button type="button" className="site-brand-button" onClick={() => showHomeSection()}>
+          <div className="site-brand">
+            <div className="site-kicker">S&amp;P 500 Monitor</div>
+            <div className="site-title">Market structure dashboard</div>
+          </div>
+        </button>
+        <div className="site-nav-wrap">
           <button
             type="button"
-            className={`view-button${activeView === 'home' ? ' active' : ''}`}
-            onClick={() => {
-              setActiveView('home');
-              setShowLoginForm(false);
-            }}
+            className={`nav-menu-button${isNavMenuOpen ? ' active' : ''}`}
+            aria-expanded={isNavMenuOpen}
+            aria-label="Toggle navigation"
+            onClick={() => setIsNavMenuOpen((current) => !current)}
           >
-            Home
+            <span />
+            <span />
+            <span />
           </button>
-          <a className="nav-link-button" href="/#data-sources">
-            Data sources
-          </a>
-          {isAuthenticated ? (
-            <button
-              type="button"
-              className={`view-button${activeView === 'prediction' ? ' active' : ''}`}
-              onClick={() => {
-                setActiveView('prediction');
-                setShowLoginForm(false);
-              }}
-            >
-              Prediction
+          <nav className={`site-nav${isNavMenuOpen ? ' open' : ''}`} aria-label="Primary">
+            <button type="button" className="nav-link-button" onClick={() => showHomeSection('members-table')}>
+              Table
             </button>
-          ) : (
-            <button
-              type="button"
-              className={`view-button${showLoginForm ? ' active' : ''}`}
-              onClick={() => setShowLoginForm((current) => !current)}
-            >
-              Log in
+            <button type="button" className="nav-link-button" onClick={() => showHomeSection('data-sources')}>
+              Data sources
             </button>
-          )}
-          {canLogout && isAuthenticated ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
-        </nav>
+            {isAuthenticated ? (
+              <button
+                type="button"
+                className={`view-button${activeView === 'prediction' ? ' active' : ''}`}
+                onClick={() => {
+                  setActiveView('prediction');
+                  setShowLoginForm(false);
+                  setIsNavMenuOpen(false);
+                }}
+              >
+                Prediction
+              </button>
+            ) : (
+              <button
+                type="button"
+                className={`view-button${showLoginForm ? ' active' : ''}`}
+                onClick={() => {
+                  setShowLoginForm((current) => !current);
+                  setActiveView('home');
+                  setIsNavMenuOpen(false);
+                }}
+              >
+                Log in
+              </button>
+            )}
+            {canLogout && isAuthenticated ? <a className="logout-button" href="/__auth/logout" onClick={() => setIsNavMenuOpen(false)}>Log out</a> : null}
+          </nav>
+        </div>
       </header>
 
       <section className="hero panel stack-section">
@@ -1317,6 +1413,7 @@ export default function App() {
               siteHeaderOffset={siteHeaderOffset}
               onQueryChange={handleMembersQueryChange}
               onSortChange={handleMembersSortChange}
+              onResetSort={handleResetMembersSort}
               onPageChange={handleMembersPageChange}
               onStartSupporterCheckout={() => void startSupporterCheckout()}
             />

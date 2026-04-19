@@ -66,6 +66,14 @@ a {
   backdrop-filter: blur(12px);
 }
 
+.site-brand-button {
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
 .site-brand {
   min-width: 0;
 }
@@ -91,6 +99,34 @@ a {
   justify-content: flex-end;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.site-nav-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-menu-button {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.nav-menu-button span {
+  width: 16px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: #10233d;
 }
 
 .hero {
@@ -434,6 +470,7 @@ a {
 }
 
 .membership-sticky-header {
+  position: relative;
   margin: -24px -24px 18px;
   padding: 24px 24px 14px;
   background: linear-gradient(180deg, rgba(244, 247, 251, 0.98) 0%, rgba(248, 251, 255, 0.94) 100%);
@@ -540,6 +577,7 @@ a {
 
 .export-menu {
   position: relative;
+  z-index: 20;
 }
 
 .export-menu summary {
@@ -581,6 +619,7 @@ a {
   top: calc(100% + 10px);
   right: 0;
   width: min(420px, calc(100vw - 48px));
+  z-index: 48;
   padding: 16px;
   border: 1px solid rgba(16, 35, 61, 0.08);
   border-radius: 20px;
@@ -613,19 +652,6 @@ a {
   border-color: #0d8f6f;
 }
 
-.export-callout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 18px;
-  padding: 16px 18px;
-  border: 1px solid rgba(13, 143, 111, 0.16);
-  border-radius: 18px;
-  background: rgba(13, 143, 111, 0.07);
-}
-
-.export-callout p,
 .export-message {
   margin: 6px 0 0;
   color: #40556f;
@@ -646,25 +672,6 @@ a {
   margin: 14px 0 0;
   padding-top: 14px;
   border-top: 1px solid rgba(16, 35, 61, 0.08);
-}
-
-.donate-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: #10233d;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.donate-link-static {
-  background: rgba(16, 35, 61, 0.08);
-  color: #10233d;
 }
 
 .table-wrap-locked {
@@ -919,15 +926,51 @@ tr:hover td {
   }
 
   .site-header {
-    align-items: flex-start;
-    padding-block: 20px;
+    align-items: center;
+    padding: 14px 16px;
     top: 0;
   }
 
+  .site-brand {
+    max-width: calc(100vw - 92px);
+  }
+
+  .site-kicker {
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+
+  .site-title {
+    margin-top: 4px;
+    font-size: 1rem;
+  }
+
   .site-nav {
-    width: 100%;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    display: none;
+    width: min(240px, calc(100vw - 32px));
+    padding: 12px;
+    border: 1px solid rgba(16, 35, 61, 0.08);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 50px rgba(16, 35, 61, 0.12);
+    backdrop-filter: blur(16px);
+    z-index: 40;
     justify-content: stretch;
-    margin-top: 6px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 0;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .nav-menu-button {
+    display: inline-flex;
   }
 
   .membership-toolbar {
@@ -942,7 +985,10 @@ tr:hover td {
   .export-button,
   .view-button,
   .nav-link-button,
-  .logout-button {
+  .logout-button,
+  .site-nav .view-button,
+  .site-nav .nav-link-button,
+  .site-nav .logout-button {
     width: 100%;
   }
 
@@ -1019,11 +1065,6 @@ tr:hover td {
   }
 
   .change-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .export-callout {
     flex-direction: column;
     align-items: flex-start;
   }

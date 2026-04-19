@@ -7,6 +7,7 @@ const LOGOUT_PATH = '/__auth/logout';
 const MEMBERS_CHALLENGE_PATH = '/__members/challenge';
 const MEMBERS_VERIFY_PATH = '/__members/verify';
 const MEMBERS_TABLE_PATH = '/__members/table';
+const MEMBERS_EXPORT_PATH = '/__members/export';
 const SUPPORTER_CHECKOUT_PATH = '/__supporter/checkout';
 const SUPPORTER_CLAIM_PATH = '/__supporter/claim';
 const SUPPORTER_WEBHOOK_PATH = '/__supporter/webhook';
@@ -92,6 +93,14 @@ export async function onRequest(context) {
     return new Response('Browser verification required.', { status: 401 });
   }
 
+  if (url.pathname === MEMBERS_EXPORT_PATH) {
+    if (await isAuthenticated(request, env) || await hasSupporterAccess(request, env)) {
+      return handleMembersExport(context);
+    }
+
+    return new Response('Export access required.', { status: 403 });
+  }
+
   if (url.pathname === SUPPORTER_CHECKOUT_PATH) {
     return handleSupporterCheckout(request, env);
   }
@@ -105,11 +114,7 @@ export async function onRequest(context) {
   }
 
   if (url.pathname === MEMBERS_DATA_PATH) {
-    if (await isAuthenticated(request, env) || await hasSupporterAccess(request, env)) {
-      return withNoStore(await next());
-    }
-
-    return new Response('Export access required.', { status: 403 });
+    return new Response('Not found.', { status: 404 });
   }
 
   if (url.pathname === PREDICTIONS_DATA_PATH) {
@@ -298,6 +303,90 @@ async function handleMembersTable(context) {
     totalPages,
   }, {
     headers: { 'cache-control': 'no-store' },
+  });
+}
+
+async function handleMembersExport(context) {
+  const { request } = context;
+
+  if (request.method !== 'GET') {
+    return new Response('Method not allowed.', { status: 405 });
+  }
+
+  const url = new URL(request.url);
+  const format = getExportFormat(url.searchParams.get('format'));
+  const decimalSeparator = getDecimalSeparator(url.searchParams.get('decimal'));
+  const query = String(url.searchParams.get('query') ?? '').trim();
+  const sortKey = getMembersSortKey(url.searchParams.get('sort'));
+  const sortDirection = getMembersSortDirection(url.searchParams.get('direction'), sortKey);
+
+  const dataset = await loadCurrentMembersData(context);
+  const allRows = Array.isArray(dataset.currentMembers) ? dataset.currentMembers : [];
+  const sectorMarketCaps = getSectorMarketCaps(allRows);
+  const filteredRows = filterMemberRows(allRows, query);
+  const sortedRows = [...filteredRows].sort((left, right) => {
+    const comparison = compareMembershipValues(
+      getMembershipSortValue(left, sortKey, sectorMarketCaps),
+      getMembershipSortValue(right, sortKey, sectorMarketCaps),
+      sortDirection,
+    );
+
+    if (comparison !== 0) return comparison;
+    return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
+  });
+
+  const exportDocument = buildMembershipExportDocument(sortedRows, sectorMarketCaps, {
+    generatedAt: dataset.generatedAt,
+    decimalSeparator,
+  });
+
+  if (format === 'csv') {
+    const delimiter = decimalSeparator === ',' ? ';' : ',';
+    const csvText = buildDelimitedText(
+      [...exportDocument.metadataRows, exportDocument.headerRow, ...exportDocument.dataRows],
+      delimiter,
+    );
+
+    return new Response(`\uFEFF${csvText}\n`, {
+      headers: {
+        'cache-control': 'no-store',
+        'content-type': 'text/csv; charset=utf-8',
+        'content-disposition': `attachment; filename="${buildExportFilename('csv', dataset.generatedAt)}"`,
+      },
+    });
+  }
+
+  const ExcelJS = await import('exceljs');
+  const workbook = new ExcelJS.Workbook();
+  const worksheet = workbook.addWorksheet('S&P 500 Members');
+
+  worksheet.columns = membershipExportColumns.map((columnWidth, index) => ({
+    key: String(index),
+    width: columnWidth,
+  }));
+
+  for (const row of exportDocument.metadataRows) {
+    const addedRow = worksheet.addRow(row);
+    if (row.length) {
+      addedRow.getCell(1).font = { bold: true };
+      addedRow.getCell(2).alignment = { wrapText: true };
+    }
+  }
+
+  const headerRow = worksheet.addRow(exportDocument.headerRow);
+  headerRow.font = { bold: true };
+
+  for (const row of exportDocument.dataRows) {
+    worksheet.addRow(row);
+  }
+
+  const workbookBytes = await workbook.xlsx.writeBuffer();
+  return new Response(workbookBytes, {
+    headers: {
+      'cache-control': 'no-store',
+      'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'content-disposition': `attachment; filename="${buildExportFilename('xlsx', dataset.generatedAt)}"`,
+    },
   });
 }
 
@@ -609,6 +698,111 @@ function getMembersPageSize(value) {
 function getPositiveInteger(value) {
   const parsed = Number.parseInt(String(value ?? ''), 10);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+}
+
+const membershipExportColumns = [10, 28, 22, 14, 14, 14, 14, 10, 16, 12, 14];
+const exportDataSources = [
+  'Wikipedia current S&P 500 constituents and change history',
+  'Wikipedia S&P 400, S&P 600, and Nasdaq-100 constituent lists',
+  'Finviz quote pages for market cap, valuation, and dividend fields',
+];
+const exportWarningText = 'This file is generated automatically from public data sources and is intended for monitoring and research only. It is not financial advice.';
+const membershipExportHeaders = ['Ticker', 'Company', 'Sector', 'Dominance', 'Member since', 'Last left', 'Dividend', 'Yield', 'Market cap', 'Forward P/E', 'Current price'];
+
+function getExportFormat(value) {
+  return value === 'csv' ? 'csv' : 'xlsx';
+}
+
+function getDecimalSeparator(value) {
+  return value === ',' ? ',' : '.';
+}
+
+function getExportLocale(decimalSeparator) {
+  return decimalSeparator === ',' ? 'de-DE' : 'en-US';
+}
+
+function formatExportDate(value) {
+  if (!value) return 'Unknown';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(date);
+}
+
+function formatExportDateTime(value) {
+  if (!value) return 'Unknown';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toISOString().replace('T', ' ').replace(/\.\d{3}Z$/, ' UTC');
+}
+
+function formatTimestampForFilename(value) {
+  const fallback = new Date().toISOString();
+  const date = value ? new Date(value) : new Date(fallback);
+  const safeValue = Number.isNaN(date.getTime()) ? fallback : date.toISOString();
+  return safeValue.replace(/:/g, '-').replace(/\.\d{3}Z$/, 'Z');
+}
+
+function buildExportFilename(format, generatedAt) {
+  return `sp500-members-${formatTimestampForFilename(generatedAt)}.${format}`;
+}
+
+function formatLocalizedNumber(value, locale, options) {
+  if (value === null || Number.isNaN(value)) return 'N/A';
+  return new Intl.NumberFormat(locale, options).format(value);
+}
+
+function formatLocalizedCurrency(value, locale, currency = 'USD') {
+  if (value === null || Number.isNaN(value)) return 'N/A';
+  return new Intl.NumberFormat(locale, { style: 'currency', currency, maximumFractionDigits: 2 }).format(value);
+}
+
+function formatLocalizedPercent(value, locale) {
+  if (value === null || Number.isNaN(value)) return 'N/A';
+  return new Intl.NumberFormat(locale, {
+    style: 'percent',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+}
+
+function buildMembershipExportDocument(rows, sectorMarketCaps, { generatedAt, decimalSeparator }) {
+  const locale = getExportLocale(decimalSeparator);
+
+  return {
+    metadataRows: [
+      ['Warning', exportWarningText],
+      ['Data sources', exportDataSources.join(' | ')],
+      ['Snapshot generated', formatExportDateTime(generatedAt)],
+      [],
+    ],
+    headerRow: membershipExportHeaders,
+    dataRows: rows.map((row) => [
+      row.ticker,
+      row.security,
+      row.sector,
+      formatLocalizedPercent(getSectorDominance(row, sectorMarketCaps), locale),
+      formatExportDate(row.currentMemberSince),
+      formatExportDate(row.lastLeftAt),
+      row.dividend?.hasDividend
+        ? formatLocalizedCurrency(row.dividend.dividendRate, locale, row.dividend.currency || 'USD')
+        : 'No dividend',
+      formatLocalizedPercent(row.dividend?.dividendYield ?? null, locale),
+      formatLocalizedCurrency(row.metrics?.marketCap ?? null, locale, row.metrics?.currency || 'USD'),
+      formatLocalizedNumber(row.metrics?.forwardPE ?? null, locale, { maximumFractionDigits: 2 }),
+      formatLocalizedCurrency(row.metrics?.price ?? null, locale, row.metrics?.currency || 'USD'),
+    ]),
+  };
+}
+
+function buildDelimitedText(rows, delimiter) {
+  return rows.map((row) => row.map((value) => {
+    const normalized = String(value ?? '');
+    if (normalized.includes('"') || normalized.includes('\n') || normalized.includes(delimiter)) {
+      return `"${normalized.replace(/"/g, '""')}"`;
+    }
+
+    return normalized;
+  }).join(delimiter)).join('\n');
 }
 
 async function isAuthenticated(request, env) {

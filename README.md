@@ -10,7 +10,7 @@ The safe local folder slug is `sp-500`. Using `S&P 500` as a Windows folder name
 - Tracks known membership entry and exit dates from the published change log.
 - Keeps the home dashboard public while protecting prediction screens behind sign-in.
 - Serves the current-members table from a separately protected payload so it is not directly downloadable from the public snapshot JSON.
-- Supports CSV and XLSX download for users who are signed in or who complete the Lemon Squeezy supporter checkout.
+- Supports server-generated CSV and XLSX download for users who are signed in or who complete the Lemon Squeezy supporter checkout.
 - Produces 25 possible fall-out names and 25 possible entrant names using a transparent heuristic.
 - Captures dividend status and dividend amount for current S&P 500 members.
 - Produces 25 most overvalued and 25 most undervalued names using a sector-relative heuristic inspired by common bank and sell-side screening practices.
@@ -27,7 +27,7 @@ The safe local folder slug is `sp-500`. Using `S&P 500` as a Windows folder name
 - Entry, removal, and valuation lists are heuristic rankings, not investment advice.
 - Wikipedia history is helpful but not a perfect historical record for every older membership period.
 - The hourly workflow caches fundamentals for 24 hours in `public/data/fundamentals-cache.json` to reduce unnecessary source traffic.
-- The member table now loads through a paginated Cloudflare Pages function so the public browser only receives one filtered/sorted page at a time; the full `current-members.json` payload is reserved for export-capable users.
+- The member table now loads through a paginated Cloudflare Pages function so the public browser only receives one filtered/sorted page at a time; direct requests to `current-members.json` are blocked and exports are generated server-side.
 - GitHub repository slugs do not support spaces or `&`, so if you later publish this to GitHub, use a slug like `sp-500` or `s-and-p-500`.
 
 ## Local usage
@@ -42,7 +42,7 @@ npm run dev
 
 The repo includes `.github/workflows/hourly-refresh.yml`, which runs every hour and commits refreshed data back to the repository.
 Visitors do not generate snapshots by loading the page. The snapshot is created only by the scheduled refresh job or by running `npm run update:data` manually.
-The live site keeps `public/data/latest.json`, `public/data/current-members.json`, and `public/data/predictions.json` instead of timestamped snapshot history, so deploys stay lean.
+The live site keeps `public/data/latest.json`, `public/data/current-members.json`, and `public/data/predictions.json` instead of timestamped snapshot history, so deploys stay lean. `current-members.json` is used internally by Pages Functions and is not exposed directly.
 
 ## Cloudflare Pages deployment
 
@@ -50,7 +50,7 @@ This repo can be deployed on Cloudflare Pages with a public home dashboard, a pr
 
 ### What is configured in this repo
 
-- `functions/_middleware.js` keeps the home view public, requires login for prediction data, serves the member table through a paginated protected endpoint, and reserves the full `current-members.json` payload for export-capable users.
+- `functions/_middleware.js` keeps the home view public, requires login for prediction data, serves the member table through a paginated protected endpoint, blocks direct raw-member payload access, and generates export files server-side.
 - Prediction access is enforced server-side on Cloudflare Pages, not just hidden in React.
 - Sessions and gated-access cookies are stored as HTTP-only cookies signed with `AUTH_SESSION_SECRET`.
 - Supporter export unlock is handled by Lemon Squeezy checkout, a verified webhook, and a paid supporter cookie.

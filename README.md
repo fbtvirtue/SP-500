@@ -84,8 +84,20 @@ Add these as environment variables in the Cloudflare Pages project settings for 
 - `MEMBER_CHALLENGE_TTL_SECONDS`: optional, defaults to `300` (5 minutes).
 - `MEMBER_CHALLENGE_DIFFICULTY`: optional, defaults to `3`.
 
-Create a Cloudflare KV namespace and bind it to the Pages project as `SUPPORTER_CLAIMS`.
+Create a Cloudflare KV namespace and bind it in `wrangler.toml` as `SUPPORTER_CLAIMS`.
 This namespace stores short-lived pending payment claims plus the paid claim records that back the supporter cookie.
+
+Use this shape in `wrangler.toml`, then replace both placeholder IDs with the real namespace IDs from Cloudflare:
+
+```toml
+[[kv_namespaces]]
+binding = "SUPPORTER_CLAIMS"
+id = "REPLACE_WITH_PRODUCTION_SUPPORTER_CLAIMS_KV_ID"
+preview_id = "REPLACE_WITH_PREVIEW_SUPPORTER_CLAIMS_KV_ID"
+```
+
+- `id`: the Production KV namespace ID.
+- `preview_id`: the Preview/local-dev KV namespace ID. If you use one namespace for both, set both fields to the same ID.
 
 - Put the Lemon API key in Cloudflare Pages environment variables, not in the React app and not in committed files.
 - Point your Lemon Squeezy webhook URL to `/__supporter/webhook` on your deployed site.

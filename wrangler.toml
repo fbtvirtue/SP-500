@@ -1,3 +1,8 @@
 name = "sp-500"
 compatibility_date = "2026-04-18"
 pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "SUPPORTER_CLAIMS"
+id = "84ee4eac10e24a2abd58609c6486d7af"
+preview_id = "5d197191de294b20a1b8b75368a905d7"

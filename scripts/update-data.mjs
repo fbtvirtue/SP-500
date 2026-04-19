@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const publicDataDirectory = path.join(projectRoot, 'public', 'data');
 const latestSnapshotPath = path.join(projectRoot, 'public', 'data', 'latest.json');
+const currentMembersPath = path.join(projectRoot, 'public', 'data', 'current-members.json');
 const predictionsPath = path.join(projectRoot, 'public', 'data', 'predictions.json');
 const snapshotDirectory = path.join(projectRoot, 'public', 'data', 'snapshots');
 const fundamentalsCachePath = path.join(projectRoot, 'public', 'data', 'fundamentals-cache.json');
@@ -672,16 +673,23 @@ async function main() {
       { label: 'Finviz quote pages for fundamentals and dividend fields', url: 'https://finviz.com/' },
     ],
     recentChanges,
+  };
+
+  const currentMembersSnapshot = {
+    generatedAt,
     currentMembers,
   };
 
   await mkdir(publicDataDirectory, { recursive: true });
   await writeFile(latestSnapshotPath, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
+  await writeFile(currentMembersPath, `${JSON.stringify(currentMembersSnapshot, null, 2)}\n`, 'utf8');
   await writeFile(predictionsPath, `${JSON.stringify(predictionSnapshot, null, 2)}\n`, 'utf8');
   await writeFile(fundamentalsCachePath, `${JSON.stringify(fundamentalsCache, null, 2)}\n`, 'utf8');
   await rm(snapshotDirectory, { recursive: true, force: true });
 
   console.log(`Snapshot written: ${latestSnapshotPath}`);
+  console.log(`Current members written: ${currentMembersPath}`);
+  console.log(`Predictions written: ${predictionsPath}`);
 }
 
 main().catch((error) => {

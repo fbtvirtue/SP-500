@@ -437,9 +437,35 @@ a {
   font-weight: 700;
 }
 
+.export-button {
+  padding: 14px 18px;
+  border: 1px solid #0f5bd6;
+  border-radius: 14px;
+  background: #0f5bd6;
+  color: white;
+  font-weight: 700;
+}
+
+.export-button-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f5bd6;
+}
+
 .reset-button:disabled {
   opacity: 0.5;
   cursor: default;
+}
+
+.supporter-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.form-error {
+  margin: 14px 0 0;
+  color: #8d2020;
 }
 
 .method-grid {
@@ -614,7 +640,8 @@ tr:hover td {
   .info-grid,
   .method-grid,
   .watch-grid,
-  .login-form {
+  .login-form,
+  .supporter-form {
     grid-template-columns: 1fr;
   }
 
@@ -635,6 +662,7 @@ tr:hover td {
 
   .search,
   .reset-button,
+  .export-button,
   .view-button,
   .nav-link-button,
   .logout-button {

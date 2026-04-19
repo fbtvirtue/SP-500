@@ -1,8 +1,19 @@
-const COOKIE_NAME = 'sp500_session';
+const AUTH_COOKIE_NAME = 'sp500_session';
+const SUPPORTER_COOKIE_NAME = 'sp500_supporter';
+const MEMBER_ACCESS_COOKIE_NAME = 'sp500_member_access';
 const LOGIN_PATH = '/__auth/login';
 const STATUS_PATH = '/__auth/status';
 const LOGOUT_PATH = '/__auth/logout';
+const MEMBERS_CHALLENGE_PATH = '/__members/challenge';
+const MEMBERS_VERIFY_PATH = '/__members/verify';
+const SUPPORTER_ACCESS_PATH = '/__supporter/access';
+const MEMBERS_DATA_PATH = '/data/current-members.json';
+const PREDICTIONS_DATA_PATH = '/data/predictions.json';
 const DEFAULT_SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
+const DEFAULT_SUPPORTER_TTL_SECONDS = 60 * 60 * 24 * 30;
+const DEFAULT_MEMBER_ACCESS_TTL_SECONDS = 60 * 30;
+const DEFAULT_MEMBER_CHALLENGE_TTL_SECONDS = 60 * 5;
+const DEFAULT_MEMBER_CHALLENGE_DIFFICULTY = 3;
 
 export async function onRequest(context) {
   const { request, env, next } = context;
@@ -18,7 +29,13 @@ export async function onRequest(context) {
 
   if (url.pathname === STATUS_PATH) {
     const authenticated = await isAuthenticated(request, env);
-    return Response.json({ authenticated });
+    const supporter = await hasSupporterAccess(request, env);
+    return Response.json({
+      authenticated,
+      supporter,
+      supporterEnabled: Boolean(env.SUPPORTER_EXPORT_CODE),
+      canExport: authenticated || supporter,
+    });
   }
 
   if (url.pathname === LOGIN_PATH) {
@@ -37,16 +54,40 @@ export async function onRequest(context) {
     return handleLogout(request);
   }
 
+  if (url.pathname === MEMBERS_CHALLENGE_PATH) {
+    return handleMembersChallenge(env);
+  }
+
+  if (url.pathname === MEMBERS_VERIFY_PATH) {
+    return handleMembersVerify(request, env);
+  }
+
+  if (url.pathname === SUPPORTER_ACCESS_PATH) {
+    return handleSupporterAccess(request, env);
+  }
+
+  if (url.pathname === MEMBERS_DATA_PATH) {
+    if (await isAuthenticated(request, env) || await hasSupporterAccess(request, env) || await hasMemberAccess(request, env)) {
+      return withNoStore(await next());
+    }
+
+    return new Response('Browser verification required.', { status: 401 });
+  }
+
+  if (url.pathname === PREDICTIONS_DATA_PATH) {
+    if (await isAuthenticated(request, env)) {
+      return withNoStore(await next());
+    }
+
+    return new Response('Authentication required.', { status: 401 });
+  }
+
   if (isPublicPath(url.pathname)) {
     return next();
   }
 
   if (await isAuthenticated(request, env)) {
     return next();
-  }
-
-  if (url.pathname === '/data/predictions.json') {
-    return new Response('Authentication required.', { status: 401 });
   }
 
   return new Response('Not found.', { status: 404 });
@@ -58,6 +99,16 @@ function isPublicPath(pathname) {
     || pathname === '/favicon.ico'
     || pathname.startsWith('/assets/')
     || pathname === '/data/latest.json';
+}
+
+function withNoStore(response) {
+  const headers = new Headers(response.headers);
+  headers.set('cache-control', 'no-store');
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 function getConfigError(env) {
@@ -79,9 +130,13 @@ async function handleLogin(request, env, fallbackRedirect = '/') {
     return renderLoginPage({ redirectTo, hasError: true }, 401);
   }
 
-  const sessionValue = await createSessionToken(submittedEmail, env.AUTH_SESSION_SECRET, getSessionTtl(env));
+  const sessionValue = await createSignedToken({
+    email: submittedEmail,
+    scope: 'auth',
+    exp: Math.floor(Date.now() / 1000) + getSessionTtl(env),
+  }, env.AUTH_SESSION_SECRET);
   const headers = new Headers({ Location: redirectTo });
-  headers.append('Set-Cookie', serializeCookie(COOKIE_NAME, sessionValue, getSessionTtl(env)));
+  headers.append('Set-Cookie', serializeCookie(AUTH_COOKIE_NAME, sessionValue, getSessionTtl(env)));
 
   return new Response(null, {
     status: 302,
@@ -92,7 +147,7 @@ async function handleLogin(request, env, fallbackRedirect = '/') {
 function handleLogout(request) {
   const homeUrl = new URL('/', request.url);
   const headers = new Headers({ Location: homeUrl.toString() });
-  headers.append('Set-Cookie', `${COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
+  headers.append('Set-Cookie', `${AUTH_COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
 
   return new Response(null, {
     status: 302,
@@ -100,35 +155,148 @@ function handleLogout(request) {
   });
 }
 
+async function handleMembersChallenge(env) {
+  const challengeToken = await createSignedToken({
+    scope: 'member-challenge',
+    nonce: crypto.randomUUID(),
+    exp: Math.floor(Date.now() / 1000) + getMemberChallengeTtl(env),
+  }, env.AUTH_SESSION_SECRET);
+
+  return Response.json({
+    challengeToken,
+    difficulty: getMemberChallengeDifficulty(env),
+  }, {
+    headers: { 'cache-control': 'no-store' },
+  });
+}
+
+async function handleMembersVerify(request, env) {
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed.', { status: 405 });
+  }
+
+  const body = await readJson(request);
+  const challengeToken = String(body.challengeToken ?? '');
+  const solution = String(body.solution ?? '');
+  const payload = await verifySignedToken(challengeToken, env.AUTH_SESSION_SECRET);
+
+  if (!payload || payload.scope !== 'member-challenge' || typeof payload.nonce !== 'string') {
+    return Response.json({ error: 'Invalid challenge.' }, { status: 400 });
+  }
+
+  if (payload.exp <= Math.floor(Date.now() / 1000)) {
+    return Response.json({ error: 'Challenge expired.' }, { status: 400 });
+  }
+
+  const digest = await sha256Hex(`${challengeToken}:${solution}`);
+  if (!digest.startsWith('0'.repeat(getMemberChallengeDifficulty(env)))) {
+    return Response.json({ error: 'Challenge failed.' }, { status: 401 });
+  }
+
+  const ttl = getMemberAccessTtl(env);
+  const accessToken = await createSignedToken({
+    scope: 'member-access',
+    exp: Math.floor(Date.now() / 1000) + ttl,
+  }, env.AUTH_SESSION_SECRET);
+  const headers = new Headers({ 'cache-control': 'no-store' });
+  headers.append('Set-Cookie', serializeCookie(MEMBER_ACCESS_COOKIE_NAME, accessToken, ttl));
+  return new Response(null, { status: 204, headers });
+}
+
+async function handleSupporterAccess(request, env) {
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed.', { status: 405 });
+  }
+
+  if (!env.SUPPORTER_EXPORT_CODE) {
+    return Response.json({ error: 'Supporter export is not configured.' }, { status: 503 });
+  }
+
+  const body = await readJson(request);
+  const submittedCode = String(body.code ?? '').trim();
+
+  if (!submittedCode || submittedCode !== String(env.SUPPORTER_EXPORT_CODE)) {
+    return Response.json({ error: 'Invalid supporter code.' }, { status: 401 });
+  }
+
+  const ttl = getSupporterTtl(env);
+  const token = await createSignedToken({
+    scope: 'supporter',
+    exp: Math.floor(Date.now() / 1000) + ttl,
+  }, env.AUTH_SESSION_SECRET);
+  const headers = new Headers({ 'cache-control': 'no-store' });
+  headers.append('Set-Cookie', serializeCookie(SUPPORTER_COOKIE_NAME, token, ttl));
+
+  return Response.json({ ok: true }, { headers });
+}
+
 function getSessionTtl(env) {
   const configured = Number.parseInt(String(env.AUTH_SESSION_TTL_SECONDS ?? ''), 10);
   return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_SESSION_TTL_SECONDS;
+}
+
+function getSupporterTtl(env) {
+  const configured = Number.parseInt(String(env.SUPPORTER_EXPORT_TTL_SECONDS ?? ''), 10);
+  return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_SUPPORTER_TTL_SECONDS;
+}
+
+function getMemberAccessTtl(env) {
+  const configured = Number.parseInt(String(env.MEMBER_ACCESS_TTL_SECONDS ?? ''), 10);
+  return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_MEMBER_ACCESS_TTL_SECONDS;
+}
+
+function getMemberChallengeTtl(env) {
+  const configured = Number.parseInt(String(env.MEMBER_CHALLENGE_TTL_SECONDS ?? ''), 10);
+  return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_MEMBER_CHALLENGE_TTL_SECONDS;
+}
+
+function getMemberChallengeDifficulty(env) {
+  const configured = Number.parseInt(String(env.MEMBER_CHALLENGE_DIFFICULTY ?? ''), 10);
+  return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_MEMBER_CHALLENGE_DIFFICULTY;
 }
 
 async function isAuthenticated(request, env) {
   const cookieHeader = request.headers.get('cookie');
   if (!cookieHeader) return false;
 
-  const sessionValue = parseCookies(cookieHeader)[COOKIE_NAME];
+  const sessionValue = parseCookies(cookieHeader)[AUTH_COOKIE_NAME];
   if (!sessionValue) return false;
 
-  const payload = await verifySessionToken(sessionValue, env.AUTH_SESSION_SECRET);
+  const payload = await verifySignedToken(sessionValue, env.AUTH_SESSION_SECRET);
   if (!payload) return false;
 
-  return payload.email === String(env.PROTECTED_EMAIL).trim().toLowerCase();
+  return payload.scope === 'auth' && payload.email === String(env.PROTECTED_EMAIL).trim().toLowerCase();
 }
 
-async function createSessionToken(email, secret, ttlSeconds) {
-  const payload = {
-    email,
-    exp: Math.floor(Date.now() / 1000) + ttlSeconds,
-  };
+async function hasSupporterAccess(request, env) {
+  const cookieHeader = request.headers.get('cookie');
+  if (!cookieHeader) return false;
+
+  const sessionValue = parseCookies(cookieHeader)[SUPPORTER_COOKIE_NAME];
+  if (!sessionValue) return false;
+
+  const payload = await verifySignedToken(sessionValue, env.AUTH_SESSION_SECRET);
+  return Boolean(payload && payload.scope === 'supporter');
+}
+
+async function hasMemberAccess(request, env) {
+  const cookieHeader = request.headers.get('cookie');
+  if (!cookieHeader) return false;
+
+  const sessionValue = parseCookies(cookieHeader)[MEMBER_ACCESS_COOKIE_NAME];
+  if (!sessionValue) return false;
+
+  const payload = await verifySignedToken(sessionValue, env.AUTH_SESSION_SECRET);
+  return Boolean(payload && payload.scope === 'member-access');
+}
+
+async function createSignedToken(payload, secret) {
   const encodedPayload = encodeBase64Url(JSON.stringify(payload));
   const signature = await signValue(encodedPayload, secret);
   return `${encodedPayload}.${signature}`;
 }
 
-async function verifySessionToken(token, secret) {
+async function verifySignedToken(token, secret) {
   const [encodedPayload, providedSignature] = token.split('.');
   if (!encodedPayload || !providedSignature) return null;
 
@@ -143,7 +311,7 @@ async function verifySessionToken(token, secret) {
     return null;
   }
 
-  if (!payload || typeof payload.email !== 'string' || typeof payload.exp !== 'number') {
+  if (!payload || typeof payload.exp !== 'number') {
     return null;
   }
 
@@ -165,6 +333,19 @@ async function signValue(value, secret) {
 
   const signature = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(value));
   return encodeBase64Url(signature);
+}
+
+async function sha256Hex(value) {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(digest)).map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function readJson(request) {
+  try {
+    return await request.json();
+  } catch {
+    return {};
+  }
 }
 
 function parseCookies(cookieHeader) {
@@ -307,7 +488,7 @@ function renderLoginPage({ redirectTo, hasError }, status = 200) {
       <h1>S&P 500 Monitor</h1>
       <p>Sign in to unlock the protected prediction view while keeping the home dashboard public.</p>
       <div class="message">${message}</div>
-      <form method="post" action="${escapeHtml(redirectTo)}">
+      <form method="post" action="${LOGIN_PATH}">
         <input type="hidden" name="redirect" value="${escapeHtml(redirectTo)}" />
         <label>
           Email

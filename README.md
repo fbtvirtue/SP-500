@@ -8,6 +8,8 @@ The safe local folder slug is `sp-500`. Using `S&P 500` as a Windows folder name
 
 - Checks the current S&P 500 membership list.
 - Tracks known membership entry and exit dates from the published change log.
+- Keeps the home dashboard public while protecting prediction screens behind sign-in.
+- Serves the current-members table from a separately protected payload so it is not directly downloadable from the public snapshot JSON.
 - Produces 25 possible fall-out names and 25 possible entrant names using a transparent heuristic.
 - Captures dividend status and dividend amount for current S&P 500 members.
 - Produces 25 most overvalued and 25 most undervalued names using a sector-relative heuristic inspired by common bank and sell-side screening practices.
@@ -24,6 +26,7 @@ The safe local folder slug is `sp-500`. Using `S&P 500` as a Windows folder name
 - Entry, removal, and valuation lists are heuristic rankings, not investment advice.
 - Wikipedia history is helpful but not a perfect historical record for every older membership period.
 - The hourly workflow caches fundamentals for 24 hours in `public/data/fundamentals-cache.json` to reduce unnecessary source traffic.
+- The member table now loads from `public/data/current-members.json`, which is served behind a short-lived browser verification gate on Cloudflare Pages.
 - GitHub repository slugs do not support spaces or `&`, so if you later publish this to GitHub, use a slug like `sp-500` or `s-and-p-500`.
 
 ## Local usage
@@ -38,17 +41,18 @@ npm run dev
 
 The repo includes `.github/workflows/hourly-refresh.yml`, which runs every hour and commits refreshed data back to the repository.
 Visitors do not generate snapshots by loading the page. The snapshot is created only by the scheduled refresh job or by running `npm run update:data` manually.
-Only `public/data/latest.json` is kept for the live site so old timestamped snapshots do not bloat deploys or bandwidth.
+The live site keeps `public/data/latest.json`, `public/data/current-members.json`, and `public/data/predictions.json` instead of timestamped snapshot history, so deploys stay lean.
 
 ## Cloudflare Pages deployment
 
-This repo can be deployed on Cloudflare Pages with all content protected behind an email and password.
+This repo can be deployed on Cloudflare Pages with a public home dashboard, a protected prediction view, and gated access to the raw current-members dataset.
 
 ### What is configured in this repo
 
-- `functions/_middleware.js` blocks every route and asset until the visitor signs in.
-- The login gate is enforced server-side on Cloudflare Pages, not in client-side React code.
-- Sessions are stored in an HTTP-only cookie signed with `AUTH_SESSION_SECRET`.
+- `functions/_middleware.js` keeps the home view public, requires login for prediction data, and protects `current-members.json` with a short-lived browser verification cookie.
+- Prediction access is enforced server-side on Cloudflare Pages, not just hidden in React.
+- Sessions and gated-access cookies are stored as HTTP-only cookies signed with `AUTH_SESSION_SECRET`.
+- An optional supporter export code can unlock the Excel-compatible member export without a prediction login.
 - `wrangler.toml` sets the Pages output directory to `dist`.
 
 ### Cloudflare Pages build settings
@@ -69,6 +73,11 @@ Add these as environment variables in the Cloudflare Pages project settings for 
 - `PROTECTED_PASSWORD`: the password paired with that email.
 - `AUTH_SESSION_SECRET`: a long random secret used to sign the session cookie.
 - `AUTH_SESSION_TTL_SECONDS`: optional, defaults to `604800` (7 days).
+- `SUPPORTER_EXPORT_CODE`: optional supporter code to unlock the member export after a donation.
+- `SUPPORTER_EXPORT_TTL_SECONDS`: optional, defaults to `2592000` (30 days).
+- `MEMBER_ACCESS_TTL_SECONDS`: optional, defaults to `1800` (30 minutes).
+- `MEMBER_CHALLENGE_TTL_SECONDS`: optional, defaults to `300` (5 minutes).
+- `MEMBER_CHALLENGE_DIFFICULTY`: optional, defaults to `3`.
 
 ### Required GitHub Actions secrets
 
@@ -94,6 +103,7 @@ For local testing with Cloudflare Pages Functions, create a `.dev.vars` file:
 PROTECTED_EMAIL=you@example.com
 PROTECTED_PASSWORD=change-this-password
 AUTH_SESSION_SECRET=replace-with-a-long-random-string
+SUPPORTER_EXPORT_CODE=optional-supporter-code
 ```
 
 Then build and run the Pages preview:

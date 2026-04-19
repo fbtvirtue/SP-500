@@ -70,6 +70,11 @@ export type PredictionData = {
   overvalued: RankedCompany[];
 };
 
+export type CurrentMembersData = {
+  generatedAt: string;
+  currentMembers: CompanyRecord[];
+};
+
 export type SnapshotData = {
   generatedAt: string;
   schedule: {
@@ -95,5 +100,4 @@ export type SnapshotData = {
     joinedLast7Days: MembershipChange[];
     leftLast7Days: MembershipChange[];
   };
-  currentMembers: CompanyRecord[];
 };

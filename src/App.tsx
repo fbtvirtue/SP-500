@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { CompanyRecord, MembershipChange, PredictionData, RankedCompany, SnapshotData } from './types';
+import type { CompanyRecord, CurrentMembersData, MembershipChange, PredictionData, RankedCompany, SnapshotData } from './types';
 
 type RankedPanelKey = 'fallOut' | 'entrants' | 'undervalued' | 'overvalued';
 type DashboardView = 'home' | 'prediction';
@@ -38,6 +38,13 @@ const membershipColumns: Array<{ key: MembershipSortKey; label: string; classNam
   { key: 'price', label: 'Current price' },
 ];
 
+type AuthStatusResponse = {
+  authenticated?: boolean;
+  supporter?: boolean;
+  supporterEnabled?: boolean;
+  canExport?: boolean;
+};
+
 function formatDate(value: string | null): string {
   if (!value) return 'Unknown';
   const date = new Date(value);
@@ -65,6 +72,47 @@ function formatCurrency(value: number | null, currency = 'USD'): string {
 function formatPercent(value: number | null): string {
   if (value === null || Number.isNaN(value)) return 'N/A';
   return `${(value * 100).toFixed(2)}%`;
+}
+
+function escapeCsvCell(value: string): string {
+  if (/[",\n]/.test(value)) {
+    return `"${value.replace(/"/g, '""')}"`;
+  }
+
+  return value;
+}
+
+function downloadFile(filename: string, content: string, mimeType: string): void {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+async function sha256Hex(value: string): Promise<string> {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(digest)).map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function solveMemberChallenge(challengeToken: string, difficulty: number): Promise<string> {
+  const targetPrefix = '0'.repeat(Math.max(1, difficulty));
+  let nonce = 0;
+
+  while (true) {
+    const candidate = String(nonce);
+    const digest = await sha256Hex(`${challengeToken}:${candidate}`);
+    if (digest.startsWith(targetPrefix)) return candidate;
+
+    nonce += 1;
+    if (nonce % 200 === 0) {
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    }
+  }
 }
 
 function MetricCard({ label, value, hint }: { label: string; value: string; hint?: string }) {
@@ -297,7 +345,17 @@ function getInitialMembershipSortDirection(key: MembershipSortKey): MembershipSo
   }
 }
 
-function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
+function MembershipTable({
+  rows,
+  canExport,
+  supporterEnabled,
+  onToggleSupporterUnlock,
+}: {
+  rows: CompanyRecord[];
+  canExport: boolean;
+  supporterEnabled: boolean;
+  onToggleSupporterUnlock: () => void;
+}) {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<MembershipSortState>(defaultMembershipSort);
 
@@ -342,12 +400,36 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
     });
   }
 
+  function exportRows() {
+    const csvLines = [
+      membershipColumns.map((column) => escapeCsvCell(column.label)).join(','),
+      ...sorted.map((row) => ([
+        row.ticker,
+        row.security,
+        row.sector,
+        formatPercent(getSectorDominance(row, sectorMarketCaps)),
+        formatDate(row.currentMemberSince),
+        formatDate(row.lastLeftAt),
+        row.dividend.hasDividend ? formatCurrency(row.dividend.dividendRate, row.dividend.currency || 'USD') : 'No dividend',
+        formatPercent(row.dividend.dividendYield),
+        formatCurrency(row.metrics.marketCap, row.metrics.currency || 'USD'),
+        formatNumber(row.metrics.forwardPE, { maximumFractionDigits: 2 }),
+        formatCurrency(row.metrics.price, row.metrics.currency || 'USD'),
+      ]).map((value) => escapeCsvCell(value)).join(',')),
+    ];
+
+    downloadFile(
+      `sp500-members-${new Date().toISOString().slice(0, 10)}.csv`,
+      `${csvLines.join('\n')}\n`,
+      'text/csv;charset=utf-8',
+    );
+  }
+
   return (
     <section className="panel stack-section membership-section">
       <div className="panel-header panel-header-stack">
         <div>
           <h2>Current S&amp;P 500 members</h2>
-          <p>Includes current member since date, last known exit date, dividend status, and dividend amount.</p>
         </div>
         <div className="membership-toolbar">
           <input
@@ -364,6 +446,15 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
           >
             Reset sort
           </button>
+          {canExport ? (
+            <button type="button" className="export-button" onClick={exportRows}>
+              Export Excel
+            </button>
+          ) : supporterEnabled ? (
+            <button type="button" className="export-button export-button-secondary" onClick={onToggleSupporterUnlock}>
+              Unlock export
+            </button>
+          ) : null}
         </div>
       </div>
       <div className="table-wrap tall">
@@ -418,10 +509,19 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
 
 export default function App() {
   const [data, setData] = useState<SnapshotData | null>(null);
+  const [currentMembers, setCurrentMembers] = useState<CompanyRecord[] | null>(null);
   const [predictionData, setPredictionData] = useState<PredictionData | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [hasSupporterAccess, setHasSupporterAccess] = useState(false);
+  const [supporterEnabled, setSupporterEnabled] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showSupporterForm, setShowSupporterForm] = useState(false);
+  const [supporterCode, setSupporterCode] = useState('');
+  const [supporterError, setSupporterError] = useState('');
+  const [supporterPending, setSupporterPending] = useState(false);
   const [error, setError] = useState('');
+  const [membersError, setMembersError] = useState('');
+  const [membersLoading, setMembersLoading] = useState(false);
   const [activeView, setActiveView] = useState<DashboardView>('home');
   const [openRankedPanels, setOpenRankedPanels] = useState<Record<RankedPanelKey, boolean>>({
     fallOut: false,
@@ -429,7 +529,9 @@ export default function App() {
     undervalued: false,
     overvalued: false,
   });
-  const canLogout = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname);
+  const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  const canLogout = typeof window !== 'undefined' && !isLocalHost;
+  const canExport = isLocalHost || isAuthenticated || hasSupporterAccess;
 
   useEffect(() => {
     void fetch('/data/latest.json', { cache: 'no-store' })
@@ -443,19 +545,90 @@ export default function App() {
     void fetch('/__auth/status', { cache: 'no-store' })
       .then(async (response) => {
         if (!response.ok) throw new Error('Could not determine authentication state.');
-        return await response.json() as { authenticated?: boolean };
+        return await response.json() as AuthStatusResponse;
       })
       .then((payload) => {
         const authenticated = Boolean(payload.authenticated);
         setIsAuthenticated(authenticated);
+        setHasSupporterAccess(Boolean(payload.supporter));
+        setSupporterEnabled(Boolean(payload.supporterEnabled));
         if (!authenticated) {
           setActiveView('home');
         } else if (new URLSearchParams(window.location.search).get('view') === 'prediction') {
           setActiveView('prediction');
         }
       })
-      .catch(() => setIsAuthenticated(false));
+      .catch(() => {
+        setIsAuthenticated(false);
+        setHasSupporterAccess(false);
+      });
   }, []);
+
+  useEffect(() => {
+    if (!data || currentMembers !== null) return;
+
+    let cancelled = false;
+
+    async function loadCurrentMembers() {
+      setMembersLoading(true);
+      setMembersError('');
+
+      try {
+        let response = await fetch('/data/current-members.json', { cache: 'no-store' });
+
+        if (response.status === 401) {
+          const challengeResponse = await fetch('/__members/challenge', { cache: 'no-store' });
+          if (!challengeResponse.ok) {
+            throw new Error('Could not start the browser verification needed for the member table.');
+          }
+
+          const challengePayload = await challengeResponse.json() as { challengeToken?: string; difficulty?: number };
+          const challengeToken = String(challengePayload.challengeToken ?? '');
+          const difficulty = Number(challengePayload.difficulty ?? 3);
+
+          if (!challengeToken) {
+            throw new Error('Member-table challenge is unavailable right now.');
+          }
+
+          const solution = await solveMemberChallenge(challengeToken, difficulty);
+          const verifyResponse = await fetch('/__members/verify', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ challengeToken, solution }),
+          });
+
+          if (!verifyResponse.ok) {
+            throw new Error('Could not complete browser verification for the member table.');
+          }
+
+          response = await fetch('/data/current-members.json', { cache: 'no-store' });
+        }
+
+        if (!response.ok) {
+          throw new Error('Could not load the current S&P 500 member table.');
+        }
+
+        const payload = await response.json() as CurrentMembersData;
+        if (!cancelled) {
+          setCurrentMembers(Array.isArray(payload.currentMembers) ? payload.currentMembers : []);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setMembersError(err instanceof Error ? err.message : 'Could not load the current S&P 500 member table.');
+        }
+      } finally {
+        if (!cancelled) {
+          setMembersLoading(false);
+        }
+      }
+    }
+
+    void loadCurrentMembers();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [currentMembers, data]);
 
   useEffect(() => {
     if (!isAuthenticated || activeView !== 'prediction' || predictionData) return;
@@ -497,6 +670,33 @@ export default function App() {
       [panel]: !current[panel],
     }));
   };
+
+  async function unlockSupporterExport(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSupporterPending(true);
+    setSupporterError('');
+
+    try {
+      const response = await fetch('/__supporter/access', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ code: supporterCode }),
+      });
+      const payload = await response.json().catch(() => ({} as { error?: string }));
+
+      if (!response.ok) {
+        throw new Error(typeof payload.error === 'string' ? payload.error : 'Could not unlock export access.');
+      }
+
+      setHasSupporterAccess(true);
+      setShowSupporterForm(false);
+      setSupporterCode('');
+    } catch (err) {
+      setSupporterError(err instanceof Error ? err.message : 'Could not unlock export access.');
+    } finally {
+      setSupporterPending(false);
+    }
+  }
 
   return (
     <main className="app-shell">
@@ -589,7 +789,53 @@ export default function App() {
 
       {activeView === 'home' ? (
         <>
-          <MembershipTable rows={data.currentMembers} />
+          {currentMembers ? (
+            <MembershipTable
+              rows={currentMembers}
+              canExport={canExport}
+              supporterEnabled={supporterEnabled}
+              onToggleSupporterUnlock={() => {
+                setShowSupporterForm((current) => !current);
+                setSupporterError('');
+              }}
+            />
+          ) : (
+            <section className="panel stack-section membership-section">
+              <div className="panel-header">
+                <div>
+                  <h2>Current S&amp;P 500 members</h2>
+                  <p>{membersError || (membersLoading ? 'Preparing the protected member table…' : 'Loading the current member table…')}</p>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {supporterEnabled && showSupporterForm && !canExport ? (
+            <section className="panel stack-section supporter-panel">
+              <div className="panel-header">
+                <div>
+                  <h2>Unlock export</h2>
+                  <p>Enter the supporter code you received after donating to unlock the Excel export without the prediction login.</p>
+                </div>
+              </div>
+              <form className="supporter-form" onSubmit={unlockSupporterExport}>
+                <label className="login-field">
+                  <span>Supporter code</span>
+                  <input
+                    type="password"
+                    value={supporterCode}
+                    onChange={(event) => setSupporterCode(event.target.value)}
+                    autoComplete="one-time-code"
+                    required
+                  />
+                </label>
+                <button type="submit" className="submit-button" disabled={supporterPending}>
+                  {supporterPending ? 'Unlocking…' : 'Unlock export'}
+                </button>
+              </form>
+              {supporterError ? <p className="form-error">{supporterError}</p> : null}
+            </section>
+          ) : null}
 
           <section className="panel stack-section methodology" id="data-sources">
             <div className="panel-header">
@@ -616,7 +862,7 @@ export default function App() {
                 <ul>
                   <li>Market data can lag source websites and may briefly reflect stale or missing fields.</li>
                   <li>Published membership changes can appear after market hours and may update independently of prices.</li>
-                  <li>Prediction screens are available only after sign-in and remain heuristic, not official S&amp;P decisions.</li>
+                  <li>This site is a monitoring layer over public sources and should not replace direct source verification.</li>
                 </ul>
               </div>
               <div>
@@ -674,6 +920,14 @@ export default function App() {
               isOpen={openRankedPanels.overvalued}
               onToggle={() => toggleRankedPanel('overvalued')}
             />
+          </section>
+          <section className="panel stack-section prediction-note">
+            <div className="panel-header">
+              <div>
+                <h2>Prediction view notice</h2>
+                <p>Prediction screens are available only after sign-in and remain heuristic, not official S&amp;P decisions.</p>
+              </div>
+            </div>
           </section>
           <PredictionMethodology {...data.methodology} />
         </>

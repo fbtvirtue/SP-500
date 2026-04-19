@@ -496,9 +496,7 @@ function MembershipTable({
   const [exportFormat, setExportFormat] = useState<ExportFormat>('xlsx');
   const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
-  const [stickyHeaderOffset, setStickyHeaderOffset] = useState(0);
   const [stickyColumnOffset, setStickyColumnOffset] = useState(0);
-  const headerRef = useRef<HTMLDivElement | null>(null);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
   const stickyHeaderCellRefs = useRef<Array<HTMLTableCellElement | null>>([]);
 
@@ -532,26 +530,6 @@ function MembershipTable({
       return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
     });
   }, [filtered, sectorMarketCaps, sort]);
-
-  useEffect(() => {
-    const element = headerRef.current;
-    if (!element) return;
-
-    const updateOffset = () => {
-      setStickyHeaderOffset(Math.ceil(element.getBoundingClientRect().height));
-    };
-
-    updateOffset();
-
-    const observer = new ResizeObserver(() => updateOffset());
-    observer.observe(element);
-    window.addEventListener('resize', updateOffset);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', updateOffset);
-    };
-  }, []);
 
   useEffect(() => {
     const updateStickyColumnOffset = () => {
@@ -698,11 +676,10 @@ function MembershipTable({
       className="panel stack-section membership-section"
       style={{
         '--site-header-offset': `${siteHeaderOffset}px`,
-        '--membership-sticky-offset': `${siteHeaderOffset + stickyHeaderOffset}px`,
         '--membership-sticky-col-2-left': `${stickyColumnOffset}px`,
       } as React.CSSProperties}
     >
-      <div ref={headerRef} className="panel-header panel-header-stack membership-sticky-header">
+      <div className="panel-header panel-header-stack membership-sticky-header">
         <div>
           <h2>Current S&amp;P 500 members</h2>
           {!canExport ? (

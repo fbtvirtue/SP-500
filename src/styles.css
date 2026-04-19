@@ -434,13 +434,9 @@ a {
 }
 
 .membership-sticky-header {
-  position: sticky;
-  top: var(--site-header-offset, 0px);
-  z-index: 8;
   margin: -24px -24px 18px;
   padding: 24px 24px 14px;
   background: linear-gradient(180deg, rgba(244, 247, 251, 0.98) 0%, rgba(248, 251, 255, 0.94) 100%);
-  backdrop-filter: blur(12px);
   border-radius: 28px 28px 22px 22px;
 }
 
@@ -778,7 +774,7 @@ th {
   color: #5d7390;
   background: rgba(235, 242, 250, 0.7);
   position: sticky;
-  top: var(--membership-sticky-offset, 0px);
+  top: var(--site-header-offset, 0px);
   z-index: 10;
 }
 
@@ -926,7 +922,6 @@ tr:hover td {
   }
 
   .membership-sticky-header {
-    top: 0;
     margin: -20px -20px 18px;
     padding: 20px 20px 14px;
   }

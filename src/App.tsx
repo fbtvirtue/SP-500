@@ -42,6 +42,10 @@ const membershipColumns: Array<{ key: MembershipSortKey; label: string; classNam
 ];
 
 const membershipTableWidth = membershipColumns.reduce((total, column) => total + Number.parseInt(column.width, 10), 0);
+const fixedMembershipColumn = membershipColumns[0];
+const fixedMembershipColumnWidth = Number.parseInt(fixedMembershipColumn.width, 10);
+const scrollableMembershipColumns = membershipColumns.slice(1);
+const membershipScrollableWidth = membershipTableWidth - fixedMembershipColumnWidth;
 
 type AuthStatusResponse = {
   authenticated?: boolean;
@@ -835,26 +839,23 @@ function MembershipTable({
     setSelectedTicker((current) => current === ticker ? null : ticker);
   }
 
-  function renderMembershipColGroup() {
+  function renderMembershipColGroup(columns = membershipColumns) {
     return (
       <colgroup>
-        {membershipColumns.map((column) => <col key={column.key} style={{ width: column.width }} />)}
+        {columns.map((column) => <col key={column.key} style={{ width: column.width }} />)}
       </colgroup>
     );
   }
 
-  function renderMembershipHeaderCells(isStickyClone = false) {
-    return membershipColumns.map((column) => {
+  function renderMembershipHeaderCells(columns = membershipColumns) {
+    return columns.map((column) => {
       const isActive = sort.key === column.key;
       const ariaSort = isActive ? (sort.direction === 'asc' ? 'ascending' : 'descending') : 'none';
-      const className = isStickyClone
-        ? column.className?.replace(/\bsticky-col-1\b/g, '').replace(/\bsticky-col\b/g, '').trim() || undefined
-        : column.className;
 
       return (
         <th
           key={column.key}
-          className={className}
+          className={column.className}
           aria-sort={ariaSort}
         >
           <button
@@ -878,6 +879,9 @@ function MembershipTable({
     <section
       id="members-table"
       className="panel stack-section membership-section"
+      style={{
+        '--membership-fixed-col-width': `${fixedMembershipColumnWidth}px`,
+      } as React.CSSProperties}
     >
       <div className="panel-header panel-header-stack membership-sticky-header">
         <div className="membership-directory-title">
@@ -898,12 +902,20 @@ function MembershipTable({
       {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
       <div className="membership-column-header-stick">
+        <div className="membership-column-header-fixed">
+          <table className="membership-table membership-table-header-clone membership-table-header-fixed" style={{ width: `${fixedMembershipColumnWidth}px` }}>
+            {renderMembershipColGroup([fixedMembershipColumn])}
+            <thead>
+              <tr>{renderMembershipHeaderCells([fixedMembershipColumn])}</tr>
+            </thead>
+          </table>
+        </div>
         <div className="membership-column-header-window">
           <div className="membership-column-header-track" style={{ transform: `translateX(-${tableScrollLeft}px)` }}>
-            <table className="membership-table membership-table-header-clone" style={{ width: `${membershipTableWidth}px` }}>
-              {renderMembershipColGroup()}
+            <table className="membership-table membership-table-header-clone membership-table-header-scroll" style={{ width: `${membershipScrollableWidth}px` }}>
+              {renderMembershipColGroup(scrollableMembershipColumns)}
               <thead>
-                <tr>{renderMembershipHeaderCells(true)}</tr>
+                <tr>{renderMembershipHeaderCells(scrollableMembershipColumns)}</tr>
               </thead>
             </table>
           </div>

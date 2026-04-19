@@ -608,6 +608,7 @@ function MembershipTable({
   tableLoading,
   sectorMarketCaps,
   canExport,
+  hasSupporterAccess,
   supporterEnabled,
   supporterPending,
   supporterError,
@@ -629,6 +630,7 @@ function MembershipTable({
   tableLoading: boolean;
   sectorMarketCaps: Map<string, number>;
   canExport: boolean;
+  hasSupporterAccess: boolean;
   supporterEnabled: boolean;
   supporterPending: boolean;
   supporterError: string;
@@ -649,6 +651,11 @@ function MembershipTable({
   const [tableScrollLeft, setTableScrollLeft] = useState(0);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
   const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  const supporterNotice = supporterAccessDuration
+    ? (hasSupporterAccess
+        ? `Export is unlocked for ${supporterAccessDuration} in this browser.`
+        : `After purchase, export stays unlocked for ${supporterAccessDuration} in this browser.`)
+    : null;
 
   useEffect(() => {
     setSelectedTicker(null);
@@ -1090,8 +1097,8 @@ function MembershipTable({
             </button>
           )}
         </div>
-        {!canExport && supporterAccessDuration ? (
-          <p className="export-note export-note-footer">After purchase, export stays unlocked for {supporterAccessDuration} in this browser.</p>
+        {supporterNotice && (!canExport || hasSupporterAccess) ? (
+          <p className="export-note export-note-footer">{supporterNotice}</p>
         ) : null}
       </div>
     </section>
@@ -1567,6 +1574,7 @@ export default function App() {
               tableLoading={membersLoading}
               sectorMarketCaps={membersSectorMarketCaps}
               canExport={canExport}
+              hasSupporterAccess={hasSupporterAccess}
               supporterEnabled={supporterEnabled}
               supporterPending={supporterPending}
               supporterError={supporterError}

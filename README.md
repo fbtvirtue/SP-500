@@ -10,7 +10,7 @@ The safe local folder slug is `sp-500`. Using `S&P 500` as a Windows folder name
 - Tracks known membership entry and exit dates from the published change log.
 - Keeps the home dashboard public while protecting prediction screens behind sign-in.
 - Serves the current-members table from a separately protected payload so it is not directly downloadable from the public snapshot JSON.
-- Supports XLSX download and Google Sheets-ready copy for users who are signed in or who complete the Lemon Squeezy supporter checkout.
+- Supports CSV and XLSX download plus automatic Google Sheets creation for users who are signed in or who complete the Lemon Squeezy supporter checkout.
 - Produces 25 possible fall-out names and 25 possible entrant names using a transparent heuristic.
 - Captures dividend status and dividend amount for current S&P 500 members.
 - Produces 25 most overvalued and 25 most undervalued names using a sector-relative heuristic inspired by common bank and sell-side screening practices.
@@ -78,7 +78,8 @@ Add these as environment variables in the Cloudflare Pages project settings for 
 - `LEMON_SQUEEZY_STORE_ID`: your Lemon Squeezy store ID.
 - `LEMON_SQUEEZY_VARIANT_ID`: the product variant ID used for the supporter checkout.
 - `LEMON_SQUEEZY_WEBHOOK_SECRET`: the signing secret for the Lemon Squeezy webhook.
-- `SUPPORTER_EXPORT_TTL_SECONDS`: optional, defaults to `2592000` (30 days).
+- `SUPPORTER_EXPORT_TTL_SECONDS`: optional, defaults to `86400` (1 day).
+- `GOOGLE_SHEETS_CLIENT_ID`: optional, enables the browser-based Google OAuth flow that creates and fills a new Google Sheet automatically.
 - `SUPPORTER_PENDING_TTL_SECONDS`: optional, defaults to `7200` (2 hours).
 - `MEMBER_ACCESS_TTL_SECONDS`: optional, defaults to `1800` (30 minutes).
 - `MEMBER_CHALLENGE_TTL_SECONDS`: optional, defaults to `300` (5 minutes).

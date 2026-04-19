@@ -3,6 +3,8 @@ import type { CompanyRecord, CurrentMembersData, MembershipChange, PredictionDat
 
 type RankedPanelKey = 'fallOut' | 'entrants' | 'undervalued' | 'overvalued';
 type DashboardView = 'home' | 'prediction';
+type ExportFormat = 'xlsx' | 'csv';
+type DecimalSeparator = '.' | ',';
 
 type MembershipSortKey =
   | 'ticker'
@@ -43,7 +45,48 @@ type AuthStatusResponse = {
   supporter?: boolean;
   supporterEnabled?: boolean;
   canExport?: boolean;
+  supporterExportTtlSeconds?: number | null;
+  googleSheetsClientId?: string | null;
 };
+
+type MembershipExportDocument = {
+  metadataRows: string[][];
+  headerRow: string[];
+  dataRows: string[][];
+};
+
+type GoogleTokenResponse = {
+  access_token?: string;
+  error?: string;
+  error_description?: string;
+};
+
+type GoogleTokenClient = {
+  requestAccessToken: (overrideConfig?: { prompt?: string }) => void;
+};
+
+type GoogleIdentityServices = {
+  accounts: {
+    oauth2: {
+      initTokenClient: (config: {
+        client_id: string;
+        scope: string;
+        callback: (response: GoogleTokenResponse) => void;
+        error_callback?: () => void;
+      }) => GoogleTokenClient;
+    };
+  };
+};
+
+const exportDataSources = [
+  'Wikipedia current S&P 500 constituents and change history',
+  'Wikipedia S&P 400, S&P 600, and Nasdaq-100 constituent lists',
+  'Finviz quote pages for market cap, valuation, and dividend fields',
+];
+
+const exportWarningText = 'This file is generated automatically from public data sources and is intended for monitoring and research only. It is not financial advice.';
+const googleIdentityScriptSrc = 'https://accounts.google.com/gsi/client';
+const googleSheetsScope = 'https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.file';
 
 function formatDate(value: string | null): string {
   if (!value) return 'Unknown';
@@ -81,6 +124,251 @@ function formatPercent(value: number | null): string {
   return `${(value * 100).toFixed(2)}%`;
 }
 
+function getExportLocale(decimalSeparator: DecimalSeparator): string {
+  return decimalSeparator === ',' ? 'de-DE' : 'en-US';
+}
+
+function formatLocalizedNumber(value: number | null, locale: string, options?: Intl.NumberFormatOptions): string {
+  if (value === null || Number.isNaN(value)) return 'N/A';
+  return new Intl.NumberFormat(locale, options).format(value);
+}
+
+function formatLocalizedCurrency(value: number | null, locale: string, currency = 'USD'): string {
+  if (value === null || Number.isNaN(value)) return 'N/A';
+  return new Intl.NumberFormat(locale, { style: 'currency', currency, maximumFractionDigits: 2 }).format(value);
+}
+
+function formatLocalizedPercent(value: number | null, locale: string): string {
+  if (value === null || Number.isNaN(value)) return 'N/A';
+  return new Intl.NumberFormat(locale, {
+    style: 'percent',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+}
+
+function formatExportDateTime(value: string | null): string {
+  if (!value) return 'Unknown';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toISOString().replace('T', ' ').replace(/\.\d{3}Z$/, ' UTC');
+}
+
+function formatTimestampForFilename(value: string | null): string {
+  const fallback = new Date().toISOString();
+  const date = value ? new Date(value) : new Date(fallback);
+  const safeValue = Number.isNaN(date.getTime()) ? fallback : date.toISOString();
+  return safeValue.replace(/:/g, '-').replace(/\.\d{3}Z$/, 'Z');
+}
+
+function buildExportFilename(format: ExportFormat, generatedAt: string): string {
+  return `sp500-members-${formatTimestampForFilename(generatedAt)}.${format}`;
+}
+
+function buildDelimitedText(rows: string[][], delimiter: string): string {
+  return rows.map((row) => row.map((value) => {
+    const normalized = String(value ?? '');
+    if (normalized.includes('"') || normalized.includes('\n') || normalized.includes(delimiter)) {
+      return `"${normalized.replace(/"/g, '""')}"`;
+    }
+
+    return normalized;
+  }).join(delimiter)).join('\n');
+}
+
+function formatSupporterAccessDuration(seconds: number | null | undefined): string | null {
+  if (!seconds || !Number.isFinite(seconds) || seconds <= 0) return null;
+
+  if (seconds % (60 * 60 * 24) === 0) {
+    const days = seconds / (60 * 60 * 24);
+    return `${days} day${days === 1 ? '' : 's'}`;
+  }
+
+  if (seconds % (60 * 60) === 0) {
+    const hours = seconds / (60 * 60);
+    return `${hours} hour${hours === 1 ? '' : 's'}`;
+  }
+
+  const minutes = Math.max(1, Math.round(seconds / 60));
+  return `${minutes} minute${minutes === 1 ? '' : 's'}`;
+}
+
+function getGoogleIdentityServices(): GoogleIdentityServices | null {
+  return (window as Window & { google?: GoogleIdentityServices }).google ?? null;
+}
+
+async function loadGoogleIdentityServices(): Promise<GoogleIdentityServices> {
+  const existing = getGoogleIdentityServices();
+  if (existing?.accounts?.oauth2) return existing;
+
+  await new Promise<void>((resolve, reject) => {
+    const existingScript = document.querySelector<HTMLScriptElement>('script[data-google-identity-services="true"]');
+
+    if (existingScript) {
+      existingScript.addEventListener('load', () => resolve(), { once: true });
+      existingScript.addEventListener('error', () => reject(new Error('Could not load Google Identity Services.')), { once: true });
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = googleIdentityScriptSrc;
+    script.async = true;
+    script.defer = true;
+    script.dataset.googleIdentityServices = 'true';
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Could not load Google Identity Services.'));
+    document.head.append(script);
+  });
+
+  const loaded = getGoogleIdentityServices();
+  if (!loaded?.accounts?.oauth2) {
+    throw new Error('Google Identity Services loaded without OAuth support.');
+  }
+
+  return loaded;
+}
+
+async function requestGoogleAccessToken(clientId: string): Promise<string> {
+  const google = await loadGoogleIdentityServices();
+
+  return await new Promise<string>((resolve, reject) => {
+    const tokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: clientId,
+      scope: googleSheetsScope,
+      callback: (response) => {
+        if (response.error) {
+          reject(new Error(response.error_description || response.error || 'Google authorization failed.'));
+          return;
+        }
+
+        if (typeof response.access_token !== 'string' || !response.access_token) {
+          reject(new Error('Google did not return an access token.'));
+          return;
+        }
+
+        resolve(response.access_token);
+      },
+      error_callback: () => {
+        reject(new Error('The Google authorization popup was closed before access was granted.'));
+      },
+    });
+
+    tokenClient.requestAccessToken({ prompt: 'consent' });
+  });
+}
+
+async function readGoogleApiError(response: Response, fallbackMessage: string): Promise<string> {
+  const rawText = await response.text();
+  if (!rawText) return fallbackMessage;
+
+  try {
+    const payload = JSON.parse(rawText) as {
+      error?: { message?: string; status?: string };
+      message?: string;
+    };
+    const detail = payload.error?.message || payload.message || payload.error?.status;
+    return detail ? `${fallbackMessage} ${detail}` : fallbackMessage;
+  } catch {
+    return `${fallbackMessage} ${rawText}`;
+  }
+}
+
+async function createGoogleSheetFromExport(
+  accessToken: string,
+  exportDocument: MembershipExportDocument,
+  generatedAt: string,
+): Promise<string> {
+  const sheetTitle = `S&P 500 Members ${formatTimestampForFilename(generatedAt)}`;
+  const createResponse = await fetch('https://sheets.googleapis.com/v4/spreadsheets', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      properties: { title: sheetTitle },
+      sheets: [
+        {
+          properties: {
+            title: 'S&P 500 Members',
+            gridProperties: { frozenRowCount: exportDocument.metadataRows.length + 1 },
+          },
+        },
+      ],
+    }),
+  });
+
+  if (!createResponse.ok) {
+    throw new Error(await readGoogleApiError(createResponse, 'Could not create a Google Sheet.'));
+  }
+
+  const spreadsheet = await createResponse.json() as { spreadsheetId?: string; spreadsheetUrl?: string };
+  if (typeof spreadsheet.spreadsheetId !== 'string' || !spreadsheet.spreadsheetId) {
+    throw new Error('Google Sheets did not return a spreadsheet ID.');
+  }
+
+  const sheetRange = encodeURIComponent('S&P 500 Members!A1');
+  const valuesResponse = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheet.spreadsheetId}/values/${sheetRange}?valueInputOption=USER_ENTERED`,
+    {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        range: 'S&P 500 Members!A1',
+        majorDimension: 'ROWS',
+        values: [...exportDocument.metadataRows, exportDocument.headerRow, ...exportDocument.dataRows],
+      }),
+    },
+  );
+
+  if (!valuesResponse.ok) {
+    throw new Error(await readGoogleApiError(valuesResponse, 'Could not write data into the Google Sheet.'));
+  }
+
+  const headerStartIndex = exportDocument.metadataRows.length;
+  await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheet.spreadsheetId}:batchUpdate`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      requests: [
+        {
+          repeatCell: {
+            range: {
+              sheetId: 0,
+              startRowIndex: headerStartIndex,
+              endRowIndex: headerStartIndex + 1,
+            },
+            cell: {
+              userEnteredFormat: {
+                textFormat: { bold: true },
+              },
+            },
+            fields: 'userEnteredFormat.textFormat.bold',
+          },
+        },
+        {
+          autoResizeDimensions: {
+            dimensions: {
+              sheetId: 0,
+              dimension: 'COLUMNS',
+              startIndex: 0,
+              endIndex: exportDocument.headerRow.length,
+            },
+          },
+        },
+      ],
+    }),
+  });
+
+  return spreadsheet.spreadsheetUrl || `https://docs.google.com/spreadsheets/d/${spreadsheet.spreadsheetId}/edit`;
+}
+
 function downloadFile(filename: string, content: BlobPart, mimeType: string): void {
   const blob = new Blob([content], { type: mimeType });
   const url = URL.createObjectURL(blob);
@@ -114,20 +402,43 @@ async function solveMemberChallenge(challengeToken: string, difficulty: number):
   }
 }
 
-function buildMembershipExportRows(rows: CompanyRecord[], sectorMarketCaps: Map<string, number>): string[][] {
-  return rows.map((row) => [
-    row.ticker,
-    row.security,
-    row.sector,
-    formatPercent(getSectorDominance(row, sectorMarketCaps)),
-    formatDate(row.currentMemberSince),
-    formatDate(row.lastLeftAt),
-    row.dividend.hasDividend ? formatCurrency(row.dividend.dividendRate, row.dividend.currency || 'USD') : 'No dividend',
-    formatPercent(row.dividend.dividendYield),
-    formatCurrency(row.metrics.marketCap, row.metrics.currency || 'USD'),
-    formatNumber(row.metrics.forwardPE, { maximumFractionDigits: 2 }),
-    formatCurrency(row.metrics.price, row.metrics.currency || 'USD'),
-  ]);
+function buildMembershipExportDocument(
+  rows: CompanyRecord[],
+  sectorMarketCaps: Map<string, number>,
+  {
+    generatedAt,
+    decimalSeparator,
+  }: {
+    generatedAt: string;
+    decimalSeparator: DecimalSeparator;
+  },
+): MembershipExportDocument {
+  const locale = getExportLocale(decimalSeparator);
+
+  return {
+    metadataRows: [
+      ['Warning', exportWarningText],
+      ['Data sources', exportDataSources.join(' | ')],
+      ['Snapshot generated', formatExportDateTime(generatedAt)],
+      [],
+    ],
+    headerRow: membershipColumns.map((column) => column.label),
+    dataRows: rows.map((row) => [
+      row.ticker,
+      row.security,
+      row.sector,
+      formatLocalizedPercent(getSectorDominance(row, sectorMarketCaps), locale),
+      formatDate(row.currentMemberSince),
+      formatDate(row.lastLeftAt),
+      row.dividend.hasDividend
+        ? formatLocalizedCurrency(row.dividend.dividendRate, locale, row.dividend.currency || 'USD')
+        : 'No dividend',
+      formatLocalizedPercent(row.dividend.dividendYield, locale),
+      formatLocalizedCurrency(row.metrics.marketCap, locale, row.metrics.currency || 'USD'),
+      formatLocalizedNumber(row.metrics.forwardPE, locale, { maximumFractionDigits: 2 }),
+      formatLocalizedCurrency(row.metrics.price, locale, row.metrics.currency || 'USD'),
+    ]),
+  };
 }
 
 function MetricCard({ label, value, hint }: { label: string; value: string; hint?: string }) {
@@ -366,6 +677,9 @@ function MembershipTable({
   supporterEnabled,
   supporterPending,
   supporterError,
+  snapshotGeneratedAt,
+  supporterAccessDuration,
+  googleSheetsClientId,
   onStartSupporterCheckout,
 }: {
   rows: CompanyRecord[];
@@ -373,11 +687,16 @@ function MembershipTable({
   supporterEnabled: boolean;
   supporterPending: boolean;
   supporterError: string;
+  snapshotGeneratedAt: string;
+  supporterAccessDuration: string | null;
+  googleSheetsClientId: string | null;
   onStartSupporterCheckout: () => void;
 }) {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<MembershipSortState>(defaultMembershipSort);
   const [exportMessage, setExportMessage] = useState('');
+  const [exportFormat, setExportFormat] = useState<ExportFormat>('xlsx');
+  const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
 
   const sectorMarketCaps = useMemo(() => {
     const totals = new Map<string, number>();
@@ -425,48 +744,108 @@ function MembershipTable({
       const ExcelJS = await import('exceljs');
       const workbook = new ExcelJS.Workbook();
       const worksheet = workbook.addWorksheet('S&P 500 Members');
+      const exportDocument = buildMembershipExportDocument(sorted, sectorMarketCaps, {
+        generatedAt: snapshotGeneratedAt,
+        decimalSeparator,
+      });
 
       worksheet.columns = membershipColumns.map((column, index) => ({
-        header: column.label,
         key: column.key,
         width: [10, 28, 22, 14, 14, 14, 14, 10, 16, 12, 14][index],
       }));
 
-      for (const row of buildMembershipExportRows(sorted, sectorMarketCaps)) {
+      for (const row of exportDocument.metadataRows) {
+        const addedRow = worksheet.addRow(row);
+        if (row.length) {
+          addedRow.getCell(1).font = { bold: true };
+          addedRow.getCell(2).alignment = { wrapText: true };
+        }
+      }
+
+      const headerRow = worksheet.addRow(exportDocument.headerRow);
+      headerRow.font = { bold: true };
+
+      for (const row of exportDocument.dataRows) {
         worksheet.addRow(row);
       }
 
-      worksheet.getRow(1).font = { bold: true };
       const workbookBytes = await workbook.xlsx.writeBuffer();
       downloadFile(
-        `sp500-members-${new Date().toISOString().slice(0, 10)}.xlsx`,
+        buildExportFilename('xlsx', snapshotGeneratedAt),
         workbookBytes,
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       );
-      setExportMessage('XLSX export downloaded.');
+      setExportMessage(`XLSX export downloaded with ${decimalSeparator === ',' ? 'comma' : 'dot'} decimals.`);
     } catch {
       setExportMessage('Could not create the XLSX export in this browser.');
     }
   }
 
-  async function copyRowsForGoogleSheets() {
-    try {
-      const lines = [
-        membershipColumns.map((column) => column.label).join('\t'),
-        ...buildMembershipExportRows(sorted, sectorMarketCaps).map((row) => row.join('\t')),
-      ];
+  function exportRowsAsCsv() {
+    const exportDocument = buildMembershipExportDocument(sorted, sectorMarketCaps, {
+      generatedAt: snapshotGeneratedAt,
+      decimalSeparator,
+    });
+    const delimiter = decimalSeparator === ',' ? ';' : ',';
+    const fileText = buildDelimitedText(
+      [...exportDocument.metadataRows, exportDocument.headerRow, ...exportDocument.dataRows],
+      delimiter,
+    );
 
-      await navigator.clipboard.writeText(`${lines.join('\n')}\n`);
-      setExportMessage('Copied in Google Sheets format. Paste directly into Sheets.');
-    } catch {
-      setExportMessage('Clipboard access is blocked in this browser.');
+    downloadFile(buildExportFilename('csv', snapshotGeneratedAt), `\uFEFF${fileText}\n`, 'text/csv;charset=utf-8');
+    setExportMessage(`CSV export downloaded using ${delimiter === ';' ? 'semicolon' : 'comma'} columns and ${decimalSeparator === ',' ? 'comma' : 'dot'} decimals.`);
+  }
+
+  async function importRowsToGoogleSheets() {
+    if (!googleSheetsClientId) {
+      setExportMessage('Google Sheets import is not configured for this site yet.');
+      return;
     }
+
+    const sheetWindow = window.open('about:blank', '_blank');
+    const exportDocument = buildMembershipExportDocument(sorted, sectorMarketCaps, {
+      generatedAt: snapshotGeneratedAt,
+      decimalSeparator,
+    });
+
+    try {
+      if (sheetWindow) {
+        sheetWindow.document.title = 'Preparing Google Sheet';
+        sheetWindow.document.body.innerHTML = '<p style="font-family:Segoe UI,sans-serif;padding:24px;">Creating your Google Sheet…</p>';
+      }
+
+      const accessToken = await requestGoogleAccessToken(googleSheetsClientId);
+      const spreadsheetUrl = await createGoogleSheetFromExport(accessToken, exportDocument, snapshotGeneratedAt);
+
+      if (sheetWindow) {
+        sheetWindow.location.href = spreadsheetUrl;
+      } else {
+        window.open(spreadsheetUrl, '_blank', 'noopener,noreferrer');
+      }
+
+      setExportMessage('Created a new Google Sheet and imported the export automatically.');
+    } catch (error) {
+      if (sheetWindow) {
+        sheetWindow.close();
+      }
+
+      setExportMessage(error instanceof Error ? error.message : 'Could not create the Google Sheet automatically.');
+    }
+  }
+
+  function downloadSelectedExport() {
+    if (exportFormat === 'csv') {
+      exportRowsAsCsv();
+      return;
+    }
+
+    void exportRowsAsXlsx();
   }
 
   function blockLockedTableAction(event: React.SyntheticEvent<HTMLElement>) {
     if (canExport) return;
     event.preventDefault();
-    setExportMessage('Donate to unlock copying, XLSX download, and Google Sheets export.');
+    setExportMessage('Donate to unlock CSV and XLSX download plus Google Sheets export.');
   }
 
   function blockLockedShortcuts(event: React.KeyboardEvent<HTMLElement>) {
@@ -485,7 +864,7 @@ function MembershipTable({
         <div>
           <h2>Current S&amp;P 500 members</h2>
           {!canExport ? (
-            <p>Donate to unlock XLSX download, Google Sheets copy, and member-table export access.</p>
+            <p>Donate to unlock CSV and XLSX download plus Google Sheets export access.</p>
           ) : null}
         </div>
         <div className="membership-toolbar">
@@ -505,11 +884,38 @@ function MembershipTable({
           </button>
           {canExport ? (
             <>
-              <button type="button" className="export-button" onClick={() => void exportRowsAsXlsx()}>
-                Download XLSX
+              <label className="toolbar-select-field">
+                <span>Format</span>
+                <select
+                  className="toolbar-select"
+                  value={exportFormat}
+                  onChange={(event) => setExportFormat(event.target.value as ExportFormat)}
+                >
+                  <option value="xlsx">XLSX</option>
+                  <option value="csv">CSV</option>
+                </select>
+              </label>
+              <label className="toolbar-select-field">
+                <span>Decimal</span>
+                <select
+                  className="toolbar-select"
+                  value={decimalSeparator}
+                  onChange={(event) => setDecimalSeparator(event.target.value as DecimalSeparator)}
+                >
+                  <option value=".">Dot (.)</option>
+                  <option value=",">Comma (,)</option>
+                </select>
+              </label>
+              <button type="button" className="export-button" onClick={downloadSelectedExport}>
+                Download {exportFormat.toUpperCase()}
               </button>
-              <button type="button" className="export-button export-button-secondary" onClick={() => void copyRowsForGoogleSheets()}>
-                Copy for Google Sheets
+              <button
+                type="button"
+                className="export-button export-button-secondary"
+                onClick={() => void importRowsToGoogleSheets()}
+                disabled={!googleSheetsClientId}
+              >
+                {googleSheetsClientId ? 'Create Google Sheet' : 'Google Sheets unavailable'}
               </button>
             </>
           ) : (
@@ -530,13 +936,19 @@ function MembershipTable({
         <div className="export-callout">
           <div>
             <strong>Donate to download.</strong>
-            <p>Payment is handled by Lemon Squeezy. After a successful purchase, export unlocks automatically in this browser.</p>
+            <p>
+              Payment is handled by Lemon Squeezy. After a successful purchase, export unlocks automatically in this browser.
+              {supporterAccessDuration ? ` Supporter export access currently lasts ${supporterAccessDuration}.` : ''}
+            </p>
           </div>
           <span className="donate-link donate-link-static">Secure checkout</span>
         </div>
       ) : null}
       {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
+      {supporterAccessDuration ? (
+        <p className="export-note">Supporter purchases unlock export access for {supporterAccessDuration} in this browser. Sign-in access is not time-limited.</p>
+      ) : null}
       <div
         className={`table-wrap tall${canExport ? '' : ' table-wrap-locked'}`}
         onCopy={blockLockedTableAction}
@@ -602,6 +1014,8 @@ export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasSupporterAccess, setHasSupporterAccess] = useState(false);
   const [supporterEnabled, setSupporterEnabled] = useState(false);
+  const [supporterExportTtlSeconds, setSupporterExportTtlSeconds] = useState<number | null>(null);
+  const [googleSheetsClientId, setGoogleSheetsClientId] = useState<string | null>(null);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [supporterError, setSupporterError] = useState('');
   const [supporterPending, setSupporterPending] = useState(false);
@@ -638,6 +1052,12 @@ export default function App() {
         setIsAuthenticated(authenticated);
         setHasSupporterAccess(Boolean(payload.supporter));
         setSupporterEnabled(Boolean(payload.supporterEnabled));
+        setSupporterExportTtlSeconds(
+          typeof payload.supporterExportTtlSeconds === 'number' && Number.isFinite(payload.supporterExportTtlSeconds)
+            ? payload.supporterExportTtlSeconds
+            : null,
+        );
+        setGoogleSheetsClientId(typeof payload.googleSheetsClientId === 'string' && payload.googleSheetsClientId ? payload.googleSheetsClientId : null);
         if (!authenticated) {
           setActiveView('home');
         } else if (new URLSearchParams(window.location.search).get('view') === 'prediction') {
@@ -648,6 +1068,8 @@ export default function App() {
         setIsAuthenticated(false);
         setHasSupporterAccess(false);
         setSupporterEnabled(false);
+        setSupporterExportTtlSeconds(null);
+        setGoogleSheetsClientId(null);
       });
   }, []);
 
@@ -757,6 +1179,8 @@ export default function App() {
       [panel]: !current[panel],
     }));
   };
+
+  const supporterAccessDuration = formatSupporterAccessDuration(supporterExportTtlSeconds);
 
   async function startSupporterCheckout() {
     setSupporterPending(true);
@@ -880,6 +1304,9 @@ export default function App() {
               supporterEnabled={supporterEnabled}
               supporterPending={supporterPending}
               supporterError={supporterError}
+              snapshotGeneratedAt={data.generatedAt}
+              supporterAccessDuration={supporterAccessDuration}
+              googleSheetsClientId={googleSheetsClientId}
               onStartSupporterCheckout={() => void startSupporterCheckout()}
             />
           ) : (

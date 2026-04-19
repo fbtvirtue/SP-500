@@ -402,11 +402,12 @@ a {
 }
 
 .table-wrap {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: visible;
 }
 
 .table-wrap.tall {
-  max-height: 720px;
+  max-height: none;
 }
 
 .search {
@@ -422,6 +423,28 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 12px;
+}
+
+.toolbar-select-field {
+  display: grid;
+  gap: 6px;
+  min-width: 132px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5d7390;
+}
+
+.toolbar-select {
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #10233d;
+  font: inherit;
+  font-weight: 700;
 }
 
 .membership-section .panel-header {
@@ -485,6 +508,12 @@ a {
 
 .export-message {
   margin: 0 0 16px;
+}
+
+.export-note {
+  margin: 0 0 16px;
+  color: #4d647f;
+  line-height: 1.6;
 }
 
 .donate-link {
@@ -609,6 +638,7 @@ th {
   background: rgba(235, 242, 250, 0.7);
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 .sort-button {
@@ -732,6 +762,8 @@ tr:hover td {
   }
 
   .search,
+  .toolbar-select-field,
+  .toolbar-select,
   .reset-button,
   .export-button,
   .view-button,
@@ -789,6 +821,6 @@ tr:hover td {
   }
 
   .table-wrap.tall {
-    max-height: 560px;
+    max-height: none;
   }
 }

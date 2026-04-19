@@ -12,7 +12,7 @@ const SUPPORTER_WEBHOOK_PATH = '/__supporter/webhook';
 const MEMBERS_DATA_PATH = '/data/current-members.json';
 const PREDICTIONS_DATA_PATH = '/data/predictions.json';
 const DEFAULT_SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
-const DEFAULT_SUPPORTER_TTL_SECONDS = 60 * 60 * 24 * 30;
+const DEFAULT_SUPPORTER_TTL_SECONDS = 60 * 60 * 24;
 const DEFAULT_SUPPORTER_PENDING_TTL_SECONDS = 60 * 60 * 2;
 const DEFAULT_MEMBER_ACCESS_TTL_SECONDS = 60 * 30;
 const DEFAULT_MEMBER_CHALLENGE_TTL_SECONDS = 60 * 5;
@@ -39,6 +39,8 @@ export async function onRequest(context) {
       supporter,
       supporterEnabled: isSupporterCheckoutConfigured(env),
       canExport: authenticated || supporter,
+      supporterExportTtlSeconds: isSupporterCheckoutConfigured(env) ? getSupporterTtl(env) : null,
+      googleSheetsClientId: env.GOOGLE_SHEETS_CLIENT_ID ? String(env.GOOGLE_SHEETS_CLIENT_ID) : null,
     });
   }
 

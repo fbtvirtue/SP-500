@@ -422,7 +422,53 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: center;
   gap: 12px;
+}
+
+.membership-sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  margin: -24px -24px 18px;
+  padding: 24px 24px 18px;
+  background: linear-gradient(180deg, rgba(244, 247, 251, 0.98) 0%, rgba(248, 251, 255, 0.94) 100%);
+  backdrop-filter: blur(12px);
+  border-radius: 28px 28px 22px 22px;
+}
+
+.membership-sticky-header::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(16, 35, 61, 0.08);
+}
+
+.search-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.search-icon {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #5d7390;
+}
+
+.search-compact {
+  width: min(280px, 40vw);
+  padding: 12px 0;
+  border: 0;
+  background: transparent;
 }
 
 .toolbar-select-field {
@@ -460,6 +506,13 @@ a {
   font-weight: 700;
 }
 
+.reset-button-subtle {
+  min-height: 46px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+}
+
 .export-button {
   display: inline-flex;
   align-items: center;
@@ -480,6 +533,55 @@ a {
 .export-button-secondary {
   background: rgba(255, 255, 255, 0.9);
   color: #0f5bd6;
+}
+
+.export-menu {
+  position: relative;
+}
+
+.export-menu summary {
+  list-style: none;
+}
+
+.export-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.export-menu-trigger {
+  min-height: 46px;
+  border-radius: 999px;
+}
+
+.export-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(420px, calc(100vw - 48px));
+  padding: 16px;
+  border: 1px solid rgba(16, 35, 61, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 50px rgba(16, 35, 61, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.export-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.export-menu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.export-menu-note {
+  margin: 12px 0 0;
+  color: #4d647f;
+  line-height: 1.6;
 }
 
 .donate-button {
@@ -637,7 +739,7 @@ th {
   color: #5d7390;
   background: rgba(235, 242, 250, 0.7);
   position: sticky;
-  top: 0;
+  top: var(--membership-sticky-offset, 0px);
   z-index: 2;
 }
 
@@ -761,6 +863,7 @@ tr:hover td {
     justify-content: stretch;
   }
 
+  .search-wrap,
   .search,
   .toolbar-select-field,
   .toolbar-select,
@@ -770,6 +873,26 @@ tr:hover td {
   .nav-link-button,
   .logout-button {
     width: 100%;
+  }
+
+  .search-compact {
+    width: 100%;
+  }
+
+  .membership-sticky-header {
+    top: 0;
+    margin: -20px -20px 18px;
+    padding: 20px 20px 18px;
+  }
+
+  .export-menu-panel {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+
+  .export-menu-grid {
+    grid-template-columns: 1fr;
   }
 
   .app-shell {

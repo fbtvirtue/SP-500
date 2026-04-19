@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CompanyRecord, CurrentMembersData, MembershipChange, PredictionData, RankedCompany, SnapshotData } from './types';
 
 type RankedPanelKey = 'fallOut' | 'entrants' | 'undervalued' | 'overvalued';
@@ -697,6 +697,8 @@ function MembershipTable({
   const [exportMessage, setExportMessage] = useState('');
   const [exportFormat, setExportFormat] = useState<ExportFormat>('xlsx');
   const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
+  const [stickyHeaderOffset, setStickyHeaderOffset] = useState(0);
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
   const sectorMarketCaps = useMemo(() => {
     const totals = new Map<string, number>();
@@ -728,6 +730,26 @@ function MembershipTable({
       return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
     });
   }, [filtered, sectorMarketCaps, sort]);
+
+  useEffect(() => {
+    const element = headerRef.current;
+    if (!element) return;
+
+    const updateOffset = () => {
+      setStickyHeaderOffset(element.getBoundingClientRect().height + 12);
+    };
+
+    updateOffset();
+
+    const observer = new ResizeObserver(() => updateOffset());
+    observer.observe(element);
+    window.addEventListener('resize', updateOffset);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateOffset);
+    };
+  }, []);
 
   function toggleSort(key: MembershipSortKey) {
     setSort((current) => {
@@ -859,8 +881,11 @@ function MembershipTable({
   }
 
   return (
-    <section className="panel stack-section membership-section">
-      <div className="panel-header panel-header-stack">
+    <section
+      className="panel stack-section membership-section"
+      style={{ '--membership-sticky-offset': `${stickyHeaderOffset}px` } as React.CSSProperties}
+    >
+      <div ref={headerRef} className="panel-header panel-header-stack membership-sticky-header">
         <div>
           <h2>Current S&amp;P 500 members</h2>
           {!canExport ? (
@@ -868,15 +893,18 @@ function MembershipTable({
           ) : null}
         </div>
         <div className="membership-toolbar">
-          <input
-            className="search"
-            placeholder="Search company, ticker, or sector"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-          />
+          <label className="search-wrap" aria-label="Search companies">
+            <span className="search-icon" aria-hidden="true">/</span>
+            <input
+              className="search search-compact"
+              placeholder="Search company, ticker, or sector"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          </label>
           <button
             type="button"
-            className="reset-button"
+            className="reset-button reset-button-subtle"
             onClick={() => setSort(defaultMembershipSort)}
             disabled={sort.key === defaultMembershipSort.key && sort.direction === defaultMembershipSort.direction}
           >
@@ -884,39 +912,50 @@ function MembershipTable({
           </button>
           {canExport ? (
             <>
-              <label className="toolbar-select-field">
-                <span>Format</span>
-                <select
-                  className="toolbar-select"
-                  value={exportFormat}
-                  onChange={(event) => setExportFormat(event.target.value as ExportFormat)}
-                >
-                  <option value="xlsx">XLSX</option>
-                  <option value="csv">CSV</option>
-                </select>
-              </label>
-              <label className="toolbar-select-field">
-                <span>Decimal</span>
-                <select
-                  className="toolbar-select"
-                  value={decimalSeparator}
-                  onChange={(event) => setDecimalSeparator(event.target.value as DecimalSeparator)}
-                >
-                  <option value=".">Dot (.)</option>
-                  <option value=",">Comma (,)</option>
-                </select>
-              </label>
-              <button type="button" className="export-button" onClick={downloadSelectedExport}>
-                Download {exportFormat.toUpperCase()}
-              </button>
-              <button
-                type="button"
-                className="export-button export-button-secondary"
-                onClick={() => void importRowsToGoogleSheets()}
-                disabled={!googleSheetsClientId}
-              >
-                {googleSheetsClientId ? 'Create Google Sheet' : 'Google Sheets unavailable'}
-              </button>
+              <details className="export-menu">
+                <summary className="export-button export-button-secondary export-menu-trigger">Export options</summary>
+                <div className="export-menu-panel">
+                  <div className="export-menu-grid">
+                    <label className="toolbar-select-field">
+                      <span>Format</span>
+                      <select
+                        className="toolbar-select"
+                        value={exportFormat}
+                        onChange={(event) => setExportFormat(event.target.value as ExportFormat)}
+                      >
+                        <option value="xlsx">XLSX</option>
+                        <option value="csv">CSV</option>
+                      </select>
+                    </label>
+                    <label className="toolbar-select-field">
+                      <span>Decimal</span>
+                      <select
+                        className="toolbar-select"
+                        value={decimalSeparator}
+                        onChange={(event) => setDecimalSeparator(event.target.value as DecimalSeparator)}
+                      >
+                        <option value=".">Dot (.)</option>
+                        <option value=",">Comma (,)</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div className="export-menu-actions">
+                    <button type="button" className="export-button" onClick={downloadSelectedExport}>
+                      Download {exportFormat.toUpperCase()}
+                    </button>
+                    <button
+                      type="button"
+                      className="export-button export-button-secondary"
+                      onClick={() => void importRowsToGoogleSheets()}
+                    >
+                      Create Google Sheet
+                    </button>
+                  </div>
+                  {!googleSheetsClientId ? (
+                    <p className="export-menu-note">Google Sheets import is unavailable because no Google client ID is being exposed by the live server yet.</p>
+                  ) : null}
+                </div>
+              </details>
             </>
           ) : (
             <>
@@ -947,7 +986,7 @@ function MembershipTable({
       {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
       {supporterAccessDuration ? (
-        <p className="export-note">Supporter purchases unlock export access for {supporterAccessDuration} in this browser. Sign-in access is not time-limited.</p>
+        <p className="export-note">Supporter purchases unlock export access for {supporterAccessDuration} in this browser.</p>
       ) : null}
       <div
         className={`table-wrap tall${canExport ? '' : ' table-wrap-locked'}`}

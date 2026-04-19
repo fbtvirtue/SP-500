@@ -40,7 +40,7 @@ export async function onRequest(context) {
       supporterEnabled: isSupporterCheckoutConfigured(env),
       canExport: authenticated || supporter,
       supporterExportTtlSeconds: isSupporterCheckoutConfigured(env) ? getSupporterTtl(env) : null,
-      googleSheetsClientId: env.GOOGLE_SHEETS_CLIENT_ID ? String(env.GOOGLE_SHEETS_CLIENT_ID) : null,
+      googleSheetsClientId: getGoogleSheetsClientId(env) || null,
     });
   }
 
@@ -140,6 +140,15 @@ function isSupporterCheckoutConfigured(env) {
       && env.LEMON_SQUEEZY_WEBHOOK_SECRET
       && env.SUPPORTER_CLAIMS,
   );
+}
+
+function getGoogleSheetsClientId(env) {
+  return String(
+    env.GOOGLE_SHEETS_CLIENT_ID
+      || env.GOOGLE_CLIENT_ID
+      || env.GOOGLE_OAUTH_CLIENT_ID
+      || '',
+  ).trim();
 }
 
 async function handleLogin(request, env, fallbackRedirect = '/') {

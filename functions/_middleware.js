@@ -397,11 +397,11 @@ async function handleMembersExport(context) {
   }
 
   worksheet.getColumn(4).numFmt = '0.00%';
-  worksheet.getColumn(7).numFmt = '$# ##0.00';
+  worksheet.getColumn(7).numFmt = '[$$-fr-FR]#,##0.00';
   worksheet.getColumn(8).numFmt = '0.00%';
-  worksheet.getColumn(9).numFmt = '$# ##0.00';
+  worksheet.getColumn(9).numFmt = '[$$-fr-FR]#,##0.00';
   worksheet.getColumn(10).numFmt = '0.00';
-  worksheet.getColumn(11).numFmt = '$# ##0.00';
+  worksheet.getColumn(11).numFmt = '[$$-fr-FR]#,##0.00';
 
   const workbookBytes = await workbook.xlsx.writeBuffer();
   return new Response(workbookBytes, {

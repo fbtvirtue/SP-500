@@ -10,7 +10,7 @@ The safe local folder slug is `sp-500`. Using `S&P 500` as a Windows folder name
 - Tracks known membership entry and exit dates from the published change log.
 - Keeps the home dashboard public while protecting prediction screens behind sign-in.
 - Serves the current-members table from a separately protected payload so it is not directly downloadable from the public snapshot JSON.
-- Supports XLSX download and Google Sheets-ready copy for users who are signed in or have supporter export access.
+- Supports XLSX download and Google Sheets-ready copy for users who are signed in or who complete the Lemon Squeezy supporter checkout.
 - Produces 25 possible fall-out names and 25 possible entrant names using a transparent heuristic.
 - Captures dividend status and dividend amount for current S&P 500 members.
 - Produces 25 most overvalued and 25 most undervalued names using a sector-relative heuristic inspired by common bank and sell-side screening practices.
@@ -53,7 +53,7 @@ This repo can be deployed on Cloudflare Pages with a public home dashboard, a pr
 - `functions/_middleware.js` keeps the home view public, requires login for prediction data, and protects `current-members.json` with a short-lived browser verification cookie.
 - Prediction access is enforced server-side on Cloudflare Pages, not just hidden in React.
 - Sessions and gated-access cookies are stored as HTTP-only cookies signed with `AUTH_SESSION_SECRET`.
-- An optional supporter export code can unlock the Excel-compatible member export without a prediction login.
+- Supporter export unlock is handled by Lemon Squeezy checkout, a verified webhook, and a paid supporter cookie.
 - `wrangler.toml` sets the Pages output directory to `dist`.
 
 ### Cloudflare Pages build settings
@@ -74,19 +74,24 @@ Add these as environment variables in the Cloudflare Pages project settings for 
 - `PROTECTED_PASSWORD`: the password paired with that email.
 - `AUTH_SESSION_SECRET`: a long random secret used to sign the session cookie.
 - `AUTH_SESSION_TTL_SECONDS`: optional, defaults to `604800` (7 days).
-- `SUPPORTER_EXPORT_CODE`: optional supporter code to unlock the member export after a donation.
-- `DONATE_URL`: optional public donation link shown on the member table when export is locked.
+- `LEMON_SQUEEZY_API_KEY`: your Lemon Squeezy server-side API key.
+- `LEMON_SQUEEZY_STORE_ID`: your Lemon Squeezy store ID.
+- `LEMON_SQUEEZY_VARIANT_ID`: the product variant ID used for the supporter checkout.
+- `LEMON_SQUEEZY_WEBHOOK_SECRET`: the signing secret for the Lemon Squeezy webhook.
 - `SUPPORTER_EXPORT_TTL_SECONDS`: optional, defaults to `2592000` (30 days).
+- `SUPPORTER_PENDING_TTL_SECONDS`: optional, defaults to `7200` (2 hours).
 - `MEMBER_ACCESS_TTL_SECONDS`: optional, defaults to `1800` (30 minutes).
 - `MEMBER_CHALLENGE_TTL_SECONDS`: optional, defaults to `300` (5 minutes).
 - `MEMBER_CHALLENGE_DIFFICULTY`: optional, defaults to `3`.
 
-To enable the donation flow, set both of these in Cloudflare Pages for Production:
+Create a Cloudflare KV namespace and bind it to the Pages project as `SUPPORTER_CLAIMS`.
+This namespace stores short-lived pending payment claims plus the paid claim records that back the supporter cookie.
 
-- `DONATE_URL`: your public donation page, for example `https://buymeacoffee.com/yourname` or a Stripe payment link.
-- `SUPPORTER_EXPORT_CODE`: the code you send donors after payment, for example `sp500-supporter-2026`.
+- Put the Lemon API key in Cloudflare Pages environment variables, not in the React app and not in committed files.
+- Point your Lemon Squeezy webhook URL to `/__supporter/webhook` on your deployed site.
+- Configure the product or checkout to use the variant referenced by `LEMON_SQUEEZY_VARIANT_ID`.
 
-If `DONATE_URL` is missing, the donate button stays disabled. If `SUPPORTER_EXPORT_CODE` is missing, the "Already donated? Enter code" flow is hidden.
+If any Lemon or KV setting is missing, the donate button stays disabled and the supporter checkout will not start.
 
 ### Required GitHub Actions secrets
 
@@ -112,8 +117,10 @@ For local testing with Cloudflare Pages Functions, create a `.dev.vars` file:
 PROTECTED_EMAIL=you@example.com
 PROTECTED_PASSWORD=change-this-password
 AUTH_SESSION_SECRET=replace-with-a-long-random-string
-DONATE_URL=https://buymeacoffee.com/yourname
-SUPPORTER_EXPORT_CODE=optional-supporter-code
+LEMON_SQUEEZY_API_KEY=lsq_api_xxx
+LEMON_SQUEEZY_STORE_ID=12345
+LEMON_SQUEEZY_VARIANT_ID=67890
+LEMON_SQUEEZY_WEBHOOK_SECRET=replace-with-your-webhook-secret
 ```
 
 Then build and run the Pages preview:

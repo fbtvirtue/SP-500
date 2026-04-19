@@ -6,14 +6,18 @@ const STATUS_PATH = '/__auth/status';
 const LOGOUT_PATH = '/__auth/logout';
 const MEMBERS_CHALLENGE_PATH = '/__members/challenge';
 const MEMBERS_VERIFY_PATH = '/__members/verify';
-const SUPPORTER_ACCESS_PATH = '/__supporter/access';
+const SUPPORTER_CHECKOUT_PATH = '/__supporter/checkout';
+const SUPPORTER_CLAIM_PATH = '/__supporter/claim';
+const SUPPORTER_WEBHOOK_PATH = '/__supporter/webhook';
 const MEMBERS_DATA_PATH = '/data/current-members.json';
 const PREDICTIONS_DATA_PATH = '/data/predictions.json';
 const DEFAULT_SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
 const DEFAULT_SUPPORTER_TTL_SECONDS = 60 * 60 * 24 * 30;
+const DEFAULT_SUPPORTER_PENDING_TTL_SECONDS = 60 * 60 * 2;
 const DEFAULT_MEMBER_ACCESS_TTL_SECONDS = 60 * 30;
 const DEFAULT_MEMBER_CHALLENGE_TTL_SECONDS = 60 * 5;
 const DEFAULT_MEMBER_CHALLENGE_DIFFICULTY = 3;
+const SUPPORTER_CLAIM_PREFIX = 'supporter-claim:';
 
 export async function onRequest(context) {
   const { request, env, next } = context;
@@ -33,9 +37,8 @@ export async function onRequest(context) {
     return Response.json({
       authenticated,
       supporter,
-      supporterEnabled: Boolean(env.SUPPORTER_EXPORT_CODE),
+      supporterEnabled: isSupporterCheckoutConfigured(env),
       canExport: authenticated || supporter,
-      donateUrl: getDonateUrl(env),
     });
   }
 
@@ -63,8 +66,16 @@ export async function onRequest(context) {
     return handleMembersVerify(request, env);
   }
 
-  if (url.pathname === SUPPORTER_ACCESS_PATH) {
-    return handleSupporterAccess(request, env);
+  if (url.pathname === SUPPORTER_CHECKOUT_PATH) {
+    return handleSupporterCheckout(request, env);
+  }
+
+  if (url.pathname === SUPPORTER_CLAIM_PATH) {
+    return handleSupporterClaim(request, env);
+  }
+
+  if (url.pathname === SUPPORTER_WEBHOOK_PATH) {
+    return handleSupporterWebhook(request, env);
   }
 
   if (url.pathname === MEMBERS_DATA_PATH) {
@@ -119,6 +130,16 @@ function getConfigError(env) {
   return '';
 }
 
+function isSupporterCheckoutConfigured(env) {
+  return Boolean(
+    env.LEMON_SQUEEZY_API_KEY
+      && env.LEMON_SQUEEZY_STORE_ID
+      && env.LEMON_SQUEEZY_VARIANT_ID
+      && env.LEMON_SQUEEZY_WEBHOOK_SECRET
+      && env.SUPPORTER_CLAIMS,
+  );
+}
+
 async function handleLogin(request, env, fallbackRedirect = '/') {
   const form = await request.formData();
   const redirectTo = getSafeRedirect(form.get('redirect')) || fallbackRedirect;
@@ -156,12 +177,6 @@ function handleLogout(request) {
     status: 302,
     headers,
   });
-}
-
-function getDonateUrl(env) {
-  const value = String(env.DONATE_URL ?? '').trim();
-  if (!value) return '';
-  return /^https?:\/\//i.test(value) ? value : '';
 }
 
 async function handleMembersChallenge(env) {
@@ -212,31 +227,167 @@ async function handleMembersVerify(request, env) {
   return new Response(null, { status: 204, headers });
 }
 
-async function handleSupporterAccess(request, env) {
+async function handleSupporterCheckout(request, env) {
   if (request.method !== 'POST') {
     return new Response('Method not allowed.', { status: 405 });
   }
 
-  if (!env.SUPPORTER_EXPORT_CODE) {
-    return Response.json({ error: 'Supporter export is not configured.' }, { status: 503 });
+  if (!isSupporterCheckoutConfigured(env)) {
+    return Response.json({ error: 'Lemon Squeezy supporter checkout is not configured.' }, { status: 503 });
   }
 
-  const body = await readJson(request);
-  const submittedCode = String(body.code ?? '').trim();
+  const claimToken = crypto.randomUUID();
+  const claimKey = getSupporterClaimKey(claimToken);
+  const origin = new URL(request.url).origin;
+  const claimUrl = `${origin}${SUPPORTER_CLAIM_PATH}?claim=${encodeURIComponent(claimToken)}`;
+  const expiresAt = new Date(Date.now() + getSupporterPendingTtl(env) * 1000).toISOString();
 
-  if (!submittedCode || submittedCode !== String(env.SUPPORTER_EXPORT_CODE)) {
-    return Response.json({ error: 'Invalid supporter code.' }, { status: 401 });
+  await env.SUPPORTER_CLAIMS.put(claimKey, JSON.stringify({
+    status: 'pending',
+    createdAt: new Date().toISOString(),
+  }), { expirationTtl: getSupporterPendingTtl(env) });
+
+  const response = await fetch('https://api.lemonsqueezy.com/v1/checkouts', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/vnd.api+json',
+      'Content-Type': 'application/vnd.api+json',
+      Authorization: `Bearer ${String(env.LEMON_SQUEEZY_API_KEY)}`,
+    },
+    body: JSON.stringify({
+      data: {
+        type: 'checkouts',
+        attributes: {
+          product_options: {
+            redirect_url: claimUrl,
+            receipt_button_text: 'Return to S&P 500 Monitor',
+            receipt_link_url: claimUrl,
+          },
+          checkout_data: {
+            custom: {
+              claim_token: claimToken,
+            },
+          },
+          expires_at: expiresAt,
+        },
+        relationships: {
+          store: {
+            data: { type: 'stores', id: String(env.LEMON_SQUEEZY_STORE_ID) },
+          },
+          variant: {
+            data: { type: 'variants', id: String(env.LEMON_SQUEEZY_VARIANT_ID) },
+          },
+        },
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    await env.SUPPORTER_CLAIMS.delete(claimKey);
+    const details = await response.text();
+    return Response.json({ error: `Could not create Lemon Squeezy checkout. ${details}`.trim() }, { status: 502 });
   }
 
-  const ttl = getSupporterTtl(env);
-  const token = await createSignedToken({
-    scope: 'supporter',
-    exp: Math.floor(Date.now() / 1000) + ttl,
-  }, env.AUTH_SESSION_SECRET);
-  const headers = new Headers({ 'cache-control': 'no-store' });
-  headers.append('Set-Cookie', serializeCookie(SUPPORTER_COOKIE_NAME, token, ttl));
+  const payload = await response.json();
+  const checkoutUrl = payload?.data?.attributes?.url;
 
-  return Response.json({ ok: true }, { headers });
+  if (typeof checkoutUrl !== 'string' || !checkoutUrl) {
+    await env.SUPPORTER_CLAIMS.delete(claimKey);
+    return Response.json({ error: 'Lemon Squeezy checkout URL was missing from the response.' }, { status: 502 });
+  }
+
+  return Response.json({ url: checkoutUrl }, {
+    headers: { 'cache-control': 'no-store' },
+  });
+}
+
+async function handleSupporterClaim(request, env) {
+  const url = new URL(request.url);
+  const claimToken = String(url.searchParams.get('claim') ?? '').trim();
+
+  if (!claimToken) {
+    return new Response('Missing supporter claim.', { status: 400 });
+  }
+
+  if (!isSupporterCheckoutConfigured(env)) {
+    return new Response('Lemon Squeezy supporter checkout is not configured.', { status: 503 });
+  }
+
+  const record = await readSupporterClaim(env, claimToken);
+  if (record?.status === 'paid') {
+    const ttl = getSupporterTtl(env);
+    const supporterToken = await createSignedToken({
+      scope: 'supporter',
+      claimToken,
+      exp: Math.floor(Date.now() / 1000) + ttl,
+    }, env.AUTH_SESSION_SECRET);
+
+    await env.SUPPORTER_CLAIMS.put(getSupporterClaimKey(claimToken), JSON.stringify({
+      ...record,
+      claimedAt: new Date().toISOString(),
+    }), { expirationTtl: ttl });
+
+    const headers = new Headers({ Location: new URL('/', request.url).toString() });
+    headers.append('Set-Cookie', serializeCookie(SUPPORTER_COOKIE_NAME, supporterToken, ttl));
+    return new Response(null, { status: 302, headers });
+  }
+
+  if (record?.status === 'revoked') {
+    return renderSupporterClaimPage('Your payment could not unlock export access because the order was refunded or revoked.', false);
+  }
+
+  return renderSupporterClaimPage('Waiting for Lemon Squeezy to confirm your payment. This page refreshes automatically.', true);
+}
+
+async function handleSupporterWebhook(request, env) {
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed.', { status: 405 });
+  }
+
+  if (!isSupporterCheckoutConfigured(env)) {
+    return new Response('Lemon Squeezy supporter checkout is not configured.', { status: 503 });
+  }
+
+  const rawBody = await request.text();
+  const signature = request.headers.get('X-Signature') || '';
+  const expectedSignature = await signHex(rawBody, String(env.LEMON_SQUEEZY_WEBHOOK_SECRET));
+
+  if (!timingSafeEqual(signature, expectedSignature)) {
+    return new Response('Invalid signature.', { status: 401 });
+  }
+
+  const payload = JSON.parse(rawBody);
+  const eventName = String(request.headers.get('X-Event-Name') || payload?.meta?.event_name || '');
+  const claimToken = String(payload?.meta?.custom_data?.claim_token || '').trim();
+
+  if (!claimToken) {
+    return new Response('ok', { status: 200 });
+  }
+
+  const claimKey = getSupporterClaimKey(claimToken);
+  const record = await readSupporterClaim(env, claimToken) || { status: 'pending' };
+  const orderStatus = String(payload?.data?.attributes?.status || '');
+  const orderIdentifier = String(payload?.data?.attributes?.identifier || '');
+
+  if (eventName === 'order_created' && orderStatus === 'paid') {
+    await env.SUPPORTER_CLAIMS.put(claimKey, JSON.stringify({
+      ...record,
+      status: 'paid',
+      orderIdentifier,
+      paidAt: new Date().toISOString(),
+    }), { expirationTtl: getSupporterTtl(env) });
+  }
+
+  if (eventName === 'order_refunded' || orderStatus === 'refunded' || orderStatus === 'fraudulent') {
+    await env.SUPPORTER_CLAIMS.put(claimKey, JSON.stringify({
+      ...record,
+      status: 'revoked',
+      orderIdentifier,
+      revokedAt: new Date().toISOString(),
+    }), { expirationTtl: getSupporterTtl(env) });
+  }
+
+  return new Response('ok', { status: 200 });
 }
 
 function getSessionTtl(env) {
@@ -247,6 +398,11 @@ function getSessionTtl(env) {
 function getSupporterTtl(env) {
   const configured = Number.parseInt(String(env.SUPPORTER_EXPORT_TTL_SECONDS ?? ''), 10);
   return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_SUPPORTER_TTL_SECONDS;
+}
+
+function getSupporterPendingTtl(env) {
+  const configured = Number.parseInt(String(env.SUPPORTER_PENDING_TTL_SECONDS ?? ''), 10);
+  return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_SUPPORTER_PENDING_TTL_SECONDS;
 }
 
 function getMemberAccessTtl(env) {
@@ -278,6 +434,8 @@ async function isAuthenticated(request, env) {
 }
 
 async function hasSupporterAccess(request, env) {
+  if (!isSupporterCheckoutConfigured(env)) return false;
+
   const cookieHeader = request.headers.get('cookie');
   if (!cookieHeader) return false;
 
@@ -285,7 +443,12 @@ async function hasSupporterAccess(request, env) {
   if (!sessionValue) return false;
 
   const payload = await verifySignedToken(sessionValue, env.AUTH_SESSION_SECRET);
-  return Boolean(payload && payload.scope === 'supporter');
+  if (!payload || payload.scope !== 'supporter' || typeof payload.claimToken !== 'string') {
+    return false;
+  }
+
+  const claim = await readSupporterClaim(env, payload.claimToken);
+  return Boolean(claim && claim.status === 'paid');
 }
 
 async function hasMemberAccess(request, env) {
@@ -342,6 +505,48 @@ async function signValue(value, secret) {
 
   const signature = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(value));
   return encodeBase64Url(signature);
+}
+
+async function signHex(value, secret) {
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign'],
+  );
+
+  const signature = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(signature)).map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function readSupporterClaim(env, claimToken) {
+  if (!env.SUPPORTER_CLAIMS) return null;
+  const raw = await env.SUPPORTER_CLAIMS.get(getSupporterClaimKey(claimToken));
+  if (!raw) return null;
+
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function getSupporterClaimKey(claimToken) {
+  return `${SUPPORTER_CLAIM_PREFIX}${claimToken}`;
+}
+
+function timingSafeEqual(left, right) {
+  if (typeof left !== 'string' || typeof right !== 'string' || left.length !== right.length) {
+    return false;
+  }
+
+  let mismatch = 0;
+  for (let index = 0; index < left.length; index += 1) {
+    mismatch |= left.charCodeAt(index) ^ right.charCodeAt(index);
+  }
+
+  return mismatch === 0;
 }
 
 async function sha256Hex(value) {
@@ -523,4 +728,73 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
+}
+
+function renderSupporterClaimPage(message, shouldRefresh) {
+  return new Response(`<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    ${shouldRefresh ? '<meta http-equiv="refresh" content="3" />' : ''}
+    <title>Unlocking export</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #f4f7fb 0%, #ebf2fa 38%, #f8fbff 100%);
+        color: #10233d;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      main {
+        width: min(100%, 460px);
+        border: 1px solid rgba(16, 35, 61, 0.08);
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: 0 18px 50px rgba(16, 35, 61, 0.08);
+      }
+
+      .eyebrow {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #0f5bd6;
+      }
+
+      h1 {
+        margin: 12px 0 10px;
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      p {
+        margin: 0;
+        color: #40556f;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">Supporter unlock</div>
+      <h1>Finalizing payment</h1>
+      <p>${escapeHtml(message)}</p>
+    </main>
+  </body>
+</html>`, {
+    status: shouldRefresh ? 202 : 200,
+    headers: { 'content-type': 'text/html; charset=UTF-8', 'cache-control': 'no-store' },
+  });
 }

@@ -501,6 +501,11 @@ a {
   white-space: nowrap;
 }
 
+.donate-link-static {
+  background: rgba(16, 35, 61, 0.08);
+  color: #10233d;
+}
+
 .table-wrap-locked {
   position: relative;
   border-radius: 18px;

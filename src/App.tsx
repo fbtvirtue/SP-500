@@ -43,7 +43,6 @@ type AuthStatusResponse = {
   supporter?: boolean;
   supporterEnabled?: boolean;
   canExport?: boolean;
-  donateUrl?: string;
 };
 
 function formatDate(value: string | null): string {
@@ -364,15 +363,17 @@ function getInitialMembershipSortDirection(key: MembershipSortKey): MembershipSo
 function MembershipTable({
   rows,
   canExport,
-  donateUrl,
   supporterEnabled,
-  onToggleSupporterUnlock,
+  supporterPending,
+  supporterError,
+  onStartSupporterCheckout,
 }: {
   rows: CompanyRecord[];
   canExport: boolean;
-  donateUrl: string;
   supporterEnabled: boolean;
-  onToggleSupporterUnlock: () => void;
+  supporterPending: boolean;
+  supporterError: string;
+  onStartSupporterCheckout: () => void;
 }) {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<MembershipSortState>(defaultMembershipSort);
@@ -513,18 +514,14 @@ function MembershipTable({
             </>
           ) : (
             <>
-              <button type="button" className="export-button donate-button" onClick={() => {
-                if (donateUrl) {
-                  window.open(donateUrl, '_blank', 'noopener,noreferrer');
-                }
-              }} disabled={!donateUrl}>
-                Donate to unlock export
+              <button
+                type="button"
+                className="export-button donate-button"
+                onClick={onStartSupporterCheckout}
+                disabled={!supporterEnabled || supporterPending}
+              >
+                {supporterPending ? 'Opening checkout…' : 'Donate to unlock export'}
               </button>
-              {supporterEnabled ? (
-                <button type="button" className="export-button export-button-secondary" onClick={onToggleSupporterUnlock}>
-                  Already donated? Enter code
-                </button>
-              ) : null}
             </>
           )}
         </div>
@@ -533,15 +530,12 @@ function MembershipTable({
         <div className="export-callout">
           <div>
             <strong>Donate to download.</strong>
-            <p>After donating, enter your supporter code to unlock the export tools.</p>
+            <p>Payment is handled by Lemon Squeezy. After a successful purchase, export unlocks automatically in this browser.</p>
           </div>
-          {donateUrl ? (
-            <a className="donate-link" href={donateUrl} target="_blank" rel="noreferrer">
-              Open donation page
-            </a>
-          ) : null}
+          <span className="donate-link donate-link-static">Secure checkout</span>
         </div>
       ) : null}
+      {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
       <div
         className={`table-wrap tall${canExport ? '' : ' table-wrap-locked'}`}
@@ -608,10 +602,7 @@ export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasSupporterAccess, setHasSupporterAccess] = useState(false);
   const [supporterEnabled, setSupporterEnabled] = useState(false);
-  const [donateUrl, setDonateUrl] = useState('');
   const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showSupporterForm, setShowSupporterForm] = useState(false);
-  const [supporterCode, setSupporterCode] = useState('');
   const [supporterError, setSupporterError] = useState('');
   const [supporterPending, setSupporterPending] = useState(false);
   const [error, setError] = useState('');
@@ -647,7 +638,6 @@ export default function App() {
         setIsAuthenticated(authenticated);
         setHasSupporterAccess(Boolean(payload.supporter));
         setSupporterEnabled(Boolean(payload.supporterEnabled));
-        setDonateUrl(typeof payload.donateUrl === 'string' ? payload.donateUrl : '');
         if (!authenticated) {
           setActiveView('home');
         } else if (new URLSearchParams(window.location.search).get('view') === 'prediction') {
@@ -657,6 +647,7 @@ export default function App() {
       .catch(() => {
         setIsAuthenticated(false);
         setHasSupporterAccess(false);
+        setSupporterEnabled(false);
       });
   }, []);
 
@@ -767,28 +758,25 @@ export default function App() {
     }));
   };
 
-  async function unlockSupporterExport(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function startSupporterCheckout() {
     setSupporterPending(true);
     setSupporterError('');
 
     try {
-      const response = await fetch('/__supporter/access', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ code: supporterCode }),
-      });
+      const response = await fetch('/__supporter/checkout', { method: 'POST' });
       const payload = await response.json().catch(() => ({} as { error?: string }));
 
       if (!response.ok) {
-        throw new Error(typeof payload.error === 'string' ? payload.error : 'Could not unlock export access.');
+        throw new Error(typeof payload.error === 'string' ? payload.error : 'Could not start the Lemon Squeezy checkout.');
       }
 
-      setHasSupporterAccess(true);
-      setShowSupporterForm(false);
-      setSupporterCode('');
+      if (typeof (payload as { url?: string }).url !== 'string' || !(payload as { url?: string }).url) {
+        throw new Error('Lemon Squeezy checkout URL was missing.');
+      }
+
+      window.location.href = (payload as { url: string }).url;
     } catch (err) {
-      setSupporterError(err instanceof Error ? err.message : 'Could not unlock export access.');
+      setSupporterError(err instanceof Error ? err.message : 'Could not start the Lemon Squeezy checkout.');
     } finally {
       setSupporterPending(false);
     }
@@ -889,13 +877,10 @@ export default function App() {
             <MembershipTable
               rows={currentMembers}
               canExport={canExport}
-              donateUrl={donateUrl}
               supporterEnabled={supporterEnabled}
-              onToggleSupporterUnlock={() => {
-                setShowSupporterForm((current) => !current);
-                setSupporterError('');
-                setShowLoginForm(false);
-              }}
+              supporterPending={supporterPending}
+              supporterError={supporterError}
+              onStartSupporterCheckout={() => void startSupporterCheckout()}
             />
           ) : (
             <section className="panel stack-section membership-section">
@@ -907,33 +892,6 @@ export default function App() {
               </div>
             </section>
           )}
-
-          {supporterEnabled && showSupporterForm && !canExport ? (
-            <section className="panel stack-section supporter-panel">
-              <div className="panel-header">
-                <div>
-                  <h2>Unlock export</h2>
-                  <p>Enter the supporter code you received after donating to unlock the Excel export without the prediction login.</p>
-                </div>
-              </div>
-              <form className="supporter-form" onSubmit={unlockSupporterExport}>
-                <label className="login-field">
-                  <span>Supporter code</span>
-                  <input
-                    type="password"
-                    value={supporterCode}
-                    onChange={(event) => setSupporterCode(event.target.value)}
-                    autoComplete="one-time-code"
-                    required
-                  />
-                </label>
-                <button type="submit" className="submit-button" disabled={supporterPending}>
-                  {supporterPending ? 'Unlocking…' : 'Unlock export'}
-                </button>
-              </form>
-              {supporterError ? <p className="form-error">{supporterError}</p> : null}
-            </section>
-          ) : null}
 
           <section className="panel stack-section methodology" id="data-sources">
             <div className="panel-header">

@@ -750,6 +750,11 @@ table {
   min-width: 1020px;
 }
 
+.membership-table thead {
+  position: relative;
+  z-index: 12;
+}
+
 th,
  td {
   text-align: left;
@@ -857,7 +862,7 @@ th {
 }
 
 .membership-table .sticky-col-2 {
-  left: 88px;
+  left: var(--membership-sticky-col-2-left, 0px);
 }
 
 .membership-table tbody tr:hover .sticky-col {

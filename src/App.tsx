@@ -46,36 +46,12 @@ type AuthStatusResponse = {
   supporterEnabled?: boolean;
   canExport?: boolean;
   supporterExportTtlSeconds?: number | null;
-  googleSheetsClientId?: string | null;
 };
 
 type MembershipExportDocument = {
   metadataRows: string[][];
   headerRow: string[];
   dataRows: string[][];
-};
-
-type GoogleTokenResponse = {
-  access_token?: string;
-  error?: string;
-  error_description?: string;
-};
-
-type GoogleTokenClient = {
-  requestAccessToken: (overrideConfig?: { prompt?: string }) => void;
-};
-
-type GoogleIdentityServices = {
-  accounts: {
-    oauth2: {
-      initTokenClient: (config: {
-        client_id: string;
-        scope: string;
-        callback: (response: GoogleTokenResponse) => void;
-        error_callback?: () => void;
-      }) => GoogleTokenClient;
-    };
-  };
 };
 
 const exportDataSources = [
@@ -85,12 +61,6 @@ const exportDataSources = [
 ];
 
 const exportWarningText = 'This file is generated automatically from public data sources and is intended for monitoring and research only. It is not financial advice.';
-const googleIdentityScriptSrc = 'https://accounts.google.com/gsi/client';
-const googleSheetsScope = 'https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.file';
-
-function isValidGoogleOAuthClientId(value: string | null | undefined): value is string {
-  return Boolean(value && /\.apps\.googleusercontent\.com$/i.test(value.trim()));
-}
 
 function formatDate(value: string | null): string {
   if (!value) return 'Unknown';
@@ -195,182 +165,6 @@ function formatSupporterAccessDuration(seconds: number | null | undefined): stri
 
   const minutes = Math.max(1, Math.round(seconds / 60));
   return `${minutes} minute${minutes === 1 ? '' : 's'}`;
-}
-
-function getGoogleIdentityServices(): GoogleIdentityServices | null {
-  return (window as Window & { google?: GoogleIdentityServices }).google ?? null;
-}
-
-async function loadGoogleIdentityServices(): Promise<GoogleIdentityServices> {
-  const existing = getGoogleIdentityServices();
-  if (existing?.accounts?.oauth2) return existing;
-
-  await new Promise<void>((resolve, reject) => {
-    const existingScript = document.querySelector<HTMLScriptElement>('script[data-google-identity-services="true"]');
-
-    if (existingScript) {
-      existingScript.addEventListener('load', () => resolve(), { once: true });
-      existingScript.addEventListener('error', () => reject(new Error('Could not load Google Identity Services.')), { once: true });
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = googleIdentityScriptSrc;
-    script.async = true;
-    script.defer = true;
-    script.dataset.googleIdentityServices = 'true';
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error('Could not load Google Identity Services.'));
-    document.head.append(script);
-  });
-
-  const loaded = getGoogleIdentityServices();
-  if (!loaded?.accounts?.oauth2) {
-    throw new Error('Google Identity Services loaded without OAuth support.');
-  }
-
-  return loaded;
-}
-
-async function requestGoogleAccessToken(clientId: string): Promise<string> {
-  const google = await loadGoogleIdentityServices();
-
-  return await new Promise<string>((resolve, reject) => {
-    const tokenClient = google.accounts.oauth2.initTokenClient({
-      client_id: clientId,
-      scope: googleSheetsScope,
-      callback: (response) => {
-        if (response.error) {
-          reject(new Error(response.error_description || response.error || 'Google authorization failed.'));
-          return;
-        }
-
-        if (typeof response.access_token !== 'string' || !response.access_token) {
-          reject(new Error('Google did not return an access token.'));
-          return;
-        }
-
-        resolve(response.access_token);
-      },
-      error_callback: () => {
-        reject(new Error('The Google authorization popup was closed before access was granted.'));
-      },
-    });
-
-    tokenClient.requestAccessToken({ prompt: 'consent' });
-  });
-}
-
-async function readGoogleApiError(response: Response, fallbackMessage: string): Promise<string> {
-  const rawText = await response.text();
-  if (!rawText) return fallbackMessage;
-
-  try {
-    const payload = JSON.parse(rawText) as {
-      error?: { message?: string; status?: string };
-      message?: string;
-    };
-    const detail = payload.error?.message || payload.message || payload.error?.status;
-    return detail ? `${fallbackMessage} ${detail}` : fallbackMessage;
-  } catch {
-    return `${fallbackMessage} ${rawText}`;
-  }
-}
-
-async function createGoogleSheetFromExport(
-  accessToken: string,
-  exportDocument: MembershipExportDocument,
-  generatedAt: string,
-): Promise<string> {
-  const sheetTitle = `S&P 500 Members ${formatTimestampForFilename(generatedAt)}`;
-  const createResponse = await fetch('https://sheets.googleapis.com/v4/spreadsheets', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      properties: { title: sheetTitle },
-      sheets: [
-        {
-          properties: {
-            title: 'S&P 500 Members',
-            gridProperties: { frozenRowCount: exportDocument.metadataRows.length + 1 },
-          },
-        },
-      ],
-    }),
-  });
-
-  if (!createResponse.ok) {
-    throw new Error(await readGoogleApiError(createResponse, 'Could not create a Google Sheet.'));
-  }
-
-  const spreadsheet = await createResponse.json() as { spreadsheetId?: string; spreadsheetUrl?: string };
-  if (typeof spreadsheet.spreadsheetId !== 'string' || !spreadsheet.spreadsheetId) {
-    throw new Error('Google Sheets did not return a spreadsheet ID.');
-  }
-
-  const sheetRange = encodeURIComponent('S&P 500 Members!A1');
-  const valuesResponse = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheet.spreadsheetId}/values/${sheetRange}?valueInputOption=USER_ENTERED`,
-    {
-      method: 'PUT',
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        range: 'S&P 500 Members!A1',
-        majorDimension: 'ROWS',
-        values: [...exportDocument.metadataRows, exportDocument.headerRow, ...exportDocument.dataRows],
-      }),
-    },
-  );
-
-  if (!valuesResponse.ok) {
-    throw new Error(await readGoogleApiError(valuesResponse, 'Could not write data into the Google Sheet.'));
-  }
-
-  const headerStartIndex = exportDocument.metadataRows.length;
-  await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheet.spreadsheetId}:batchUpdate`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      requests: [
-        {
-          repeatCell: {
-            range: {
-              sheetId: 0,
-              startRowIndex: headerStartIndex,
-              endRowIndex: headerStartIndex + 1,
-            },
-            cell: {
-              userEnteredFormat: {
-                textFormat: { bold: true },
-              },
-            },
-            fields: 'userEnteredFormat.textFormat.bold',
-          },
-        },
-        {
-          autoResizeDimensions: {
-            dimensions: {
-              sheetId: 0,
-              dimension: 'COLUMNS',
-              startIndex: 0,
-              endIndex: exportDocument.headerRow.length,
-            },
-          },
-        },
-      ],
-    }),
-  });
-
-  return spreadsheet.spreadsheetUrl || `https://docs.google.com/spreadsheets/d/${spreadsheet.spreadsheetId}/edit`;
 }
 
 function downloadFile(filename: string, content: BlobPart, mimeType: string): void {
@@ -683,7 +477,6 @@ function MembershipTable({
   supporterError,
   snapshotGeneratedAt,
   supporterAccessDuration,
-  googleSheetsClientId,
   siteHeaderOffset,
   onStartSupporterCheckout,
 }: {
@@ -694,7 +487,6 @@ function MembershipTable({
   supporterError: string;
   snapshotGeneratedAt: string;
   supporterAccessDuration: string | null;
-  googleSheetsClientId: string | null;
   siteHeaderOffset: number;
   onStartSupporterCheckout: () => void;
 }) {
@@ -705,9 +497,10 @@ function MembershipTable({
   const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
   const [stickyHeaderOffset, setStickyHeaderOffset] = useState(0);
+  const [stickyColumnOffset, setStickyColumnOffset] = useState(0);
   const headerRef = useRef<HTMLDivElement | null>(null);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
-  const hasGoogleSheetsSupport = isValidGoogleOAuthClientId(googleSheetsClientId);
+  const stickyHeaderCellRefs = useRef<Array<HTMLTableCellElement | null>>([]);
 
   const sectorMarketCaps = useMemo(() => {
     const totals = new Map<string, number>();
@@ -759,6 +552,26 @@ function MembershipTable({
       window.removeEventListener('resize', updateOffset);
     };
   }, []);
+
+  useEffect(() => {
+    const updateStickyColumnOffset = () => {
+      const tickerHeaderCell = stickyHeaderCellRefs.current[0];
+      setStickyColumnOffset(Math.round(tickerHeaderCell?.getBoundingClientRect().width ?? 0));
+    };
+
+    updateStickyColumnOffset();
+
+    const observer = new ResizeObserver(() => updateStickyColumnOffset());
+    stickyHeaderCellRefs.current.slice(0, 2).forEach((cell) => {
+      if (cell) observer.observe(cell);
+    });
+    window.addEventListener('resize', updateStickyColumnOffset);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateStickyColumnOffset);
+    };
+  }, [rows.length]);
 
   useEffect(() => {
     if (!isExportMenuOpen) return;
@@ -854,43 +667,6 @@ function MembershipTable({
     setExportMessage(`CSV export downloaded using ${delimiter === ';' ? 'semicolon' : 'comma'} columns and ${decimalSeparator === ',' ? 'comma' : 'dot'} decimals.`);
   }
 
-  async function importRowsToGoogleSheets() {
-    if (!hasGoogleSheetsSupport || !googleSheetsClientId) {
-      setExportMessage('Google Sheets import needs a Google Web OAuth client ID ending in .apps.googleusercontent.com. The current site configuration is not valid for OAuth.');
-      return;
-    }
-
-    const sheetWindow = window.open('about:blank', '_blank');
-    const exportDocument = buildMembershipExportDocument(sorted, sectorMarketCaps, {
-      generatedAt: snapshotGeneratedAt,
-      decimalSeparator,
-    });
-
-    try {
-      if (sheetWindow) {
-        sheetWindow.document.title = 'Preparing Google Sheet';
-        sheetWindow.document.body.innerHTML = '<p style="font-family:Segoe UI,sans-serif;padding:24px;">Creating your Google Sheet…</p>';
-      }
-
-      const accessToken = await requestGoogleAccessToken(googleSheetsClientId);
-      const spreadsheetUrl = await createGoogleSheetFromExport(accessToken, exportDocument, snapshotGeneratedAt);
-
-      if (sheetWindow) {
-        sheetWindow.location.href = spreadsheetUrl;
-      } else {
-        window.open(spreadsheetUrl, '_blank', 'noopener,noreferrer');
-      }
-
-      setExportMessage('Created a new Google Sheet and imported the export automatically.');
-    } catch (error) {
-      if (sheetWindow) {
-        sheetWindow.close();
-      }
-
-      setExportMessage(error instanceof Error ? error.message : 'Could not create the Google Sheet automatically.');
-    }
-  }
-
   function downloadSelectedExport() {
     if (exportFormat === 'csv') {
       exportRowsAsCsv();
@@ -903,8 +679,8 @@ function MembershipTable({
   function blockLockedTableAction(event: React.SyntheticEvent<HTMLElement>) {
     event.preventDefault();
     setExportMessage(canExport
-      ? 'Manual table copy is disabled. Use CSV, XLSX, or Google Sheets export instead.'
-      : 'Donate to unlock CSV and XLSX download plus Google Sheets export.');
+      ? 'Manual table copy is disabled. Use CSV or XLSX export instead.'
+      : 'Donate to unlock CSV and XLSX export.');
   }
 
   function blockLockedShortcuts(event: React.KeyboardEvent<HTMLElement>) {
@@ -912,7 +688,7 @@ function MembershipTable({
     if ((event.ctrlKey || event.metaKey) && ['a', 'c', 'x'].includes(key)) {
       event.preventDefault();
       setExportMessage(canExport
-        ? 'Manual table copy is disabled. Use CSV, XLSX, or Google Sheets export instead.'
+        ? 'Manual table copy is disabled. Use CSV or XLSX export instead.'
         : 'Manual copy is disabled until export access is unlocked.');
     }
   }
@@ -923,13 +699,14 @@ function MembershipTable({
       style={{
         '--site-header-offset': `${siteHeaderOffset}px`,
         '--membership-sticky-offset': `${siteHeaderOffset + stickyHeaderOffset}px`,
+        '--membership-sticky-col-2-left': `${stickyColumnOffset}px`,
       } as React.CSSProperties}
     >
       <div ref={headerRef} className="panel-header panel-header-stack membership-sticky-header">
         <div>
           <h2>Current S&amp;P 500 members</h2>
           {!canExport ? (
-            <p>Donate to unlock CSV and XLSX download plus Google Sheets export access.</p>
+            <p>Donate to unlock CSV and XLSX export access.</p>
           ) : null}
         </div>
         <div className="membership-toolbar">
@@ -1001,17 +778,7 @@ function MembershipTable({
                     <button type="button" className="export-button" onClick={() => { downloadSelectedExport(); setIsExportMenuOpen(false); }}>
                       Download {exportFormat.toUpperCase()}
                     </button>
-                    <button
-                      type="button"
-                      className="export-button export-button-secondary"
-                      onClick={() => void importRowsToGoogleSheets()}
-                    >
-                      Create Google Sheet
-                    </button>
                   </div>
-                  {!hasGoogleSheetsSupport ? (
-                    <p className="export-menu-note">Google Sheets import needs a Google Web OAuth client ID ending in .apps.googleusercontent.com. The current live value is not valid for OAuth.</p>
-                  ) : null}
                 </div> : null}
               </div>
             </>
@@ -1062,9 +829,17 @@ function MembershipTable({
               {membershipColumns.map((column) => {
                 const isActive = sort.key === column.key;
                 const ariaSort = isActive ? (sort.direction === 'asc' ? 'ascending' : 'descending') : 'none';
+                const columnIndex = membershipColumns.indexOf(column);
 
                 return (
-                  <th key={column.key} className={column.className} aria-sort={ariaSort}>
+                  <th
+                    key={column.key}
+                    ref={(element) => {
+                      stickyHeaderCellRefs.current[columnIndex] = element;
+                    }}
+                    className={column.className}
+                    aria-sort={ariaSort}
+                  >
                     <button
                       type="button"
                       className={`sort-button${isActive ? ' active' : ''}`}
@@ -1113,7 +888,6 @@ export default function App() {
   const [hasSupporterAccess, setHasSupporterAccess] = useState(false);
   const [supporterEnabled, setSupporterEnabled] = useState(false);
   const [supporterExportTtlSeconds, setSupporterExportTtlSeconds] = useState<number | null>(null);
-  const [googleSheetsClientId, setGoogleSheetsClientId] = useState<string | null>(null);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [supporterError, setSupporterError] = useState('');
   const [supporterPending, setSupporterPending] = useState(false);
@@ -1177,7 +951,6 @@ export default function App() {
             ? payload.supporterExportTtlSeconds
             : null,
         );
-        setGoogleSheetsClientId(typeof payload.googleSheetsClientId === 'string' && payload.googleSheetsClientId ? payload.googleSheetsClientId : null);
         if (!authenticated) {
           setActiveView('home');
         } else if (new URLSearchParams(window.location.search).get('view') === 'prediction') {
@@ -1189,7 +962,6 @@ export default function App() {
         setHasSupporterAccess(false);
         setSupporterEnabled(false);
         setSupporterExportTtlSeconds(null);
-        setGoogleSheetsClientId(null);
       });
   }, []);
 
@@ -1426,7 +1198,6 @@ export default function App() {
               supporterError={supporterError}
               snapshotGeneratedAt={data.generatedAt}
               supporterAccessDuration={supporterAccessDuration}
-              googleSheetsClientId={googleSheetsClientId}
               siteHeaderOffset={siteHeaderOffset}
               onStartSupporterCheckout={() => void startSupporterCheckout()}
             />

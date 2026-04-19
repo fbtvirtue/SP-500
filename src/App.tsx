@@ -359,14 +359,12 @@ function MembershipTable({
   canExport,
   donateUrl,
   supporterEnabled,
-  onRequestLogin,
   onToggleSupporterUnlock,
 }: {
   rows: CompanyRecord[];
   canExport: boolean;
   donateUrl: string;
   supporterEnabled: boolean;
-  onRequestLogin: () => void;
   onToggleSupporterUnlock: () => void;
 }) {
   const [query, setQuery] = useState('');
@@ -460,7 +458,7 @@ function MembershipTable({
   function blockLockedTableAction(event: React.SyntheticEvent<HTMLElement>) {
     if (canExport) return;
     event.preventDefault();
-    setExportMessage('Sign in or donate to unlock copying, XLSX download, and Google Sheets export.');
+    setExportMessage('Donate to unlock copying, XLSX download, and Google Sheets export.');
   }
 
   function blockLockedShortcuts(event: React.KeyboardEvent<HTMLElement>) {
@@ -479,7 +477,7 @@ function MembershipTable({
         <div>
           <h2>Current S&amp;P 500 members</h2>
           {!canExport ? (
-            <p>Sign in or donate to unlock XLSX download, Google Sheets copy, and member-table export access.</p>
+            <p>Donate to unlock XLSX download, Google Sheets copy, and member-table export access.</p>
           ) : null}
         </div>
         <div className="membership-toolbar">
@@ -515,9 +513,6 @@ function MembershipTable({
               }} disabled={!donateUrl}>
                 Donate to unlock export
               </button>
-              <button type="button" className="export-button export-button-secondary" onClick={onRequestLogin}>
-                Sign in to unlock export
-              </button>
               {supporterEnabled ? (
                 <button type="button" className="export-button export-button-secondary" onClick={onToggleSupporterUnlock}>
                   Already donated? Enter code
@@ -532,8 +527,7 @@ function MembershipTable({
           <div>
             <strong>Donate to download.</strong>
             <p>
-              Supporters can unlock XLSX and Google Sheets export with a supporter code. Sign-in still unlocks export too,
-              but public visitors need either login or donation access.
+              Supporters can unlock XLSX and Google Sheets export with a supporter code after donating.
             </p>
           </div>
           {donateUrl ? (
@@ -892,10 +886,6 @@ export default function App() {
               canExport={canExport}
               donateUrl={donateUrl}
               supporterEnabled={supporterEnabled}
-              onRequestLogin={() => {
-                setShowLoginForm(true);
-                setShowSupporterForm(false);
-              }}
               onToggleSupporterUnlock={() => {
                 setShowSupporterForm((current) => !current);
                 setSupporterError('');

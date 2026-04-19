@@ -375,10 +375,33 @@ async function handleMembersExport(context) {
 
   const headerRow = worksheet.addRow(exportDocument.headerRow);
   headerRow.font = { bold: true };
+  worksheet.autoFilter = {
+    from: { row: headerRow.number, column: 1 },
+    to: { row: headerRow.number, column: membershipExportHeaders.length },
+  };
 
-  for (const row of exportDocument.dataRows) {
-    worksheet.addRow(row);
+  for (const row of sortedRows) {
+    worksheet.addRow([
+      row.ticker,
+      row.security,
+      row.sector,
+      getSectorDominance(row, sectorMarketCaps),
+      formatExportDate(row.currentMemberSince),
+      formatExportDate(row.lastLeftAt),
+      row.dividend?.hasDividend ? row.dividend.dividendRate : null,
+      row.dividend?.dividendYield ?? null,
+      row.metrics?.marketCap ?? null,
+      row.metrics?.forwardPE ?? null,
+      row.metrics?.price ?? null,
+    ]);
   }
+
+  worksheet.getColumn(4).numFmt = '0.00%';
+  worksheet.getColumn(7).numFmt = '$# ##0.00';
+  worksheet.getColumn(8).numFmt = '0.00%';
+  worksheet.getColumn(9).numFmt = '$# ##0.00';
+  worksheet.getColumn(10).numFmt = '0.00';
+  worksheet.getColumn(11).numFmt = '$# ##0.00';
 
   const workbookBytes = await workbook.xlsx.writeBuffer();
   return new Response(workbookBytes, {

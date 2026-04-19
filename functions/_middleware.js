@@ -6,6 +6,7 @@ const STATUS_PATH = '/__auth/status';
 const LOGOUT_PATH = '/__auth/logout';
 const MEMBERS_CHALLENGE_PATH = '/__members/challenge';
 const MEMBERS_VERIFY_PATH = '/__members/verify';
+const MEMBERS_TABLE_PATH = '/__members/table';
 const SUPPORTER_CHECKOUT_PATH = '/__supporter/checkout';
 const SUPPORTER_CLAIM_PATH = '/__supporter/claim';
 const SUPPORTER_WEBHOOK_PATH = '/__supporter/webhook';
@@ -17,7 +18,23 @@ const DEFAULT_SUPPORTER_PENDING_TTL_SECONDS = 60 * 60 * 2;
 const DEFAULT_MEMBER_ACCESS_TTL_SECONDS = 60 * 30;
 const DEFAULT_MEMBER_CHALLENGE_TTL_SECONDS = 60 * 5;
 const DEFAULT_MEMBER_CHALLENGE_DIFFICULTY = 3;
+const DEFAULT_MEMBERS_PAGE_SIZE = 50;
+const MAX_MEMBERS_PAGE_SIZE = 100;
 const SUPPORTER_CLAIM_PREFIX = 'supporter-claim:';
+
+const MEMBERS_SORT_KEYS = new Set([
+  'ticker',
+  'security',
+  'sector',
+  'sectorDominance',
+  'currentMemberSince',
+  'lastLeftAt',
+  'dividendRate',
+  'dividendYield',
+  'marketCap',
+  'forwardPE',
+  'price',
+]);
 
 export async function onRequest(context) {
   const { request, env, next } = context;
@@ -67,6 +84,14 @@ export async function onRequest(context) {
     return handleMembersVerify(request, env);
   }
 
+  if (url.pathname === MEMBERS_TABLE_PATH) {
+    if (await isAuthenticated(request, env) || await hasSupporterAccess(request, env) || await hasMemberAccess(request, env)) {
+      return handleMembersTable(context);
+    }
+
+    return new Response('Browser verification required.', { status: 401 });
+  }
+
   if (url.pathname === SUPPORTER_CHECKOUT_PATH) {
     return handleSupporterCheckout(request, env);
   }
@@ -80,11 +105,11 @@ export async function onRequest(context) {
   }
 
   if (url.pathname === MEMBERS_DATA_PATH) {
-    if (await isAuthenticated(request, env) || await hasSupporterAccess(request, env) || await hasMemberAccess(request, env)) {
+    if (await isAuthenticated(request, env) || await hasSupporterAccess(request, env)) {
       return withNoStore(await next());
     }
 
-    return new Response('Browser verification required.', { status: 401 });
+    return new Response('Export access required.', { status: 403 });
   }
 
   if (url.pathname === PREDICTIONS_DATA_PATH) {
@@ -226,6 +251,54 @@ async function handleMembersVerify(request, env) {
   const headers = new Headers({ 'cache-control': 'no-store' });
   headers.append('Set-Cookie', serializeCookie(MEMBER_ACCESS_COOKIE_NAME, accessToken, ttl));
   return new Response(null, { status: 204, headers });
+}
+
+async function handleMembersTable(context) {
+  const { request, env } = context;
+
+  if (request.method !== 'GET') {
+    return new Response('Method not allowed.', { status: 405 });
+  }
+
+  const url = new URL(request.url);
+  const query = String(url.searchParams.get('query') ?? '').trim();
+  const sortKey = getMembersSortKey(url.searchParams.get('sort'));
+  const sortDirection = getMembersSortDirection(url.searchParams.get('direction'), sortKey);
+  const pageSize = getMembersPageSize(url.searchParams.get('pageSize'));
+  const requestedPage = getPositiveInteger(url.searchParams.get('page')) || 1;
+
+  const dataset = await loadCurrentMembersData(context);
+  const allRows = Array.isArray(dataset.currentMembers) ? dataset.currentMembers : [];
+  const sectorMarketCaps = getSectorMarketCaps(allRows);
+  const filteredRows = filterMemberRows(allRows, query);
+  const sortedRows = [...filteredRows].sort((left, right) => {
+    const comparison = compareMembershipValues(
+      getMembershipSortValue(left, sortKey, sectorMarketCaps),
+      getMembershipSortValue(right, sortKey, sectorMarketCaps),
+      sortDirection,
+    );
+
+    if (comparison !== 0) return comparison;
+    return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
+  });
+
+  const totalCount = sortedRows.length;
+  const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
+  const page = Math.min(requestedPage, totalPages);
+  const startIndex = (page - 1) * pageSize;
+  const pageRows = sortedRows.slice(startIndex, startIndex + pageSize);
+
+  return Response.json({
+    generatedAt: dataset.generatedAt,
+    currentMembers: pageRows,
+    sectorMarketCaps: Object.fromEntries(sectorMarketCaps.entries()),
+    totalCount,
+    page,
+    pageSize,
+    totalPages,
+  }, {
+    headers: { 'cache-control': 'no-store' },
+  });
 }
 
 async function handleSupporterCheckout(request, env) {
@@ -419,6 +492,123 @@ function getMemberChallengeTtl(env) {
 function getMemberChallengeDifficulty(env) {
   const configured = Number.parseInt(String(env.MEMBER_CHALLENGE_DIFFICULTY ?? ''), 10);
   return Number.isFinite(configured) && configured > 0 ? configured : DEFAULT_MEMBER_CHALLENGE_DIFFICULTY;
+}
+
+async function loadCurrentMembersData(context) {
+  const assetUrl = new URL(MEMBERS_DATA_PATH, context.request.url).toString();
+  const assetRequest = new Request(assetUrl, {
+    method: 'GET',
+    headers: { accept: 'application/json' },
+  });
+  const assetResponse = await context.env.ASSETS.fetch(assetRequest);
+
+  if (!assetResponse.ok) {
+    throw new Error('Could not load the current members dataset.');
+  }
+
+  return await assetResponse.json();
+}
+
+function filterMemberRows(rows, query) {
+  const normalized = String(query || '').trim().toLowerCase();
+  if (!normalized) return rows;
+
+  return rows.filter((row) => [row.ticker, row.security, row.sector, row.subIndustry].join(' ').toLowerCase().includes(normalized));
+}
+
+function getSectorMarketCaps(rows) {
+  const totals = new Map();
+
+  for (const row of rows) {
+    const marketCap = row?.metrics?.marketCap;
+    if (typeof marketCap !== 'number' || Number.isNaN(marketCap)) continue;
+    totals.set(row.sector, (totals.get(row.sector) || 0) + marketCap);
+  }
+
+  return totals;
+}
+
+function getSectorDominance(row, sectorMarketCaps) {
+  const marketCap = row?.metrics?.marketCap;
+  if (typeof marketCap !== 'number' || Number.isNaN(marketCap)) return null;
+
+  const sectorTotal = sectorMarketCaps.get(row.sector);
+  if (typeof sectorTotal !== 'number' || Number.isNaN(sectorTotal) || sectorTotal <= 0) return null;
+
+  return marketCap / sectorTotal;
+}
+
+function getMembershipSortValue(row, key, sectorMarketCaps) {
+  switch (key) {
+    case 'ticker':
+      return row.ticker;
+    case 'security':
+      return row.security;
+    case 'sector':
+      return row.sector;
+    case 'sectorDominance':
+      return getSectorDominance(row, sectorMarketCaps);
+    case 'currentMemberSince':
+      return row.currentMemberSince ? Date.parse(row.currentMemberSince) : null;
+    case 'lastLeftAt':
+      return row.lastLeftAt ? Date.parse(row.lastLeftAt) : null;
+    case 'dividendRate':
+      return row.dividend?.hasDividend ? row.dividend.dividendRate : null;
+    case 'dividendYield':
+      return row.dividend?.dividendYield ?? null;
+    case 'marketCap':
+      return row.metrics?.marketCap ?? null;
+    case 'forwardPE':
+      return row.metrics?.forwardPE ?? null;
+    case 'price':
+      return row.metrics?.price ?? null;
+    default:
+      return null;
+  }
+}
+
+function compareMembershipValues(left, right, direction) {
+  if (left === null && right === null) return 0;
+  if (left === null) return 1;
+  if (right === null) return -1;
+
+  const modifier = direction === 'asc' ? 1 : -1;
+
+  if (typeof left === 'string' && typeof right === 'string') {
+    return left.localeCompare(right, undefined, { sensitivity: 'base' }) * modifier;
+  }
+
+  if (left < right) return -1 * modifier;
+  if (left > right) return 1 * modifier;
+  return 0;
+}
+
+function getMembersSortKey(value) {
+  return MEMBERS_SORT_KEYS.has(value) ? value : 'marketCap';
+}
+
+function getMembersSortDirection(value, sortKey) {
+  if (value === 'asc' || value === 'desc') return value;
+
+  switch (sortKey) {
+    case 'ticker':
+    case 'security':
+    case 'sector':
+      return 'asc';
+    default:
+      return 'desc';
+  }
+}
+
+function getMembersPageSize(value) {
+  const parsed = getPositiveInteger(value);
+  if (!parsed) return DEFAULT_MEMBERS_PAGE_SIZE;
+  return Math.min(parsed, MAX_MEMBERS_PAGE_SIZE);
+}
+
+function getPositiveInteger(value) {
+  const parsed = Number.parseInt(String(value ?? ''), 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
 }
 
 async function isAuthenticated(request, env) {

@@ -75,6 +75,16 @@ export type CurrentMembersData = {
   currentMembers: CompanyRecord[];
 };
 
+export type MembersTableResponse = {
+  generatedAt: string;
+  currentMembers: CompanyRecord[];
+  sectorMarketCaps: Record<string, number>;
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+};
+
 export type SnapshotData = {
   generatedAt: string;
   schedule: {

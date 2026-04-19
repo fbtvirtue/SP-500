@@ -27,7 +27,7 @@ The safe local folder slug is `sp-500`. Using `S&P 500` as a Windows folder name
 - Entry, removal, and valuation lists are heuristic rankings, not investment advice.
 - Wikipedia history is helpful but not a perfect historical record for every older membership period.
 - The hourly workflow caches fundamentals for 24 hours in `public/data/fundamentals-cache.json` to reduce unnecessary source traffic.
-- The member table now loads from `public/data/current-members.json`, which is served behind a short-lived browser verification gate on Cloudflare Pages.
+- The member table now loads through a paginated Cloudflare Pages function so the public browser only receives one filtered/sorted page at a time; the full `current-members.json` payload is reserved for export-capable users.
 - GitHub repository slugs do not support spaces or `&`, so if you later publish this to GitHub, use a slug like `sp-500` or `s-and-p-500`.
 
 ## Local usage
@@ -50,7 +50,7 @@ This repo can be deployed on Cloudflare Pages with a public home dashboard, a pr
 
 ### What is configured in this repo
 
-- `functions/_middleware.js` keeps the home view public, requires login for prediction data, and protects `current-members.json` with a short-lived browser verification cookie.
+- `functions/_middleware.js` keeps the home view public, requires login for prediction data, serves the member table through a paginated protected endpoint, and reserves the full `current-members.json` payload for export-capable users.
 - Prediction access is enforced server-side on Cloudflare Pages, not just hidden in React.
 - Sessions and gated-access cookies are stored as HTTP-only cookies signed with `AUTH_SESSION_SECRET`.
 - Supporter export unlock is handled by Lemon Squeezy checkout, a verified webhook, and a paid supporter cookie.

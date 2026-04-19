@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { CompanyRecord, CurrentMembersData, MembershipChange, PredictionData, RankedCompany, SnapshotData } from './types';
+import type { CompanyRecord, CurrentMembersData, MembersTableResponse, MembershipChange, PredictionData, RankedCompany, SnapshotData } from './types';
 
 type RankedPanelKey = 'fallOut' | 'entrants' | 'undervalued' | 'overvalued';
 type DashboardView = 'home' | 'prediction';
@@ -25,6 +25,7 @@ type MembershipSortState = {
 };
 
 const defaultMembershipSort: MembershipSortState = { key: 'marketCap', direction: 'desc' };
+const defaultMembersPageSize = 50;
 
 const membershipColumns: Array<{ key: MembershipSortKey; label: string; className?: string }> = [
   { key: 'ticker', label: 'Ticker', className: 'sticky-col sticky-col-1 ticker-column' },
@@ -471,6 +472,14 @@ function getInitialMembershipSortDirection(key: MembershipSortKey): MembershipSo
 
 function MembershipTable({
   rows,
+  query,
+  sort,
+  page,
+  pageSize,
+  totalCount,
+  totalPages,
+  tableLoading,
+  sectorMarketCaps,
   canExport,
   supporterEnabled,
   supporterPending,
@@ -478,9 +487,20 @@ function MembershipTable({
   snapshotGeneratedAt,
   supporterAccessDuration,
   siteHeaderOffset,
+  onQueryChange,
+  onSortChange,
+  onPageChange,
   onStartSupporterCheckout,
 }: {
   rows: CompanyRecord[];
+  query: string;
+  sort: MembershipSortState;
+  page: number;
+  pageSize: number;
+  totalCount: number;
+  totalPages: number;
+  tableLoading: boolean;
+  sectorMarketCaps: Map<string, number>;
   canExport: boolean;
   supporterEnabled: boolean;
   supporterPending: boolean;
@@ -488,10 +508,11 @@ function MembershipTable({
   snapshotGeneratedAt: string;
   supporterAccessDuration: string | null;
   siteHeaderOffset: number;
+  onQueryChange: (value: string) => void;
+  onSortChange: (key: MembershipSortKey) => void;
+  onPageChange: (page: number) => void;
   onStartSupporterCheckout: () => void;
 }) {
-  const [query, setQuery] = useState('');
-  const [sort, setSort] = useState<MembershipSortState>(defaultMembershipSort);
   const [exportMessage, setExportMessage] = useState('');
   const [exportFormat, setExportFormat] = useState<ExportFormat>('xlsx');
   const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
@@ -499,37 +520,6 @@ function MembershipTable({
   const [stickyColumnOffset, setStickyColumnOffset] = useState(0);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
   const stickyHeaderCellRefs = useRef<Array<HTMLTableCellElement | null>>([]);
-
-  const sectorMarketCaps = useMemo(() => {
-    const totals = new Map<string, number>();
-
-    for (const row of rows) {
-      const marketCap = row.metrics.marketCap;
-      if (marketCap === null || Number.isNaN(marketCap)) continue;
-      totals.set(row.sector, (totals.get(row.sector) ?? 0) + marketCap);
-    }
-
-    return totals;
-  }, [rows]);
-
-  const filtered = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-    if (!normalized) return rows;
-    return rows.filter((row) => [row.ticker, row.security, row.sector, row.subIndustry].join(' ').toLowerCase().includes(normalized));
-  }, [query, rows]);
-
-  const sorted = useMemo(() => {
-    return [...filtered].sort((left, right) => {
-      const comparison = compareMembershipValues(
-        getMembershipSortValue(left, sort.key, sectorMarketCaps),
-        getMembershipSortValue(right, sort.key, sectorMarketCaps),
-        sort.direction,
-      );
-
-      if (comparison !== 0) return comparison;
-      return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
-    });
-  }, [filtered, sectorMarketCaps, sort]);
 
   useEffect(() => {
     const updateStickyColumnOffset = () => {
@@ -578,14 +568,26 @@ function MembershipTable({
     };
   }, [isExportMenuOpen]);
 
-  function toggleSort(key: MembershipSortKey) {
-    setSort((current) => {
-      if (current.key === key) {
-        return { key, direction: current.direction === 'asc' ? 'desc' : 'asc' };
-      }
+  const visibleRowStart = totalCount ? (page - 1) * pageSize + 1 : 0;
+  const visibleRowEnd = totalCount ? visibleRowStart + rows.length - 1 : 0;
 
-      return { key, direction: getInitialMembershipSortDirection(key) };
-    });
+  async function loadFullRowsForExport(): Promise<{ rows: CompanyRecord[]; sectorTotals: Map<string, number> }> {
+    const response = await fetch('/data/current-members.json', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error('Could not load the full member dataset for export.');
+    }
+
+    const payload = await response.json() as CurrentMembersData;
+    const exportRows = Array.isArray(payload.currentMembers) ? payload.currentMembers : [];
+    const exportSectorTotals = new Map<string, number>();
+
+    for (const row of exportRows) {
+      const marketCap = row.metrics.marketCap;
+      if (marketCap === null || Number.isNaN(marketCap)) continue;
+      exportSectorTotals.set(row.sector, (exportSectorTotals.get(row.sector) ?? 0) + marketCap);
+    }
+
+    return { rows: exportRows, sectorTotals: exportSectorTotals };
   }
 
   async function exportRowsAsXlsx() {
@@ -593,7 +595,8 @@ function MembershipTable({
       const ExcelJS = await import('exceljs');
       const workbook = new ExcelJS.Workbook();
       const worksheet = workbook.addWorksheet('S&P 500 Members');
-      const exportDocument = buildMembershipExportDocument(sorted, sectorMarketCaps, {
+      const { rows: exportRows, sectorTotals } = await loadFullRowsForExport();
+      const exportDocument = buildMembershipExportDocument(exportRows, sectorTotals, {
         generatedAt: snapshotGeneratedAt,
         decimalSeparator,
       });
@@ -631,18 +634,24 @@ function MembershipTable({
   }
 
   function exportRowsAsCsv() {
-    const exportDocument = buildMembershipExportDocument(sorted, sectorMarketCaps, {
-      generatedAt: snapshotGeneratedAt,
-      decimalSeparator,
-    });
-    const delimiter = decimalSeparator === ',' ? ';' : ',';
-    const fileText = buildDelimitedText(
-      [...exportDocument.metadataRows, exportDocument.headerRow, ...exportDocument.dataRows],
-      delimiter,
-    );
+    void loadFullRowsForExport()
+      .then(({ rows: exportRows, sectorTotals }) => {
+        const exportDocument = buildMembershipExportDocument(exportRows, sectorTotals, {
+          generatedAt: snapshotGeneratedAt,
+          decimalSeparator,
+        });
+        const delimiter = decimalSeparator === ',' ? ';' : ',';
+        const fileText = buildDelimitedText(
+          [...exportDocument.metadataRows, exportDocument.headerRow, ...exportDocument.dataRows],
+          delimiter,
+        );
 
-    downloadFile(buildExportFilename('csv', snapshotGeneratedAt), `\uFEFF${fileText}\n`, 'text/csv;charset=utf-8');
-    setExportMessage(`CSV export downloaded using ${delimiter === ';' ? 'semicolon' : 'comma'} columns and ${decimalSeparator === ',' ? 'comma' : 'dot'} decimals.`);
+        downloadFile(buildExportFilename('csv', snapshotGeneratedAt), `\uFEFF${fileText}\n`, 'text/csv;charset=utf-8');
+        setExportMessage(`CSV export downloaded using ${delimiter === ';' ? 'semicolon' : 'comma'} columns and ${decimalSeparator === ',' ? 'comma' : 'dot'} decimals.`);
+      })
+      .catch(() => {
+        setExportMessage('Could not create the CSV export in this browser.');
+      });
   }
 
   function downloadSelectedExport() {
@@ -693,13 +702,13 @@ function MembershipTable({
               className="search search-compact"
               placeholder="Search company, ticker, or sector"
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) => onQueryChange(event.target.value)}
             />
           </label>
           <button
             type="button"
             className="reset-button reset-button-subtle"
-            onClick={() => setSort(defaultMembershipSort)}
+            onClick={() => onSortChange(defaultMembershipSort.key)}
             disabled={sort.key === defaultMembershipSort.key && sort.direction === defaultMembershipSort.direction}
           >
             Reset sort
@@ -820,7 +829,7 @@ function MembershipTable({
                     <button
                       type="button"
                       className={`sort-button${isActive ? ' active' : ''}`}
-                      onClick={() => toggleSort(column.key)}
+                      onClick={() => onSortChange(column.key)}
                       aria-label={`Sort by ${column.label}${isActive ? ` (${sort.direction})` : ''}`}
                     >
                       <span>{column.label}</span>
@@ -835,7 +844,10 @@ function MembershipTable({
             </tr>
           </thead>
           <tbody>
-            {sorted.map((row) => (
+            {!rows.length && !tableLoading ? <tr>
+              <td colSpan={membershipColumns.length}>No companies matched the current search.</td>
+            </tr> : null}
+            {rows.map((row) => (
               <tr key={row.ticker}>
                 <td className={membershipColumns[0].className}>{row.ticker}</td>
                 <td className={membershipColumns[1].className}>{row.security}</td>
@@ -853,6 +865,20 @@ function MembershipTable({
           </tbody>
         </table>
       </div>
+      <div className="members-table-footer">
+        <p className="members-table-meta">
+          {tableLoading ? 'Refreshing table…' : totalCount ? `Showing ${visibleRowStart}-${visibleRowEnd} of ${formatNumber(totalCount)} companies.` : 'No companies to show.'}
+        </p>
+        <div className="members-pagination">
+          <button type="button" className="reset-button reset-button-subtle" onClick={() => onPageChange(page - 1)} disabled={page <= 1 || tableLoading}>
+            Previous
+          </button>
+          <span className="members-pagination-label">Page {page} of {totalPages}</span>
+          <button type="button" className="reset-button reset-button-subtle" onClick={() => onPageChange(page + 1)} disabled={page >= totalPages || tableLoading}>
+            Next
+          </button>
+        </div>
+      </div>
     </section>
   );
 }
@@ -860,6 +886,13 @@ function MembershipTable({
 export default function App() {
   const [data, setData] = useState<SnapshotData | null>(null);
   const [currentMembers, setCurrentMembers] = useState<CompanyRecord[] | null>(null);
+  const [membersSectorMarketCaps, setMembersSectorMarketCaps] = useState<Map<string, number>>(new Map());
+  const [membersQuery, setMembersQuery] = useState('');
+  const [debouncedMembersQuery, setDebouncedMembersQuery] = useState('');
+  const [membersSort, setMembersSort] = useState<MembershipSortState>(defaultMembershipSort);
+  const [membersPage, setMembersPage] = useState(1);
+  const [membersTotalCount, setMembersTotalCount] = useState(0);
+  const [membersTotalPages, setMembersTotalPages] = useState(1);
   const [predictionData, setPredictionData] = useState<PredictionData | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasSupporterAccess, setHasSupporterAccess] = useState(false);
@@ -881,6 +914,7 @@ export default function App() {
   const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
   const canLogout = typeof window !== 'undefined' && !isLocalHost;
   const canExport = isLocalHost || isAuthenticated || hasSupporterAccess;
+  const membersPageSize = defaultMembersPageSize;
   const [siteHeaderOffset, setSiteHeaderOffset] = useState(0);
   const siteHeaderRef = useRef<HTMLElement | null>(null);
 
@@ -903,6 +937,16 @@ export default function App() {
       window.removeEventListener('resize', updateOffset);
     };
   }, []);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setDebouncedMembersQuery(membersQuery.trim());
+    }, 180);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [membersQuery]);
 
   useEffect(() => {
     void fetch('/data/latest.json', { cache: 'no-store' })
@@ -943,7 +987,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!data || currentMembers !== null) return;
+    if (!data) return;
 
     let cancelled = false;
 
@@ -952,7 +996,66 @@ export default function App() {
       setMembersError('');
 
       try {
-        let response = await fetch('/data/current-members.json', { cache: 'no-store' });
+        if (isLocalHost) {
+          const response = await fetch('/data/current-members.json', { cache: 'no-store' });
+          if (!response.ok) {
+            throw new Error('Could not load the current S&P 500 member table.');
+          }
+
+          const payload = await response.json() as CurrentMembersData;
+          const allRows = Array.isArray(payload.currentMembers) ? payload.currentMembers : [];
+          const sectorTotals = new Map<string, number>();
+
+          for (const row of allRows) {
+            const marketCap = row.metrics.marketCap;
+            if (marketCap === null || Number.isNaN(marketCap)) continue;
+            sectorTotals.set(row.sector, (sectorTotals.get(row.sector) ?? 0) + marketCap);
+          }
+
+          const normalizedQuery = debouncedMembersQuery.toLowerCase();
+          const filteredRows = !normalizedQuery
+            ? allRows
+            : allRows.filter((row) => [row.ticker, row.security, row.sector, row.subIndustry].join(' ').toLowerCase().includes(normalizedQuery));
+
+          const sortedRows = [...filteredRows].sort((left, right) => {
+            const comparison = compareMembershipValues(
+              getMembershipSortValue(left, membersSort.key, sectorTotals),
+              getMembershipSortValue(right, membersSort.key, sectorTotals),
+              membersSort.direction,
+            );
+
+            if (comparison !== 0) return comparison;
+            return left.ticker.localeCompare(right.ticker, undefined, { sensitivity: 'base' });
+          });
+
+          const totalCount = sortedRows.length;
+          const totalPages = Math.max(1, Math.ceil(totalCount / membersPageSize));
+          const page = Math.min(membersPage, totalPages);
+          const startIndex = (page - 1) * membersPageSize;
+
+          if (!cancelled) {
+            setCurrentMembers(sortedRows.slice(startIndex, startIndex + membersPageSize));
+            setMembersSectorMarketCaps(sectorTotals);
+            setMembersTotalCount(totalCount);
+            setMembersTotalPages(totalPages);
+            setMembersPage(page);
+          }
+
+          return;
+        }
+
+        const params = new URLSearchParams({
+          page: String(membersPage),
+          pageSize: String(membersPageSize),
+          sort: membersSort.key,
+          direction: membersSort.direction,
+        });
+
+        if (debouncedMembersQuery) {
+          params.set('query', debouncedMembersQuery);
+        }
+
+        let response = await fetch(`/__members/table?${params.toString()}`, { cache: 'no-store' });
 
         if (response.status === 401) {
           const challengeResponse = await fetch('/__members/challenge', { cache: 'no-store' });
@@ -979,20 +1082,28 @@ export default function App() {
             throw new Error('Could not complete browser verification for the member table.');
           }
 
-          response = await fetch('/data/current-members.json', { cache: 'no-store' });
+          response = await fetch(`/__members/table?${params.toString()}`, { cache: 'no-store' });
         }
 
         if (!response.ok) {
           throw new Error('Could not load the current S&P 500 member table.');
         }
 
-        const payload = await response.json() as CurrentMembersData;
+        const payload = await response.json() as MembersTableResponse;
         if (!cancelled) {
           setCurrentMembers(Array.isArray(payload.currentMembers) ? payload.currentMembers : []);
+          setMembersSectorMarketCaps(new Map(Object.entries(payload.sectorMarketCaps ?? {}).map(([sector, value]) => [sector, Number(value)])));
+          setMembersTotalCount(typeof payload.totalCount === 'number' ? payload.totalCount : 0);
+          setMembersTotalPages(typeof payload.totalPages === 'number' ? Math.max(1, payload.totalPages) : 1);
+          setMembersPage(typeof payload.page === 'number' ? Math.max(1, payload.page) : 1);
         }
       } catch (err) {
         if (!cancelled) {
           setMembersError(err instanceof Error ? err.message : 'Could not load the current S&P 500 member table.');
+          setCurrentMembers([]);
+          setMembersSectorMarketCaps(new Map());
+          setMembersTotalCount(0);
+          setMembersTotalPages(1);
         }
       } finally {
         if (!cancelled) {
@@ -1006,7 +1117,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [currentMembers, data]);
+  }, [data, debouncedMembersQuery, membersPage, membersPageSize, membersSort.direction, membersSort.key]);
 
   useEffect(() => {
     if (!isAuthenticated || activeView !== 'prediction' || predictionData) return;
@@ -1050,6 +1161,26 @@ export default function App() {
   };
 
   const supporterAccessDuration = formatSupporterAccessDuration(supporterExportTtlSeconds);
+
+  function handleMembersQueryChange(value: string) {
+    setMembersQuery(value);
+    setMembersPage(1);
+  }
+
+  function handleMembersSortChange(key: MembershipSortKey) {
+    setMembersPage(1);
+    setMembersSort((current) => {
+      if (current.key === key) {
+        return { key, direction: current.direction === 'asc' ? 'desc' : 'asc' };
+      }
+
+      return { key, direction: getInitialMembershipSortDirection(key) };
+    });
+  }
+
+  function handleMembersPageChange(nextPage: number) {
+    setMembersPage((current) => Math.max(1, nextPage === current ? current : nextPage));
+  }
 
   async function startSupporterCheckout() {
     setSupporterPending(true);
@@ -1169,6 +1300,14 @@ export default function App() {
           {currentMembers ? (
             <MembershipTable
               rows={currentMembers}
+              query={membersQuery}
+              sort={membersSort}
+              page={membersPage}
+              pageSize={membersPageSize}
+              totalCount={membersTotalCount}
+              totalPages={membersTotalPages}
+              tableLoading={membersLoading}
+              sectorMarketCaps={membersSectorMarketCaps}
               canExport={canExport}
               supporterEnabled={supporterEnabled}
               supporterPending={supporterPending}
@@ -1176,6 +1315,9 @@ export default function App() {
               snapshotGeneratedAt={data.generatedAt}
               supporterAccessDuration={supporterAccessDuration}
               siteHeaderOffset={siteHeaderOffset}
+              onQueryChange={handleMembersQueryChange}
+              onSortChange={handleMembersSortChange}
+              onPageChange={handleMembersPageChange}
               onStartSupporterCheckout={() => void startSupporterCheckout()}
             />
           ) : (

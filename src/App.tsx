@@ -173,7 +173,7 @@ function SnapshotWatch({
   leftLast7Days: MembershipChange[];
 }) {
   return (
-    <section className="panel snapshot-watch">
+    <section className="panel stack-section snapshot-watch">
       <div className="panel-header">
         <div>
           <h2>Snapshot watch</h2>
@@ -317,7 +317,7 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
   }
 
   return (
-    <section className="panel">
+    <section className="panel stack-section membership-section">
       <div className="panel-header panel-header-stack">
         <div>
           <h2>Current S&amp;P 500 members</h2>
@@ -474,61 +474,61 @@ export default function App() {
 
   return (
     <main className="app-shell">
+      <header className="panel site-header">
+        <div className="site-brand">
+          <div className="site-kicker">S&amp;P 500 Monitor</div>
+          <div className="site-title">Market structure dashboard</div>
+        </div>
+        <nav className="site-nav" aria-label="Primary">
+          <button
+            type="button"
+            className={`view-button${activeView === 'home' ? ' active' : ''}`}
+            onClick={() => {
+              setActiveView('home');
+              setShowLoginForm(false);
+            }}
+          >
+            Home
+          </button>
+          {isAuthenticated ? (
+            <button
+              type="button"
+              className={`view-button${activeView === 'prediction' ? ' active' : ''}`}
+              onClick={() => {
+                setActiveView('prediction');
+                setShowLoginForm(false);
+              }}
+            >
+              Prediction
+            </button>
+          ) : (
+            <button
+              type="button"
+              className={`view-button${showLoginForm ? ' active' : ''}`}
+              onClick={() => setShowLoginForm((current) => !current)}
+            >
+              Log in
+            </button>
+          )}
+          {canLogout && isAuthenticated ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
+        </nav>
+      </header>
+
       <section className="hero panel">
         <div className="hero-copy">
-          <div className="hero-topline">
-            <div className="eyebrow">Hourly market structure monitor</div>
-            <div className="hero-actions">
-              <button
-                type="button"
-                className={`view-button${activeView === 'home' ? ' active' : ''}`}
-                onClick={() => {
-                  setActiveView('home');
-                  setShowLoginForm(false);
-                }}
-              >
-                Home
-              </button>
-              {isAuthenticated ? (
-                <button
-                  type="button"
-                  className={`view-button${activeView === 'prediction' ? ' active' : ''}`}
-                  onClick={() => {
-                    setActiveView('prediction');
-                    setShowLoginForm(false);
-                  }}
-                >
-                  Prediction
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className={`view-button${showLoginForm ? ' active' : ''}`}
-                  onClick={() => setShowLoginForm((current) => !current)}
-                >
-                  Log in
-                </button>
-              )}
-              {canLogout && isAuthenticated ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
-            </div>
-          </div>
+          <div className="eyebrow">Hourly market structure monitor</div>
           <h1>S&amp;P 500 membership, dividend, and valuation dashboard</h1>
-          <p>
-            Tracks current members, highlights 25 possible removals and 25 possible entrants,
-            records member entry and exit dates, and flags the 25 most overvalued and undervalued companies
-            using a transparent sector-relative heuristic inspired by common bank and sell-side screening practices.
-          </p>
+          <p>Tracks current members, dividend coverage, and recent published S&amp;P 500 membership changes.</p>
         </div>
         <div className="hero-meta">
           <MetricCard label="Snapshot generated" value={formatDate(data.generatedAt)} hint={new Date(data.generatedAt).toLocaleTimeString()} />
           <MetricCard label="Current members" value={String(data.summary.currentConstituentCount)} />
           <MetricCard label="Dividend payers" value={String(data.summary.dividendPayers)} hint={`${data.summary.nonDividendPayers} non-payers`} />
-          <MetricCard label="Candidate universe" value={String(data.summary.candidateUniverseCount)} hint="S&P 400 + S&P 600 + Nasdaq-100" />
         </div>
       </section>
 
       {!isAuthenticated && showLoginForm ? (
-        <section className="panel login-panel">
+        <section className="panel stack-section login-panel">
           <div className="panel-header">
             <div>
               <h2>Sign in for predictions</h2>
@@ -560,7 +560,7 @@ export default function App() {
 
           <MembershipTable rows={data.currentMembers} />
 
-          <section className="panel methodology">
+          <section className="panel stack-section methodology">
             <div className="panel-header">
               <div>
                 <h2>Methodology and caveats</h2>

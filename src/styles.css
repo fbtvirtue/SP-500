@@ -49,6 +49,45 @@ a {
   padding: 32px;
 }
 
+.stack-section {
+  margin-top: 20px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-block: 18px;
+}
+
+.site-brand {
+  min-width: 0;
+}
+
+.site-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0f5bd6;
+}
+
+.site-title {
+  margin-top: 6px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #10233d;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
@@ -57,31 +96,16 @@ a {
 }
 
 .hero-copy h1 {
-  margin: 12px 0 16px;
+  margin: 10px 0 14px;
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 0.98;
 }
 
-.hero-topline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
 .hero-copy p {
-  max-width: 72ch;
+  max-width: 56ch;
   margin: 0;
   color: #3a4f6b;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .eyebrow {
@@ -137,6 +161,7 @@ a {
 .hero-meta {
   display: grid;
   gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .metric-card {
@@ -155,7 +180,7 @@ a {
 
 .metric-value {
   margin-top: 8px;
-  font-size: 1.7rem;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
   font-weight: 700;
 }
 
@@ -277,11 +302,11 @@ a {
 }
 
 .snapshot-watch {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .login-panel {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .login-form {
@@ -391,6 +416,10 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 12px;
+}
+
+.membership-section .panel-header {
+  margin-bottom: 18px;
 }
 
 .reset-button {
@@ -542,6 +571,7 @@ tr:hover td {
 }
 
 @media (max-width: 1100px) {
+  .site-header,
   .hero,
   .two-up,
   .method-grid,
@@ -550,14 +580,15 @@ tr:hover td {
     grid-template-columns: 1fr;
   }
 
-  .hero-topline {
-    flex-direction: column;
+  .site-header {
     align-items: flex-start;
+    padding-block: 20px;
   }
 
-  .hero-actions {
+  .site-nav {
     width: 100%;
     justify-content: stretch;
+    margin-top: 6px;
   }
 
   .membership-toolbar {
@@ -572,6 +603,45 @@ tr:hover td {
   }
 
   .app-shell {
+    padding: 16px;
+  }
+
+  .panel {
     padding: 20px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.85rem, 9vw, 2.6rem);
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .accordion-toggle {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .accordion-action {
+    align-self: center;
+    padding-left: 0;
+  }
+
+  .accordion-state {
+    display: none;
+  }
+
+  .accordion-panel .table-wrap {
+    padding: 0 20px 20px;
+  }
+
+  .change-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-wrap.tall {
+    max-height: 560px;
   }
 }

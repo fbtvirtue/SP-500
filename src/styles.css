@@ -130,7 +130,8 @@ a {
   font-weight: 700;
 }
 
-.view-button {
+.view-button,
+.nav-link-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -141,6 +142,7 @@ a {
   background: rgba(255, 255, 255, 0.9);
   color: #10233d;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .view-button.active {
@@ -155,6 +157,10 @@ a {
 }
 
 .view-button:hover {
+  border-color: rgba(15, 91, 214, 0.28);
+}
+
+.nav-link-button:hover {
   border-color: rgba(15, 91, 214, 0.28);
 }
 
@@ -442,13 +448,44 @@ a {
   gap: 18px;
 }
 
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-grid > div,
+.method-grid > div {
+  border: 1px solid rgba(16, 35, 61, 0.08);
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 20px;
+  padding: 18px;
+}
+
 .method-grid h3 {
+  margin: 0 0 10px;
+}
+
+.info-grid h3 {
   margin: 0 0 10px;
 }
 
 .method-grid ul {
   margin: 0;
   padding-left: 18px;
+  color: #40556f;
+  line-height: 1.7;
+}
+
+.info-grid ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #40556f;
+  line-height: 1.7;
+}
+
+.info-grid p {
+  margin: 0;
   color: #40556f;
   line-height: 1.7;
 }
@@ -574,6 +611,7 @@ tr:hover td {
   .site-header,
   .hero,
   .two-up,
+  .info-grid,
   .method-grid,
   .watch-grid,
   .login-form {
@@ -598,6 +636,7 @@ tr:hover td {
   .search,
   .reset-button,
   .view-button,
+  .nav-link-button,
   .logout-button {
     width: 100%;
   }

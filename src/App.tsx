@@ -778,7 +778,6 @@ function MembershipTable({
         </div>
         <div className="membership-toolbar">
           <label className="search-wrap" aria-label="Search companies">
-            <span className="search-icon" aria-hidden="true">/</span>
             <input
               className="search search-compact"
               placeholder="Search company, ticker, or sector"

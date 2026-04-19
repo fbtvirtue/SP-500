@@ -1,4 +1,6 @@
 const COOKIE_NAME = 'sp500_session';
+const LOGIN_PATH = '/__auth/login';
+const STATUS_PATH = '/__auth/status';
 const LOGOUT_PATH = '/__auth/logout';
 const DEFAULT_SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
 
@@ -14,24 +16,48 @@ export async function onRequest(context) {
     });
   }
 
+  if (url.pathname === STATUS_PATH) {
+    const authenticated = await isAuthenticated(request, env);
+    return Response.json({ authenticated });
+  }
+
+  if (url.pathname === LOGIN_PATH) {
+    if (request.method === 'POST') {
+      return handleLogin(request, env, '/');
+    }
+
+    if (await isAuthenticated(request, env)) {
+      return Response.redirect(new URL('/', request.url), 302);
+    }
+
+    return renderLoginPage({ redirectTo: '/', hasError: false });
+  }
+
   if (url.pathname === LOGOUT_PATH) {
     return handleLogout(request);
+  }
+
+  if (isPublicPath(url.pathname)) {
+    return next();
   }
 
   if (await isAuthenticated(request, env)) {
     return next();
   }
 
-  const redirectTo = getSafeRedirect(url.pathname + url.search);
-
-  if (request.method === 'POST') {
-    return handleLogin(request, env, redirectTo);
+  if (url.pathname === '/data/predictions.json') {
+    return new Response('Authentication required.', { status: 401 });
   }
 
-  return renderLoginPage({
-    redirectTo,
-    hasError: false,
-  });
+  return new Response('Not found.', { status: 404 });
+}
+
+function isPublicPath(pathname) {
+  return pathname === '/'
+    || pathname === '/index.html'
+    || pathname === '/favicon.ico'
+    || pathname.startsWith('/assets/')
+    || pathname === '/data/latest.json';
 }
 
 function getConfigError(env) {
@@ -279,7 +305,7 @@ function renderLoginPage({ redirectTo, hasError }, status = 200) {
     <main>
       <div class="eyebrow">Protected Dashboard</div>
       <h1>S&P 500 Monitor</h1>
-      <p>Every route and asset is blocked until a valid email and password are submitted.</p>
+      <p>Sign in to unlock the protected prediction view while keeping the home dashboard public.</p>
       <div class="message">${message}</div>
       <form method="post" action="${escapeHtml(redirectTo)}">
         <input type="hidden" name="redirect" value="${escapeHtml(redirectTo)}" />

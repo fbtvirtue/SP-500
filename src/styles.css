@@ -35,6 +35,10 @@ input {
   outline: none;
 }
 
+label {
+  display: block;
+}
+
 a {
   color: #0f5bd6;
 }
@@ -276,6 +280,44 @@ a {
   margin-top: 20px;
 }
 
+.login-panel {
+  margin-top: 20px;
+}
+
+.login-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+
+.login-field {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.login-field span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 14px;
+  background: white;
+}
+
+.submit-button {
+  min-height: 50px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #0f5bd6;
+  color: white;
+  font-weight: 700;
+}
+
 .prediction-grid {
   margin-top: 20px;
 }
@@ -503,7 +545,8 @@ tr:hover td {
   .hero,
   .two-up,
   .method-grid,
-  .watch-grid {
+  .watch-grid,
+  .login-form {
     grid-template-columns: 1fr;
   }
 

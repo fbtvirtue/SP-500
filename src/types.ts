@@ -62,6 +62,14 @@ export type MembershipChange = {
   security: string;
 };
 
+export type PredictionData = {
+  generatedAt: string;
+  possibleFallOut: RankedCompany[];
+  possibleEntrants: RankedCompany[];
+  undervalued: RankedCompany[];
+  overvalued: RankedCompany[];
+};
+
 export type SnapshotData = {
   generatedAt: string;
   schedule: {
@@ -88,9 +96,4 @@ export type SnapshotData = {
     leftLast7Days: MembershipChange[];
   };
   currentMembers: CompanyRecord[];
-  candidateUniverse: CompanyRecord[];
-  possibleFallOut: RankedCompany[];
-  possibleEntrants: RankedCompany[];
-  undervalued: RankedCompany[];
-  overvalued: RankedCompany[];
 };

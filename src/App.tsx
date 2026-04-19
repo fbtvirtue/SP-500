@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { CompanyRecord, MembershipChange, RankedCompany, SnapshotData } from './types';
+import type { CompanyRecord, MembershipChange, PredictionData, RankedCompany, SnapshotData } from './types';
 
 type RankedPanelKey = 'fallOut' | 'entrants' | 'undervalued' | 'overvalued';
 type DashboardView = 'home' | 'prediction';
@@ -392,6 +392,9 @@ function MembershipTable({ rows }: { rows: CompanyRecord[] }) {
 
 export default function App() {
   const [data, setData] = useState<SnapshotData | null>(null);
+  const [predictionData, setPredictionData] = useState<PredictionData | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(false);
   const [error, setError] = useState('');
   const [activeView, setActiveView] = useState<DashboardView>('home');
   const [openRankedPanels, setOpenRankedPanels] = useState<Record<RankedPanelKey, boolean>>({
@@ -410,7 +413,35 @@ export default function App() {
       })
       .then((payload) => setData(payload))
       .catch((err) => setError(err instanceof Error ? err.message : 'Could not load snapshot.'));
+
+    void fetch('/__auth/status', { cache: 'no-store' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Could not determine authentication state.');
+        return await response.json() as { authenticated?: boolean };
+      })
+      .then((payload) => {
+        const authenticated = Boolean(payload.authenticated);
+        setIsAuthenticated(authenticated);
+        if (!authenticated) {
+          setActiveView('home');
+        } else if (new URLSearchParams(window.location.search).get('view') === 'prediction') {
+          setActiveView('prediction');
+        }
+      })
+      .catch(() => setIsAuthenticated(false));
   }, []);
+
+  useEffect(() => {
+    if (!isAuthenticated || activeView !== 'prediction' || predictionData) return;
+
+    void fetch('/data/predictions.json', { cache: 'no-store' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Could not load prediction data.');
+        return await response.json() as PredictionData;
+      })
+      .then((payload) => setPredictionData(payload))
+      .catch((err) => setError(err instanceof Error ? err.message : 'Could not load prediction data.'));
+  }, [activeView, isAuthenticated, predictionData]);
 
   if (error) {
     return (
@@ -451,18 +482,34 @@ export default function App() {
               <button
                 type="button"
                 className={`view-button${activeView === 'home' ? ' active' : ''}`}
-                onClick={() => setActiveView('home')}
+                onClick={() => {
+                  setActiveView('home');
+                  setShowLoginForm(false);
+                }}
               >
                 Home
               </button>
-              <button
-                type="button"
-                className={`view-button${activeView === 'prediction' ? ' active' : ''}`}
-                onClick={() => setActiveView('prediction')}
-              >
-                Prediction
-              </button>
-              {canLogout ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
+              {isAuthenticated ? (
+                <button
+                  type="button"
+                  className={`view-button${activeView === 'prediction' ? ' active' : ''}`}
+                  onClick={() => {
+                    setActiveView('prediction');
+                    setShowLoginForm(false);
+                  }}
+                >
+                  Prediction
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className={`view-button${showLoginForm ? ' active' : ''}`}
+                  onClick={() => setShowLoginForm((current) => !current)}
+                >
+                  Log in
+                </button>
+              )}
+              {canLogout && isAuthenticated ? <a className="logout-button" href="/__auth/logout">Log out</a> : null}
             </div>
           </div>
           <h1>S&amp;P 500 membership, dividend, and valuation dashboard</h1>
@@ -479,6 +526,29 @@ export default function App() {
           <MetricCard label="Candidate universe" value={String(data.summary.candidateUniverseCount)} hint="S&P 400 + S&P 600 + Nasdaq-100" />
         </div>
       </section>
+
+      {!isAuthenticated && showLoginForm ? (
+        <section className="panel login-panel">
+          <div className="panel-header">
+            <div>
+              <h2>Sign in for predictions</h2>
+              <p>Home stays public. Logging in unlocks the Prediction tab and the protected prediction data.</p>
+            </div>
+          </div>
+          <form method="post" action="/__auth/login" className="login-form">
+            <input type="hidden" name="redirect" value="/?view=prediction" />
+            <label className="login-field">
+              <span>Email</span>
+              <input type="email" name="email" autoComplete="username" required />
+            </label>
+            <label className="login-field">
+              <span>Password</span>
+              <input type="password" name="password" autoComplete="current-password" required />
+            </label>
+            <button type="submit" className="submit-button">Unlock Prediction</button>
+          </form>
+        </section>
+      ) : null}
 
       {activeView === 'home' ? (
         <>
@@ -528,7 +598,7 @@ export default function App() {
           <RankedTable
             title="25 possible fall outs"
             description="Heuristic ranking based on low market cap, weak profitability, earnings pressure, balance-sheet strain, and reduced liquidity."
-            rows={data.possibleFallOut}
+            rows={predictionData?.possibleFallOut ?? []}
             scoreKey="fallOutRisk"
             isOpen={openRankedPanels.fallOut}
             onToggle={() => toggleRankedPanel('fallOut')}
@@ -536,7 +606,7 @@ export default function App() {
           <RankedTable
             title="25 possible entrants"
             description="Heuristic ranking based on size, profitability, growth, and balance-sheet strength across S&P 400, S&P 600, and Nasdaq-100 candidates."
-            rows={data.possibleEntrants}
+            rows={predictionData?.possibleEntrants ?? []}
             scoreKey="entryScore"
             isOpen={openRankedPanels.entrants}
             onToggle={() => toggleRankedPanel('entrants')}
@@ -544,7 +614,7 @@ export default function App() {
           <RankedTable
             title="25 most undervalued"
             description="Sector-relative heuristic using lower forward and trailing multiples, dividend support, and quality factors."
-            rows={data.undervalued}
+            rows={predictionData?.undervalued ?? []}
             scoreKey="undervaluedScore"
             isOpen={openRankedPanels.undervalued}
             onToggle={() => toggleRankedPanel('undervalued')}
@@ -552,7 +622,7 @@ export default function App() {
           <RankedTable
             title="25 most overvalued"
             description="Sector-relative heuristic using premium multiples plus weaker quality support to surface stretched names."
-            rows={data.overvalued}
+            rows={predictionData?.overvalued ?? []}
             scoreKey="overvaluedScore"
             isOpen={openRankedPanels.overvalued}
             onToggle={() => toggleRankedPanel('overvalued')}

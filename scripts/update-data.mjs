@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const publicDataDirectory = path.join(projectRoot, 'public', 'data');
 const latestSnapshotPath = path.join(projectRoot, 'public', 'data', 'latest.json');
+const predictionsPath = path.join(projectRoot, 'public', 'data', 'predictions.json');
 const snapshotDirectory = path.join(projectRoot, 'public', 'data', 'snapshots');
 const fundamentalsCachePath = path.join(projectRoot, 'public', 'data', 'fundamentals-cache.json');
 
@@ -620,6 +621,14 @@ async function main() {
     company.scores.entryScore = scoreEntry(candidateUniverse, company);
   }
 
+  const predictionSnapshot = {
+    generatedAt,
+    possibleFallOut: rankCompanies(currentMembers, 'fallOutRisk', describeFallOut, 25),
+    possibleEntrants: rankCompanies(candidateUniverse, 'entryScore', describeEntry, 25),
+    undervalued: rankCompanies(currentMembers, 'undervaluedScore', describeUndervalued, 25),
+    overvalued: rankCompanies(currentMembers, 'overvaluedScore', describeOvervalued, 25),
+  };
+
   const snapshot = {
     generatedAt,
     schedule: {
@@ -664,15 +673,11 @@ async function main() {
     ],
     recentChanges,
     currentMembers,
-    candidateUniverse,
-    possibleFallOut: rankCompanies(currentMembers, 'fallOutRisk', describeFallOut, 25),
-    possibleEntrants: rankCompanies(candidateUniverse, 'entryScore', describeEntry, 25),
-    undervalued: rankCompanies(currentMembers, 'undervaluedScore', describeUndervalued, 25),
-    overvalued: rankCompanies(currentMembers, 'overvaluedScore', describeOvervalued, 25),
   };
 
   await mkdir(publicDataDirectory, { recursive: true });
   await writeFile(latestSnapshotPath, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
+  await writeFile(predictionsPath, `${JSON.stringify(predictionSnapshot, null, 2)}\n`, 'utf8');
   await writeFile(fundamentalsCachePath, `${JSON.stringify(fundamentalsCache, null, 2)}\n`, 'utf8');
   await rm(snapshotDirectory, { recursive: true, force: true });
 

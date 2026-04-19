@@ -359,6 +359,7 @@ async function handleMembersExport(context) {
   const ExcelJS = await import('exceljs');
   const workbook = new ExcelJS.Workbook();
   const worksheet = workbook.addWorksheet('S&P 500 Members');
+  const xlsxFormats = getXlsxNumberFormats(decimalSeparator);
 
   worksheet.columns = membershipExportColumns.map((columnWidth, index) => ({
     key: String(index),
@@ -396,12 +397,12 @@ async function handleMembersExport(context) {
     ]);
   }
 
-  worksheet.getColumn(4).numFmt = '0.00%';
-  worksheet.getColumn(7).numFmt = '[$$-fr-FR]#,##0.00';
-  worksheet.getColumn(8).numFmt = '0.00%';
-  worksheet.getColumn(9).numFmt = '[$$-fr-FR]#,##0.00';
-  worksheet.getColumn(10).numFmt = '0.00';
-  worksheet.getColumn(11).numFmt = '[$$-fr-FR]#,##0.00';
+  worksheet.getColumn(4).numFmt = xlsxFormats.percent;
+  worksheet.getColumn(7).numFmt = xlsxFormats.currency;
+  worksheet.getColumn(8).numFmt = xlsxFormats.percent;
+  worksheet.getColumn(9).numFmt = xlsxFormats.currency;
+  worksheet.getColumn(10).numFmt = xlsxFormats.decimal;
+  worksheet.getColumn(11).numFmt = xlsxFormats.currency;
 
   const workbookBytes = await workbook.xlsx.writeBuffer();
   return new Response(workbookBytes, {
@@ -742,6 +743,22 @@ function getDecimalSeparator(value) {
 
 function getExportLocale(decimalSeparator) {
   return decimalSeparator === ',' ? 'de-DE' : 'en-US';
+}
+
+function getXlsxNumberFormats(decimalSeparator) {
+  if (decimalSeparator === ',') {
+    return {
+      percent: '[$-fr-FR]0.00%',
+      currency: '[$$-fr-FR]#,##0.00',
+      decimal: '[$-fr-FR]0.00',
+    };
+  }
+
+  return {
+    percent: '[$-en-US]0.00%',
+    currency: '[$$-en-US]#,##0.00',
+    decimal: '[$-en-US]0.00',
+  };
 }
 
 function formatExportDate(value) {

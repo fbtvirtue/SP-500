@@ -109,6 +109,26 @@ function getExportLocale(decimalSeparator: DecimalSeparator): string {
   return decimalSeparator === ',' ? 'de-DE' : 'en-US';
 }
 
+function getXlsxNumberFormats(decimalSeparator: DecimalSeparator): {
+  percent: string;
+  currency: string;
+  decimal: string;
+} {
+  if (decimalSeparator === ',') {
+    return {
+      percent: '[$-fr-FR]0.00%',
+      currency: '[$$-fr-FR]#,##0.00',
+      decimal: '[$-fr-FR]0.00',
+    };
+  }
+
+  return {
+    percent: '[$-en-US]0.00%',
+    currency: '[$$-en-US]#,##0.00',
+    decimal: '[$-en-US]0.00',
+  };
+}
+
 function formatLocalizedNumber(value: number | null, locale: string, options?: Intl.NumberFormatOptions): string {
   if (value === null || Number.isNaN(value)) return 'N/A';
   return new Intl.NumberFormat(locale, options).format(value);
@@ -713,6 +733,7 @@ function MembershipTable({
       const workbook = new ExcelJS.Workbook();
       const worksheet = workbook.addWorksheet('S&P 500 Members');
       const { rows: exportRows, sectorTotals } = await loadFullRowsForExport();
+      const xlsxFormats = getXlsxNumberFormats(decimalSeparator);
       const exportDocument = buildMembershipExportDocument(exportRows, sectorTotals, {
         generatedAt: snapshotGeneratedAt,
         decimalSeparator,
@@ -754,12 +775,12 @@ function MembershipTable({
         ]);
       }
 
-      worksheet.getColumn(4).numFmt = '0.00%';
-      worksheet.getColumn(7).numFmt = '[$$-fr-FR]#,##0.00';
-      worksheet.getColumn(8).numFmt = '0.00%';
-      worksheet.getColumn(9).numFmt = '[$$-fr-FR]#,##0.00';
-      worksheet.getColumn(10).numFmt = '0.00';
-      worksheet.getColumn(11).numFmt = '[$$-fr-FR]#,##0.00';
+      worksheet.getColumn(4).numFmt = xlsxFormats.percent;
+      worksheet.getColumn(7).numFmt = xlsxFormats.currency;
+      worksheet.getColumn(8).numFmt = xlsxFormats.percent;
+      worksheet.getColumn(9).numFmt = xlsxFormats.currency;
+      worksheet.getColumn(10).numFmt = xlsxFormats.decimal;
+      worksheet.getColumn(11).numFmt = xlsxFormats.currency;
 
       const workbookBytes = await workbook.xlsx.writeBuffer();
       downloadFile(

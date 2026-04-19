@@ -109,5 +109,7 @@ export type SnapshotData = {
   recentChanges: {
     joinedLast7Days: MembershipChange[];
     leftLast7Days: MembershipChange[];
+    joinedLast45Days?: MembershipChange[];
+    leftLast45Days?: MembershipChange[];
   };
 };

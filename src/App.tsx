@@ -29,7 +29,7 @@ const defaultMembersPageSize = 50;
 
 const membershipColumns: Array<{ key: MembershipSortKey; label: string; className?: string }> = [
   { key: 'ticker', label: 'Ticker', className: 'sticky-col sticky-col-1 ticker-column' },
-  { key: 'security', label: 'Company', className: 'sticky-col sticky-col-2 company-column' },
+  { key: 'security', label: 'Company', className: 'company-column' },
   { key: 'sector', label: 'Sector' },
   { key: 'sectorDominance', label: 'Dominance' },
   { key: 'currentMemberSince', label: 'Member since' },
@@ -486,6 +486,99 @@ function getInitialMembershipSortDirection(key: MembershipSortKey): MembershipSo
   }
 }
 
+function sortCompanyRows(
+  rows: CompanyRecord[],
+  selector: (row: CompanyRecord) => number | null,
+  direction: 'asc' | 'desc' = 'desc',
+): CompanyRecord[] {
+  return [...rows].sort((left, right) => {
+    const leftValue = selector(left);
+    const rightValue = selector(right);
+
+    if (leftValue === null && rightValue === null) return left.ticker.localeCompare(right.ticker);
+    if (leftValue === null) return 1;
+    if (rightValue === null) return -1;
+    if (leftValue === rightValue) return left.ticker.localeCompare(right.ticker);
+
+    return direction === 'desc' ? rightValue - leftValue : leftValue - rightValue;
+  });
+}
+
+function summarizeChangeTickers(rows: MembershipChange[]): string {
+  if (!rows.length) return 'Last 45 days: none';
+  return `Last 45 days: ${rows.map((row) => row.ticker).join(', ')}`;
+}
+
+function HomeStatPill({ label, value, note }: { label: string; value: string; note?: string }) {
+  return (
+    <article className="home-stat-pill">
+      <div className="app-overline">{label}</div>
+      <strong>{value}</strong>
+      {note ? <p>{note}</p> : null}
+    </article>
+  );
+}
+
+function HomeCompactTable({
+  id,
+  title,
+  rows,
+  metricLabel,
+  metricValue,
+}: {
+  id?: string;
+  title: string;
+  rows: CompanyRecord[];
+  metricLabel: string;
+  metricValue: (row: CompanyRecord) => string;
+}) {
+  return (
+    <section id={id} className="panel home-side-card">
+      <div className="app-overline">{title}</div>
+      <div className="app-compact-table-wrap table-wrap">
+        <table className="app-compact-table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Company</th>
+              <th>Sector</th>
+              <th>{metricLabel}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={`${title}-${row.ticker}`}>
+                <td>{row.ticker}</td>
+                <td>{row.security}</td>
+                <td>{row.sector}</td>
+                <td>{metricValue(row)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+function HomeSectorLeaderBoard({ leaders }: { leaders: Array<{ sector: string; row: CompanyRecord }> }) {
+  return (
+    <section id="sectors-panel" className="panel home-side-card">
+      <div className="app-overline">Sector leaders</div>
+      <div className="home-sector-grid">
+        {leaders.map(({ sector, row }) => (
+          <article key={sector} className="home-sector-card">
+            <span>{sector}</span>
+            <strong>{row.ticker}</strong>
+            <p>{row.security}</p>
+            <small>{formatCurrency(row.metrics.marketCap, row.metrics.currency || 'USD')}</small>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function MembershipTable({
   rows,
   query,
@@ -502,7 +595,6 @@ function MembershipTable({
   supporterError,
   snapshotGeneratedAt,
   supporterAccessDuration,
-  siteHeaderOffset,
   onQueryChange,
   onSortChange,
   onResetSort,
@@ -524,7 +616,6 @@ function MembershipTable({
   supporterError: string;
   snapshotGeneratedAt: string;
   supporterAccessDuration: string | null;
-  siteHeaderOffset: number;
   onQueryChange: (value: string) => void;
   onSortChange: (key: MembershipSortKey) => void;
   onResetSort: () => void;
@@ -537,34 +628,12 @@ function MembershipTable({
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
   const [exportPending, setExportPending] = useState(false);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
-  const [stickyColumnOffset, setStickyColumnOffset] = useState(0);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
-  const stickyHeaderCellRefs = useRef<Array<HTMLTableCellElement | null>>([]);
   const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
   useEffect(() => {
     setSelectedTicker(null);
   }, [page, query, sort.direction, sort.key]);
-
-  useEffect(() => {
-    const updateStickyColumnOffset = () => {
-      const tickerHeaderCell = stickyHeaderCellRefs.current[0];
-      setStickyColumnOffset(Math.round(tickerHeaderCell?.getBoundingClientRect().width ?? 0));
-    };
-
-    updateStickyColumnOffset();
-
-    const observer = new ResizeObserver(() => updateStickyColumnOffset());
-    stickyHeaderCellRefs.current.slice(0, 2).forEach((cell) => {
-      if (cell) observer.observe(cell);
-    });
-    window.addEventListener('resize', updateStickyColumnOffset);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', updateStickyColumnOffset);
-    };
-  }, [rows.length]);
 
   useEffect(() => {
     if (!isExportMenuOpen) return;
@@ -767,100 +836,19 @@ function MembershipTable({
     <section
       id="members-table"
       className="panel stack-section membership-section"
-      style={{
-        '--site-header-offset': `${siteHeaderOffset}px`,
-        '--membership-sticky-col-2-left': `${stickyColumnOffset}px`,
-      } as React.CSSProperties}
     >
       <div className="panel-header panel-header-stack membership-sticky-header">
-        <div>
-          <h2>Current S&amp;P 500 members</h2>
+        <div className="membership-directory-title">
+          <div className="app-overline">Member list</div>
         </div>
-        <div className="membership-toolbar">
-          <label className="search-wrap" aria-label="Search companies">
+        <label className="membership-search-field" aria-label="Search companies">
             <input
-              className="search search-compact"
-              placeholder="Search company, ticker, or sector"
+              className="membership-search-input"
+              placeholder="Search ticker, name, sector"
               value={query}
               onChange={(event) => onQueryChange(event.target.value)}
             />
-          </label>
-          <button
-            type="button"
-            className="reset-button reset-button-subtle"
-            onClick={onResetSort}
-            disabled={sort.key === defaultMembershipSort.key && sort.direction === defaultMembershipSort.direction}
-          >
-            Reset sort
-          </button>
-          {canExport ? (
-            <>
-              <div ref={exportMenuRef} className="export-menu">
-                <button
-                  type="button"
-                  className="export-button export-button-secondary export-menu-trigger"
-                  aria-expanded={isExportMenuOpen}
-                  onClick={() => setIsExportMenuOpen((current) => !current)}
-                >
-                  Export options
-                </button>
-                {isExportMenuOpen ? <div className="export-menu-panel">
-                  <div className="export-menu-header">
-                    <strong>Export options</strong>
-                    <button
-                      type="button"
-                      className="export-menu-close"
-                      aria-label="Close export options"
-                      onClick={() => setIsExportMenuOpen(false)}
-                    >
-                      x
-                    </button>
-                  </div>
-                  <div className="export-menu-grid">
-                    <label className="toolbar-select-field">
-                      <span>Format</span>
-                      <select
-                        className="toolbar-select"
-                        value={exportFormat}
-                        onChange={(event) => setExportFormat(event.target.value as ExportFormat)}
-                      >
-                        <option value="xlsx">XLSX</option>
-                        <option value="csv">CSV</option>
-                      </select>
-                    </label>
-                    <label className="toolbar-select-field">
-                      <span>Decimal</span>
-                      <select
-                        className="toolbar-select"
-                        value={decimalSeparator}
-                        onChange={(event) => setDecimalSeparator(event.target.value as DecimalSeparator)}
-                      >
-                        <option value=".">Dot (.)</option>
-                        <option value=",">Comma (,)</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div className="export-menu-actions">
-                    <button type="button" className="export-button" disabled={exportPending} onClick={() => { downloadSelectedExport(); setIsExportMenuOpen(false); }}>
-                      {exportPending ? 'Preparing…' : `Download ${exportFormat.toUpperCase()}`}
-                    </button>
-                  </div>
-                </div> : null}
-              </div>
-            </>
-          ) : (
-            <>
-              <button
-                type="button"
-                className="export-button donate-button"
-                onClick={onStartSupporterCheckout}
-                disabled={!supporterEnabled || supporterPending}
-              >
-                {supporterPending ? 'Opening checkout…' : 'Unlock export'}
-              </button>
-            </>
-          )}
-        </div>
+        </label>
         {!canExport && supporterAccessDuration ? (
           <p className="export-note export-note-sticky"><strong>Unlock export access for {supporterAccessDuration} in this browser.</strong></p>
         ) : null}
@@ -888,9 +876,6 @@ function MembershipTable({
                 return (
                   <th
                     key={column.key}
-                    ref={(element) => {
-                      stickyHeaderCellRefs.current[columnIndex] = element;
-                    }}
                     className={column.className}
                     aria-sort={ariaSort}
                   >
@@ -946,16 +931,88 @@ function MembershipTable({
       </div>
       <div className="members-table-footer">
         <p className="members-table-meta">
-          {tableLoading ? 'Refreshing table…' : totalCount ? `Showing ${visibleRowStart}-${visibleRowEnd} of ${formatNumber(totalCount)} companies.` : 'No companies to show.'}
+          {tableLoading ? 'Refreshing table…' : totalCount ? `${formatNumber(totalCount)} results • Page ${page} of ${totalPages}` : 'No companies to show.'}
         </p>
-        <div className="members-pagination">
-          <button type="button" className="reset-button reset-button-subtle" onClick={() => onPageChange(page - 1)} disabled={page <= 1 || tableLoading}>
-            Previous
+        <div className="membership-footer-actions">
+          <button
+            type="button"
+            className="reset-button reset-button-subtle"
+            onClick={onResetSort}
+            disabled={sort.key === defaultMembershipSort.key && sort.direction === defaultMembershipSort.direction}
+          >
+            Reset sort
           </button>
-          <span className="members-pagination-label">Page {page} of {totalPages}</span>
-          <button type="button" className="reset-button reset-button-subtle" onClick={() => onPageChange(page + 1)} disabled={page >= totalPages || tableLoading}>
-            Next
-          </button>
+          <div className="members-pagination">
+            <button type="button" className="reset-button reset-button-subtle" onClick={() => onPageChange(page - 1)} disabled={page <= 1 || tableLoading}>
+              Previous
+            </button>
+            <button type="button" className="reset-button reset-button-subtle" onClick={() => onPageChange(page + 1)} disabled={page >= totalPages || tableLoading}>
+              Next
+            </button>
+          </div>
+          {canExport ? (
+            <div ref={exportMenuRef} className="export-menu">
+              <button
+                type="button"
+                className="export-button export-button-secondary export-menu-trigger"
+                aria-expanded={isExportMenuOpen}
+                onClick={() => setIsExportMenuOpen((current) => !current)}
+              >
+                Export
+              </button>
+              {isExportMenuOpen ? <div className="export-menu-panel">
+                <div className="export-menu-header">
+                  <strong>Export options</strong>
+                  <button
+                    type="button"
+                    className="export-menu-close"
+                    aria-label="Close export options"
+                    onClick={() => setIsExportMenuOpen(false)}
+                  >
+                    x
+                  </button>
+                </div>
+                <div className="export-menu-grid">
+                  <label className="toolbar-select-field">
+                    <span>Format</span>
+                    <select
+                      className="toolbar-select"
+                      value={exportFormat}
+                      onChange={(event) => setExportFormat(event.target.value as ExportFormat)}
+                    >
+                      <option value="xlsx">XLSX</option>
+                      <option value="csv">CSV</option>
+                    </select>
+                  </label>
+                  <label className="toolbar-select-field">
+                    <span>Decimal</span>
+                    <select
+                      className="toolbar-select"
+                      value={decimalSeparator}
+                      onChange={(event) => setDecimalSeparator(event.target.value as DecimalSeparator)}
+                    >
+                      <option value=".">Dot (.)</option>
+                      <option value=",">Comma (,)</option>
+                    </select>
+                  </label>
+                </div>
+                <div className="export-menu-actions">
+                  <button type="button" className="export-button" disabled={exportPending} onClick={() => { downloadSelectedExport(); setIsExportMenuOpen(false); }}>
+                    {exportPending ? 'Preparing…' : `Download ${exportFormat.toUpperCase()}`}
+                  </button>
+                </div>
+              </div> : null}
+            </div>
+          ) : (
+            <button
+              type="button"
+              className="export-button donate-button"
+              onClick={onStartSupporterCheckout}
+              disabled={!supporterEnabled || supporterPending}
+            >
+              {supporterPending ? 'Opening checkout…' : 'Unlock export'}
+            </button>
+          )}
         </div>
       </div>
     </section>
@@ -965,6 +1022,7 @@ function MembershipTable({
 export default function App() {
   const [data, setData] = useState<SnapshotData | null>(null);
   const [currentMembers, setCurrentMembers] = useState<CompanyRecord[] | null>(null);
+  const [homeUniverseRows, setHomeUniverseRows] = useState<CompanyRecord[]>([]);
   const [membersSectorMarketCaps, setMembersSectorMarketCaps] = useState<Map<string, number>>(new Map());
   const [membersQuery, setMembersQuery] = useState('');
   const [debouncedMembersQuery, setDebouncedMembersQuery] = useState('');
@@ -995,28 +1053,6 @@ export default function App() {
   const canLogout = typeof window !== 'undefined' && !isLocalHost;
   const canExport = isLocalHost || isAuthenticated || hasSupporterAccess;
   const membersPageSize = defaultMembersPageSize;
-  const [siteHeaderOffset, setSiteHeaderOffset] = useState(0);
-  const siteHeaderRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const element = siteHeaderRef.current;
-    if (!element) return;
-
-    const updateOffset = () => {
-      setSiteHeaderOffset(Math.ceil(element.getBoundingClientRect().height));
-    };
-
-    updateOffset();
-
-    const observer = new ResizeObserver(() => updateOffset());
-    observer.observe(element);
-    window.addEventListener('resize', updateOffset);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', updateOffset);
-    };
-  }, []);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -1063,6 +1099,18 @@ export default function App() {
         setHasSupporterAccess(false);
         setSupporterEnabled(false);
         setSupporterExportTtlSeconds(null);
+      });
+
+    void fetch('/data/current-members.json', { cache: 'no-store' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Could not load the full current-member universe.');
+        return await response.json() as CurrentMembersData;
+      })
+      .then((payload) => {
+        setHomeUniverseRows(Array.isArray(payload.currentMembers) ? payload.currentMembers : []);
+      })
+      .catch(() => {
+        setHomeUniverseRows([]);
       });
   }, []);
 
@@ -1211,6 +1259,32 @@ export default function App() {
       .catch((err) => setError(err instanceof Error ? err.message : 'Could not load prediction data.'));
   }, [activeView, isAuthenticated, predictionData]);
 
+  const supporterAccessDuration = formatSupporterAccessDuration(supporterExportTtlSeconds);
+  const joinedRecent = data?.recentChanges.joinedLast45Days ?? data?.recentChanges.joinedLast7Days ?? [];
+  const leftRecent = data?.recentChanges.leftLast45Days ?? data?.recentChanges.leftLast7Days ?? [];
+  const homeRows = homeUniverseRows.length ? homeUniverseRows : (currentMembers ?? []);
+  const sectorLeaders = useMemo(() => {
+    const leadersBySector = new Map<string, CompanyRecord>();
+
+    for (const row of homeRows) {
+      const existing = leadersBySector.get(row.sector);
+      const existingCap = existing?.metrics.marketCap ?? -1;
+      const nextCap = row.metrics.marketCap ?? -1;
+      if (!existing || nextCap > existingCap) {
+        leadersBySector.set(row.sector, row);
+      }
+    }
+
+    return [...leadersBySector.entries()]
+      .map(([sector, row]) => ({ sector, row }))
+      .sort((left, right) => (right.row.metrics.marketCap ?? 0) - (left.row.metrics.marketCap ?? 0))
+      .slice(0, 8);
+  }, [homeRows]);
+  const topYieldRows = useMemo(() => sortCompanyRows(
+    homeRows.filter((row) => row.dividend.hasDividend),
+    (row) => row.dividend.dividendYield,
+  ).slice(0, 8), [homeRows]);
+
   if (error) {
     return (
       <main className="app-shell">
@@ -1239,8 +1313,6 @@ export default function App() {
       [panel]: !current[panel],
     }));
   };
-
-  const supporterAccessDuration = formatSupporterAccessDuration(supporterExportTtlSeconds);
 
   function showHomeSection(sectionId?: string) {
     setActiveView('home');
@@ -1310,11 +1382,10 @@ export default function App() {
 
   return (
     <main className="app-shell">
-      <header ref={siteHeaderRef} className="panel site-header">
+      <header className="panel site-header">
         <button type="button" className="site-brand-button" onClick={() => showHomeSection()}>
           <div className="site-brand">
             <div className="site-kicker">S&amp;P 500 Monitor</div>
-            <div className="site-title">Market structure dashboard</div>
           </div>
         </button>
         <div className="site-nav-wrap">
@@ -1331,10 +1402,16 @@ export default function App() {
           </button>
           <nav className={`site-nav${isNavMenuOpen ? ' open' : ''}`} aria-label="Primary">
             <button type="button" className="nav-link-button" onClick={() => showHomeSection('members-table')}>
-              Table
+              Members
+            </button>
+            <button type="button" className="nav-link-button" onClick={() => showHomeSection('sectors-panel')}>
+              Sectors
+            </button>
+            <button type="button" className="nav-link-button" onClick={() => showHomeSection('yields-panel')}>
+              Yields
             </button>
             <button type="button" className="nav-link-button" onClick={() => showHomeSection('data-sources')}>
-              Data sources
+              About this site
             </button>
             {isAuthenticated ? (
               <button
@@ -1366,27 +1443,6 @@ export default function App() {
         </div>
       </header>
 
-      <section className="hero panel stack-section">
-        <div className="hero-copy">
-          <div className="eyebrow">Hourly market structure monitor</div>
-          <h1>S&amp;P 500 membership, dividend, and valuation dashboard</h1>
-          <p>
-            Autogenerated from published index membership changes and market data snapshots. Built for monitoring and research,
-            not financial advice.
-          </p>
-        </div>
-        <div className="hero-meta">
-          <MetricCard label="Snapshot generated" value={formatDate(data.generatedAt)} hint={new Date(data.generatedAt).toLocaleTimeString()} />
-          <MetricCard label="Current members" value={String(data.summary.currentConstituentCount)} />
-          <MetricCard label="Dividend payers" value={String(data.summary.dividendPayers)} hint={`${data.summary.nonDividendPayers} non-payers`} />
-          <SnapshotWatch
-            nextSnapshotAt={data.schedule.nextSnapshotAt}
-            joinedLast7Days={data.recentChanges.joinedLast7Days}
-            leftLast7Days={data.recentChanges.leftLast7Days}
-          />
-        </div>
-      </section>
-
       {!isAuthenticated && showLoginForm ? (
         <section className="panel stack-section login-panel">
           <div className="panel-header">
@@ -1412,6 +1468,15 @@ export default function App() {
 
       {activeView === 'home' ? (
         <>
+          <section className="home-stat-band stack-section">
+            <HomeStatPill label="Current members" value={String(data.summary.currentConstituentCount)} />
+            <HomeStatPill label="Dividend payers" value={String(data.summary.dividendPayers)} note={`${data.summary.nonDividendPayers} non-payers`} />
+            <HomeStatPill label="Recent joins" value={String(joinedRecent.length)} note={summarizeChangeTickers(joinedRecent.slice(0, 5))} />
+            <HomeStatPill label="Recent leavers" value={String(leftRecent.length)} note={summarizeChangeTickers(leftRecent.slice(0, 5))} />
+            <HomeStatPill label="Snapshot generated" value={formatDate(data.generatedAt)} note={formatTime(data.generatedAt)} />
+            <HomeStatPill label="Next snapshot" value={formatDate(data.schedule.nextSnapshotAt)} note={formatTime(data.schedule.nextSnapshotAt)} />
+          </section>
+
           {currentMembers ? (
             <MembershipTable
               rows={currentMembers}
@@ -1429,7 +1494,6 @@ export default function App() {
               supporterError={supporterError}
               snapshotGeneratedAt={data.generatedAt}
               supporterAccessDuration={supporterAccessDuration}
-              siteHeaderOffset={siteHeaderOffset}
               onQueryChange={handleMembersQueryChange}
               onSortChange={handleMembersSortChange}
               onResetSort={handleResetMembersSort}
@@ -1446,6 +1510,17 @@ export default function App() {
               </div>
             </section>
           )}
+
+          <section className="home-side-grid stack-section">
+            <HomeSectorLeaderBoard leaders={sectorLeaders} />
+            <HomeCompactTable
+              id="yields-panel"
+              title="Highest-yield current S&P 500 members"
+              rows={topYieldRows}
+              metricLabel="Yield"
+              metricValue={(row) => formatPercent(row.dividend.dividendYield)}
+            />
+          </section>
 
           <section className="panel stack-section methodology" id="data-sources">
             <div className="panel-header">

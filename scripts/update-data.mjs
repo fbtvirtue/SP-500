@@ -213,32 +213,43 @@ function getNextSnapshotAt(generatedAt) {
 }
 
 function getRecentChanges(changes, generatedAt) {
-  const cutoff = new Date(generatedAt);
-  cutoff.setUTCDate(cutoff.getUTCDate() - 7);
-  cutoff.setUTCHours(0, 0, 0, 0);
+  const filterChangesSinceDays = (days) => {
+    const cutoff = new Date(generatedAt);
+    cutoff.setUTCDate(cutoff.getUTCDate() - days);
+    cutoff.setUTCHours(0, 0, 0, 0);
 
-  const recent = changes
-    .filter((change) => {
+    return changes.filter((change) => {
       const timestamp = Date.parse(`${change.date}T00:00:00Z`);
       return Number.isFinite(timestamp) && timestamp >= cutoff.getTime();
-    })
+    });
+  };
+
+  const mapJoined = (items) => items
+    .filter((change) => change.addedTicker)
+    .map((change) => ({
+      date: change.date,
+      ticker: change.addedTicker,
+      security: change.addedSecurity,
+    }));
+
+  const mapLeft = (items) => items
+    .filter((change) => change.removedTicker)
+    .map((change) => ({
+      date: change.date,
+      ticker: change.removedTicker,
+      security: change.removedSecurity,
+    }));
+
+  const recent7 = filterChangesSinceDays(7)
+    .sort((left, right) => String(right.date).localeCompare(String(left.date)));
+  const recent45 = filterChangesSinceDays(45)
     .sort((left, right) => String(right.date).localeCompare(String(left.date)));
 
   return {
-    joinedLast7Days: recent
-      .filter((change) => change.addedTicker)
-      .map((change) => ({
-        date: change.date,
-        ticker: change.addedTicker,
-        security: change.addedSecurity,
-      })),
-    leftLast7Days: recent
-      .filter((change) => change.removedTicker)
-      .map((change) => ({
-        date: change.date,
-        ticker: change.removedTicker,
-        security: change.removedSecurity,
-      })),
+    joinedLast7Days: mapJoined(recent7),
+    leftLast7Days: mapLeft(recent7),
+    joinedLast45Days: mapJoined(recent45),
+    leftLast45Days: mapLeft(recent45),
   };
 }
 

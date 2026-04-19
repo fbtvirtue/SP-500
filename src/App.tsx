@@ -60,6 +60,13 @@ function formatDateTime(value: string | null): string {
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
 }
 
+function formatTime(value: string | null): string {
+  if (!value) return 'Unknown';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleTimeString();
+}
+
 function formatNumber(value: number | null, options?: Intl.NumberFormatOptions): string {
   if (value === null || Number.isNaN(value)) return 'N/A';
   return new Intl.NumberFormat('en-US', options).format(value);
@@ -232,7 +239,7 @@ function SnapshotWatch({
   return (
     <div className="hero-watch">
       <div className="watch-grid">
-        <MetricCard label="Next snapshot" value={formatDate(nextSnapshotAt)} hint={formatDateTime(nextSnapshotAt)} />
+        <MetricCard label="Next snapshot" value={formatDate(nextSnapshotAt)} hint={formatTime(nextSnapshotAt)} />
         <ChangeList
           title="Joined in 7 days"
           rows={joinedLast7Days}
@@ -526,9 +533,7 @@ function MembershipTable({
         <div className="export-callout">
           <div>
             <strong>Donate to download.</strong>
-            <p>
-              Supporters can unlock XLSX and Google Sheets export with a supporter code after donating.
-            </p>
+            <p>After donating, enter your supporter code to unlock the export tools.</p>
           </div>
           {donateUrl ? (
             <a className="donate-link" href={donateUrl} target="_blank" rel="noreferrer">

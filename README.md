@@ -81,6 +81,13 @@ Add these as environment variables in the Cloudflare Pages project settings for 
 - `MEMBER_CHALLENGE_TTL_SECONDS`: optional, defaults to `300` (5 minutes).
 - `MEMBER_CHALLENGE_DIFFICULTY`: optional, defaults to `3`.
 
+To enable the donation flow, set both of these in Cloudflare Pages for Production:
+
+- `DONATE_URL`: your public donation page, for example `https://buymeacoffee.com/yourname` or a Stripe payment link.
+- `SUPPORTER_EXPORT_CODE`: the code you send donors after payment, for example `sp500-supporter-2026`.
+
+If `DONATE_URL` is missing, the donate button stays disabled. If `SUPPORTER_EXPORT_CODE` is missing, the "Already donated? Enter code" flow is hidden.
+
 ### Required GitHub Actions secrets
 
 Add these repository secrets in GitHub so `.github/workflows/deploy-cloudflare-pages.yml` can deploy on push to `main`:
@@ -105,6 +112,7 @@ For local testing with Cloudflare Pages Functions, create a `.dev.vars` file:
 PROTECTED_EMAIL=you@example.com
 PROTECTED_PASSWORD=change-this-password
 AUTH_SESSION_SECRET=replace-with-a-long-random-string
+DONATE_URL=https://buymeacoffee.com/yourname
 SUPPORTER_EXPORT_CODE=optional-supporter-code
 ```
 

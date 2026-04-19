@@ -208,8 +208,7 @@ function parseChanges(html) {
 
 function getNextSnapshotAt(generatedAt) {
   const next = new Date(generatedAt);
-  next.setUTCMinutes(0, 0, 0);
-  next.setUTCHours(next.getUTCHours() + 1);
+  next.setTime(next.getTime() + 60 * 60 * 1000);
   return next.toISOString();
 }
 

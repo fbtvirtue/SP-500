@@ -109,23 +109,15 @@ function getExportLocale(decimalSeparator: DecimalSeparator): string {
   return decimalSeparator === ',' ? 'de-DE' : 'en-US';
 }
 
-function getXlsxNumberFormats(decimalSeparator: DecimalSeparator): {
+function getXlsxNumberFormats(): {
   percent: string;
   currency: string;
   decimal: string;
 } {
-  if (decimalSeparator === ',') {
-    return {
-      percent: '[$-fr-FR]0.00%',
-      currency: '[$$-fr-FR]#,##0.00',
-      decimal: '[$-fr-FR]0.00',
-    };
-  }
-
   return {
-    percent: '[$-en-US]0.00%',
-    currency: '[$$-en-US]#,##0.00',
-    decimal: '[$-en-US]0.00',
+    percent: '0.00%',
+    currency: '$#,##0.00',
+    decimal: '0.00',
   };
 }
 
@@ -691,9 +683,7 @@ function MembershipTable({
 
   const visibleRowStart = totalCount ? (page - 1) * pageSize + 1 : 0;
   const visibleRowEnd = totalCount ? visibleRowStart + rows.length - 1 : 0;
-  const unlockExportLabel = supporterAccessDuration
-    ? `Unlock export access for ${supporterAccessDuration} in this browser`
-    : 'Unlock export';
+  const unlockExportLabel = 'Unlock export';
 
   async function loadFullRowsForExport(): Promise<{ rows: CompanyRecord[]; sectorTotals: Map<string, number> }> {
     const response = await fetch('/data/current-members.json', { cache: 'no-store' });
@@ -736,7 +726,7 @@ function MembershipTable({
       const workbook = new ExcelJS.Workbook();
       const worksheet = workbook.addWorksheet('S&P 500 Members');
       const { rows: exportRows, sectorTotals } = await loadFullRowsForExport();
-      const xlsxFormats = getXlsxNumberFormats(decimalSeparator);
+      const xlsxFormats = getXlsxNumberFormats();
       const exportDocument = buildMembershipExportDocument(exportRows, sectorTotals, {
         generatedAt: snapshotGeneratedAt,
         decimalSeparator,
@@ -821,7 +811,9 @@ function MembershipTable({
   async function downloadServerGeneratedExport() {
     const exportUrl = new URL('/__members/export', window.location.origin);
     exportUrl.searchParams.set('format', exportFormat);
-    exportUrl.searchParams.set('decimal', decimalSeparator);
+    if (exportFormat === 'csv') {
+      exportUrl.searchParams.set('decimal', decimalSeparator);
+    }
     exportUrl.searchParams.set('sort', sort.key);
     exportUrl.searchParams.set('direction', sort.direction);
     if (query.trim()) {
@@ -1054,7 +1046,7 @@ function MembershipTable({
                     x
                   </button>
                 </div>
-                <div className="export-menu-grid">
+                <div className={`export-menu-grid${exportFormat === 'csv' ? '' : ' export-menu-grid-single'}`}>
                   <label className="toolbar-select-field">
                     <span>Format</span>
                     <select
@@ -1066,17 +1058,19 @@ function MembershipTable({
                       <option value="csv">CSV</option>
                     </select>
                   </label>
-                  <label className="toolbar-select-field">
-                    <span>Decimal</span>
-                    <select
-                      className="toolbar-select"
-                      value={decimalSeparator}
-                      onChange={(event) => setDecimalSeparator(event.target.value as DecimalSeparator)}
-                    >
-                      <option value=".">Dot (.)</option>
-                      <option value=",">Comma (,)</option>
-                    </select>
-                  </label>
+                  {exportFormat === 'csv' ? (
+                    <label className="toolbar-select-field">
+                      <span>Decimal</span>
+                      <select
+                        className="toolbar-select"
+                        value={decimalSeparator}
+                        onChange={(event) => setDecimalSeparator(event.target.value as DecimalSeparator)}
+                      >
+                        <option value=".">Dot (.)</option>
+                        <option value=",">Comma (,)</option>
+                      </select>
+                    </label>
+                  ) : null}
                 </div>
                 <div className="export-menu-actions">
                   <button type="button" className="export-button" disabled={exportPending} onClick={() => { downloadSelectedExport(); setIsExportMenuOpen(false); }}>
@@ -1096,6 +1090,9 @@ function MembershipTable({
             </button>
           )}
         </div>
+        {!canExport && supporterAccessDuration ? (
+          <p className="export-note export-note-footer">After purchase, export stays unlocked for {supporterAccessDuration} in this browser.</p>
+        ) : null}
       </div>
     </section>
   );
@@ -1529,8 +1526,7 @@ export default function App() {
         <section className="panel stack-section login-panel">
           <div className="panel-header">
             <div>
-              <h2>Sign in for predictions</h2>
-              <p>Home stays public. Logging in unlocks the Prediction tab and the protected prediction data.</p>
+              <h2>Log in</h2>
             </div>
           </div>
           <form method="post" action="/__auth/login" className="login-form">
@@ -1543,7 +1539,7 @@ export default function App() {
               <span>Password</span>
               <input type="password" name="password" autoComplete="current-password" required />
             </label>
-            <button type="submit" className="submit-button">Unlock Prediction</button>
+            <button type="submit" className="submit-button">Log in</button>
           </form>
         </section>
       ) : null}

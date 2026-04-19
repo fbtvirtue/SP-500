@@ -794,6 +794,10 @@ a {
   gap: 12px;
 }
 
+.export-menu-grid-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .export-menu-actions {
   display: flex;
   flex-wrap: wrap;
@@ -831,6 +835,10 @@ a {
   margin: 0 0 16px;
   color: var(--app-muted-strong);
   line-height: 1.6;
+}
+
+.export-note-footer {
+  margin: 0 0 0 auto;
 }
 
 .table-wrap-locked {
@@ -1125,6 +1133,7 @@ th {
   margin-top: 16px;
   position: relative;
   z-index: 40;
+  flex-wrap: wrap;
 }
 
 .membership-footer-actions {

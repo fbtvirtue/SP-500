@@ -744,19 +744,11 @@ function getExportLocale(decimalSeparator) {
   return decimalSeparator === ',' ? 'de-DE' : 'en-US';
 }
 
-function getXlsxNumberFormats(decimalSeparator) {
-  if (decimalSeparator === ',') {
-    return {
-      percent: '[$-fr-FR]0.00%',
-      currency: '[$$-fr-FR]#,##0.00',
-      decimal: '[$-fr-FR]0.00',
-    };
-  }
-
+function getXlsxNumberFormats() {
   return {
-    percent: '[$-en-US]0.00%',
-    currency: '[$$-en-US]#,##0.00',
-    decimal: '[$-en-US]0.00',
+    percent: '0.00%',
+    currency: '$#,##0.00',
+    decimal: '0.00',
   };
 }
 

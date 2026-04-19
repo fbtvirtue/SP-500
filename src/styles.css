@@ -579,6 +579,7 @@ a {
 }
 
 .table-wrap {
+  position: relative;
   overflow-x: auto;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
@@ -660,6 +661,31 @@ a {
   margin-bottom: 18px;
 }
 
+.membership-section {
+  position: relative;
+  z-index: 8;
+  overflow: visible;
+}
+
+.membership-column-header-stick {
+  position: sticky;
+  top: 0;
+  z-index: 32;
+  margin: 0 -24px;
+}
+
+.membership-column-header-window {
+  overflow: hidden;
+  border-bottom: 1px solid rgba(63, 103, 200, 0.12);
+  background: linear-gradient(180deg, rgba(243, 248, 255, 0.98) 0%, rgba(233, 241, 253, 0.96) 100%);
+}
+
+.membership-column-header-track {
+  min-width: 100%;
+  width: max-content;
+  will-change: transform;
+}
+
 .reset-button {
   padding: 14px 18px;
   border: 1px solid var(--app-border-strong);
@@ -701,7 +727,7 @@ a {
 
 .export-menu {
   position: relative;
-  z-index: 20;
+  z-index: 42;
 }
 
 .export-menu summary {
@@ -743,7 +769,7 @@ a {
   top: calc(100% + 10px);
   right: 0;
   width: min(420px, calc(100vw - 48px));
-  z-index: 48;
+  z-index: 60;
   padding: 16px;
   border: 1px solid var(--app-border);
   border-radius: 20px;
@@ -962,6 +988,7 @@ th {
   min-width: 1300px;
   border-collapse: separate;
   border-spacing: 0;
+  table-layout: fixed;
 }
 
 .membership-table thead {
@@ -970,10 +997,16 @@ th {
 }
 
 .membership-table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 10;
   white-space: nowrap;
+}
+
+.membership-table-header-clone {
+  margin: 0;
+}
+
+.membership-table-header-clone thead th {
+  position: static;
+  z-index: auto;
 }
 
 .membership-table th,
@@ -991,7 +1024,7 @@ th {
 }
 
 .membership-table .company-column {
-  min-width: 240px;
+  min-width: 260px;
 }
 
 .membership-table .sticky-col {
@@ -1019,7 +1052,8 @@ th {
 
 .membership-table th.sticky-col-1 {
   z-index: 13;
-  box-shadow: 16px 0 0 color-mix(in srgb, var(--app-accent) 11%, white), 10px 0 18px rgba(12, 24, 44, 0.06);
+  box-shadow: 10px 0 18px rgba(12, 24, 44, 0.06);
+  border-right: 1px solid rgba(63, 103, 200, 0.14);
 }
 
 .membership-table td.sticky-col-1 {
@@ -1064,6 +1098,8 @@ th {
   justify-content: space-between;
   gap: 16px;
   margin-top: 16px;
+  position: relative;
+  z-index: 40;
 }
 
 .membership-footer-actions {
@@ -1186,6 +1222,10 @@ th {
     grid-template-columns: 1fr;
   }
 
+  .membership-column-header-stick {
+    margin: 0 -20px;
+  }
+
   .membership-table .sticky-col {
     position: static;
   }
@@ -1203,7 +1243,7 @@ th {
   .membership-table th.sticky-col-1 {
     z-index: 13;
     background: rgba(235, 242, 250, 0.98);
-    box-shadow: 16px 0 0 rgba(235, 242, 250, 0.98), 10px 0 18px rgba(12, 24, 44, 0.06);
+    box-shadow: 10px 0 18px rgba(12, 24, 44, 0.06);
   }
 
   .membership-table td.sticky-col-1 {

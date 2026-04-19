@@ -27,18 +27,18 @@ type MembershipSortState = {
 const defaultMembershipSort: MembershipSortState = { key: 'marketCap', direction: 'desc' };
 const defaultMembersPageSize = 50;
 
-const membershipColumns: Array<{ key: MembershipSortKey; label: string; className?: string }> = [
-  { key: 'ticker', label: 'Ticker', className: 'sticky-col sticky-col-1 ticker-column' },
-  { key: 'security', label: 'Company', className: 'company-column' },
-  { key: 'sector', label: 'Sector' },
-  { key: 'sectorDominance', label: 'Dominance' },
-  { key: 'currentMemberSince', label: 'Member since' },
-  { key: 'lastLeftAt', label: 'Last left' },
-  { key: 'dividendRate', label: 'Dividend' },
-  { key: 'dividendYield', label: 'Yield' },
-  { key: 'marketCap', label: 'Market cap' },
-  { key: 'forwardPE', label: 'Forward P/E' },
-  { key: 'price', label: 'Current price' },
+const membershipColumns: Array<{ key: MembershipSortKey; label: string; className?: string; width: string }> = [
+  { key: 'ticker', label: 'Ticker', className: 'sticky-col sticky-col-1 ticker-column', width: '92px' },
+  { key: 'security', label: 'Company', className: 'company-column', width: '260px' },
+  { key: 'sector', label: 'Sector', width: '170px' },
+  { key: 'sectorDominance', label: 'Dominance', width: '120px' },
+  { key: 'currentMemberSince', label: 'Member since', width: '130px' },
+  { key: 'lastLeftAt', label: 'Last left', width: '120px' },
+  { key: 'dividendRate', label: 'Dividend', width: '130px' },
+  { key: 'dividendYield', label: 'Yield', width: '90px' },
+  { key: 'marketCap', label: 'Market cap', width: '150px' },
+  { key: 'forwardPE', label: 'Forward P/E', width: '120px' },
+  { key: 'price', label: 'Current price', width: '130px' },
 ];
 
 type AuthStatusResponse = {
@@ -628,6 +628,7 @@ function MembershipTable({
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
   const [exportPending, setExportPending] = useState(false);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
+  const [tableScrollLeft, setTableScrollLeft] = useState(0);
   const exportMenuRef = useRef<HTMLDivElement | null>(null);
   const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
@@ -832,6 +833,42 @@ function MembershipTable({
     setSelectedTicker((current) => current === ticker ? null : ticker);
   }
 
+  function renderMembershipColGroup() {
+    return (
+      <colgroup>
+        {membershipColumns.map((column) => <col key={column.key} style={{ width: column.width }} />)}
+      </colgroup>
+    );
+  }
+
+  function renderMembershipHeaderCells() {
+    return membershipColumns.map((column) => {
+      const isActive = sort.key === column.key;
+      const ariaSort = isActive ? (sort.direction === 'asc' ? 'ascending' : 'descending') : 'none';
+
+      return (
+        <th
+          key={column.key}
+          className={column.className}
+          aria-sort={ariaSort}
+        >
+          <button
+            type="button"
+            className={`sort-button${isActive ? ' active' : ''}`}
+            onClick={() => onSortChange(column.key)}
+            aria-label={`Sort by ${column.label}${isActive ? ` (${sort.direction})` : ''}`}
+          >
+            <span>{column.label}</span>
+            <span className="sort-indicator" aria-hidden="true">
+              <span className={`sort-arrow sort-arrow-up${isActive && sort.direction === 'asc' ? ' active' : ''}`} />
+              <span className={`sort-arrow sort-arrow-down${isActive && sort.direction === 'desc' ? ' active' : ''}`} />
+            </span>
+          </button>
+        </th>
+      );
+    });
+  }
+
   return (
     <section
       id="members-table"
@@ -855,8 +892,21 @@ function MembershipTable({
       </div>
       {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
+      <div className="membership-column-header-stick">
+        <div className="membership-column-header-window">
+          <div className="membership-column-header-track" style={{ transform: `translateX(-${tableScrollLeft}px)` }}>
+            <table className="membership-table membership-table-header-clone">
+              {renderMembershipColGroup()}
+              <thead>
+                <tr>{renderMembershipHeaderCells()}</tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
       <div
         className={`table-wrap tall${canExport ? '' : ' table-wrap-locked'}`}
+        onScroll={(event) => setTableScrollLeft(event.currentTarget.scrollLeft)}
         onCopy={blockLockedTableAction}
         onCut={blockLockedTableAction}
         onContextMenu={blockLockedTableAction}
@@ -866,36 +916,7 @@ function MembershipTable({
         tabIndex={0}
       >
         <table className={`membership-table${canExport ? '' : ' membership-table-locked'}`}>
-          <thead>
-            <tr>
-              {membershipColumns.map((column) => {
-                const isActive = sort.key === column.key;
-                const ariaSort = isActive ? (sort.direction === 'asc' ? 'ascending' : 'descending') : 'none';
-                const columnIndex = membershipColumns.indexOf(column);
-
-                return (
-                  <th
-                    key={column.key}
-                    className={column.className}
-                    aria-sort={ariaSort}
-                  >
-                    <button
-                      type="button"
-                      className={`sort-button${isActive ? ' active' : ''}`}
-                      onClick={() => onSortChange(column.key)}
-                      aria-label={`Sort by ${column.label}${isActive ? ` (${sort.direction})` : ''}`}
-                    >
-                      <span>{column.label}</span>
-                      <span className="sort-indicator" aria-hidden="true">
-                        <span className={`sort-arrow sort-arrow-up${isActive && sort.direction === 'asc' ? ' active' : ''}`} />
-                        <span className={`sort-arrow sort-arrow-down${isActive && sort.direction === 'desc' ? ' active' : ''}`} />
-                      </span>
-                    </button>
-                  </th>
-                );
-              })}
-            </tr>
-          </thead>
+          {renderMembershipColGroup()}
           <tbody>
             {!rows.length && !tableLoading ? <tr>
               <td colSpan={membershipColumns.length}>No companies matched the current search.</td>

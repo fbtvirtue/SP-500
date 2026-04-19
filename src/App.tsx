@@ -173,13 +173,7 @@ function SnapshotWatch({
   leftLast7Days: MembershipChange[];
 }) {
   return (
-    <section className="panel stack-section snapshot-watch">
-      <div className="panel-header">
-        <div>
-          <h2>Snapshot watch</h2>
-          <p>Tracks the next scheduled refresh time plus the last seven days of published S&amp;P 500 membership changes.</p>
-        </div>
-      </div>
+    <div className="hero-watch">
       <div className="watch-grid">
         <MetricCard label="Next snapshot" value={formatDate(nextSnapshotAt)} hint={formatDateTime(nextSnapshotAt)} />
         <ChangeList
@@ -193,7 +187,7 @@ function SnapshotWatch({
           emptyMessage="No S&P 500 removals were published in the last 7 days."
         />
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -524,6 +518,11 @@ export default function App() {
           <MetricCard label="Snapshot generated" value={formatDate(data.generatedAt)} hint={new Date(data.generatedAt).toLocaleTimeString()} />
           <MetricCard label="Current members" value={String(data.summary.currentConstituentCount)} />
           <MetricCard label="Dividend payers" value={String(data.summary.dividendPayers)} hint={`${data.summary.nonDividendPayers} non-payers`} />
+          <SnapshotWatch
+            nextSnapshotAt={data.schedule.nextSnapshotAt}
+            joinedLast7Days={data.recentChanges.joinedLast7Days}
+            leftLast7Days={data.recentChanges.leftLast7Days}
+          />
         </div>
       </section>
 
@@ -552,12 +551,6 @@ export default function App() {
 
       {activeView === 'home' ? (
         <>
-          <SnapshotWatch
-            nextSnapshotAt={data.schedule.nextSnapshotAt}
-            joinedLast7Days={data.recentChanges.joinedLast7Days}
-            leftLast7Days={data.recentChanges.leftLast7Days}
-          />
-
           <MembershipTable rows={data.currentMembers} />
 
           <section className="panel stack-section methodology">

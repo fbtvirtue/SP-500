@@ -1002,6 +1002,7 @@ th {
 
 .membership-table-header-clone {
   margin: 0;
+  min-width: 0;
 }
 
 .membership-table-header-clone thead th {

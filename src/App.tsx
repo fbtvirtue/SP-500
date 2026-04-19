@@ -41,6 +41,8 @@ const membershipColumns: Array<{ key: MembershipSortKey; label: string; classNam
   { key: 'price', label: 'Current price', width: '130px' },
 ];
 
+const membershipTableWidth = membershipColumns.reduce((total, column) => total + Number.parseInt(column.width, 10), 0);
+
 type AuthStatusResponse = {
   authenticated?: boolean;
   supporter?: boolean;
@@ -841,15 +843,18 @@ function MembershipTable({
     );
   }
 
-  function renderMembershipHeaderCells() {
+  function renderMembershipHeaderCells(isStickyClone = false) {
     return membershipColumns.map((column) => {
       const isActive = sort.key === column.key;
       const ariaSort = isActive ? (sort.direction === 'asc' ? 'ascending' : 'descending') : 'none';
+      const className = isStickyClone
+        ? column.className?.replace(/\bsticky-col-1\b/g, '').replace(/\bsticky-col\b/g, '').trim() || undefined
+        : column.className;
 
       return (
         <th
           key={column.key}
-          className={column.className}
+          className={className}
           aria-sort={ariaSort}
         >
           <button
@@ -895,10 +900,10 @@ function MembershipTable({
       <div className="membership-column-header-stick">
         <div className="membership-column-header-window">
           <div className="membership-column-header-track" style={{ transform: `translateX(-${tableScrollLeft}px)` }}>
-            <table className="membership-table membership-table-header-clone">
+            <table className="membership-table membership-table-header-clone" style={{ width: `${membershipTableWidth}px` }}>
               {renderMembershipColGroup()}
               <thead>
-                <tr>{renderMembershipHeaderCells()}</tr>
+                <tr>{renderMembershipHeaderCells(true)}</tr>
               </thead>
             </table>
           </div>
@@ -915,7 +920,7 @@ function MembershipTable({
         onSelectStart={blockLockedTableAction}
         tabIndex={0}
       >
-        <table className={`membership-table${canExport ? '' : ' membership-table-locked'}`}>
+        <table className={`membership-table${canExport ? '' : ' membership-table-locked'}`} style={{ width: `${membershipTableWidth}px` }}>
           {renderMembershipColGroup()}
           <tbody>
             {!rows.length && !tableLoading ? <tr>

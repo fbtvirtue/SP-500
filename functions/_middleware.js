@@ -35,6 +35,7 @@ export async function onRequest(context) {
       supporter,
       supporterEnabled: Boolean(env.SUPPORTER_EXPORT_CODE),
       canExport: authenticated || supporter,
+      donateUrl: getDonateUrl(env),
     });
   }
 
@@ -148,11 +149,19 @@ function handleLogout(request) {
   const homeUrl = new URL('/', request.url);
   const headers = new Headers({ Location: homeUrl.toString() });
   headers.append('Set-Cookie', `${AUTH_COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
+  headers.append('Set-Cookie', `${SUPPORTER_COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
+  headers.append('Set-Cookie', `${MEMBER_ACCESS_COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
 
   return new Response(null, {
     status: 302,
     headers,
   });
+}
+
+function getDonateUrl(env) {
+  const value = String(env.DONATE_URL ?? '').trim();
+  if (!value) return '';
+  return /^https?:\/\//i.test(value) ? value : '';
 }
 
 async function handleMembersChallenge(env) {

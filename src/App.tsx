@@ -43,6 +43,7 @@ type AuthStatusResponse = {
   supporter?: boolean;
   supporterEnabled?: boolean;
   canExport?: boolean;
+  donateUrl?: string;
 };
 
 function formatDate(value: string | null): string {
@@ -74,15 +75,7 @@ function formatPercent(value: number | null): string {
   return `${(value * 100).toFixed(2)}%`;
 }
 
-function escapeCsvCell(value: string): string {
-  if (/[",\n]/.test(value)) {
-    return `"${value.replace(/"/g, '""')}"`;
-  }
-
-  return value;
-}
-
-function downloadFile(filename: string, content: string, mimeType: string): void {
+function downloadFile(filename: string, content: BlobPart, mimeType: string): void {
   const blob = new Blob([content], { type: mimeType });
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
@@ -113,6 +106,22 @@ async function solveMemberChallenge(challengeToken: string, difficulty: number):
       await new Promise((resolve) => setTimeout(resolve, 0));
     }
   }
+}
+
+function buildMembershipExportRows(rows: CompanyRecord[], sectorMarketCaps: Map<string, number>): string[][] {
+  return rows.map((row) => [
+    row.ticker,
+    row.security,
+    row.sector,
+    formatPercent(getSectorDominance(row, sectorMarketCaps)),
+    formatDate(row.currentMemberSince),
+    formatDate(row.lastLeftAt),
+    row.dividend.hasDividend ? formatCurrency(row.dividend.dividendRate, row.dividend.currency || 'USD') : 'No dividend',
+    formatPercent(row.dividend.dividendYield),
+    formatCurrency(row.metrics.marketCap, row.metrics.currency || 'USD'),
+    formatNumber(row.metrics.forwardPE, { maximumFractionDigits: 2 }),
+    formatCurrency(row.metrics.price, row.metrics.currency || 'USD'),
+  ]);
 }
 
 function MetricCard({ label, value, hint }: { label: string; value: string; hint?: string }) {
@@ -348,16 +357,21 @@ function getInitialMembershipSortDirection(key: MembershipSortKey): MembershipSo
 function MembershipTable({
   rows,
   canExport,
+  donateUrl,
   supporterEnabled,
+  onRequestLogin,
   onToggleSupporterUnlock,
 }: {
   rows: CompanyRecord[];
   canExport: boolean;
+  donateUrl: string;
   supporterEnabled: boolean;
+  onRequestLogin: () => void;
   onToggleSupporterUnlock: () => void;
 }) {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<MembershipSortState>(defaultMembershipSort);
+  const [exportMessage, setExportMessage] = useState('');
 
   const sectorMarketCaps = useMemo(() => {
     const totals = new Map<string, number>();
@@ -400,29 +414,63 @@ function MembershipTable({
     });
   }
 
-  function exportRows() {
-    const csvLines = [
-      membershipColumns.map((column) => escapeCsvCell(column.label)).join(','),
-      ...sorted.map((row) => ([
-        row.ticker,
-        row.security,
-        row.sector,
-        formatPercent(getSectorDominance(row, sectorMarketCaps)),
-        formatDate(row.currentMemberSince),
-        formatDate(row.lastLeftAt),
-        row.dividend.hasDividend ? formatCurrency(row.dividend.dividendRate, row.dividend.currency || 'USD') : 'No dividend',
-        formatPercent(row.dividend.dividendYield),
-        formatCurrency(row.metrics.marketCap, row.metrics.currency || 'USD'),
-        formatNumber(row.metrics.forwardPE, { maximumFractionDigits: 2 }),
-        formatCurrency(row.metrics.price, row.metrics.currency || 'USD'),
-      ]).map((value) => escapeCsvCell(value)).join(',')),
-    ];
+  async function exportRowsAsXlsx() {
+    try {
+      const ExcelJS = await import('exceljs');
+      const workbook = new ExcelJS.Workbook();
+      const worksheet = workbook.addWorksheet('S&P 500 Members');
 
-    downloadFile(
-      `sp500-members-${new Date().toISOString().slice(0, 10)}.csv`,
-      `${csvLines.join('\n')}\n`,
-      'text/csv;charset=utf-8',
-    );
+      worksheet.columns = membershipColumns.map((column, index) => ({
+        header: column.label,
+        key: column.key,
+        width: [10, 28, 22, 14, 14, 14, 14, 10, 16, 12, 14][index],
+      }));
+
+      for (const row of buildMembershipExportRows(sorted, sectorMarketCaps)) {
+        worksheet.addRow(row);
+      }
+
+      worksheet.getRow(1).font = { bold: true };
+      const workbookBytes = await workbook.xlsx.writeBuffer();
+      downloadFile(
+        `sp500-members-${new Date().toISOString().slice(0, 10)}.xlsx`,
+        workbookBytes,
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      );
+      setExportMessage('XLSX export downloaded.');
+    } catch {
+      setExportMessage('Could not create the XLSX export in this browser.');
+    }
+  }
+
+  async function copyRowsForGoogleSheets() {
+    try {
+      const lines = [
+        membershipColumns.map((column) => column.label).join('\t'),
+        ...buildMembershipExportRows(sorted, sectorMarketCaps).map((row) => row.join('\t')),
+      ];
+
+      await navigator.clipboard.writeText(`${lines.join('\n')}\n`);
+      setExportMessage('Copied in Google Sheets format. Paste directly into Sheets.');
+    } catch {
+      setExportMessage('Clipboard access is blocked in this browser.');
+    }
+  }
+
+  function blockLockedTableAction(event: React.SyntheticEvent<HTMLElement>) {
+    if (canExport) return;
+    event.preventDefault();
+    setExportMessage('Sign in or donate to unlock copying, XLSX download, and Google Sheets export.');
+  }
+
+  function blockLockedShortcuts(event: React.KeyboardEvent<HTMLElement>) {
+    if (canExport) return;
+
+    const key = event.key.toLowerCase();
+    if ((event.ctrlKey || event.metaKey) && ['a', 'c', 'x'].includes(key)) {
+      event.preventDefault();
+      setExportMessage('Manual copy is disabled until export access is unlocked.');
+    }
   }
 
   return (
@@ -430,6 +478,9 @@ function MembershipTable({
       <div className="panel-header panel-header-stack">
         <div>
           <h2>Current S&amp;P 500 members</h2>
+          {!canExport ? (
+            <p>Sign in or donate to unlock XLSX download, Google Sheets copy, and member-table export access.</p>
+          ) : null}
         </div>
         <div className="membership-toolbar">
           <input
@@ -447,18 +498,62 @@ function MembershipTable({
             Reset sort
           </button>
           {canExport ? (
-            <button type="button" className="export-button" onClick={exportRows}>
-              Export Excel
-            </button>
-          ) : supporterEnabled ? (
-            <button type="button" className="export-button export-button-secondary" onClick={onToggleSupporterUnlock}>
-              Unlock export
-            </button>
-          ) : null}
+            <>
+              <button type="button" className="export-button" onClick={() => void exportRowsAsXlsx()}>
+                Download XLSX
+              </button>
+              <button type="button" className="export-button export-button-secondary" onClick={() => void copyRowsForGoogleSheets()}>
+                Copy for Google Sheets
+              </button>
+            </>
+          ) : (
+            <>
+              <button type="button" className="export-button donate-button" onClick={() => {
+                if (donateUrl) {
+                  window.open(donateUrl, '_blank', 'noopener,noreferrer');
+                }
+              }} disabled={!donateUrl}>
+                Donate to unlock export
+              </button>
+              <button type="button" className="export-button export-button-secondary" onClick={onRequestLogin}>
+                Sign in to unlock export
+              </button>
+              {supporterEnabled ? (
+                <button type="button" className="export-button export-button-secondary" onClick={onToggleSupporterUnlock}>
+                  Already donated? Enter code
+                </button>
+              ) : null}
+            </>
+          )}
         </div>
       </div>
-      <div className="table-wrap tall">
-        <table className="membership-table">
+      {!canExport ? (
+        <div className="export-callout">
+          <div>
+            <strong>Donate to download.</strong>
+            <p>
+              Supporters can unlock XLSX and Google Sheets export with a supporter code. Sign-in still unlocks export too,
+              but public visitors need either login or donation access.
+            </p>
+          </div>
+          {donateUrl ? (
+            <a className="donate-link" href={donateUrl} target="_blank" rel="noreferrer">
+              Open donation page
+            </a>
+          ) : null}
+        </div>
+      ) : null}
+      {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
+      <div
+        className={`table-wrap tall${canExport ? '' : ' table-wrap-locked'}`}
+        onCopy={blockLockedTableAction}
+        onCut={blockLockedTableAction}
+        onContextMenu={blockLockedTableAction}
+        onDragStart={blockLockedTableAction}
+        onKeyDownCapture={blockLockedShortcuts}
+        tabIndex={0}
+      >
+        <table className={`membership-table${canExport ? '' : ' membership-table-locked'}`}>
           <thead>
             <tr>
               {membershipColumns.map((column) => {
@@ -514,6 +609,7 @@ export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasSupporterAccess, setHasSupporterAccess] = useState(false);
   const [supporterEnabled, setSupporterEnabled] = useState(false);
+  const [donateUrl, setDonateUrl] = useState('');
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSupporterForm, setShowSupporterForm] = useState(false);
   const [supporterCode, setSupporterCode] = useState('');
@@ -552,6 +648,7 @@ export default function App() {
         setIsAuthenticated(authenticated);
         setHasSupporterAccess(Boolean(payload.supporter));
         setSupporterEnabled(Boolean(payload.supporterEnabled));
+        setDonateUrl(typeof payload.donateUrl === 'string' ? payload.donateUrl : '');
         if (!authenticated) {
           setActiveView('home');
         } else if (new URLSearchParams(window.location.search).get('view') === 'prediction') {
@@ -793,10 +890,16 @@ export default function App() {
             <MembershipTable
               rows={currentMembers}
               canExport={canExport}
+              donateUrl={donateUrl}
               supporterEnabled={supporterEnabled}
+              onRequestLogin={() => {
+                setShowLoginForm(true);
+                setShowSupporterForm(false);
+              }}
               onToggleSupporterUnlock={() => {
                 setShowSupporterForm((current) => !current);
                 setSupporterError('');
+                setShowLoginForm(false);
               }}
             />
           ) : (

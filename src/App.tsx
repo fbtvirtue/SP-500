@@ -733,10 +733,33 @@ function MembershipTable({
 
       const headerRow = worksheet.addRow(exportDocument.headerRow);
       headerRow.font = { bold: true };
+      worksheet.autoFilter = {
+        from: { row: headerRow.number, column: 1 },
+        to: { row: headerRow.number, column: membershipColumns.length },
+      };
 
-      for (const row of exportDocument.dataRows) {
-        worksheet.addRow(row);
+      for (const row of exportRows) {
+        worksheet.addRow([
+          row.ticker,
+          row.security,
+          row.sector,
+          getSectorDominance(row, sectorTotals),
+          formatDate(row.currentMemberSince),
+          formatDate(row.lastLeftAt),
+          row.dividend.hasDividend ? row.dividend.dividendRate : null,
+          row.dividend.dividendYield,
+          row.metrics.marketCap,
+          row.metrics.forwardPE,
+          row.metrics.price,
+        ]);
       }
+
+      worksheet.getColumn(4).numFmt = '0.00%';
+      worksheet.getColumn(7).numFmt = '$# ##0.00';
+      worksheet.getColumn(8).numFmt = '0.00%';
+      worksheet.getColumn(9).numFmt = '$# ##0.00';
+      worksheet.getColumn(10).numFmt = '0.00';
+      worksheet.getColumn(11).numFmt = '$# ##0.00';
 
       const workbookBytes = await workbook.xlsx.writeBuffer();
       downloadFile(
@@ -744,7 +767,7 @@ function MembershipTable({
         workbookBytes,
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       );
-      setExportMessage(`XLSX export downloaded with ${decimalSeparator === ',' ? 'comma' : 'dot'} decimals.`);
+      setExportMessage('XLSX export downloaded.');
     } catch {
       setExportMessage('Could not create the XLSX export in this browser.');
     }

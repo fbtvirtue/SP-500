@@ -950,6 +950,12 @@ th {
   font-weight: 700;
 }
 
+.sort-button > span:first-child {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .sort-button:hover,
 .sort-button.active {
   color: var(--app-text-strong);
@@ -1014,6 +1020,9 @@ th {
 .membership-table td {
   user-select: none;
   -webkit-user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .membership-table tbody td {

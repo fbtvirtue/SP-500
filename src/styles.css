@@ -409,6 +409,8 @@ a {
 .table-wrap {
   overflow-x: auto;
   overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .table-wrap.tall {
@@ -436,7 +438,7 @@ a {
   top: var(--site-header-offset, 0px);
   z-index: 8;
   margin: -24px -24px 18px;
-  padding: 24px 24px 18px;
+  padding: 24px 24px 14px;
   background: linear-gradient(180deg, rgba(244, 247, 251, 0.98) 0%, rgba(248, 251, 255, 0.94) 100%);
   backdrop-filter: blur(12px);
   border-radius: 28px 28px 22px 22px;
@@ -642,6 +644,12 @@ a {
   margin: 0 0 16px;
   color: #4d647f;
   line-height: 1.6;
+}
+
+.export-note-sticky {
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(16, 35, 61, 0.08);
 }
 
 .donate-link {
@@ -920,7 +928,22 @@ tr:hover td {
   .membership-sticky-header {
     top: 0;
     margin: -20px -20px 18px;
-    padding: 20px 20px 18px;
+    padding: 20px 20px 14px;
+  }
+
+  .membership-table .sticky-col {
+    position: static;
+  }
+
+  .membership-table .sticky-col-1,
+  .membership-table .sticky-col-2 {
+    left: auto;
+  }
+
+  .membership-table th.sticky-col,
+  .membership-table td.sticky-col,
+  .membership-table tbody tr:hover .sticky-col {
+    background: transparent;
   }
 
   .export-menu-panel {

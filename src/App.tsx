@@ -538,7 +538,7 @@ function MembershipTable({
     if (!element) return;
 
     const updateOffset = () => {
-      setStickyHeaderOffset(element.getBoundingClientRect().height + 12);
+      setStickyHeaderOffset(Math.ceil(element.getBoundingClientRect().height));
     };
 
     updateOffset();
@@ -795,6 +795,9 @@ function MembershipTable({
             </>
           )}
         </div>
+        {supporterAccessDuration ? (
+          <p className="export-note export-note-sticky">Supporter purchases unlock export access for {supporterAccessDuration} in this browser.</p>
+        ) : null}
       </div>
       {!canExport ? (
         <div className="export-callout">
@@ -810,9 +813,6 @@ function MembershipTable({
       ) : null}
       {!canExport && supporterError ? <p className="form-error">{supporterError}</p> : null}
       {exportMessage ? <p className="export-message">{exportMessage}</p> : null}
-      {supporterAccessDuration ? (
-        <p className="export-note">Supporter purchases unlock export access for {supporterAccessDuration} in this browser.</p>
-      ) : null}
       <div
         className={`table-wrap tall${canExport ? '' : ' table-wrap-locked'}`}
         onCopy={blockLockedTableAction}
@@ -912,7 +912,7 @@ export default function App() {
     if (!element) return;
 
     const updateOffset = () => {
-      setSiteHeaderOffset(element.getBoundingClientRect().height + 12);
+      setSiteHeaderOffset(Math.ceil(element.getBoundingClientRect().height));
     };
 
     updateOffset();

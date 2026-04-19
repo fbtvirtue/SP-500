@@ -88,6 +88,10 @@ const exportWarningText = 'This file is generated automatically from public data
 const googleIdentityScriptSrc = 'https://accounts.google.com/gsi/client';
 const googleSheetsScope = 'https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.file';
 
+function isValidGoogleOAuthClientId(value: string | null | undefined): value is string {
+  return Boolean(value && /\.apps\.googleusercontent\.com$/i.test(value.trim()));
+}
+
 function formatDate(value: string | null): string {
   if (!value) return 'Unknown';
   const date = new Date(value);
@@ -680,6 +684,7 @@ function MembershipTable({
   snapshotGeneratedAt,
   supporterAccessDuration,
   googleSheetsClientId,
+  siteHeaderOffset,
   onStartSupporterCheckout,
 }: {
   rows: CompanyRecord[];
@@ -690,6 +695,7 @@ function MembershipTable({
   snapshotGeneratedAt: string;
   supporterAccessDuration: string | null;
   googleSheetsClientId: string | null;
+  siteHeaderOffset: number;
   onStartSupporterCheckout: () => void;
 }) {
   const [query, setQuery] = useState('');
@@ -697,8 +703,11 @@ function MembershipTable({
   const [exportMessage, setExportMessage] = useState('');
   const [exportFormat, setExportFormat] = useState<ExportFormat>('xlsx');
   const [decimalSeparator, setDecimalSeparator] = useState<DecimalSeparator>('.');
+  const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
   const [stickyHeaderOffset, setStickyHeaderOffset] = useState(0);
   const headerRef = useRef<HTMLDivElement | null>(null);
+  const exportMenuRef = useRef<HTMLDivElement | null>(null);
+  const hasGoogleSheetsSupport = isValidGoogleOAuthClientId(googleSheetsClientId);
 
   const sectorMarketCaps = useMemo(() => {
     const totals = new Map<string, number>();
@@ -750,6 +759,33 @@ function MembershipTable({
       window.removeEventListener('resize', updateOffset);
     };
   }, []);
+
+  useEffect(() => {
+    if (!isExportMenuOpen) return;
+
+    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (exportMenuRef.current?.contains(target)) return;
+      setIsExportMenuOpen(false);
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsExportMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('touchstart', handlePointerDown);
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('touchstart', handlePointerDown);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isExportMenuOpen]);
 
   function toggleSort(key: MembershipSortKey) {
     setSort((current) => {
@@ -819,8 +855,8 @@ function MembershipTable({
   }
 
   async function importRowsToGoogleSheets() {
-    if (!googleSheetsClientId) {
-      setExportMessage('Google Sheets import is not configured for this site yet.');
+    if (!hasGoogleSheetsSupport || !googleSheetsClientId) {
+      setExportMessage('Google Sheets import needs a Google Web OAuth client ID ending in .apps.googleusercontent.com. The current site configuration is not valid for OAuth.');
       return;
     }
 
@@ -865,25 +901,29 @@ function MembershipTable({
   }
 
   function blockLockedTableAction(event: React.SyntheticEvent<HTMLElement>) {
-    if (canExport) return;
     event.preventDefault();
-    setExportMessage('Donate to unlock CSV and XLSX download plus Google Sheets export.');
+    setExportMessage(canExport
+      ? 'Manual table copy is disabled. Use CSV, XLSX, or Google Sheets export instead.'
+      : 'Donate to unlock CSV and XLSX download plus Google Sheets export.');
   }
 
   function blockLockedShortcuts(event: React.KeyboardEvent<HTMLElement>) {
-    if (canExport) return;
-
     const key = event.key.toLowerCase();
     if ((event.ctrlKey || event.metaKey) && ['a', 'c', 'x'].includes(key)) {
       event.preventDefault();
-      setExportMessage('Manual copy is disabled until export access is unlocked.');
+      setExportMessage(canExport
+        ? 'Manual table copy is disabled. Use CSV, XLSX, or Google Sheets export instead.'
+        : 'Manual copy is disabled until export access is unlocked.');
     }
   }
 
   return (
     <section
       className="panel stack-section membership-section"
-      style={{ '--membership-sticky-offset': `${stickyHeaderOffset}px` } as React.CSSProperties}
+      style={{
+        '--site-header-offset': `${siteHeaderOffset}px`,
+        '--membership-sticky-offset': `${siteHeaderOffset + stickyHeaderOffset}px`,
+      } as React.CSSProperties}
     >
       <div ref={headerRef} className="panel-header panel-header-stack membership-sticky-header">
         <div>
@@ -912,9 +952,27 @@ function MembershipTable({
           </button>
           {canExport ? (
             <>
-              <details className="export-menu">
-                <summary className="export-button export-button-secondary export-menu-trigger">Export options</summary>
-                <div className="export-menu-panel">
+              <div ref={exportMenuRef} className="export-menu">
+                <button
+                  type="button"
+                  className="export-button export-button-secondary export-menu-trigger"
+                  aria-expanded={isExportMenuOpen}
+                  onClick={() => setIsExportMenuOpen((current) => !current)}
+                >
+                  Export options
+                </button>
+                {isExportMenuOpen ? <div className="export-menu-panel">
+                  <div className="export-menu-header">
+                    <strong>Export options</strong>
+                    <button
+                      type="button"
+                      className="export-menu-close"
+                      aria-label="Close export options"
+                      onClick={() => setIsExportMenuOpen(false)}
+                    >
+                      x
+                    </button>
+                  </div>
                   <div className="export-menu-grid">
                     <label className="toolbar-select-field">
                       <span>Format</span>
@@ -940,7 +998,7 @@ function MembershipTable({
                     </label>
                   </div>
                   <div className="export-menu-actions">
-                    <button type="button" className="export-button" onClick={downloadSelectedExport}>
+                    <button type="button" className="export-button" onClick={() => { downloadSelectedExport(); setIsExportMenuOpen(false); }}>
                       Download {exportFormat.toUpperCase()}
                     </button>
                     <button
@@ -951,11 +1009,11 @@ function MembershipTable({
                       Create Google Sheet
                     </button>
                   </div>
-                  {!googleSheetsClientId ? (
-                    <p className="export-menu-note">Google Sheets import is unavailable because no Google client ID is being exposed by the live server yet.</p>
+                  {!hasGoogleSheetsSupport ? (
+                    <p className="export-menu-note">Google Sheets import needs a Google Web OAuth client ID ending in .apps.googleusercontent.com. The current live value is not valid for OAuth.</p>
                   ) : null}
-                </div>
-              </details>
+                </div> : null}
+              </div>
             </>
           ) : (
             <>
@@ -995,6 +1053,7 @@ function MembershipTable({
         onContextMenu={blockLockedTableAction}
         onDragStart={blockLockedTableAction}
         onKeyDownCapture={blockLockedShortcuts}
+        onSelectStart={blockLockedTableAction}
         tabIndex={0}
       >
         <table className={`membership-table${canExport ? '' : ' membership-table-locked'}`}>
@@ -1071,6 +1130,28 @@ export default function App() {
   const isLocalHost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
   const canLogout = typeof window !== 'undefined' && !isLocalHost;
   const canExport = isLocalHost || isAuthenticated || hasSupporterAccess;
+  const [siteHeaderOffset, setSiteHeaderOffset] = useState(0);
+  const siteHeaderRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const element = siteHeaderRef.current;
+    if (!element) return;
+
+    const updateOffset = () => {
+      setSiteHeaderOffset(element.getBoundingClientRect().height + 12);
+    };
+
+    updateOffset();
+
+    const observer = new ResizeObserver(() => updateOffset());
+    observer.observe(element);
+    window.addEventListener('resize', updateOffset);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateOffset);
+    };
+  }, []);
 
   useEffect(() => {
     void fetch('/data/latest.json', { cache: 'no-store' })
@@ -1247,7 +1328,7 @@ export default function App() {
 
   return (
     <main className="app-shell">
-      <header className="panel site-header">
+      <header ref={siteHeaderRef} className="panel site-header">
         <div className="site-brand">
           <div className="site-kicker">S&amp;P 500 Monitor</div>
           <div className="site-title">Market structure dashboard</div>
@@ -1346,6 +1427,7 @@ export default function App() {
               snapshotGeneratedAt={data.generatedAt}
               supporterAccessDuration={supporterAccessDuration}
               googleSheetsClientId={googleSheetsClientId}
+              siteHeaderOffset={siteHeaderOffset}
               onStartSupporterCheckout={() => void startSupporterCheckout()}
             />
           ) : (

@@ -59,6 +59,11 @@ a {
   justify-content: space-between;
   gap: 18px;
   padding-block: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 24;
+  background: linear-gradient(180deg, rgba(244, 247, 251, 0.98) 0%, rgba(248, 251, 255, 0.94) 100%);
+  backdrop-filter: blur(12px);
 }
 
 .site-brand {
@@ -428,7 +433,7 @@ a {
 
 .membership-sticky-header {
   position: sticky;
-  top: 0;
+  top: var(--site-header-offset, 0px);
   z-index: 8;
   margin: -24px -24px 18px;
   padding: 24px 24px 18px;
@@ -550,6 +555,27 @@ a {
 .export-menu-trigger {
   min-height: 46px;
   border-radius: 999px;
+}
+
+.export-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.export-menu-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(16, 35, 61, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #10233d;
+  font-weight: 700;
 }
 
 .export-menu-panel {
@@ -798,6 +824,12 @@ th {
   min-width: 1300px;
 }
 
+.membership-table th,
+.membership-table td {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .membership-table .ticker-column {
   min-width: 88px;
 }
@@ -813,11 +845,11 @@ th {
 
 .membership-table th.sticky-col {
   background: rgba(235, 242, 250, 0.95);
-  z-index: 3;
+  z-index: 7;
 }
 
 .membership-table td.sticky-col {
-  z-index: 1;
+  z-index: 2;
 }
 
 .membership-table .sticky-col-1 {
@@ -851,6 +883,7 @@ tr:hover td {
   .site-header {
     align-items: flex-start;
     padding-block: 20px;
+    top: 0;
   }
 
   .site-nav {

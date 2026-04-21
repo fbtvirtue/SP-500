@@ -380,45 +380,28 @@ async function handleMembersExport(context) {
     to: { row: headerRow.number, column: membershipExportHeaders.length },
   };
 
-  // Write rows in the export-specific column order. For XLSX we write real Date objects
-  // for Member since / Last left so Excel treats them as dates.
   for (const row of sortedRows) {
-    const memberSinceDate = row.currentMemberSince ? new Date(row.currentMemberSince) : null;
-    const lastLeftDate = row.lastLeftAt ? new Date(row.lastLeftAt) : null;
-    const eps = (typeof row.metrics?.price === 'number' && typeof row.metrics?.trailingPE === 'number' && row.metrics?.trailingPE)
-      ? (row.metrics.price / row.metrics.trailingPE)
-      : null;
-
     worksheet.addRow([
       row.ticker,
       row.security,
       row.sector,
       getSectorDominance(row, sectorMarketCaps),
+      formatExportDate(row.currentMemberSince),
+      formatExportDate(row.lastLeftAt),
       row.dividend?.hasDividend ? row.dividend.dividendRate : null,
       row.dividend?.dividendYield ?? null,
       row.metrics?.marketCap ?? null,
-      memberSinceDate,
-      lastLeftDate,
-      null, // MA50
-      null, // MA200
-      eps,
       row.metrics?.forwardPE ?? null,
       row.metrics?.price ?? null,
     ]);
   }
 
-  // Apply XLSX number formats
-  worksheet.getColumn(4).numFmt = xlsxFormats.percent; // Dominance
-  worksheet.getColumn(5).numFmt = xlsxFormats.currency; // Dividend
-  worksheet.getColumn(6).numFmt = xlsxFormats.percent; // Yield
-  worksheet.getColumn(7).numFmt = xlsxFormats.currency; // Market cap
-  worksheet.getColumn(8).numFmt = 'mm/dd/yyyy'; // Member since
-  worksheet.getColumn(9).numFmt = 'mm/dd/yyyy'; // Last left
-  worksheet.getColumn(10).numFmt = xlsxFormats.currency; // MA50
-  worksheet.getColumn(11).numFmt = xlsxFormats.currency; // MA200
-  worksheet.getColumn(12).numFmt = xlsxFormats.decimal; // EPS
-  worksheet.getColumn(13).numFmt = xlsxFormats.decimal; // Forward P/E
-  worksheet.getColumn(14).numFmt = xlsxFormats.currency; // Current price
+  worksheet.getColumn(4).numFmt = xlsxFormats.percent;
+  worksheet.getColumn(7).numFmt = xlsxFormats.currency;
+  worksheet.getColumn(8).numFmt = xlsxFormats.percent;
+  worksheet.getColumn(9).numFmt = xlsxFormats.currency;
+  worksheet.getColumn(10).numFmt = xlsxFormats.decimal;
+  worksheet.getColumn(11).numFmt = xlsxFormats.currency;
 
   const workbookBytes = await workbook.xlsx.writeBuffer();
   return new Response(workbookBytes, {
@@ -740,17 +723,14 @@ function getPositiveInteger(value) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
 }
 
-const membershipExportColumns = [10, 28, 22, 14, 14, 10, 16, 12, 12, 12, 12, 12, 12, 14];
+const membershipExportColumns = [10, 28, 22, 14, 14, 14, 14, 10, 16, 12, 14];
 const exportDataSources = [
   'Wikipedia current S&P 500 constituents and change history',
   'Wikipedia S&P 400, S&P 600, and Nasdaq-100 constituent lists',
   'Finviz quote pages for market cap, valuation, and dividend fields',
 ];
 const exportWarningText = 'This file is generated automatically from public data sources and is intended for monitoring and research only. It is not financial advice.';
-const membershipExportHeaders = [
-  'Ticker', 'Company', 'Sector', 'Dominance', 'Dividend', 'Yield', 'Market cap', 'Member since', 'Last left',
-  'MA50', 'MA200', 'EPS', 'Forward P/E', 'Current price',
-];
+const membershipExportHeaders = ['Ticker', 'Company', 'Sector', 'Dominance', 'Member since', 'Last left', 'Dividend', 'Yield', 'Market cap', 'Forward P/E', 'Current price'];
 
 function getExportFormat(value) {
   return value === 'csv' ? 'csv' : 'xlsx';
@@ -819,11 +799,6 @@ function formatLocalizedPercent(value, locale) {
 function buildMembershipExportDocument(rows, sectorMarketCaps, { generatedAt, decimalSeparator }) {
   const locale = getExportLocale(decimalSeparator);
 
-  const exportHeaders = [
-    'Ticker', 'Company', 'Sector', 'Dominance', 'Dividend', 'Yield', 'Market cap', 'Member since', 'Last left',
-    'MA50', 'MA200', 'EPS', 'Forward P/E', 'Current price',
-  ];
-
   return {
     metadataRows: [
       ['Warning', exportWarningText],
@@ -831,29 +806,22 @@ function buildMembershipExportDocument(rows, sectorMarketCaps, { generatedAt, de
       ['Snapshot generated', formatExportDateTime(generatedAt)],
       [],
     ],
-    headerRow: exportHeaders,
-    dataRows: rows.map((row) => {
-      const eps = (typeof row.metrics?.price === 'number' && typeof row.metrics?.trailingPE === 'number' && row.metrics?.trailingPE)
-        ? (row.metrics.price / row.metrics.trailingPE)
-        : null;
-
-      return [
-        row.ticker,
-        row.security,
-        row.sector,
-        formatLocalizedPercent(getSectorDominance(row, sectorMarketCaps), locale),
-        row.dividend?.hasDividend ? formatLocalizedCurrency(row.dividend.dividendRate, locale, row.dividend.currency || 'USD') : 'No dividend',
-        formatLocalizedPercent(row.dividend?.dividendYield ?? null, locale),
-        formatLocalizedCurrency(row.metrics?.marketCap ?? null, locale, row.metrics?.currency || 'USD'),
-        formatExportDate(row.currentMemberSince),
-        formatExportDate(row.lastLeftAt),
-        '', // MA50
-        '', // MA200
-        eps === null ? 'N/A' : formatLocalizedNumber(eps, locale, { maximumFractionDigits: 2 }),
-        formatLocalizedNumber(row.metrics?.forwardPE ?? null, locale, { maximumFractionDigits: 2 }),
-        formatLocalizedCurrency(row.metrics?.price ?? null, locale, row.metrics?.currency || 'USD'),
-      ];
-    }),
+    headerRow: membershipExportHeaders,
+    dataRows: rows.map((row) => [
+      row.ticker,
+      row.security,
+      row.sector,
+      formatLocalizedPercent(getSectorDominance(row, sectorMarketCaps), locale),
+      formatExportDate(row.currentMemberSince),
+      formatExportDate(row.lastLeftAt),
+      row.dividend?.hasDividend
+        ? formatLocalizedCurrency(row.dividend.dividendRate, locale, row.dividend.currency || 'USD')
+        : 'No dividend',
+      formatLocalizedPercent(row.dividend?.dividendYield ?? null, locale),
+      formatLocalizedCurrency(row.metrics?.marketCap ?? null, locale, row.metrics?.currency || 'USD'),
+      formatLocalizedNumber(row.metrics?.forwardPE ?? null, locale, { maximumFractionDigits: 2 }),
+      formatLocalizedCurrency(row.metrics?.price ?? null, locale, row.metrics?.currency || 'USD'),
+    ]),
   };
 }
 

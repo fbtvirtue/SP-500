@@ -248,11 +248,6 @@ function buildMembershipExportDocument(
 ): MembershipExportDocument {
   const locale = getExportLocale(decimalSeparator);
 
-  const exportHeaders = [
-    'Ticker', 'Company', 'Sector', 'Dominance', 'Dividend', 'Yield', 'Market cap', 'Member since', 'Last left',
-    'MA50', 'MA200', 'EPS', 'Forward P/E', 'Current price',
-  ];
-
   return {
     metadataRows: [
       ['Warning', exportWarningText],
@@ -260,29 +255,22 @@ function buildMembershipExportDocument(
       ['Snapshot generated', formatExportDateTime(generatedAt)],
       [],
     ],
-    headerRow: exportHeaders,
-    dataRows: rows.map((row) => {
-      const eps = (typeof row.metrics.price === 'number' && typeof row.metrics.trailingPE === 'number' && row.metrics.trailingPE)
-        ? (row.metrics.price / row.metrics.trailingPE)
-        : null;
-
-      return [
-        row.ticker,
-        row.security,
-        row.sector,
-        formatLocalizedPercent(getSectorDominance(row, sectorMarketCaps), locale),
-        row.dividend.hasDividend ? formatLocalizedCurrency(row.dividend.dividendRate, locale, row.dividend.currency || 'USD') : 'No dividend',
-        formatLocalizedPercent(row.dividend.dividendYield ?? null, locale),
-        formatLocalizedCurrency(row.metrics.marketCap ?? null, locale, row.metrics.currency || 'USD'),
-        formatDate(row.currentMemberSince),
-        formatDate(row.lastLeftAt),
-        '', // MA50 not available in dataset
-        '', // MA200 not available in dataset
-        eps === null ? 'N/A' : formatLocalizedNumber(eps, locale, { maximumFractionDigits: 2 }),
-        formatLocalizedNumber(row.metrics.forwardPE ?? null, locale, { maximumFractionDigits: 2 }),
-        formatLocalizedCurrency(row.metrics.price ?? null, locale, row.metrics.currency || 'USD'),
-      ];
-    }),
+    headerRow: membershipColumns.map((column) => column.label),
+    dataRows: rows.map((row) => [
+      row.ticker,
+      row.security,
+      row.sector,
+      formatLocalizedPercent(getSectorDominance(row, sectorMarketCaps), locale),
+      formatDate(row.currentMemberSince),
+      formatDate(row.lastLeftAt),
+      row.dividend.hasDividend
+        ? formatLocalizedCurrency(row.dividend.dividendRate, locale, row.dividend.currency || 'USD')
+        : 'No dividend',
+      formatLocalizedPercent(row.dividend.dividendYield, locale),
+      formatLocalizedCurrency(row.metrics.marketCap, locale, row.metrics.currency || 'USD'),
+      formatLocalizedNumber(row.metrics.forwardPE, locale, { maximumFractionDigits: 2 }),
+      formatLocalizedCurrency(row.metrics.price, locale, row.metrics.currency || 'USD'),
+    ]),
   };
 }
 
@@ -751,9 +739,10 @@ function MembershipTable({
         decimalSeparator,
       });
 
-      // Export columns are arranged specifically for XLSX output (includes MA50/MA200/EPS)
-      const exportColumnWidths = [10, 28, 22, 14, 14, 10, 16, 12, 12, 12, 12, 12, 12, 14];
-      worksheet.columns = exportColumnWidths.map((w, i) => ({ key: `col${i + 1}`, width: w }));
+      worksheet.columns = membershipColumns.map((column, index) => ({
+        key: column.key,
+        width: [10, 28, 22, 14, 14, 14, 14, 10, 16, 12, 14][index],
+      }));
 
       for (const row of exportDocument.metadataRows) {
         const addedRow = worksheet.addRow(row);
@@ -765,49 +754,33 @@ function MembershipTable({
 
       const headerRow = worksheet.addRow(exportDocument.headerRow);
       headerRow.font = { bold: true };
-      const exportColumnCount = exportColumnWidths.length;
       worksheet.autoFilter = {
         from: { row: headerRow.number, column: 1 },
-        to: { row: headerRow.number, column: exportColumnCount },
+        to: { row: headerRow.number, column: membershipColumns.length },
       };
 
       for (const row of exportRows) {
-        const memberSinceDate = row.currentMemberSince ? new Date(row.currentMemberSince) : null;
-        const lastLeftDate = row.lastLeftAt ? new Date(row.lastLeftAt) : null;
-        const eps = (typeof row.metrics.price === 'number' && typeof row.metrics.trailingPE === 'number' && row.metrics.trailingPE)
-          ? (row.metrics.price / row.metrics.trailingPE)
-          : null;
-
         worksheet.addRow([
           row.ticker,
           row.security,
           row.sector,
           getSectorDominance(row, sectorTotals),
+          formatDate(row.currentMemberSince),
+          formatDate(row.lastLeftAt),
           row.dividend.hasDividend ? row.dividend.dividendRate : null,
-          row.dividend.dividendYield ?? null,
-          row.metrics.marketCap ?? null,
-          memberSinceDate,
-          lastLeftDate,
-          null, // MA50
-          null, // MA200
-          eps,
-          row.metrics.forwardPE ?? null,
-          row.metrics.price ?? null,
+          row.dividend.dividendYield,
+          row.metrics.marketCap,
+          row.metrics.forwardPE,
+          row.metrics.price,
         ]);
       }
 
-      // Apply XLSX number formats to exported columns
-      worksheet.getColumn(4).numFmt = xlsxFormats.percent; // Dominance
-      worksheet.getColumn(5).numFmt = xlsxFormats.currency; // Dividend
-      worksheet.getColumn(6).numFmt = xlsxFormats.percent; // Yield
-      worksheet.getColumn(7).numFmt = xlsxFormats.currency; // Market cap
-      worksheet.getColumn(8).numFmt = 'mm/dd/yyyy'; // Member since (short date)
-      worksheet.getColumn(9).numFmt = 'mm/dd/yyyy'; // Last left (short date)
-      worksheet.getColumn(10).numFmt = xlsxFormats.currency; // MA50
-      worksheet.getColumn(11).numFmt = xlsxFormats.currency; // MA200
-      worksheet.getColumn(12).numFmt = xlsxFormats.decimal; // EPS
-      worksheet.getColumn(13).numFmt = xlsxFormats.decimal; // Forward P/E
-      worksheet.getColumn(14).numFmt = xlsxFormats.currency; // Current price
+      worksheet.getColumn(4).numFmt = xlsxFormats.percent;
+      worksheet.getColumn(7).numFmt = xlsxFormats.currency;
+      worksheet.getColumn(8).numFmt = xlsxFormats.percent;
+      worksheet.getColumn(9).numFmt = xlsxFormats.currency;
+      worksheet.getColumn(10).numFmt = xlsxFormats.decimal;
+      worksheet.getColumn(11).numFmt = xlsxFormats.currency;
 
       const workbookBytes = await workbook.xlsx.writeBuffer();
       downloadFile(

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T15:53:41.977Z",
+  "generatedAt": "2026-05-05T17:19:16.738Z",
   "possibleFallOut": [
     {
       "ticker": "BAX",
@@ -1304,7 +1304,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.55396984448812,
+        "entryScore": 93.54404920956749,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1454,7 +1454,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.08154634403006,
+        "entryScore": 89.07162570910943,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1504,7 +1504,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.81332008659369,
+        "entryScore": 88.79348864889805,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1554,7 +1554,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.81034680056584,
+        "entryScore": 87.79051536287018,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1604,7 +1604,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.71563094927751,
+        "entryScore": 87.74611066566659,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1654,7 +1654,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.00437834789335,
+        "entryScore": 86.99445771297272,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1704,7 +1704,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.7788965619472,
+        "entryScore": 86.76897592702656,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1754,7 +1754,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.86709925060698,
+        "entryScore": 85.84726781291133,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1804,7 +1804,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.5293823133525,
+        "entryScore": 85.5628510614439,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1854,7 +1854,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.31263933878874,
+        "entryScore": 85.42229493901037,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1904,7 +1904,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.64920108247685,
+        "entryScore": 84.63928044755622,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1954,7 +1954,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.53658960114642,
+        "entryScore": 84.60432825379074,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2004,7 +2004,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.44860940224532,
+        "entryScore": 84.43868876732469,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2054,7 +2054,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.1475376968294,
+        "entryScore": 84.12770625913373,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2104,7 +2104,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.74734977675377,
+        "entryScore": 83.73742914183313,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2154,7 +2154,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.3682531816823,
+        "entryScore": 83.35833254676167,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2204,7 +2204,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.31197015891479,
+        "entryScore": 83.30204952399416,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2254,61 +2254,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.21456602352467,
+        "entryScore": 83.26933761326222,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 20,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "TOL",
-      "yahooTicker": "TOL",
-      "security": "Toll Brothers",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Homebuilding",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Fort Washington, Pennsylvania",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.01,
-        "dividendYield": 0.0075,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 12790000000,
-        "price": 135.05,
-        "currency": "USD",
-        "trailingPE": 9.65,
-        "forwardPE": 9.55,
-        "priceToBook": 1.52,
-        "returnOnEquity": 0.1703,
-        "profitMargins": 0.1226,
-        "operatingMargins": 0.1528,
-        "debtToEquity": 0.34,
-        "currentRatio": 3.77,
-        "revenueGrowth": 0.15410000000000001,
-        "earningsGrowth": 0.2525,
-        "averageDailyVolume": 1210000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 83.1884849234982,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 21,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2354,7 +2304,57 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.11936874276607,
+        "entryScore": 83.10944810784544,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 21,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "TOL",
+      "yahooTicker": "TOL",
+      "security": "Toll Brothers",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Homebuilding",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Fort Washington, Pennsylvania",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.01,
+        "dividendYield": 0.0075,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 12790000000,
+        "price": 135.05,
+        "currency": "USD",
+        "trailingPE": 9.65,
+        "forwardPE": 9.55,
+        "priceToBook": 1.52,
+        "returnOnEquity": 0.1703,
+        "profitMargins": 0.1226,
+        "operatingMargins": 0.1528,
+        "debtToEquity": 0.34,
+        "currentRatio": 3.77,
+        "revenueGrowth": 0.15410000000000001,
+        "earningsGrowth": 0.2525,
+        "averageDailyVolume": 1210000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.09726166363757,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2404,62 +2404,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.07245075156881,
+        "entryScore": 83.05261931387315,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 23,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
-    },
-    {
-      "ticker": "FR",
-      "yahooTicker": "FR",
-      "security": "First Industrial Realty Trust",
-      "sector": "Real Estate",
-      "subIndustry": "Industrial REITs",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Chicago, Illinois",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.84,
-        "dividendYield": 0.0301,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 8369999999.999999,
-        "price": 61.06,
-        "currency": "USD",
-        "trailingPE": 23.65,
-        "forwardPE": 32.36,
-        "priceToBook": 2.94,
-        "returnOnEquity": 0.1266,
-        "profitMargins": 0.4595,
-        "operatingMargins": 0.4121,
-        "debtToEquity": 0.94,
-        "currentRatio": 3.36,
-        "revenueGrowth": 0.1003,
-        "earningsGrowth": 1.9724000000000002,
-        "averageDailyVolume": 1060000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 82.18705237510927,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 24,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "ARWR",
@@ -2504,12 +2454,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.15133798142189,
+        "entryScore": 82.17799092081067,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 24,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "FR",
+      "yahooTicker": "FR",
+      "security": "First Industrial Realty Trust",
+      "sector": "Real Estate",
+      "subIndustry": "Industrial REITs",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Chicago, Illinois",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.84,
+        "dividendYield": 0.0301,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 8369999999.999999,
+        "price": 61.06,
+        "currency": "USD",
+        "trailingPE": 23.65,
+        "forwardPE": 32.36,
+        "priceToBook": 2.94,
+        "returnOnEquity": 0.1266,
+        "profitMargins": 0.4595,
+        "operatingMargins": 0.4121,
+        "debtToEquity": 0.94,
+        "currentRatio": 3.36,
+        "revenueGrowth": 0.1003,
+        "earningsGrowth": 1.9724000000000002,
+        "averageDailyVolume": 1060000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.16722093741362,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     }
   ],
   "undervalued": [

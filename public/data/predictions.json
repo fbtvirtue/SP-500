@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T02:29:00.590Z",
+  "generatedAt": "2026-05-07T05:57:13.008Z",
   "possibleFallOut": [
     {
       "ticker": "BAX",
@@ -43,10 +43,10 @@
         "averageDailyVolume": 9670000
       },
       "scores": {
-        "fallOutRisk": 98.82436920628159,
+        "fallOutRisk": 98.92549184657726,
         "entryScore": null,
-        "undervaluedScore": 64.30915945110699,
-        "overvaluedScore": 31.76333310102806
+        "undervaluedScore": 64.34489057674176,
+        "overvaluedScore": 31.70874927000154
       },
       "rank": 1,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
@@ -93,10 +93,10 @@
         "averageDailyVolume": 1020000
       },
       "scores": {
-        "fallOutRisk": 97.42565406078774,
+        "fallOutRisk": 97.55835137366496,
         "entryScore": null,
-        "undervaluedScore": 41.37944055477206,
-        "overvaluedScore": 54.56551339503031
+        "undervaluedScore": 41.80488984028003,
+        "overvaluedScore": 54.122509707809165
       },
       "rank": 2,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
@@ -747,10 +747,10 @@
         "averageDailyVolume": 10710000
       },
       "scores": {
-        "fallOutRisk": 85.78316471403635,
+        "fallOutRisk": 85.87670580545539,
         "entryScore": null,
-        "undervaluedScore": 72.39546018359033,
-        "overvaluedScore": 23.63429233310652
+        "undervaluedScore": 72.32803758665827,
+        "overvaluedScore": 23.686060065370413
       },
       "rank": 15,
       "commentary": "smaller market-cap profile, thin profitability"
@@ -1156,6 +1156,56 @@
       "commentary": "thin profitability, negative earnings growth"
     },
     {
+      "ticker": "CNC",
+      "yahooTicker": "CNC",
+      "security": "Centene Corporation",
+      "sector": "Health Care",
+      "subIndustry": "Managed Health Care",
+      "sourceIndex": "S&P 500",
+      "headquarters": "St. Louis, Missouri",
+      "cik": "0001071739",
+      "founded": "1984",
+      "currentMember": true,
+      "currentMemberSince": "2016-03-30",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2016-03-30",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 26160000000,
+        "price": 52.98,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 11.76,
+        "priceToBook": 1.22,
+        "returnOnEquity": -0.2612,
+        "profitMargins": -0.0325,
+        "operatingMargins": 0.0002,
+        "debtToEquity": 0.76,
+        "currentRatio": 1.12,
+        "revenueGrowth": 0.0713,
+        "earningsGrowth": 0.1816,
+        "averageDailyVolume": 6640000
+      },
+      "scores": {
+        "fallOutRisk": 80.29218448839654,
+        "entryScore": null,
+        "undervaluedScore": 60.96895827839566,
+        "overvaluedScore": 34.6242974441704
+      },
+      "rank": 24,
+      "commentary": "thin profitability"
+    },
+    {
       "ticker": "SWKS",
       "yahooTicker": "SWKS",
       "security": "Skyworks Solutions",
@@ -1202,58 +1252,8 @@
         "undervaluedScore": 65.32001691747661,
         "overvaluedScore": 26.66887441019875
       },
-      "rank": 24,
-      "commentary": "smaller market-cap profile, negative earnings growth"
-    },
-    {
-      "ticker": "CNC",
-      "yahooTicker": "CNC",
-      "security": "Centene Corporation",
-      "sector": "Health Care",
-      "subIndustry": "Managed Health Care",
-      "sourceIndex": "S&P 500",
-      "headquarters": "St. Louis, Missouri",
-      "cik": "0001071739",
-      "founded": "1984",
-      "currentMember": true,
-      "currentMemberSince": "2016-03-30",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2016-03-30",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 26160000000,
-        "price": 52.98,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 11.76,
-        "priceToBook": 1.22,
-        "returnOnEquity": -0.2612,
-        "profitMargins": -0.0325,
-        "operatingMargins": 0.0002,
-        "debtToEquity": 0.76,
-        "currentRatio": 1.12,
-        "revenueGrowth": 0.0713,
-        "earningsGrowth": 0.1816,
-        "averageDailyVolume": 6640000
-      },
-      "scores": {
-        "fallOutRisk": 80.1752309762993,
-        "entryScore": null,
-        "undervaluedScore": 60.898910706288476,
-        "overvaluedScore": 34.7011048709454
-      },
       "rank": 25,
-      "commentary": "thin profitability"
+      "commentary": "smaller market-cap profile, negative earnings growth"
     }
   ],
   "possibleEntrants": [
@@ -2651,10 +2651,10 @@
         "averageDailyVolume": 3990000
       },
       "scores": {
-        "fallOutRisk": 36.63034772799307,
+        "fallOutRisk": 36.92796677561212,
         "entryScore": null,
-        "undervaluedScore": 85.47619047619048,
-        "overvaluedScore": 13.571428571428573
+        "undervaluedScore": 85.25,
+        "overvaluedScore": 13.75
       },
       "rank": 3,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
@@ -2755,7 +2755,7 @@
         "averageDailyVolume": 2330000
       },
       "scores": {
-        "fallOutRisk": 42.38168817332241,
+        "fallOutRisk": 42.36176785459731,
         "entryScore": null,
         "undervaluedScore": 79.87135401424251,
         "overvaluedScore": 16.64520534581992
@@ -2918,6 +2918,56 @@
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
     },
     {
+      "ticker": "DVN",
+      "yahooTicker": "DVN",
+      "security": "Devon Energy",
+      "sector": "Energy",
+      "subIndustry": "Oil & Gas Exploration & Production",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Oklahoma City, Oklahoma",
+      "cik": "0001090012",
+      "founded": "1971",
+      "currentMember": true,
+      "currentMemberSince": "2000-08-30",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2000-08-30",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.96,
+        "dividendYield": 0.018799999999999997,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 31660000000,
+        "price": 50.99,
+        "currency": "USD",
+        "trailingPE": 12.21,
+        "forwardPE": 9.44,
+        "priceToBook": 2.04,
+        "returnOnEquity": 0.17600000000000002,
+        "profitMargins": 0.15789999999999998,
+        "operatingMargins": 0.2041,
+        "debtToEquity": 0.56,
+        "currentRatio": 0.98,
+        "revenueGrowth": -0.0352,
+        "earningsGrowth": -0.0796,
+        "averageDailyVolume": 14220000
+      },
+      "scores": {
+        "fallOutRisk": 55.62395328864184,
+        "entryScore": null,
+        "undervaluedScore": 76.5,
+        "overvaluedScore": 21.25
+      },
+      "rank": 9,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
+    },
+    {
       "ticker": "CHTR",
       "yahooTicker": "CHTR",
       "security": "Charter Communications",
@@ -2964,7 +3014,7 @@
         "undervaluedScore": 76.13636363636365,
         "overvaluedScore": 23.636363636363633
       },
-      "rank": 9,
+      "rank": 10,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple"
     },
     {
@@ -3014,7 +3064,7 @@
         "undervaluedScore": 75.99999999999999,
         "overvaluedScore": 26.4
       },
-      "rank": 10,
+      "rank": 11,
       "commentary": "discounted sector-relative earnings multiple, quality support"
     },
     {
@@ -3064,7 +3114,7 @@
         "undervaluedScore": 75.86313145315734,
         "overvaluedScore": 17.29009750011552
       },
-      "rank": 11,
+      "rank": 12,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
     },
     {
@@ -3114,7 +3164,7 @@
         "undervaluedScore": 75.7771867612293,
         "overvaluedScore": 20.041371158392437
       },
-      "rank": 12,
+      "rank": 13,
       "commentary": "discounted sector-relative earnings multiple, quality support"
     },
     {
@@ -3164,58 +3214,8 @@
         "undervaluedScore": 75.27796257796258,
         "overvaluedScore": 24.990090090090092
       },
-      "rank": 13,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
-    },
-    {
-      "ticker": "DVN",
-      "yahooTicker": "DVN",
-      "security": "Devon Energy",
-      "sector": "Energy",
-      "subIndustry": "Oil & Gas Exploration & Production",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Oklahoma City, Oklahoma",
-      "cik": "0001090012",
-      "founded": "1971",
-      "currentMember": true,
-      "currentMemberSince": "2000-08-30",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2000-08-30",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.96,
-        "dividendYield": 0.018799999999999997,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 31660000000,
-        "price": 50.99,
-        "currency": "USD",
-        "trailingPE": 12.21,
-        "forwardPE": 9.44,
-        "priceToBook": 2.04,
-        "returnOnEquity": 0.17600000000000002,
-        "profitMargins": 0.15789999999999998,
-        "operatingMargins": 0.2041,
-        "debtToEquity": 0.56,
-        "currentRatio": 0.98,
-        "revenueGrowth": -0.0352,
-        "earningsGrowth": -0.0796,
-        "averageDailyVolume": 14220000
-      },
-      "scores": {
-        "fallOutRisk": 56.20728662197518,
-        "entryScore": null,
-        "undervaluedScore": 75.23809523809523,
-        "overvaluedScore": 22.857142857142854
-      },
       "rank": 14,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
     },
     {
       "ticker": "UHS",
@@ -3259,10 +3259,10 @@
         "averageDailyVolume": 802110
       },
       "scores": {
-        "fallOutRisk": 64.39755384894937,
+        "fallOutRisk": 64.51312911673,
         "entryScore": null,
-        "undervaluedScore": 75.06625737334308,
-        "overvaluedScore": 24.341320950935998
+        "undervaluedScore": 75.00476446710567,
+        "overvaluedScore": 24.419172068899837
       },
       "rank": 15,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple"
@@ -3618,6 +3618,56 @@
       "commentary": "discounted sector-relative earnings multiple, contained book multiple"
     },
     {
+      "ticker": "APA",
+      "yahooTicker": "APA",
+      "security": "APA Corporation",
+      "sector": "Energy",
+      "subIndustry": "Oil & Gas Exploration & Production",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Houston, Texas",
+      "cik": "0001841666",
+      "founded": "1954",
+      "currentMember": true,
+      "currentMemberSince": "1997-07-28",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1997-07-28",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1,
+        "dividendYield": 0.0241,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 14660000000,
+        "price": 41.48,
+        "currency": "USD",
+        "trailingPE": 10.42,
+        "forwardPE": 10.03,
+        "priceToBook": 2.4,
+        "returnOnEquity": 0.2522,
+        "profitMargins": 0.16079999999999997,
+        "operatingMargins": 0.30829999999999996,
+        "debtToEquity": 0.79,
+        "currentRatio": 0.82,
+        "revenueGrowth": -0.2659,
+        "earningsGrowth": -0.1808,
+        "averageDailyVolume": 8480000
+      },
+      "scores": {
+        "fallOutRisk": 65.08132142090322,
+        "entryScore": null,
+        "undervaluedScore": 74,
+        "overvaluedScore": 26
+      },
+      "rank": 23,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+    },
+    {
       "ticker": "ALL",
       "yahooTicker": "ALL",
       "security": "Allstate",
@@ -3664,7 +3714,7 @@
         "undervaluedScore": 73.93693693693695,
         "overvaluedScore": 24.895495495495496
       },
-      "rank": 23,
+      "rank": 24,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
     },
     {
@@ -3709,63 +3759,13 @@
         "averageDailyVolume": 6990000
       },
       "scores": {
-        "fallOutRisk": 67.70678201857243,
+        "fallOutRisk": 67.72674209841273,
         "entryScore": null,
         "undervaluedScore": 73.889691121277,
         "overvaluedScore": 28.51202578439074
       },
-      "rank": 24,
-      "commentary": "discounted sector-relative earnings multiple, dividend support, quality support"
-    },
-    {
-      "ticker": "EPAM",
-      "yahooTicker": "EPAM",
-      "security": "EPAM Systems",
-      "sector": "Information Technology",
-      "subIndustry": "IT Consulting & Other Services",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Newtown, Pennsylvania",
-      "cik": "0001352010",
-      "founded": "1993",
-      "currentMember": true,
-      "currentMemberSince": "2021-12-14",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2021-12-14",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 5780000000,
-        "price": 109.64,
-        "currency": "USD",
-        "trailingPE": 16.29,
-        "forwardPE": 7.83,
-        "priceToBook": 1.62,
-        "returnOnEquity": 0.10339999999999999,
-        "profitMargins": 0.0692,
-        "operatingMargins": 0.0922,
-        "debtToEquity": 0.04,
-        "currentRatio": 2.59,
-        "revenueGrowth": 0.1275,
-        "earningsGrowth": 0.0987,
-        "averageDailyVolume": 1410000
-      },
-      "scores": {
-        "fallOutRisk": 69.11075958451107,
-        "entryScore": null,
-        "undervaluedScore": 73.20127304653207,
-        "overvaluedScore": 20.60116086235489
-      },
       "rank": 25,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
+      "commentary": "discounted sector-relative earnings multiple, dividend support, quality support"
     }
   ],
   "overvalued": [
@@ -3811,7 +3811,7 @@
         "averageDailyVolume": 4650000
       },
       "scores": {
-        "fallOutRisk": 54.39041022079884,
+        "fallOutRisk": 54.41037030063916,
         "entryScore": null,
         "undervaluedScore": 15.594806571277156,
         "overvaluedScore": 91.17816640169582
@@ -4111,7 +4111,7 @@
         "averageDailyVolume": 3690000
       },
       "scores": {
-        "fallOutRisk": 56.66028778464068,
+        "fallOutRisk": 56.64036746591558,
         "entryScore": null,
         "undervaluedScore": 18.66858237547893,
         "overvaluedScore": 82.82348111658456
@@ -4469,7 +4469,7 @@
         "averageDailyVolume": 648740
       },
       "scores": {
-        "fallOutRisk": 40.18784491978542,
+        "fallOutRisk": 40.207804999625736,
         "entryScore": null,
         "undervaluedScore": 24.69202700237183,
         "overvaluedScore": 80.73786717752235
@@ -4519,7 +4519,7 @@
         "averageDailyVolume": 4010000
       },
       "scores": {
-        "fallOutRisk": 51.23483374630319,
+        "fallOutRisk": 51.21491342757809,
         "entryScore": null,
         "undervaluedScore": 17.92892156862745,
         "overvaluedScore": 80.62091503267975
@@ -4578,56 +4578,6 @@
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
-      "ticker": "TRGP",
-      "yahooTicker": "TRGP",
-      "security": "Targa Resources",
-      "sector": "Energy",
-      "subIndustry": "Oil & Gas Storage & Transportation",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Houston, Texas",
-      "cik": "0001389170",
-      "founded": "2005",
-      "currentMember": true,
-      "currentMemberSince": "2022-10-12",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2022-10-12",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.25,
-        "dividendYield": 0.016399999999999998,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 55790000000,
-        "price": 259.72,
-        "currency": "USD",
-        "trailingPE": 30.51,
-        "forwardPE": 22.49,
-        "priceToBook": 18.17,
-        "returnOnEquity": 0.6506000000000001,
-        "profitMargins": 0.10710000000000001,
-        "operatingMargins": 0.2036,
-        "debtToEquity": 5.71,
-        "currentRatio": 0.67,
-        "revenueGrowth": -0.0922,
-        "earningsGrowth": 0.7406,
-        "averageDailyVolume": 1460000
-      },
-      "scores": {
-        "fallOutRisk": 48.47133564402214,
-        "entryScore": null,
-        "undervaluedScore": 25.238095238095237,
-        "overvaluedScore": 80
-      },
-      "rank": 17,
-      "commentary": "elevated book multiple"
-    },
-    {
       "ticker": "CASY",
       "yahooTicker": "CASY",
       "security": "Casey's",
@@ -4674,7 +4624,7 @@
         "undervaluedScore": 19.38474025974026,
         "overvaluedScore": 79.7987012987013
       },
-      "rank": 18,
+      "rank": 17,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
     },
     {
@@ -4724,7 +4674,7 @@
         "undervaluedScore": 19.846335697399528,
         "overvaluedScore": 79.68676122931441
       },
-      "rank": 19,
+      "rank": 18,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
@@ -4774,6 +4724,56 @@
         "undervaluedScore": 27.334340222575516,
         "overvaluedScore": 79.52151563328033
       },
+      "rank": 19,
+      "commentary": "elevated book multiple"
+    },
+    {
+      "ticker": "TRGP",
+      "yahooTicker": "TRGP",
+      "security": "Targa Resources",
+      "sector": "Energy",
+      "subIndustry": "Oil & Gas Storage & Transportation",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Houston, Texas",
+      "cik": "0001389170",
+      "founded": "2005",
+      "currentMember": true,
+      "currentMemberSince": "2022-10-12",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2022-10-12",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.25,
+        "dividendYield": 0.016399999999999998,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 55790000000,
+        "price": 259.72,
+        "currency": "USD",
+        "trailingPE": 30.51,
+        "forwardPE": 22.49,
+        "priceToBook": 18.17,
+        "returnOnEquity": 0.6506000000000001,
+        "profitMargins": 0.10710000000000001,
+        "operatingMargins": 0.2036,
+        "debtToEquity": 5.71,
+        "currentRatio": 0.67,
+        "revenueGrowth": -0.0922,
+        "earningsGrowth": 0.7406,
+        "averageDailyVolume": 1460000
+      },
+      "scores": {
+        "fallOutRisk": 48.078478501165,
+        "entryScore": null,
+        "undervaluedScore": 26,
+        "overvaluedScore": 79.25
+      },
       "rank": 20,
       "commentary": "elevated book multiple"
     },
@@ -4819,7 +4819,7 @@
         "averageDailyVolume": 1500000
       },
       "scores": {
-        "fallOutRisk": 39.877193819532245,
+        "fallOutRisk": 39.89715389937257,
         "entryScore": null,
         "undervaluedScore": 24.600000000000005,
         "overvaluedScore": 79.20000000000002
@@ -4869,7 +4869,7 @@
         "averageDailyVolume": 3590000
       },
       "scores": {
-        "fallOutRisk": 20.389517616000905,
+        "fallOutRisk": 20.389557377116127,
         "entryScore": null,
         "undervaluedScore": 29.593640699523053,
         "overvaluedScore": 78.93428722840487
@@ -4969,7 +4969,7 @@
         "averageDailyVolume": 2660000
       },
       "scores": {
-        "fallOutRisk": 26.064256645450435,
+        "fallOutRisk": 26.044336326725336,
         "entryScore": null,
         "undervaluedScore": 29.429591129591127,
         "overvaluedScore": 78.83908523908525

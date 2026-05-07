@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-06T23:47:19.577Z",
+  "generatedAt": "2026-05-07T02:29:00.590Z",
   "schedule": {
-    "nextSnapshotAt": "2026-05-07T00:47:19.577Z"
+    "nextSnapshotAt": "2026-05-07T03:29:00.590Z"
   },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
@@ -56,9 +56,26 @@
     }
   ],
   "recentChanges": {
-    "joinedLast7Days": [],
-    "leftLast7Days": [],
+    "joinedLast7Days": [
+      {
+        "date": "2026-05-07",
+        "ticker": "VEEV",
+        "security": "Veeva Systems"
+      }
+    ],
+    "leftLast7Days": [
+      {
+        "date": "2026-05-07",
+        "ticker": "CTRA",
+        "security": "Coterra Energy"
+      }
+    ],
     "joinedLast45Days": [
+      {
+        "date": "2026-05-07",
+        "ticker": "VEEV",
+        "security": "Veeva Systems"
+      },
       {
         "date": "2026-04-09",
         "ticker": "CASY",
@@ -86,6 +103,11 @@
       }
     ],
     "leftLast45Days": [
+      {
+        "date": "2026-05-07",
+        "ticker": "CTRA",
+        "security": "Coterra Energy"
+      },
       {
         "date": "2026-04-09",
         "ticker": "HOLX",

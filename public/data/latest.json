@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-07T23:53:44.639Z",
+  "generatedAt": "2026-05-08T02:35:31.838Z",
   "schedule": {
-    "nextSnapshotAt": "2026-05-08T00:53:44.639Z"
+    "nextSnapshotAt": "2026-05-08T03:35:31.838Z"
   },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
@@ -80,26 +80,6 @@
         "date": "2026-04-09",
         "ticker": "CASY",
         "security": "Casey's"
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "VRT",
-        "security": "Vertiv"
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "LITE",
-        "security": "Lumentum"
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "COHR",
-        "security": "Coherent Corp."
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "SATS",
-        "security": "EchoStar"
       }
     ],
     "leftLast45Days": [
@@ -112,26 +92,6 @@
         "date": "2026-04-09",
         "ticker": "HOLX",
         "security": "Hologic"
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "MTCH",
-        "security": "Match Group"
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "MOH",
-        "security": "Molina Healthcare"
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "LW",
-        "security": "Lamb Weston"
-      },
-      {
-        "date": "2026-03-23",
-        "ticker": "PAYC",
-        "security": "Paycom"
       }
     ]
   }

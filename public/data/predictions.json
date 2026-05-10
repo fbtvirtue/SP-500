@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10T11:45:54.817Z",
+  "generatedAt": "2026-05-10T13:07:05.989Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 94.82759588057574,
+        "entryScore": 94.83746754888769,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.25387969350238,
+        "entryScore": 93.27362303012627,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.1776553610284,
+        "entryScore": 92.18752702934033,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.60318031321184,
+        "entryScore": 91.61305198152378,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.8572713813431,
+        "entryScore": 88.88688638627893,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.74591307996141,
+        "entryScore": 88.81325601264118,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.28953246712263,
+        "entryScore": 87.30927580374652,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.24364708193971,
+        "entryScore": 87.25351875025166,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.17352018361682,
+        "entryScore": 86.20313518855265,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1750,7 +1750,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.4457142618264,
+        "entryScore": 85.46545759845029,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.40966844130273,
+        "entryScore": 85.43928344623856,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.04007161344322,
+        "entryScore": 85.10612305703607,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1886,7 +1886,7 @@
         "marketCap": 27460000000,
         "price": 359.88,
         "currency": "USD",
-        "trailingPE": 155.86,
+        "trailingPE": 156.04,
         "forwardPE": 52.58,
         "priceToBook": 19.37,
         "returnOnEquity": 0.1349,
@@ -1895,7 +1895,7 @@
         "debtToEquity": 0.29,
         "currentRatio": 7.52,
         "revenueGrowth": 0.225,
-        "earningsGrowth": 0.4351,
+        "earningsGrowth": 0.4288,
         "averageDailyVolume": 1160000
       },
       "scores": {
@@ -1958,56 +1958,6 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
-      "ticker": "JHG",
-      "yahooTicker": "JHG",
-      "security": "Janus Henderson",
-      "sector": "Financials",
-      "subIndustry": "Asset Management & Custody Banks",
-      "sourceIndex": "S&P 400",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.2,
-        "dividendYield": 0.0232,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 7960000000,
-        "price": 51.69,
-        "currency": "USD",
-        "trailingPE": 9.84,
-        "forwardPE": 10.98,
-        "priceToBook": 1.56,
-        "returnOnEquity": 0.16449999999999998,
-        "profitMargins": 0.2469,
-        "operatingMargins": 0.3521,
-        "debtToEquity": 0.1,
-        "currentRatio": 4.18,
-        "revenueGrowth": 0.631,
-        "earningsGrowth": 2.4164,
-        "averageDailyVolume": 3120000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 84.65653128381194,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 15,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
       "ticker": "RMBS",
       "yahooTicker": "RMBS",
       "security": "Rambus",
@@ -2050,11 +2000,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.12215987106059,
+        "entryScore": 84.13203153937253,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 16,
+      "rank": 15,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2100,11 +2050,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.866913359885,
+        "entryScore": 83.87678502819695,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 17,
+      "rank": 16,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2150,11 +2100,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.58065440945182,
+        "entryScore": 83.61026941438766,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 18,
+      "rank": 17,
       "commentary": "solid profitability, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2200,11 +2150,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.23973086558628,
+        "entryScore": 83.26934587052212,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 19,
+      "rank": 18,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2250,11 +2200,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.23198420533069,
+        "entryScore": 83.24185587364263,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 20,
+      "rank": 19,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
@@ -2300,11 +2250,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.83088808052005,
+        "entryScore": 82.87037475376783,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 21,
+      "rank": 20,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2350,11 +2300,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.70055777357408,
+        "entryScore": 82.69068610526213,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 22,
+      "rank": 21,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
@@ -2400,11 +2350,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.51138473482632,
+        "entryScore": 82.52125640313827,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 23,
+      "rank": 22,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2450,11 +2400,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.44981998106459,
+        "entryScore": 82.46956331768848,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 24,
+      "rank": 23,
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2500,12 +2450,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.01560060583087,
+        "entryScore": 82.02547227414281,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 24,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "EVR",
+      "yahooTicker": "EVR",
+      "security": "Evercore",
+      "sector": "Financials",
+      "subIndustry": "Investment Banking & Brokerage",
+      "sourceIndex": "S&P 400",
+      "headquarters": "New York City, New York",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 3.36,
+        "dividendYield": 0.0098,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 13510000000,
+        "price": 341.19,
+        "currency": "USD",
+        "trailingPE": 19.25,
+        "forwardPE": 14.82,
+        "priceToBook": 7.4,
+        "returnOnEquity": 0.4543,
+        "profitMargins": 0.163,
+        "operatingMargins": 0.22920000000000001,
+        "debtToEquity": 0.62,
+        "currentRatio": 2.77,
+        "revenueGrowth": 1.0034999999999998,
+        "earningsGrowth": 1.0709,
+        "averageDailyVolume": 660100
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 81.82312891669233,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     }
   ],
   "undervalued": [

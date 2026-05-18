@@ -31981,5 +31981,47 @@
       "dividendRate": null,
       "dividendYield": null
     }
+  },
+  "BFAM": {
+    "fetchedAt": "2026-05-18T16:09:37.857Z",
+    "metrics": {
+      "marketCap": 3580000000,
+      "price": 68.11,
+      "currency": "USD",
+      "trailingPE": 20.48,
+      "forwardPE": 11.86,
+      "priceToBook": 3.14,
+      "returnOnEquity": 0.1532,
+      "profitMargins": 0.0635,
+      "operatingMargins": 0.1065,
+      "debtToEquity": 1.64,
+      "currentRatio": 0.46,
+      "revenueGrowth": 0.0702,
+      "earningsGrowth": -0.0504,
+      "averageDailyVolume": 1150000,
+      "dividendRate": null,
+      "dividendYield": null
+    }
+  },
+  "RELY": {
+    "fetchedAt": "2026-05-18T16:09:38.453Z",
+    "metrics": {
+      "marketCap": 4590000000,
+      "price": 21.81,
+      "currency": "USD",
+      "trailingPE": 44.73,
+      "forwardPE": 24.69,
+      "priceToBook": 5.06,
+      "returnOnEquity": 0.1295,
+      "profitMargins": 0.061200000000000004,
+      "operatingMargins": 0.0775,
+      "debtToEquity": 0.04,
+      "currentRatio": 2.84,
+      "revenueGrowth": 0.2521,
+      "earningsGrowth": 3.3462,
+      "averageDailyVolume": 4770000,
+      "dividendRate": null,
+      "dividendYield": null
+    }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T01:42:01.677Z",
+  "generatedAt": "2026-05-20T03:07:20.152Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 94.01523198492858,
+        "entryScore": 93.98564618611202,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.07344126874877,
+        "entryScore": 92.0438554699322,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.89221632495325,
+        "entryScore": 88.88233490202835,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.3943849730279,
+        "entryScore": 87.35491775128644,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.76182234710663,
+        "entryScore": 85.73223654829006,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.42852520946167,
+        "entryScore": 84.39893941064508,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.17659403779805,
+        "entryScore": 84.13712681605658,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.99908285694238,
+        "entryScore": 83.96949705812581,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.78623377150925,
+        "entryScore": 83.74676654976778,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.90295156348668,
+        "entryScore": 82.86348434174522,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,12 +2250,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.86258367318973,
+        "entryScore": 82.83299787437318,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 20,
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "SN",
+      "yahooTicker": "SN",
+      "security": "SharkNinja",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Household Appliances",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Needham, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 14430000000,
+        "price": 101.99,
+        "currency": "USD",
+        "trailingPE": 20.56,
+        "forwardPE": 14.6,
+        "priceToBook": 5.22,
+        "returnOnEquity": 0.2937,
+        "profitMargins": 0.107,
+        "operatingMargins": 0.1439,
+        "debtToEquity": 0.31,
+        "currentRatio": 2.38,
+        "revenueGrowth": 0.1555,
+        "earningsGrowth": 0.0294,
+        "averageDailyVolume": 2049999.9999999998
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.77485014790807,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 21,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "PDD",
@@ -2300,11 +2350,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.67126518965983,
+        "entryScore": 82.65150234381002,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 21,
+      "rank": 22,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
@@ -2350,11 +2400,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.4085686966952,
+        "entryScore": 82.25772302723453,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 22,
+      "rank": 23,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2400,11 +2450,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.13630820274017,
+        "entryScore": 82.10672240392361,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 23,
+      "rank": 24,
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2450,62 +2500,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.70314958979924,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 24,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "MRVL",
-      "yahooTicker": "MRVL",
-      "security": "Marvell Technology",
-      "sector": "Technology",
-      "subIndustry": "Semiconductors",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.24,
-        "dividendYield": 0.0014000000000000002,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 155020000000,
-        "price": 177.05,
-        "currency": "USD",
-        "trailingPE": 57.28,
-        "forwardPE": 32.38,
-        "priceToBook": 10.48,
-        "returnOnEquity": 0.1925,
-        "profitMargins": 0.3258,
-        "operatingMargins": 0.16329999999999997,
-        "debtToEquity": 0.35,
-        "currentRatio": 2.01,
-        "revenueGrowth": 0.2208,
-        "earningsGrowth": 1.0334,
-        "averageDailyVolume": 24490000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 81.0294788823217,
+        "entryScore": 81.67356379098267,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     }
   ],
   "undervalued": [

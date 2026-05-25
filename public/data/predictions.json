@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T09:21:23.673Z",
+  "generatedAt": "2026-05-25T11:23:17.525Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 94.06004084360667,
+        "entryScore": 94.06452215963684,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.04044014024487,
+        "entryScore": 93.02723703790386,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.60674401312424,
+        "entryScore": 92.60204982434257,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.33085291650617,
+        "entryScore": 91.32416259087304,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.05163135642805,
+        "entryScore": 89.03859949741677,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.96039442467773,
+        "entryScore": 88.06925641411665,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.02274737169482,
+        "entryScore": 87.01425732194086,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.16935460204265,
+        "entryScore": 86.16333156132487,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.73260221967533,
+        "entryScore": 85.76562530071081,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1750,7 +1750,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.54905791579166,
+        "entryScore": 85.53680230466006,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,61 +1800,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.81058314538726,
+        "entryScore": 84.80296649491126,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 11,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "MTSI",
-      "yahooTicker": "MTSI",
-      "security": "MACOM Technology Solutions",
-      "sector": "Information Technology",
-      "subIndustry": "Semiconductors",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Lowell, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 29450000000,
-        "price": 385.98,
-        "currency": "USD",
-        "trailingPE": 167.35,
-        "forwardPE": 56.39,
-        "priceToBook": 20.77,
-        "returnOnEquity": 0.1349,
-        "profitMargins": 0.1646,
-        "operatingMargins": 0.15960000000000002,
-        "debtToEquity": 0.29,
-        "currentRatio": 7.52,
-        "revenueGrowth": 0.225,
-        "earningsGrowth": 0.4288,
-        "averageDailyVolume": 1240000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 84.7130053474554,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 12,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1900,12 +1850,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.70627136700965,
+        "entryScore": 84.77293875249322,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 12,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+    },
+    {
+      "ticker": "MTSI",
+      "yahooTicker": "MTSI",
+      "security": "MACOM Technology Solutions",
+      "sector": "Information Technology",
+      "subIndustry": "Semiconductors",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Lowell, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 29450000000,
+        "price": 385.98,
+        "currency": "USD",
+        "trailingPE": 167.35,
+        "forwardPE": 56.39,
+        "priceToBook": 20.77,
+        "returnOnEquity": 0.1349,
+        "profitMargins": 0.1646,
+        "operatingMargins": 0.15960000000000002,
+        "debtToEquity": 0.29,
+        "currentRatio": 7.52,
+        "revenueGrowth": 0.225,
+        "earningsGrowth": 0.4288,
+        "averageDailyVolume": 1240000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 84.69817682317682,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 13,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "RMBS",
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.54884328275176,
+        "entryScore": 84.54144657656364,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.45840572360208,
+        "entryScore": 84.51962722099024,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.39652582632566,
+        "entryScore": 84.48142314116946,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.55794362238785,
+        "entryScore": 83.55942880390161,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2150,7 +2150,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.26211671612263,
+        "entryScore": 83.24703557312252,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.09048792368331,
+        "entryScore": 83.08058955899865,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.95762076527838,
+        "entryScore": 82.94752536647813,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.66175552214318,
+        "entryScore": 82.65150234381002,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.65799944612799,
+        "entryScore": 82.64656079706246,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.22415158203904,
+        "entryScore": 82.21518417626497,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2450,7 +2450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.80723293470028,
+        "entryScore": 81.8017299392157,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.02611688853162,
+        "entryScore": 81.0097160364719,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

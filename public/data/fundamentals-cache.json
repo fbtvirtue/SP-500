@@ -3045,24 +3045,24 @@
     }
   },
   "FLO": {
-    "fetchedAt": "2026-05-19T19:35:17.425Z",
+    "fetchedAt": "2026-05-25T13:09:06.874Z",
     "metrics": {
-      "marketCap": 1520000000,
-      "price": 7.17,
+      "marketCap": 1680000000,
+      "price": 7.94,
       "currency": "USD",
-      "trailingPE": 18.19,
-      "forwardPE": 8.64,
-      "priceToBook": 1.16,
-      "returnOnEquity": 0.061799999999999994,
-      "profitMargins": 0.0159,
-      "operatingMargins": 0.0683,
-      "debtToEquity": 1.6,
-      "currentRatio": 0.75,
-      "revenueGrowth": 0.1096,
-      "earningsGrowth": -2.563,
-      "averageDailyVolume": 6180000,
+      "trailingPE": 23.22,
+      "forwardPE": 9.47,
+      "priceToBook": 1.29,
+      "returnOnEquity": 0.0536,
+      "profitMargins": 0.0138,
+      "operatingMargins": 0.067,
+      "debtToEquity": 1.57,
+      "currentRatio": 0.77,
+      "revenueGrowth": 0.011200000000000002,
+      "earningsGrowth": -0.2082,
+      "averageDailyVolume": 6500000,
       "dividendRate": 0.99,
-      "dividendYield": 0.1384
+      "dividendYield": 0.1249
     }
   },
   "FLR": {
@@ -32106,6 +32106,27 @@
       "averageDailyVolume": 4450000,
       "dividendRate": null,
       "dividendYield": null
+    }
+  },
+  "FG": {
+    "fetchedAt": "2026-05-25T13:09:06.299Z",
+    "metrics": {
+      "marketCap": 3680000000,
+      "price": 27.79,
+      "currency": "USD",
+      "trailingPE": 7.45,
+      "forwardPE": 5.39,
+      "priceToBook": 0.8,
+      "returnOnEquity": 0.1186,
+      "profitMargins": 0.0858,
+      "operatingMargins": 0.142,
+      "debtToEquity": 0.48,
+      "currentRatio": 0.07,
+      "revenueGrowth": 0.2602,
+      "earningsGrowth": 9.8478,
+      "averageDailyVolume": 787460,
+      "dividendRate": 0.94,
+      "dividendYield": 0.0338
     }
   }
 }

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-24T23:22:32.096Z",
+  "generatedAt": "2026-05-25T00:40:18.226Z",
   "schedule": {
-    "nextSnapshotAt": "2026-05-25T00:22:32.096Z"
+    "nextSnapshotAt": "2026-05-25T01:40:18.226Z"
   },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
@@ -63,11 +63,6 @@
         "date": "2026-05-07",
         "ticker": "VEEV",
         "security": "Veeva Systems"
-      },
-      {
-        "date": "2026-04-09",
-        "ticker": "CASY",
-        "security": "Casey's"
       }
     ],
     "leftLast45Days": [
@@ -75,11 +70,6 @@
         "date": "2026-05-07",
         "ticker": "CTRA",
         "security": "Coterra Energy"
-      },
-      {
-        "date": "2026-04-09",
-        "ticker": "HOLX",
-        "security": "Hologic"
       }
     ]
   }

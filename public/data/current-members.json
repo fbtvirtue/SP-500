@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T01:36:07.475Z",
+  "generatedAt": "2026-05-28T03:09:09.820Z",
   "currentMembers": [
     {
       "ticker": "MMM",
@@ -283,7 +283,7 @@
         "averageDailyVolume": 5460000
       },
       "scores": {
-        "fallOutRisk": 33.83785120954092,
+        "fallOutRisk": 33.76813009400307,
         "entryScore": null,
         "undervaluedScore": 73.24754901960785,
         "overvaluedScore": 27.826797385620914
@@ -1729,8 +1729,8 @@
       "scores": {
         "fallOutRisk": 37.87188902049459,
         "entryScore": null,
-        "undervaluedScore": 36.84647588765236,
-        "overvaluedScore": 68.3967673555909
+        "undervaluedScore": 36.71314255431902,
+        "overvaluedScore": 68.53010068892422
       }
     },
     {
@@ -3295,16 +3295,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.12,
-        "dividendYield": 0.015,
+        "dividendYield": 0.0152,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 96810000000,
-        "price": 141.05,
+        "marketCap": 95910000000,
+        "price": 139.74,
         "currency": "USD",
-        "trailingPE": 17.48,
-        "forwardPE": 14.64,
-        "priceToBook": 2.45,
+        "trailingPE": 17.31,
+        "forwardPE": 14.5,
+        "priceToBook": 2.43,
         "returnOnEquity": 0.1356,
         "profitMargins": 0.1406,
         "operatingMargins": 0.18100000000000002,
@@ -3315,7 +3315,7 @@
         "averageDailyVolume": 3660000
       },
       "scores": {
-        "fallOutRisk": 47.40790352105094,
+        "fallOutRisk": 47.477624636588786,
         "entryScore": null,
         "undervaluedScore": 35.73524112347641,
         "overvaluedScore": 64.18457869634341

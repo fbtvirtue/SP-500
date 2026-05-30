@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T22:21:41.870Z",
+  "generatedAt": "2026-05-30T23:22:13.502Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -81,7 +81,7 @@
         "price": 18.78,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 9.41,
+        "forwardPE": 9.4,
         "priceToBook": 1.6,
         "returnOnEquity": -0.1495,
         "profitMargins": -0.08869999999999999,
@@ -381,7 +381,7 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 7450000000,
+        "marketCap": 7460000000,
         "price": 39.53,
         "currency": "USD",
         "trailingPE": null,
@@ -3343,7 +3343,7 @@
         "price": 44.49,
         "currency": "USD",
         "trailingPE": 12.35,
-        "forwardPE": 8.15,
+        "forwardPE": 8.07,
         "priceToBook": 1.79,
         "returnOnEquity": 0.15130000000000002,
         "profitMargins": 0.13449999999999998,
@@ -3393,7 +3393,7 @@
         "price": 112.35,
         "currency": "USD",
         "trailingPE": 10.1,
-        "forwardPE": 10.3,
+        "forwardPE": 10.16,
         "priceToBook": 3.23,
         "returnOnEquity": 0.34740000000000004,
         "profitMargins": 0.2373,
@@ -3405,7 +3405,7 @@
         "averageDailyVolume": 4780000
       },
       "scores": {
-        "fallOutRisk": 38.72988047808765,
+        "fallOutRisk": 38.74980079681275,
         "entryScore": null,
         "undervaluedScore": 75.4,
         "overvaluedScore": 28.799999999999997
@@ -4353,7 +4353,7 @@
         "price": 956.32,
         "currency": "USD",
         "trailingPE": 49.74,
-        "forwardPE": 42.25,
+        "forwardPE": 42.28,
         "priceToBook": 13.22,
         "returnOnEquity": 0.2965,
         "profitMargins": 0.029900000000000003,
@@ -4624,56 +4624,6 @@
       "commentary": "elevated book multiple"
     },
     {
-      "ticker": "TRGP",
-      "yahooTicker": "TRGP",
-      "security": "Targa Resources",
-      "sector": "Energy",
-      "subIndustry": "Oil & Gas Storage & Transportation",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Houston, Texas",
-      "cik": "0001389170",
-      "founded": "2005",
-      "currentMember": true,
-      "currentMemberSince": "2022-10-12",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2022-10-12",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.25,
-        "dividendYield": 0.0167,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 54750000000,
-        "price": 255.07,
-        "currency": "USD",
-        "trailingPE": 25.98,
-        "forwardPE": 20.85,
-        "priceToBook": 17.46,
-        "returnOnEquity": 0.7587,
-        "profitMargins": 0.12710000000000002,
-        "operatingMargins": 0.2259,
-        "debtToEquity": 6.1,
-        "currentRatio": 0.72,
-        "revenueGrowth": -0.106,
-        "earningsGrowth": 1.4355000000000002,
-        "averageDailyVolume": 1380000
-      },
-      "scores": {
-        "fallOutRisk": 45.62749003984064,
-        "entryScore": null,
-        "undervaluedScore": 25.5,
-        "overvaluedScore": 80
-      },
-      "rank": 18,
-      "commentary": "elevated book multiple"
-    },
-    {
       "ticker": "COIN",
       "yahooTicker": "COIN",
       "security": "Coinbase",
@@ -4720,7 +4670,7 @@
         "undervaluedScore": 16.92162162162162,
         "overvaluedScore": 79.22702702702703
       },
-      "rank": 19,
+      "rank": 18,
       "commentary": "stretched sector-relative earnings multiple"
     },
     {
@@ -4753,8 +4703,8 @@
         "price": 115.75,
         "currency": "USD",
         "trailingPE": 40.78,
-        "forwardPE": 35.32,
-        "priceToBook": 9.26,
+        "forwardPE": 35.3,
+        "priceToBook": 9.77,
         "returnOnEquity": 0.2553,
         "profitMargins": 0.0313,
         "operatingMargins": 0.0416,
@@ -4770,7 +4720,7 @@
         "undervaluedScore": 23.433441558441558,
         "overvaluedScore": 79.12310606060606
       },
-      "rank": 20,
+      "rank": 19,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
@@ -4820,7 +4770,7 @@
         "undervaluedScore": 29.661208267090622,
         "overvaluedScore": 78.79915209326973
       },
-      "rank": 21,
+      "rank": 20,
       "commentary": "elevated book multiple"
     },
     {
@@ -4853,7 +4803,7 @@
         "price": 875.87,
         "currency": "USD",
         "trailingPE": 43.57,
-        "forwardPE": 29.26,
+        "forwardPE": 29.14,
         "priceToBook": 21.62,
         "returnOnEquity": 0.5135000000000001,
         "profitMargins": 0.1333,
@@ -4870,7 +4820,7 @@
         "undervaluedScore": 29.494485694485697,
         "overvaluedScore": 78.77765567765567
       },
-      "rank": 22,
+      "rank": 21,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
@@ -4915,13 +4865,63 @@
         "averageDailyVolume": 2310000
       },
       "scores": {
-        "fallOutRisk": 24.696766917085643,
+        "fallOutRisk": 24.716687235810742,
         "entryScore": null,
         "undervaluedScore": 26.32058212058212,
         "overvaluedScore": 78.73402633402634
       },
-      "rank": 23,
+      "rank": 22,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
+    },
+    {
+      "ticker": "TRGP",
+      "yahooTicker": "TRGP",
+      "security": "Targa Resources",
+      "sector": "Energy",
+      "subIndustry": "Oil & Gas Storage & Transportation",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Houston, Texas",
+      "cik": "0001389170",
+      "founded": "2005",
+      "currentMember": true,
+      "currentMemberSince": "2022-10-12",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2022-10-12",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.25,
+        "dividendYield": 0.0167,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 54750000000,
+        "price": 255.07,
+        "currency": "USD",
+        "trailingPE": 25.98,
+        "forwardPE": 20.81,
+        "priceToBook": 17.46,
+        "returnOnEquity": 0.7587,
+        "profitMargins": 0.12710000000000002,
+        "operatingMargins": 0.2259,
+        "debtToEquity": 6.1,
+        "currentRatio": 0.72,
+        "revenueGrowth": -0.106,
+        "earningsGrowth": 1.4355000000000002,
+        "averageDailyVolume": 1380000
+      },
+      "scores": {
+        "fallOutRisk": 45.62749003984064,
+        "entryScore": null,
+        "undervaluedScore": 27,
+        "overvaluedScore": 78.5
+      },
+      "rank": 23,
+      "commentary": "elevated book multiple"
     },
     {
       "ticker": "LLY",

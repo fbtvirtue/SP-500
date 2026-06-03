@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T03:09:55.806Z",
+  "generatedAt": "2026-06-03T05:39:07.142Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 94.36183564452274,
+        "entryScore": 94.35613230739641,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.76707435912326,
+        "entryScore": 93.76126874591513,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.80932384696385,
+        "entryScore": 92.8062006605149,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.3276555051246,
+        "entryScore": 91.32096171967135,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.83866389181928,
+        "entryScore": 88.82558710123276,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.98526912421192,
+        "entryScore": 87.9877980426468,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.62634102140044,
+        "entryScore": 86.61825397864911,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.22147449762602,
+        "entryScore": 86.21552755123305,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.3709439365106,
+        "entryScore": 85.37097776604824,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1750,7 +1750,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.32107496463932,
+        "entryScore": 85.31595308746644,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.03073974721627,
+        "entryScore": 85.02294830449748,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.00526326418725,
+        "entryScore": 84.99747553198713,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.81519971219089,
+        "entryScore": 84.81341611576958,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.73143909185056,
+        "entryScore": 84.722565119001,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.36328341790029,
+        "entryScore": 84.35841465819821,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.04565492023559,
+        "entryScore": 84.03600524550066,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,61 +2100,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.57805429901126,
+        "entryScore": 83.57600981622066,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 17,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "WTS",
-      "yahooTicker": "WTS",
-      "security": "Watts Water Technologies",
-      "sector": "Industrials",
-      "subIndustry": "Building Products",
-      "sourceIndex": "S&P 400",
-      "headquarters": "North Andover, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.71,
-        "dividendYield": 0.0087,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 10360000000,
-        "price": 310.27,
-        "currency": "USD",
-        "trailingPE": 28.37,
-        "forwardPE": 23.84,
-        "priceToBook": 4.94,
-        "returnOnEquity": 0.1894,
-        "profitMargins": 0.1432,
-        "operatingMargins": 0.1955,
-        "debtToEquity": 0.09,
-        "currentRatio": 2.72,
-        "revenueGrowth": 0.2138,
-        "earningsGrowth": 0.34590000000000004,
-        "averageDailyVolume": 260880
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 82.95739618424618,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 18,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2200,7 +2150,57 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.95114995435657,
+        "entryScore": 83.01572246673338,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 18,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "WTS",
+      "yahooTicker": "WTS",
+      "security": "Watts Water Technologies",
+      "sector": "Industrials",
+      "subIndustry": "Building Products",
+      "sourceIndex": "S&P 400",
+      "headquarters": "North Andover, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.71,
+        "dividendYield": 0.0087,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 10360000000,
+        "price": 310.27,
+        "currency": "USD",
+        "trailingPE": 28.37,
+        "forwardPE": 23.84,
+        "priceToBook": 4.94,
+        "returnOnEquity": 0.1894,
+        "profitMargins": 0.1432,
+        "operatingMargins": 0.1955,
+        "debtToEquity": 0.09,
+        "currentRatio": 2.72,
+        "revenueGrowth": 0.2138,
+        "earningsGrowth": 0.34590000000000004,
+        "averageDailyVolume": 260880
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.95713326386272,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.52377572997575,
+        "entryScore": 82.52615177300744,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.49141904156971,
+        "entryScore": 82.48013365980712,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.63750200807335,
+        "entryScore": 81.63219306845004,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.59005093055889,
+        "entryScore": 81.58932576519379,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2450,7 +2450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.36836290036328,
+        "entryScore": 81.3600999798702,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 80.36155599833805,
+        "entryScore": 80.34761832813221,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

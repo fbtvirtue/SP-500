@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-04T01:54:19.359Z",
+  "generatedAt": "2026-06-04T03:09:23.577Z",
   "schedule": {
-    "nextSnapshotAt": "2026-06-04T02:54:19.359Z"
+    "nextSnapshotAt": "2026-06-04T04:09:23.577Z"
   },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
@@ -56,9 +56,26 @@
     }
   ],
   "recentChanges": {
-    "joinedLast7Days": [],
-    "leftLast7Days": [],
+    "joinedLast7Days": [
+      {
+        "date": "2026-06-01",
+        "ticker": "FDXF",
+        "security": "FedEx Freight"
+      }
+    ],
+    "leftLast7Days": [
+      {
+        "date": "2026-06-02",
+        "ticker": "EPAM",
+        "security": "EPAM Systems"
+      }
+    ],
     "joinedLast45Days": [
+      {
+        "date": "2026-06-01",
+        "ticker": "FDXF",
+        "security": "FedEx Freight"
+      },
       {
         "date": "2026-05-07",
         "ticker": "VEEV",
@@ -66,6 +83,11 @@
       }
     ],
     "leftLast45Days": [
+      {
+        "date": "2026-06-02",
+        "ticker": "EPAM",
+        "security": "EPAM Systems"
+      },
       {
         "date": "2026-05-07",
         "ticker": "CTRA",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T01:54:19.359Z",
+  "generatedAt": "2026-06-04T03:09:23.577Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -93,7 +93,7 @@
         "averageDailyVolume": 8189999.999999999
       },
       "scores": {
-        "fallOutRisk": 99.42905243159397,
+        "fallOutRisk": 99.49171594918032,
         "entryScore": null,
         "undervaluedScore": 59.610026926270116,
         "overvaluedScore": 36.725688762893846
@@ -143,7 +143,7 @@
         "averageDailyVolume": 1890000
       },
       "scores": {
-        "fallOutRisk": 94.95325839499147,
+        "fallOutRisk": 95.00759195893926,
         "entryScore": null,
         "undervaluedScore": 60.354166666666664,
         "overvaluedScore": 37.802083333333336
@@ -193,7 +193,7 @@
         "averageDailyVolume": 11490000
       },
       "scores": {
-        "fallOutRisk": 92.64104620479122,
+        "fallOutRisk": 92.70046919148714,
         "entryScore": null,
         "undervaluedScore": 58.603896103896105,
         "overvaluedScore": 37.48917748917749
@@ -243,63 +243,13 @@
         "averageDailyVolume": 2640000
       },
       "scores": {
-        "fallOutRisk": 91.9487033156356,
+        "fallOutRisk": 92.01633697262442,
         "entryScore": null,
         "undervaluedScore": 60.18863478863477,
         "overvaluedScore": 33.9943866943867
       },
       "rank": 5,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
-    },
-    {
-      "ticker": "LYB",
-      "yahooTicker": "LYB",
-      "security": "LyondellBasell",
-      "sector": "Materials",
-      "subIndustry": "Specialty Chemicals",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Rotterdam, Netherlands",
-      "cik": "0001489393",
-      "founded": "2007",
-      "currentMember": true,
-      "currentMemberSince": "2012-09-05",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2012-09-05",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.12,
-        "dividendYield": 0.061200000000000004,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 21720000000,
-        "price": 67.3,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 8.85,
-        "priceToBook": 2.16,
-        "returnOnEquity": -0.060599999999999994,
-        "profitMargins": -0.027000000000000003,
-        "operatingMargins": 0.0408,
-        "debtToEquity": 1.42,
-        "currentRatio": 1.54,
-        "revenueGrowth": -0.061200000000000004,
-        "earningsGrowth": -0.2869,
-        "averageDailyVolume": 7610000
-      },
-      "scores": {
-        "fallOutRisk": 90.69123505976096,
-        "entryScore": null,
-        "undervaluedScore": 65,
-        "overvaluedScore": 31.4
-      },
-      "rank": 6,
-      "commentary": "thin profitability, negative earnings growth"
     },
     {
       "ticker": "TAP",
@@ -343,13 +293,63 @@
         "averageDailyVolume": 3110000
       },
       "scores": {
-        "fallOutRisk": 90.67888510891498,
+        "fallOutRisk": 90.75148890530626,
         "entryScore": null,
         "undervaluedScore": 72.80073051948051,
         "overvaluedScore": 20.172213203463205
       },
-      "rank": 7,
+      "rank": 6,
       "commentary": "smaller market-cap profile, thin profitability"
+    },
+    {
+      "ticker": "LYB",
+      "yahooTicker": "LYB",
+      "security": "LyondellBasell",
+      "sector": "Materials",
+      "subIndustry": "Specialty Chemicals",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Rotterdam, Netherlands",
+      "cik": "0001489393",
+      "founded": "2007",
+      "currentMember": true,
+      "currentMemberSince": "2012-09-05",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2012-09-05",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.12,
+        "dividendYield": 0.061200000000000004,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 21720000000,
+        "price": 67.3,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 8.85,
+        "priceToBook": 2.16,
+        "returnOnEquity": -0.060599999999999994,
+        "profitMargins": -0.027000000000000003,
+        "operatingMargins": 0.0408,
+        "debtToEquity": 1.42,
+        "currentRatio": 1.54,
+        "revenueGrowth": -0.061200000000000004,
+        "earningsGrowth": -0.2869,
+        "averageDailyVolume": 7610000
+      },
+      "scores": {
+        "fallOutRisk": 90.74051896207584,
+        "entryScore": null,
+        "undervaluedScore": 65,
+        "overvaluedScore": 31.4
+      },
+      "rank": 7,
+      "commentary": "thin profitability, negative earnings growth"
     },
     {
       "ticker": "DOW",
@@ -397,7 +397,7 @@
         "averageDailyVolume": 14190000
       },
       "scores": {
-        "fallOutRisk": 90.36812749003984,
+        "fallOutRisk": 90.41397205588822,
         "entryScore": null,
         "undervaluedScore": 49.4,
         "overvaluedScore": 46.2
@@ -447,7 +447,7 @@
         "averageDailyVolume": 15100000
       },
       "scores": {
-        "fallOutRisk": 89.8844007088529,
+        "fallOutRisk": 89.95885339710189,
         "entryScore": null,
         "undervaluedScore": 74.04694264069265,
         "overvaluedScore": 19.786796536796537
@@ -497,7 +497,7 @@
         "averageDailyVolume": 1950000
       },
       "scores": {
-        "fallOutRisk": 86.50573727266953,
+        "fallOutRisk": 86.56339088973819,
         "entryScore": null,
         "undervaluedScore": 64.91005841005841,
         "overvaluedScore": 28.612117612117615
@@ -547,7 +547,7 @@
         "averageDailyVolume": 2270000
       },
       "scores": {
-        "fallOutRisk": 86.10505596660974,
+        "fallOutRisk": 86.17286854861705,
         "entryScore": null,
         "undervaluedScore": 53.69047619047619,
         "overvaluedScore": 38.154761904761905
@@ -597,7 +597,7 @@
         "averageDailyVolume": 6630000
       },
       "scores": {
-        "fallOutRisk": 85.8405425915386,
+        "fallOutRisk": 85.88708297690332,
         "entryScore": null,
         "undervaluedScore": 12.359307359307362,
         "overvaluedScore": 86.42857142857143
@@ -647,7 +647,7 @@
         "averageDailyVolume": 1860000
       },
       "scores": {
-        "fallOutRisk": 85.49976453523965,
+        "fallOutRisk": 85.57385937345168,
         "entryScore": null,
         "undervaluedScore": 45.593971631205676,
         "overvaluedScore": 56.66666666666667
@@ -697,7 +697,7 @@
         "averageDailyVolume": 5220000
       },
       "scores": {
-        "fallOutRisk": 85.45100920196282,
+        "fallOutRisk": 85.50480599085517,
         "entryScore": null,
         "undervaluedScore": 28.602245862884164,
         "overvaluedScore": 70.10047281323877
@@ -747,7 +747,7 @@
         "averageDailyVolume": 6880000
       },
       "scores": {
-        "fallOutRisk": 85.33665338645417,
+        "fallOutRisk": 85.39321357285428,
         "entryScore": null,
         "undervaluedScore": 65.4,
         "overvaluedScore": 29.000000000000004
@@ -797,7 +797,7 @@
         "averageDailyVolume": 4500000
       },
       "scores": {
-        "fallOutRisk": 82.54398315827599,
+        "fallOutRisk": 82.57885365632372,
         "entryScore": null,
         "undervaluedScore": 19.723890692640694,
         "overvaluedScore": 80.95833333333333
@@ -847,7 +847,7 @@
         "averageDailyVolume": 1880000
       },
       "scores": {
-        "fallOutRisk": 82.36865775668012,
+        "fallOutRisk": 82.41831938958961,
         "entryScore": null,
         "undervaluedScore": 54.93572695035461,
         "overvaluedScore": 41.25221631205674
@@ -897,7 +897,7 @@
         "averageDailyVolume": 8870000
       },
       "scores": {
-        "fallOutRisk": 81.45848747865679,
+        "fallOutRisk": 81.52393427430852,
         "entryScore": null,
         "undervaluedScore": 72.89245129870129,
         "overvaluedScore": 23.7340367965368
@@ -947,7 +947,7 @@
         "averageDailyVolume": 11060000
       },
       "scores": {
-        "fallOutRisk": 81.12982963518749,
+        "fallOutRisk": 81.200027884108,
         "entryScore": null,
         "undervaluedScore": 73.43705739803744,
         "overvaluedScore": 23.720448250847525
@@ -997,7 +997,7 @@
         "averageDailyVolume": 1380000
       },
       "scores": {
-        "fallOutRisk": 80.03201165277,
+        "fallOutRisk": 80.08684223065805,
         "entryScore": null,
         "undervaluedScore": 50.26755937146137,
         "overvaluedScore": 50.178211332930026
@@ -1047,7 +1047,7 @@
         "averageDailyVolume": 6420000
       },
       "scores": {
-        "fallOutRisk": 79.33661346362265,
+        "fallOutRisk": 79.36106654948281,
         "entryScore": null,
         "undervaluedScore": 54.92964746821371,
         "overvaluedScore": 41.038276689365624
@@ -1097,10 +1097,10 @@
         "averageDailyVolume": 4040000
       },
       "scores": {
-        "fallOutRisk": 78.85552560997837,
+        "fallOutRisk": 78.88830705207202,
         "entryScore": null,
-        "undervaluedScore": 63.583161334709324,
-        "overvaluedScore": 28.467492260061917
+        "undervaluedScore": 64.22457763074914,
+        "overvaluedScore": 27.707312215792793
       },
       "rank": 22,
       "commentary": "smaller market-cap profile, negative earnings growth"
@@ -1147,7 +1147,7 @@
         "averageDailyVolume": 10020000
       },
       "scores": {
-        "fallOutRisk": 78.4808764940239,
+        "fallOutRisk": 78.55528942115768,
         "entryScore": null,
         "undervaluedScore": 62.4,
         "overvaluedScore": 33.4
@@ -1197,7 +1197,7 @@
         "averageDailyVolume": 1110000
       },
       "scores": {
-        "fallOutRisk": 78.3347118801302,
+        "fallOutRisk": 78.3980712172329,
         "entryScore": null,
         "undervaluedScore": 52.952588852588846,
         "overvaluedScore": 48.330779130779135
@@ -1247,7 +1247,7 @@
         "averageDailyVolume": 5570000
       },
       "scores": {
-        "fallOutRisk": 78.27628225835397,
+        "fallOutRisk": 78.35172897448346,
         "entryScore": null,
         "undervaluedScore": 66.36279809220986,
         "overvaluedScore": 28.785850556438792
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.70203873604346,
+        "entryScore": 93.67242373110763,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.48001156523614,
+        "entryScore": 86.50962657017197,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1683,12 +1683,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8640000000,
-        "price": 293.21,
+        "marketCap": 8900000000,
+        "price": 301.82,
         "currency": "USD",
-        "trailingPE": 39.19,
-        "forwardPE": 30.19,
-        "priceToBook": 6.76,
+        "trailingPE": 40.34,
+        "forwardPE": 31.08,
+        "priceToBook": 6.96,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1696,11 +1696,11 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 277660
+        "averageDailyVolume": 277910
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.39070157414926,
+        "entryScore": 85.56839160376427,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1729,16 +1729,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 8.79,
-        "dividendYield": 0.0052,
+        "dividendYield": 0.0051,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 657280000000,
-        "price": 1705.37,
+        "marketCap": 665370000000,
+        "price": 1726.36,
         "currency": "USD",
-        "trailingPE": 56.86,
-        "forwardPE": 34.49,
-        "priceToBook": 27.39,
+        "trailingPE": 57.56,
+        "forwardPE": 34.7,
+        "priceToBook": 27.72,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -1933,12 +1933,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 38200000000,
-        "price": 286.12,
+        "marketCap": 39060000000,
+        "price": 292.58,
         "currency": "USD",
-        "trailingPE": 67.98,
-        "forwardPE": 26.82,
-        "priceToBook": 35.5,
+        "trailingPE": 69.52,
+        "forwardPE": 27.43,
+        "priceToBook": 36.31,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.71267392216619,
+        "entryScore": 84.74228892710202,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.56611861938585,
+        "entryScore": 83.59573362432168,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.06570208677122,
+        "entryScore": 83.09531709170706,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2433,12 +2433,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 125520000000,
-        "price": 88.18,
+        "marketCap": 121560000000,
+        "price": 85.4,
         "currency": "USD",
-        "trailingPE": 9.61,
-        "forwardPE": 7.05,
-        "priceToBook": 2.05,
+        "trailingPE": 9.31,
+        "forwardPE": 6.85,
+        "priceToBook": 1.98,
         "returnOnEquity": 0.2552,
         "profitMargins": 0.2186,
         "operatingMargins": 0.2214,
@@ -2446,7 +2446,7 @@
         "currentRatio": 2.54,
         "revenueGrowth": 0.16690000000000002,
         "earningsGrowth": -0.10369999999999999,
-        "averageDailyVolume": 8530000
+        "averageDailyVolume": 8590000
       },
       "scores": {
         "fallOutRisk": null,
@@ -2551,7 +2551,7 @@
         "averageDailyVolume": 8420000
       },
       "scores": {
-        "fallOutRisk": 40.62671536077911,
+        "fallOutRisk": 40.67049234863607,
         "entryScore": null,
         "undervaluedScore": 92.34656084656085,
         "overvaluedScore": 3.644179894179894
@@ -2601,7 +2601,7 @@
         "averageDailyVolume": 3050000
       },
       "scores": {
-        "fallOutRisk": 52.30610889774236,
+        "fallOutRisk": 52.36127744510977,
         "entryScore": null,
         "undervaluedScore": 85.5,
         "overvaluedScore": 16.333333333333332
@@ -2651,7 +2651,7 @@
         "averageDailyVolume": 3520000
       },
       "scores": {
-        "fallOutRisk": 38.32171314741036,
+        "fallOutRisk": 38.375748502994014,
         "entryScore": null,
         "undervaluedScore": 85.25,
         "overvaluedScore": 13.75
@@ -2701,7 +2701,7 @@
         "averageDailyVolume": 32520000.000000004
       },
       "scores": {
-        "fallOutRisk": 42.26255152549973,
+        "fallOutRisk": 42.2737641599917,
         "entryScore": null,
         "undervaluedScore": 85.17748917748915,
         "overvaluedScore": 13.5995670995671
@@ -2751,7 +2751,7 @@
         "averageDailyVolume": 6570000
       },
       "scores": {
-        "fallOutRisk": 48.314120096191814,
+        "fallOutRisk": 48.36960673248099,
         "entryScore": null,
         "undervaluedScore": 83.3453630100689,
         "overvaluedScore": 19.158240593534714
@@ -2801,62 +2801,12 @@
         "averageDailyVolume": 6980000
       },
       "scores": {
-        "fallOutRisk": 61.712252297997566,
+        "fallOutRisk": 62.021760557086374,
         "entryScore": null,
-        "undervaluedScore": 78.29957860337117,
-        "overvaluedScore": 14.327055383556932
+        "undervaluedScore": 78.79009326975208,
+        "overvaluedScore": 13.726198510781897
       },
       "rank": 6,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
-    },
-    {
-      "ticker": "EG",
-      "yahooTicker": "EG",
-      "security": "Everest Group",
-      "sector": "Financials",
-      "subIndustry": "Reinsurance",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Hamilton, Bermuda",
-      "cik": "0001095073",
-      "founded": "1973",
-      "currentMember": true,
-      "currentMemberSince": "2017-06-19",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2017-06-19",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 8,
-        "dividendYield": 0.025099999999999997,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 12590000000,
-        "price": 318.12,
-        "currency": "USD",
-        "trailingPE": 6.48,
-        "forwardPE": 5.24,
-        "priceToBook": 0.83,
-        "returnOnEquity": 0.1382,
-        "profitMargins": 0.1162,
-        "operatingMargins": 0.1458,
-        "debtToEquity": 0.23,
-        "currentRatio": 0.39,
-        "revenueGrowth": -0.045700000000000005,
-        "earningsGrowth": 2.2957,
-        "averageDailyVolume": 342410
-      },
-      "scores": {
-        "fallOutRisk": 67.42491296076953,
-        "entryScore": null,
-        "undervaluedScore": 77.50927397986221,
-        "overvaluedScore": 15.59613142554319
-      },
-      "rank": 7,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
     },
     {
@@ -2901,13 +2851,63 @@
         "averageDailyVolume": 7740000
       },
       "scores": {
-        "fallOutRisk": 56.37611319428169,
+        "fallOutRisk": 56.57888553353666,
         "entryScore": null,
-        "undervaluedScore": 77.4079807361541,
-        "overvaluedScore": 25.9171826625387
+        "undervaluedScore": 78.0374074770698,
+        "overvaluedScore": 25.189416151267388
+      },
+      "rank": 7,
+      "commentary": "discounted sector-relative earnings multiple, quality support"
+    },
+    {
+      "ticker": "EG",
+      "yahooTicker": "EG",
+      "security": "Everest Group",
+      "sector": "Financials",
+      "subIndustry": "Reinsurance",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Hamilton, Bermuda",
+      "cik": "0001095073",
+      "founded": "1973",
+      "currentMember": true,
+      "currentMemberSince": "2017-06-19",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2017-06-19",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 8,
+        "dividendYield": 0.025099999999999997,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 12590000000,
+        "price": 318.12,
+        "currency": "USD",
+        "trailingPE": 6.48,
+        "forwardPE": 5.24,
+        "priceToBook": 0.83,
+        "returnOnEquity": 0.1382,
+        "profitMargins": 0.1162,
+        "operatingMargins": 0.1458,
+        "debtToEquity": 0.23,
+        "currentRatio": 0.39,
+        "revenueGrowth": -0.045700000000000005,
+        "earningsGrowth": 2.2957,
+        "averageDailyVolume": 342410
+      },
+      "scores": {
+        "fallOutRisk": 67.48859038679397,
+        "entryScore": null,
+        "undervaluedScore": 77.50927397986221,
+        "overvaluedScore": 15.59613142554319
       },
       "rank": 8,
-      "commentary": "discounted sector-relative earnings multiple, quality support"
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
     },
     {
       "ticker": "T",
@@ -2955,7 +2955,7 @@
         "averageDailyVolume": 39610000
       },
       "scores": {
-        "fallOutRisk": 39.24708094030803,
+        "fallOutRisk": 39.24896959328097,
         "entryScore": null,
         "undervaluedScore": 77.37878787878789,
         "overvaluedScore": 22.37229437229437
@@ -3005,7 +3005,7 @@
         "averageDailyVolume": 913100
       },
       "scores": {
-        "fallOutRisk": 66.702946539806,
+        "fallOutRisk": 66.7697452133752,
         "entryScore": null,
         "undervaluedScore": 77.3480563839003,
         "overvaluedScore": 21.757577764837293
@@ -3055,7 +3055,7 @@
         "averageDailyVolume": 4480000
       },
       "scores": {
-        "fallOutRisk": 25.993027888446214,
+        "fallOutRisk": 26.02644710578842,
         "entryScore": null,
         "undervaluedScore": 77.25,
         "overvaluedScore": 24.25
@@ -3105,7 +3105,7 @@
         "averageDailyVolume": 2640000
       },
       "scores": {
-        "fallOutRisk": 70.36762042738138,
+        "fallOutRisk": 70.41553257122119,
         "entryScore": null,
         "undervaluedScore": 77.00216450216452,
         "overvaluedScore": 23.00865800865801
@@ -3155,7 +3155,7 @@
         "averageDailyVolume": 2420000
       },
       "scores": {
-        "fallOutRisk": 59.67131474103586,
+        "fallOutRisk": 59.72055888223553,
         "entryScore": null,
         "undervaluedScore": 76.66666666666667,
         "overvaluedScore": 22.333333333333332
@@ -3205,7 +3205,7 @@
         "averageDailyVolume": 3080000
       },
       "scores": {
-        "fallOutRisk": 61.22658302958379,
+        "fallOutRisk": 61.281691935278374,
         "entryScore": null,
         "undervaluedScore": 76.45685579196218,
         "overvaluedScore": 18.903664302600475
@@ -3255,7 +3255,7 @@
         "averageDailyVolume": 1900000
       },
       "scores": {
-        "fallOutRisk": 63.28955915768665,
+        "fallOutRisk": 63.342182993680005,
         "entryScore": null,
         "undervaluedScore": 76.06995346995348,
         "overvaluedScore": 18.78617958617959
@@ -3305,7 +3305,7 @@
         "averageDailyVolume": 15850000
       },
       "scores": {
-        "fallOutRisk": 53.8406374501992,
+        "fallOutRisk": 53.865269461077844,
         "entryScore": null,
         "undervaluedScore": 76,
         "overvaluedScore": 21.75
@@ -3355,7 +3355,7 @@
         "averageDailyVolume": 2170000
       },
       "scores": {
-        "fallOutRisk": 43.32832633430243,
+        "fallOutRisk": 43.37303770836704,
         "entryScore": null,
         "undervaluedScore": 75.76936936936937,
         "overvaluedScore": 19.363963963963965
@@ -3405,7 +3405,7 @@
         "averageDailyVolume": 8189999.999999999
       },
       "scores": {
-        "fallOutRisk": 60.92131474103586,
+        "fallOutRisk": 60.990518962075846,
         "entryScore": null,
         "undervaluedScore": 75.75,
         "overvaluedScore": 23.25
@@ -3455,7 +3455,7 @@
         "averageDailyVolume": 1610000
       },
       "scores": {
-        "fallOutRisk": 67.36804355688818,
+        "fallOutRisk": 67.43162158012457,
         "entryScore": null,
         "undervaluedScore": 75.59272349272348,
         "overvaluedScore": 19.757519057519055
@@ -3505,113 +3505,13 @@
         "averageDailyVolume": 9600000
       },
       "scores": {
-        "fallOutRisk": 69.37084454390231,
+        "fallOutRisk": 69.42704688026544,
         "entryScore": null,
         "undervaluedScore": 75.50257034632034,
         "overvaluedScore": 23.12121212121212
       },
       "rank": 20,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
-    },
-    {
-      "ticker": "ALL",
-      "yahooTicker": "ALL",
-      "security": "Allstate",
-      "sector": "Financials",
-      "subIndustry": "Property & Casualty Insurance",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Northbrook, Illinois",
-      "cik": "0000899051",
-      "founded": "1931",
-      "currentMember": true,
-      "currentMemberSince": "1995-07-13",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1995-07-13",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.16,
-        "dividendYield": 0.0199,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 53890000000,
-        "price": 209.34,
-        "currency": "USD",
-        "trailingPE": 4.62,
-        "forwardPE": 8.01,
-        "priceToBook": 1.82,
-        "returnOnEquity": 0.4526,
-        "profitMargins": 0.1764,
-        "operatingMargins": 0.21109999999999998,
-        "debtToEquity": 0.24,
-        "currentRatio": 0.41,
-        "revenueGrowth": 0.0297,
-        "earningsGrowth": 3.3911000000000002,
-        "averageDailyVolume": 1500000
-      },
-      "scores": {
-        "fallOutRisk": 36.47649402390437,
-        "entryScore": null,
-        "undervaluedScore": 74.93147853736089,
-        "overvaluedScore": 23.90005299417064
-      },
-      "rank": 21,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
-    },
-    {
-      "ticker": "UAL",
-      "yahooTicker": "UAL",
-      "security": "United Airlines Holdings",
-      "sector": "Industrials",
-      "subIndustry": "Passenger Airlines",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Chicago, Illinois",
-      "cik": "0000100517",
-      "founded": "1967",
-      "currentMember": true,
-      "currentMemberSince": "2015-09-02",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2015-09-02",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 34130000000.000004,
-        "price": 105.14,
-        "currency": "USD",
-        "trailingPE": 9.38,
-        "forwardPE": 7.3,
-        "priceToBook": 2.15,
-        "returnOnEquity": 0.25730000000000003,
-        "profitMargins": 0.060599999999999994,
-        "operatingMargins": 0.084,
-        "debtToEquity": 1.95,
-        "currentRatio": 0.7,
-        "revenueGrowth": 0.1056,
-        "earningsGrowth": 0.8404,
-        "averageDailyVolume": 7770000
-      },
-      "scores": {
-        "fallOutRisk": 59.539084410797564,
-        "entryScore": null,
-        "undervaluedScore": 74.80152460152462,
-        "overvaluedScore": 25.66576576576577
-      },
-      "rank": 22,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
     },
     {
       "ticker": "FSLR",
@@ -3659,13 +3559,113 @@
         "averageDailyVolume": 2320000
       },
       "scores": {
-        "fallOutRisk": 37.61812228211338,
+        "fallOutRisk": 37.79696650424189,
         "entryScore": null,
-        "undervaluedScore": 74.72630718954248,
-        "overvaluedScore": 21.486928104575163
+        "undervaluedScore": 75.29535421484128,
+        "overvaluedScore": 20.78831196132016
+      },
+      "rank": 21,
+      "commentary": "discounted sector-relative earnings multiple, quality support"
+    },
+    {
+      "ticker": "ALL",
+      "yahooTicker": "ALL",
+      "security": "Allstate",
+      "sector": "Financials",
+      "subIndustry": "Property & Casualty Insurance",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Northbrook, Illinois",
+      "cik": "0000899051",
+      "founded": "1931",
+      "currentMember": true,
+      "currentMemberSince": "1995-07-13",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1995-07-13",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.16,
+        "dividendYield": 0.0199,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 53890000000,
+        "price": 209.34,
+        "currency": "USD",
+        "trailingPE": 4.62,
+        "forwardPE": 8.01,
+        "priceToBook": 1.82,
+        "returnOnEquity": 0.4526,
+        "profitMargins": 0.1764,
+        "operatingMargins": 0.21109999999999998,
+        "debtToEquity": 0.24,
+        "currentRatio": 0.41,
+        "revenueGrowth": 0.0297,
+        "earningsGrowth": 3.3911000000000002,
+        "averageDailyVolume": 1500000
+      },
+      "scores": {
+        "fallOutRisk": 36.503193612774446,
+        "entryScore": null,
+        "undervaluedScore": 74.93147853736089,
+        "overvaluedScore": 23.90005299417064
+      },
+      "rank": 22,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
+    },
+    {
+      "ticker": "UAL",
+      "yahooTicker": "UAL",
+      "security": "United Airlines Holdings",
+      "sector": "Industrials",
+      "subIndustry": "Passenger Airlines",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Chicago, Illinois",
+      "cik": "0000100517",
+      "founded": "1967",
+      "currentMember": true,
+      "currentMemberSince": "2015-09-02",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2015-09-02",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 34130000000.000004,
+        "price": 105.14,
+        "currency": "USD",
+        "trailingPE": 9.38,
+        "forwardPE": 7.3,
+        "priceToBook": 2.15,
+        "returnOnEquity": 0.25730000000000003,
+        "profitMargins": 0.060599999999999994,
+        "operatingMargins": 0.084,
+        "debtToEquity": 1.95,
+        "currentRatio": 0.7,
+        "revenueGrowth": 0.1056,
+        "earningsGrowth": 0.8404,
+        "averageDailyVolume": 7770000
+      },
+      "scores": {
+        "fallOutRisk": 59.59158896344525,
+        "entryScore": null,
+        "undervaluedScore": 74.80152460152462,
+        "overvaluedScore": 25.66576576576577
       },
       "rank": 23,
-      "commentary": "discounted sector-relative earnings multiple, quality support"
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
     },
     {
       "ticker": "CF",
@@ -3709,7 +3709,7 @@
         "averageDailyVolume": 4690000
       },
       "scores": {
-        "fallOutRisk": 38.30159362549801,
+        "fallOutRisk": 38.36566866267465,
         "entryScore": null,
         "undervaluedScore": 74.60000000000001,
         "overvaluedScore": 29.799999999999997
@@ -3718,54 +3718,54 @@
       "commentary": "discounted sector-relative earnings multiple, quality support"
     },
     {
-      "ticker": "CAG",
-      "yahooTicker": "CAG",
-      "security": "Conagra Brands",
-      "sector": "Consumer Staples",
-      "subIndustry": "Packaged Foods & Meats",
+      "ticker": "INTU",
+      "yahooTicker": "INTU",
+      "security": "Intuit",
+      "sector": "Information Technology",
+      "subIndustry": "Application Software",
       "sourceIndex": "S&P 500",
-      "headquarters": "Chicago, Illinois",
-      "cik": "0000023217",
-      "founded": "1919",
+      "headquarters": "Mountain View, California",
+      "cik": "0000896878",
+      "founded": "1983",
       "currentMember": true,
-      "currentMemberSince": "1983-08-31",
+      "currentMemberSince": "2000-12-05",
       "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "1983-08-31",
+          "enteredAt": "2000-12-05",
           "leftAt": null
         }
       ],
       "dividend": {
         "hasDividend": true,
-        "dividendRate": 1.4,
-        "dividendYield": 0.11130000000000001,
+        "dividendRate": 4.64,
+        "dividendYield": 0.0149,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 6020000000,
-        "price": 12.58,
+        "marketCap": 85190000000,
+        "price": 311.44,
         "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 7.7,
-        "priceToBook": 0.74,
-        "returnOnEquity": -0.0051,
-        "profitMargins": -0.0039000000000000003,
-        "operatingMargins": 0.1206,
-        "debtToEquity": 0.9,
-        "currentRatio": 0.9,
-        "revenueGrowth": -0.0187,
-        "earningsGrowth": 0.37560000000000004,
-        "averageDailyVolume": 15100000
+        "trailingPE": 18.86,
+        "forwardPE": 11.36,
+        "priceToBook": 4.14,
+        "returnOnEquity": 0.225,
+        "profitMargins": 0.2191,
+        "operatingMargins": 0.2747,
+        "debtToEquity": 0.33,
+        "currentRatio": 1.45,
+        "revenueGrowth": 0.10369999999999999,
+        "earningsGrowth": 0.1101,
+        "averageDailyVolume": 4170000
       },
       "scores": {
-        "fallOutRisk": 89.8844007088529,
+        "fallOutRisk": 39.531479399829735,
         "entryScore": null,
-        "undervaluedScore": 74.04694264069265,
-        "overvaluedScore": 19.786796536796537
+        "undervaluedScore": 74.55716229821981,
+        "overvaluedScore": 21.57380259562086
       },
       "rank": 25,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
+      "commentary": "discounted sector-relative earnings multiple, quality support"
     }
   ],
   "overvalued": [
@@ -3811,7 +3811,7 @@
         "averageDailyVolume": 4960000
       },
       "scores": {
-        "fallOutRisk": 55.13574530706004,
+        "fallOutRisk": 55.18659977342611,
         "entryScore": null,
         "undervaluedScore": 15.529941706412291,
         "overvaluedScore": 91.11059883412825
@@ -3861,7 +3861,7 @@
         "averageDailyVolume": 7080000
       },
       "scores": {
-        "fallOutRisk": 39.501511901113496,
+        "fallOutRisk": 39.52481191463228,
         "entryScore": null,
         "undervaluedScore": 19.431808731808733,
         "overvaluedScore": 89.47241857241858
@@ -3911,7 +3911,7 @@
         "averageDailyVolume": 6630000
       },
       "scores": {
-        "fallOutRisk": 85.8405425915386,
+        "fallOutRisk": 85.88708297690332,
         "entryScore": null,
         "undervaluedScore": 12.359307359307362,
         "overvaluedScore": 86.42857142857143
@@ -3961,7 +3961,7 @@
         "averageDailyVolume": 1150000
       },
       "scores": {
-        "fallOutRisk": 44.24412592181517,
+        "fallOutRisk": 44.26649154912628,
         "entryScore": null,
         "undervaluedScore": 16.715661815661818,
         "overvaluedScore": 85.17387387387387
@@ -4011,10 +4011,10 @@
         "averageDailyVolume": 3610000
       },
       "scores": {
-        "fallOutRisk": 49.34045517277296,
+        "fallOutRisk": 49.198798534946086,
         "entryScore": null,
-        "undervaluedScore": 15.106209150326798,
-        "overvaluedScore": 83.61111111111111
+        "undervaluedScore": 15.18288837502628,
+        "overvaluedScore": 83.44229556443136
       },
       "rank": 5,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
@@ -4065,10 +4065,10 @@
         "averageDailyVolume": 2700000
       },
       "scores": {
-        "fallOutRisk": 42.36680728068119,
+        "fallOutRisk": 42.270191590751644,
         "entryScore": null,
-        "undervaluedScore": 17.95343137254902,
-        "overvaluedScore": 83.390522875817
+        "undervaluedScore": 18.071263401303344,
+        "overvaluedScore": 83.21946605003153
       },
       "rank": 6,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
@@ -4115,7 +4115,7 @@
         "averageDailyVolume": 3360000
       },
       "scores": {
-        "fallOutRisk": 49.06573705179283,
+        "fallOutRisk": 49.097804391217565,
         "entryScore": null,
         "undervaluedScore": 21.16666666666667,
         "overvaluedScore": 83.16666666666667
@@ -4165,7 +4165,7 @@
         "averageDailyVolume": 7510000
       },
       "scores": {
-        "fallOutRisk": 23.210672762863997,
+        "fallOutRisk": 23.227233267353032,
         "entryScore": null,
         "undervaluedScore": 24.35460845460846,
         "overvaluedScore": 82.35232155232156
@@ -4215,7 +4215,7 @@
         "averageDailyVolume": 4890000
       },
       "scores": {
-        "fallOutRisk": 70.05776892430279,
+        "fallOutRisk": 70.0938123752495,
         "entryScore": null,
         "undervaluedScore": 17.333333333333332,
         "overvaluedScore": 82
@@ -4265,7 +4265,7 @@
         "averageDailyVolume": 574440
       },
       "scores": {
-        "fallOutRisk": 41.62015957334682,
+        "fallOutRisk": 41.65332034344011,
         "entryScore": null,
         "undervaluedScore": 24.18053274949827,
         "overvaluedScore": 81.4160280970626
@@ -4315,7 +4315,7 @@
         "averageDailyVolume": 1980000
       },
       "scores": {
-        "fallOutRisk": 27.24766841724013,
+        "fallOutRisk": 27.248264833968427,
         "entryScore": null,
         "undervaluedScore": 21.883252164502167,
         "overvaluedScore": 81.02069805194806
@@ -4365,7 +4365,7 @@
         "averageDailyVolume": 4500000
       },
       "scores": {
-        "fallOutRisk": 82.54398315827599,
+        "fallOutRisk": 82.57885365632372,
         "entryScore": null,
         "undervaluedScore": 19.723890692640694,
         "overvaluedScore": 80.95833333333333
@@ -4415,10 +4415,10 @@
         "averageDailyVolume": 5520000
       },
       "scores": {
-        "fallOutRisk": 43.385770642918516,
+        "fallOutRisk": 43.292422932147055,
         "entryScore": null,
-        "undervaluedScore": 18.839869281045747,
-        "overvaluedScore": 80.64542483660131
+        "undervaluedScore": 18.97204120243851,
+        "overvaluedScore": 80.43199495480344
       },
       "rank": 13,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
@@ -4465,7 +4465,7 @@
         "averageDailyVolume": 60280000
       },
       "scores": {
-        "fallOutRisk": 35.28645465419645,
+        "fallOutRisk": 35.28285627326906,
         "entryScore": null,
         "undervaluedScore": 18.971631205673763,
         "overvaluedScore": 80.38120567375887
@@ -4515,7 +4515,7 @@
         "averageDailyVolume": 3520000
       },
       "scores": {
-        "fallOutRisk": 54.36168479236208,
+        "fallOutRisk": 54.39892107676538,
         "entryScore": null,
         "undervaluedScore": 26.058028616852148,
         "overvaluedScore": 80.36359300476948
@@ -4565,7 +4565,7 @@
         "averageDailyVolume": 1160000
       },
       "scores": {
-        "fallOutRisk": 34.29929291841643,
+        "fallOutRisk": 34.3236068403733,
         "entryScore": null,
         "undervaluedScore": 26.587281399046105,
         "overvaluedScore": 80.20190779014308
@@ -4615,7 +4615,7 @@
         "averageDailyVolume": 3950000
       },
       "scores": {
-        "fallOutRisk": 59.40488311305045,
+        "fallOutRisk": 59.43621487184362,
         "entryScore": null,
         "undervaluedScore": 21.183725597518702,
         "overvaluedScore": 79.75939609560298
@@ -4665,7 +4665,7 @@
         "averageDailyVolume": 3510000
       },
       "scores": {
-        "fallOutRisk": 21.139313018197477,
+        "fallOutRisk": 21.156648864433294,
         "entryScore": null,
         "undervaluedScore": 29.261208267090623,
         "overvaluedScore": 79.19915209326973
@@ -4715,7 +4715,7 @@
         "averageDailyVolume": 19910000
       },
       "scores": {
-        "fallOutRisk": 34.5132327831531,
+        "fallOutRisk": 34.515896777872825,
         "entryScore": null,
         "undervaluedScore": 23.433441558441558,
         "overvaluedScore": 79.12310606060606
@@ -4765,7 +4765,7 @@
         "averageDailyVolume": 2550000
       },
       "scores": {
-        "fallOutRisk": 26.82175635641771,
+        "fallOutRisk": 26.835573343956575,
         "entryScore": null,
         "undervaluedScore": 29.224215424215426,
         "overvaluedScore": 79.11549351549351
@@ -4815,7 +4815,7 @@
         "averageDailyVolume": 1370000
       },
       "scores": {
-        "fallOutRisk": 45.647410358565736,
+        "fallOutRisk": 45.678642714570856,
         "entryScore": null,
         "undervaluedScore": 26.5,
         "overvaluedScore": 78.75
@@ -4865,7 +4865,7 @@
         "averageDailyVolume": 10710000
       },
       "scores": {
-        "fallOutRisk": 67.50444707655862,
+        "fallOutRisk": 67.53864163564762,
         "entryScore": null,
         "undervaluedScore": 17.595495495495495,
         "overvaluedScore": 78.41801801801803
@@ -4915,7 +4915,7 @@
         "averageDailyVolume": 1610000
       },
       "scores": {
-        "fallOutRisk": 39.35059760956175,
+        "fallOutRisk": 39.375249500998,
         "entryScore": null,
         "undervaluedScore": 26.6,
         "overvaluedScore": 78.4
@@ -4965,7 +4965,7 @@
         "averageDailyVolume": 3090000
       },
       "scores": {
-        "fallOutRisk": 14.51978117591526,
+        "fallOutRisk": 14.523936212455725,
         "entryScore": null,
         "undervaluedScore": 30.778958142841994,
         "overvaluedScore": 78.19392720935369
@@ -5015,7 +5015,7 @@
         "averageDailyVolume": 5820000
       },
       "scores": {
-        "fallOutRisk": 44.484141356651314,
+        "fallOutRisk": 44.51499598206185,
         "entryScore": null,
         "undervaluedScore": 30.424242424242422,
         "overvaluedScore": 78.13852813852814

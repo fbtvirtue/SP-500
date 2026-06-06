@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T03:06:33.953Z",
+  "generatedAt": "2026-06-06T05:18:34.463Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -867,8 +867,12 @@
       "founded": "1869",
       "currentMember": true,
       "currentMemberSince": "1957-03-04",
-      "lastLeftAt": null,
+      "lastLeftAt": "2026-06-22",
       "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": "2026-06-22"
+        },
         {
           "enteredAt": "1957-03-04",
           "leftAt": null

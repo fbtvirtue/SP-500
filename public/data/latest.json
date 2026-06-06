@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-06T03:06:33.953Z",
+  "generatedAt": "2026-06-06T05:18:34.463Z",
   "schedule": {
-    "nextSnapshotAt": "2026-06-06T04:06:33.953Z"
+    "nextSnapshotAt": "2026-06-06T06:18:34.463Z"
   },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
@@ -58,6 +58,16 @@
   "recentChanges": {
     "joinedLast7Days": [
       {
+        "date": "2026-06-22",
+        "ticker": "MRVL",
+        "security": "Marvell Technology"
+      },
+      {
+        "date": "2026-06-22",
+        "ticker": "FLEX",
+        "security": "Flex"
+      },
+      {
         "date": "2026-06-01",
         "ticker": "FDXF",
         "security": "FedEx Freight"
@@ -65,12 +75,32 @@
     ],
     "leftLast7Days": [
       {
+        "date": "2026-06-22",
+        "ticker": "POOL",
+        "security": "Pool Corporation"
+      },
+      {
+        "date": "2026-06-22",
+        "ticker": "CPB",
+        "security": "Campbell's"
+      },
+      {
         "date": "2026-06-02",
         "ticker": "EPAM",
         "security": "EPAM Systems"
       }
     ],
     "joinedLast45Days": [
+      {
+        "date": "2026-06-22",
+        "ticker": "MRVL",
+        "security": "Marvell Technology"
+      },
+      {
+        "date": "2026-06-22",
+        "ticker": "FLEX",
+        "security": "Flex"
+      },
       {
         "date": "2026-06-01",
         "ticker": "FDXF",
@@ -83,6 +113,16 @@
       }
     ],
     "leftLast45Days": [
+      {
+        "date": "2026-06-22",
+        "ticker": "POOL",
+        "security": "Pool Corporation"
+      },
+      {
+        "date": "2026-06-22",
+        "ticker": "CPB",
+        "security": "Campbell's"
+      },
       {
         "date": "2026-06-02",
         "ticker": "EPAM",

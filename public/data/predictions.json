@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T05:32:57.735Z",
+  "generatedAt": "2026-06-07T07:24:08.844Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1304,7 +1304,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.9147108978548,
+        "entryScore": 92.90804024034233,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1354,7 +1354,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.87538206060471,
+        "entryScore": 92.86972121568856,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1404,7 +1404,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.62600736151862,
+        "entryScore": 92.62079016548651,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1454,7 +1454,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.16293691258876,
+        "entryScore": 91.15957347953074,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1504,7 +1504,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.85514352059998,
+        "entryScore": 88.84844747887365,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1554,7 +1554,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.23460927896828,
+        "entryScore": 88.23232426450858,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1604,7 +1604,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.8156678163651,
+        "entryScore": 86.80414793252632,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1654,7 +1654,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.15435046272438,
+        "entryScore": 86.1502499838703,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1704,7 +1704,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.62756302806733,
+        "entryScore": 85.61788167376258,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1754,7 +1754,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.286279496962,
+        "entryScore": 85.28147100424327,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1804,61 +1804,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.97932885079942,
+        "entryScore": 84.97728379788873,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 11,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "OHI",
-      "yahooTicker": "OHI",
-      "security": "Omega Healthcare Investors",
-      "sector": "Real Estate",
-      "subIndustry": "Health Care REITs",
-      "sourceIndex": "S&P 400",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.68,
-        "dividendYield": 0.0603,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 13240000000,
-        "price": 44.47,
-        "currency": "USD",
-        "trailingPE": 21.55,
-        "forwardPE": 22.07,
-        "priceToBook": 2.55,
-        "returnOnEquity": 0.1242,
-        "profitMargins": 0.4954,
-        "operatingMargins": 0.6452,
-        "debtToEquity": 0.86,
-        "currentRatio": 2.46,
-        "revenueGrowth": 0.1685,
-        "earningsGrowth": 0.3925,
-        "averageDailyVolume": 2130000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 84.84297253513681,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 12,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1904,12 +1854,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.75218012393684,
+        "entryScore": 84.75118237052625,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 12,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+    },
+    {
+      "ticker": "OHI",
+      "yahooTicker": "OHI",
+      "security": "Omega Healthcare Investors",
+      "sector": "Real Estate",
+      "subIndustry": "Health Care REITs",
+      "sourceIndex": "S&P 400",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.68,
+        "dividendYield": 0.0603,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 13240000000,
+        "price": 44.47,
+        "currency": "USD",
+        "trailingPE": 21.55,
+        "forwardPE": 22.07,
+        "priceToBook": 2.55,
+        "returnOnEquity": 0.1242,
+        "profitMargins": 0.4954,
+        "operatingMargins": 0.6452,
+        "debtToEquity": 0.86,
+        "currentRatio": 2.46,
+        "revenueGrowth": 0.1685,
+        "earningsGrowth": 0.3925,
+        "averageDailyVolume": 2130000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 84.71463772699244,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 13,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "EXEL",
@@ -1954,7 +1954,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.62824675864871,
+        "entryScore": 84.61867961400932,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2004,7 +2004,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.61811226109337,
+        "entryScore": 84.60570159122676,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2054,7 +2054,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.35530737992038,
+        "entryScore": 84.35013850763958,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2104,7 +2104,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.0548620929392,
+        "entryScore": 84.04764469878495,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2154,7 +2154,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.76347387153325,
+        "entryScore": 83.75580250861483,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2204,7 +2204,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.16437971284493,
+        "entryScore": 83.15494637404777,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2254,7 +2254,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.12319729381977,
+        "entryScore": 83.11344934823025,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2304,7 +2304,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.09490983709362,
+        "entryScore": 83.08697741869959,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2354,7 +2354,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.69721272005555,
+        "entryScore": 82.68891052984897,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2404,62 +2404,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.50636937933781,
+        "entryScore": 82.39959670467636,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 23,
       "commentary": "solid profitability, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "FR",
-      "yahooTicker": "FR",
-      "security": "First Industrial Realty Trust",
-      "sector": "Real Estate",
-      "subIndustry": "Industrial REITs",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Chicago, Illinois",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.84,
-        "dividendYield": 0.0298,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 8439999999.999999,
-        "price": 61.58,
-        "currency": "USD",
-        "trailingPE": 23.85,
-        "forwardPE": 32.53,
-        "priceToBook": 2.96,
-        "returnOnEquity": 0.1266,
-        "profitMargins": 0.4595,
-        "operatingMargins": 0.4121,
-        "debtToEquity": 0.94,
-        "currentRatio": 3.36,
-        "revenueGrowth": 0.1003,
-        "earningsGrowth": 1.9724000000000002,
-        "averageDailyVolume": 954860
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 81.6265764387241,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 24,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "EVR",
@@ -2504,12 +2454,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.58279566984457,
+        "entryScore": 81.57815476900163,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 24,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "PDD",
+      "yahooTicker": "PDD",
+      "security": "PDD Holdings",
+      "sector": "Technology",
+      "subIndustry": "EDP Services",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 121090000000,
+        "price": 85.07,
+        "currency": "USD",
+        "trailingPE": 9.27,
+        "forwardPE": 6.83,
+        "priceToBook": 1.98,
+        "returnOnEquity": 0.2552,
+        "profitMargins": 0.2186,
+        "operatingMargins": 0.2214,
+        "debtToEquity": 0.01,
+        "currentRatio": 2.54,
+        "revenueGrowth": 0.16690000000000002,
+        "earningsGrowth": -0.10369999999999999,
+        "averageDailyVolume": 8650000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 81.57024895036088,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     }
   ],
   "undervalued": [

@@ -32233,5 +32233,47 @@
       "dividendRate": null,
       "dividendYield": null
     }
+  },
+  "PTON": {
+    "fetchedAt": "2026-06-08T13:27:46.175Z",
+    "metrics": {
+      "marketCap": 2500000000,
+      "price": 5.77,
+      "currency": "USD",
+      "trailingPE": 128.51,
+      "forwardPE": 19.21,
+      "priceToBook": null,
+      "returnOnEquity": null,
+      "profitMargins": 0.009399999999999999,
+      "operatingMargins": 0.0785,
+      "debtToEquity": null,
+      "currentRatio": 2.49,
+      "revenueGrowth": 0.0111,
+      "earningsGrowth": 1.4253,
+      "averageDailyVolume": 14820000,
+      "dividendRate": null,
+      "dividendYield": null
+    }
+  },
+  "UTI": {
+    "fetchedAt": "2026-06-08T13:27:46.780Z",
+    "metrics": {
+      "marketCap": 2400000000,
+      "price": 43.57,
+      "currency": "USD",
+      "trailingPE": 56.87,
+      "forwardPE": 50.66,
+      "priceToBook": 7.06,
+      "returnOnEquity": 0.13470000000000001,
+      "profitMargins": 0.049100000000000005,
+      "operatingMargins": 0.0635,
+      "debtToEquity": 0.93,
+      "currentRatio": 1.17,
+      "revenueGrowth": 0.0673,
+      "earningsGrowth": -0.9621999999999999,
+      "averageDailyVolume": 888290,
+      "dividendRate": null,
+      "dividendYield": null
+    }
   }
 }

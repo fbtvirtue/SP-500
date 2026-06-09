@@ -25074,14 +25074,14 @@
     }
   },
   "EPAM": {
-    "fetchedAt": "2026-06-04T00:52:48.639Z",
+    "fetchedAt": "2026-06-09T11:04:01.535Z",
     "metrics": {
-      "marketCap": 5080000000,
-      "price": 97.28,
+      "marketCap": 5050000000,
+      "price": 96.72,
       "currency": "USD",
-      "trailingPE": 13.96,
-      "forwardPE": 6.87,
-      "priceToBook": 1.5,
+      "trailingPE": 13.88,
+      "forwardPE": 6.83,
+      "priceToBook": 1.49,
       "returnOnEquity": 0.1093,
       "profitMargins": 0.0696,
       "operatingMargins": 0.09359999999999999,
@@ -25089,7 +25089,7 @@
       "currentRatio": 2.67,
       "revenueGrowth": 0.0756,
       "earningsGrowth": 0.1868,
-      "averageDailyVolume": 1760000,
+      "averageDailyVolume": 1750000,
       "dividendRate": null,
       "dividendYield": null
     }
@@ -32272,6 +32272,27 @@
       "revenueGrowth": 0.0673,
       "earningsGrowth": -0.9621999999999999,
       "averageDailyVolume": 888290,
+      "dividendRate": null,
+      "dividendYield": null
+    }
+  },
+  "DAVE": {
+    "fetchedAt": "2026-06-09T11:04:00.905Z",
+    "metrics": {
+      "marketCap": 3440000000,
+      "price": 270.29,
+      "currency": "USD",
+      "trailingPE": 17.38,
+      "forwardPE": 14.09,
+      "priceToBook": 16.86,
+      "returnOnEquity": 1.1162,
+      "profitMargins": 0.3722,
+      "operatingMargins": 0.3508,
+      "debtToEquity": 1.32,
+      "currentRatio": 3.86,
+      "revenueGrowth": 0.4671,
+      "earningsGrowth": 1.0452,
+      "averageDailyVolume": 572710,
       "dividendRate": null,
       "dividendYield": null
     }

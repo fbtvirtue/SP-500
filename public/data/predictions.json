@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T18:44:08.302Z",
+  "generatedAt": "2026-06-09T19:41:29.789Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.08735926042422,
+        "entryScore": 91.05777346160765,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2158,6 +2158,56 @@
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
+      "ticker": "SN",
+      "yahooTicker": "SN",
+      "security": "SharkNinja",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Household Appliances",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Needham, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 18260000000,
+        "price": 129.06,
+        "currency": "USD",
+        "trailingPE": 26.02,
+        "forwardPE": 18.48,
+        "priceToBook": 6.61,
+        "returnOnEquity": 0.2937,
+        "profitMargins": 0.107,
+        "operatingMargins": 0.1439,
+        "debtToEquity": 0.31,
+        "currentRatio": 2.38,
+        "revenueGrowth": 0.1555,
+        "earningsGrowth": 0.0294,
+        "averageDailyVolume": 2150000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.33004961072426,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 19,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
       "ticker": "WTS",
       "yahooTicker": "WTS",
       "security": "Watts Water Technologies",
@@ -2201,56 +2251,6 @@
       "scores": {
         "fallOutRisk": null,
         "entryScore": 83.14929293147907,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 19,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "SN",
-      "yahooTicker": "SN",
-      "security": "SharkNinja",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Household Appliances",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Needham, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 16850000000.000002,
-        "price": 119.06,
-        "currency": "USD",
-        "trailingPE": 24,
-        "forwardPE": 17.05,
-        "priceToBook": 6.1,
-        "returnOnEquity": 0.2937,
-        "profitMargins": 0.107,
-        "operatingMargins": 0.1439,
-        "debtToEquity": 0.31,
-        "currentRatio": 2.38,
-        "revenueGrowth": 0.1555,
-        "earningsGrowth": 0.0294,
-        "averageDailyVolume": 2140000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 83.06377742137515,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

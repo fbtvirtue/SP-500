@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T03:07:48.909Z",
+  "generatedAt": "2026-06-10T05:32:23.012Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -27,12 +27,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8980000000,
-        "price": 186.44,
+        "marketCap": 9140000000,
+        "price": 189.85,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 15.12,
-        "priceToBook": 3.05,
+        "forwardPE": 15.4,
+        "priceToBook": 3.11,
         "returnOnEquity": -0.0602,
         "profitMargins": -0.045899999999999996,
         "operatingMargins": 0.1298,
@@ -40,7 +40,7 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.0118,
         "earningsGrowth": -1.6054,
-        "averageDailyVolume": 884820
+        "averageDailyVolume": 879860
       },
       "scores": {
         "fallOutRisk": 100,
@@ -73,16 +73,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.2,
-        "dividendYield": 0.0104,
+        "dividendYield": 0.01,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 9940000000,
-        "price": 19.24,
+        "marketCap": 10340000000,
+        "price": 20.03,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 9.63,
-        "priceToBook": 1.64,
+        "forwardPE": 10.03,
+        "priceToBook": 1.71,
         "returnOnEquity": -0.1495,
         "profitMargins": -0.08869999999999999,
         "operatingMargins": 0.0548,
@@ -90,65 +90,15 @@
         "currentRatio": 1.85,
         "revenueGrowth": 0.028999999999999998,
         "earningsGrowth": -1.1187,
-        "averageDailyVolume": 8020000
+        "averageDailyVolume": 7930000
       },
       "scores": {
         "fallOutRisk": 99.40189558989888,
         "entryScore": null,
-        "undervaluedScore": 59.49568181192501,
-        "overvaluedScore": 36.936187723392806
+        "undervaluedScore": 58.969366022451325,
+        "overvaluedScore": 37.46250351286649
       },
       "rank": 2,
-      "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
-    },
-    {
-      "ticker": "SJM",
-      "yahooTicker": "SJM",
-      "security": "J.M. Smucker Company (The)",
-      "sector": "Consumer Staples",
-      "subIndustry": "Packaged Foods & Meats",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Orrville, Ohio",
-      "cik": "0000091419",
-      "founded": "1897",
-      "currentMember": true,
-      "currentMemberSince": "2008-11-06",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2008-11-06",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.4,
-        "dividendYield": 0.0432,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 10850000000,
-        "price": 101.77,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 10.37,
-        "priceToBook": 2.07,
-        "returnOnEquity": -0.20679999999999998,
-        "profitMargins": -0.1407,
-        "operatingMargins": 0.1632,
-        "debtToEquity": 1.43,
-        "currentRatio": 0.84,
-        "revenueGrowth": 0.0702,
-        "earningsGrowth": -0.0904,
-        "averageDailyVolume": 1860000
-      },
-      "scores": {
-        "fallOutRisk": 95.02755203877958,
-        "entryScore": null,
-        "undervaluedScore": 62.06845238095237,
-        "overvaluedScore": 36.08779761904762
-      },
-      "rank": 3,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -173,16 +123,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.2,
-        "dividendYield": 0.0192,
+        "dividendYield": 0.0195,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 11630000000,
-        "price": 10.39,
+        "marketCap": 11460000000,
+        "price": 10.24,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 13.16,
-        "priceToBook": 0.99,
+        "forwardPE": 12.97,
+        "priceToBook": 0.98,
         "returnOnEquity": -0.042800000000000005,
         "profitMargins": -0.0208,
         "operatingMargins": 0.08130000000000001,
@@ -190,15 +140,15 @@
         "currentRatio": 1.1,
         "revenueGrowth": 0.0216,
         "earningsGrowth": -0.3296,
-        "averageDailyVolume": 11050000
+        "averageDailyVolume": 11010000
       },
       "scores": {
-        "fallOutRisk": 92.71044923140731,
+        "fallOutRisk": 93.05975062861289,
         "entryScore": null,
-        "undervaluedScore": 58.12770562770562,
-        "overvaluedScore": 37.72727272727273
+        "undervaluedScore": 59.556277056277054,
+        "overvaluedScore": 36.298701298701296
       },
-      "rank": 4,
+      "rank": 3,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -227,12 +177,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 7860000000,
-        "price": 73.12,
+        "marketCap": 8340000000,
+        "price": 77.54,
         "currency": "USD",
-        "trailingPE": 27.91,
-        "forwardPE": 11.84,
-        "priceToBook": 1.96,
+        "trailingPE": 29.6,
+        "forwardPE": 12.55,
+        "priceToBook": 2.08,
         "returnOnEquity": 0.0696,
         "profitMargins": 0.0197,
         "operatingMargins": 0.0417,
@@ -240,15 +190,15 @@
         "currentRatio": 1.76,
         "revenueGrowth": -0.1013,
         "earningsGrowth": -1.5124000000000002,
-        "averageDailyVolume": 2610000
+        "averageDailyVolume": 2570000
       },
       "scores": {
-        "fallOutRisk": 92.13609745166632,
+        "fallOutRisk": 92.0662371722252,
         "entryScore": null,
-        "undervaluedScore": 60.18863478863477,
-        "overvaluedScore": 33.9943866943867
+        "undervaluedScore": 59.66195426195425,
+        "overvaluedScore": 34.58863478863479
       },
-      "rank": 5,
+      "rank": 4,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -273,16 +223,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 4.12,
-        "dividendYield": 0.0639,
+        "dividendYield": 0.0647,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 20800000000,
-        "price": 64.43,
+        "marketCap": 20540000000,
+        "price": 63.64,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 8.49,
-        "priceToBook": 2.07,
+        "forwardPE": 8.38,
+        "priceToBook": 2.05,
         "returnOnEquity": -0.060599999999999994,
         "profitMargins": -0.027000000000000003,
         "operatingMargins": 0.0408,
@@ -290,15 +240,15 @@
         "currentRatio": 1.54,
         "revenueGrowth": -0.061200000000000004,
         "earningsGrowth": -0.2869,
-        "averageDailyVolume": 7340000
+        "averageDailyVolume": 7190000
       },
       "scores": {
-        "fallOutRisk": 91.30938123752495,
+        "fallOutRisk": 91.79840319361277,
         "entryScore": null,
         "undervaluedScore": 67,
         "overvaluedScore": 29.200000000000003
       },
-      "rank": 6,
+      "rank": 5,
       "commentary": "thin profitability, negative earnings growth"
     },
     {
@@ -323,16 +273,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.37,
-        "dividendYield": 0.059800000000000006,
+        "dividendYield": 0.058499999999999996,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 7480000000,
-        "price": 39.61,
+        "marketCap": 7640000000,
+        "price": 40.52,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 7.97,
-        "priceToBook": 0.7,
+        "forwardPE": 8.16,
+        "priceToBook": 0.72,
         "returnOnEquity": -0.18230000000000002,
         "profitMargins": -0.1885,
         "operatingMargins": 0.1369,
@@ -340,15 +290,15 @@
         "currentRatio": 0.54,
         "revenueGrowth": 0.0204,
         "earningsGrowth": 0.3468,
-        "averageDailyVolume": 3100000
+        "averageDailyVolume": 3130000
       },
       "scores": {
-        "fallOutRisk": 91.03404878554579,
+        "fallOutRisk": 91.50855431993155,
         "entryScore": null,
-        "undervaluedScore": 73.9301948051948,
-        "overvaluedScore": 19.341856060606062
+        "undervaluedScore": 73.32413419913419,
+        "overvaluedScore": 19.796401515151516
       },
-      "rank": 7,
+      "rank": 6,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -377,16 +327,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.4,
-        "dividendYield": 0.0409,
+        "dividendYield": 0.0421,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 24650000000,
-        "price": 34.2,
+        "marketCap": 23940000000,
+        "price": 33.22,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 13.55,
-        "priceToBook": 1.62,
+        "forwardPE": 12.99,
+        "priceToBook": 1.57,
         "returnOnEquity": -0.17850000000000002,
         "profitMargins": -0.0727,
         "operatingMargins": 0.0040999999999999995,
@@ -394,15 +344,15 @@
         "currentRatio": 1.85,
         "revenueGrowth": -0.0611,
         "earningsGrowth": -0.6917,
-        "averageDailyVolume": 13830000
+        "averageDailyVolume": 13630000
       },
       "scores": {
-        "fallOutRisk": 90.81317365269462,
+        "fallOutRisk": 91.44191616766467,
         "entryScore": null,
-        "undervaluedScore": 50.6,
-        "overvaluedScore": 45
+        "undervaluedScore": 53.4,
+        "overvaluedScore": 42.2
       },
-      "rank": 8,
+      "rank": 7,
       "commentary": "thin profitability, negative earnings growth"
     },
     {
@@ -432,10 +382,10 @@
       },
       "metrics": {
         "marketCap": 6290000000,
-        "price": 13.15,
+        "price": 13.14,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 8.19,
+        "forwardPE": 8.18,
         "priceToBook": 0.77,
         "returnOnEquity": -0.0051,
         "profitMargins": -0.0039000000000000003,
@@ -444,115 +394,15 @@
         "currentRatio": 0.9,
         "revenueGrowth": -0.0187,
         "earningsGrowth": 0.37560000000000004,
-        "averageDailyVolume": 15350000
+        "averageDailyVolume": 15510000
       },
       "scores": {
-        "fallOutRisk": 89.8559164139254,
+        "fallOutRisk": 89.87587649376572,
         "entryScore": null,
-        "undervaluedScore": 72.6183712121212,
-        "overvaluedScore": 21.215367965367967
+        "undervaluedScore": 72.9040854978355,
+        "overvaluedScore": 20.92965367965368
       },
-      "rank": 9,
-      "commentary": "smaller market-cap profile, thin profitability"
-    },
-    {
-      "ticker": "SWK",
-      "yahooTicker": "SWK",
-      "security": "Stanley Black & Decker",
-      "sector": "Industrials",
-      "subIndustry": "Industrial Machinery & Supplies & Components",
-      "sourceIndex": "S&P 500",
-      "headquarters": "New Britain, Connecticut",
-      "cik": "0000093556",
-      "founded": "1843",
-      "currentMember": true,
-      "currentMemberSince": "1982-09-30",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1982-09-30",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 3.32,
-        "dividendYield": 0.042300000000000004,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 12210000000,
-        "price": 78.53,
-        "currency": "USD",
-        "trailingPE": 32.17,
-        "forwardPE": 12.62,
-        "priceToBook": 1.36,
-        "returnOnEquity": 0.0417,
-        "profitMargins": 0.024399999999999998,
-        "operatingMargins": 0.0824,
-        "debtToEquity": 0.72,
-        "currentRatio": 1.14,
-        "revenueGrowth": 0.027200000000000002,
-        "earningsGrowth": -0.34369999999999995,
-        "averageDailyVolume": 1900000
-      },
-      "scores": {
-        "fallOutRisk": 86.7829517679817,
-        "entryScore": null,
-        "undervaluedScore": 65.03826353826354,
-        "overvaluedScore": 28.483912483912487
-      },
-      "rank": 10,
-      "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
-    },
-    {
-      "ticker": "ARE",
-      "yahooTicker": "ARE",
-      "security": "Alexandria Real Estate Equities",
-      "sector": "Real Estate",
-      "subIndustry": "Office REITs",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Pasadena, California",
-      "cik": "0001035443",
-      "founded": "1994",
-      "currentMember": true,
-      "currentMemberSince": "2017-03-20",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2017-03-20",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.08,
-        "dividendYield": 0.0812,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 8760000000,
-        "price": 50.26,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": null,
-        "priceToBook": 0.55,
-        "returnOnEquity": -0.0643,
-        "profitMargins": -0.3632,
-        "operatingMargins": 0.22760000000000002,
-        "debtToEquity": 0.83,
-        "currentRatio": 1.44,
-        "revenueGrowth": -0.1149,
-        "earningsGrowth": 31.886799999999997,
-        "averageDailyVolume": 2290000
-      },
-      "scores": {
-        "fallOutRisk": 86.31258910749928,
-        "entryScore": null,
-        "undervaluedScore": 53.69047619047619,
-        "overvaluedScore": 38.154761904761905
-      },
-      "rank": 11,
+      "rank": 8,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -581,12 +431,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 33799999999.999996,
-        "price": 116.62,
+        "marketCap": 33840000000.000004,
+        "price": 116.77,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 64.86,
-        "priceToBook": 5.99,
+        "forwardPE": 64.95,
+        "priceToBook": 6,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -594,16 +444,66 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 6780000
+        "averageDailyVolume": 6900000
       },
       "scores": {
-        "fallOutRisk": 86.09666381522668,
+        "fallOutRisk": 86.4659252922726,
         "entryScore": null,
-        "undervaluedScore": 12.359307359307362,
-        "overvaluedScore": 86.42857142857143
+        "undervaluedScore": 14.264069264069267,
+        "overvaluedScore": 84.52380952380952
       },
-      "rank": 12,
+      "rank": 9,
       "commentary": "thin profitability"
+    },
+    {
+      "ticker": "SWK",
+      "yahooTicker": "SWK",
+      "security": "Stanley Black & Decker",
+      "sector": "Industrials",
+      "subIndustry": "Industrial Machinery & Supplies & Components",
+      "sourceIndex": "S&P 500",
+      "headquarters": "New Britain, Connecticut",
+      "cik": "0000093556",
+      "founded": "1843",
+      "currentMember": true,
+      "currentMemberSince": "1982-09-30",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1982-09-30",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 3.32,
+        "dividendYield": 0.0414,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 12460000000,
+        "price": 80.12,
+        "currency": "USD",
+        "trailingPE": 32.83,
+        "forwardPE": 12.87,
+        "priceToBook": 1.39,
+        "returnOnEquity": 0.0417,
+        "profitMargins": 0.024399999999999998,
+        "operatingMargins": 0.0824,
+        "debtToEquity": 0.72,
+        "currentRatio": 1.14,
+        "revenueGrowth": 0.027200000000000002,
+        "earningsGrowth": -0.34369999999999995,
+        "averageDailyVolume": 1890000
+      },
+      "scores": {
+        "fallOutRisk": 86.4336503707761,
+        "entryScore": null,
+        "undervaluedScore": 64.91005841005841,
+        "overvaluedScore": 28.612117612117615
+      },
+      "rank": 10,
+      "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
       "ticker": "MGM",
@@ -631,12 +531,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 12090000000,
-        "price": 47.26,
+        "marketCap": 12060000000,
+        "price": 47.15,
         "currency": "USD",
-        "trailingPE": 65.19,
-        "forwardPE": 22.48,
-        "priceToBook": 4.97,
+        "trailingPE": 65.03,
+        "forwardPE": 22.43,
+        "priceToBook": 4.96,
         "returnOnEquity": 0.071,
         "profitMargins": 0.0106,
         "operatingMargins": 0.0694,
@@ -644,16 +544,66 @@
         "currentRatio": 1.33,
         "revenueGrowth": 0.0415,
         "earningsGrowth": -0.059000000000000004,
-        "averageDailyVolume": 5210000
+        "averageDailyVolume": 5190000
       },
       "scores": {
-        "fallOutRisk": 86.08364830622443,
+        "fallOutRisk": 86.17346866550585,
         "entryScore": null,
         "undervaluedScore": 29.689716312056742,
         "overvaluedScore": 68.76773049645391
       },
-      "rank": 13,
+      "rank": 11,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
+    },
+    {
+      "ticker": "ARE",
+      "yahooTicker": "ARE",
+      "security": "Alexandria Real Estate Equities",
+      "sector": "Real Estate",
+      "subIndustry": "Office REITs",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Pasadena, California",
+      "cik": "0001035443",
+      "founded": "1994",
+      "currentMember": true,
+      "currentMemberSince": "2017-03-20",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2017-03-20",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.08,
+        "dividendYield": 0.0771,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 9230000000,
+        "price": 52.95,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": null,
+        "priceToBook": 0.57,
+        "returnOnEquity": -0.0643,
+        "profitMargins": -0.3632,
+        "operatingMargins": 0.22760000000000002,
+        "debtToEquity": 0.83,
+        "currentRatio": 1.44,
+        "revenueGrowth": -0.1149,
+        "earningsGrowth": 31.886799999999997,
+        "averageDailyVolume": 2310000
+      },
+      "scores": {
+        "fallOutRisk": 86.03314798973481,
+        "entryScore": null,
+        "undervaluedScore": 53.69047619047619,
+        "overvaluedScore": 38.154761904761905
+      },
+      "rank": 12,
+      "commentary": "smaller market-cap profile, thin profitability"
     },
     {
       "ticker": "HAS",
@@ -677,16 +627,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.8,
-        "dividendYield": 0.0335,
+        "dividendYield": 0.0332,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 11820000000,
-        "price": 83.54,
+        "marketCap": 11920000000,
+        "price": 84.26,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 13.04,
-        "priceToBook": 18.24,
+        "forwardPE": 13.15,
+        "priceToBook": 18.4,
         "returnOnEquity": -0.24489999999999998,
         "profitMargins": -0.0463,
         "operatingMargins": 0.2707,
@@ -697,10 +647,60 @@
         "averageDailyVolume": 1890000
       },
       "scores": {
-        "fallOutRisk": 85.71357993233391,
+        "fallOutRisk": 85.94312085049759,
         "entryScore": null,
-        "undervaluedScore": 47.083333333333336,
-        "overvaluedScore": 55.177304964539005
+        "undervaluedScore": 45.88947990543735,
+        "overvaluedScore": 56.51004728132388
+      },
+      "rank": 13,
+      "commentary": "smaller market-cap profile, thin profitability"
+    },
+    {
+      "ticker": "SJM",
+      "yahooTicker": "SJM",
+      "security": "J.M. Smucker Company (The)",
+      "sector": "Consumer Staples",
+      "subIndustry": "Packaged Foods & Meats",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Orrville, Ohio",
+      "cik": "0000091419",
+      "founded": "1897",
+      "currentMember": true,
+      "currentMemberSince": "2008-11-06",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2008-11-06",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.4,
+        "dividendYield": 0.0391,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 11990000000,
+        "price": 112.39,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 10.45,
+        "priceToBook": 2.29,
+        "returnOnEquity": -0.0239,
+        "profitMargins": -0.015300000000000001,
+        "operatingMargins": 0.1656,
+        "debtToEquity": 1.26,
+        "currentRatio": 0.78,
+        "revenueGrowth": 0.057999999999999996,
+        "earningsGrowth": 1.53,
+        "averageDailyVolume": 1870000
+      },
+      "scores": {
+        "fallOutRisk": 85.86697384451875,
+        "entryScore": null,
+        "undervaluedScore": 63.12987012987011,
+        "overvaluedScore": 35.02556818181819
       },
       "rank": 14,
       "commentary": "smaller market-cap profile, thin profitability"
@@ -727,16 +727,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.85,
-        "dividendYield": 0.0562,
+        "dividendYield": 0.0542,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 17400000000,
-        "price": 32.86,
+        "marketCap": 18070000000,
+        "price": 34.12,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 12.33,
-        "priceToBook": 1.17,
+        "forwardPE": 12.81,
+        "priceToBook": 1.22,
         "returnOnEquity": -0.1604,
         "profitMargins": -0.1336,
         "operatingMargins": 0.0143,
@@ -744,66 +744,16 @@
         "currentRatio": 1.21,
         "revenueGrowth": 0.011899999999999999,
         "earningsGrowth": 1.5954,
-        "averageDailyVolume": 6900000
+        "averageDailyVolume": 6870000
       },
       "scores": {
-        "fallOutRisk": 85.55289421157684,
+        "fallOutRisk": 85.20359281437126,
         "entryScore": null,
-        "undervaluedScore": 62.60000000000001,
-        "overvaluedScore": 31.8
+        "undervaluedScore": 61.40000000000001,
+        "overvaluedScore": 33.2
       },
       "rank": 15,
       "commentary": "smaller market-cap profile, thin profitability"
-    },
-    {
-      "ticker": "GPC",
-      "yahooTicker": "GPC",
-      "security": "Genuine Parts Company",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Distributors",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Atlanta, Georgia",
-      "cik": "0000040987",
-      "founded": "1925",
-      "currentMember": true,
-      "currentMemberSince": "1973-12-31",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1973-12-31",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.18,
-        "dividendYield": 0.0431,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 13360000000,
-        "price": 97.07,
-        "currency": "USD",
-        "trailingPE": 225.32,
-        "forwardPE": 11.59,
-        "priceToBook": 2.99,
-        "returnOnEquity": 0.013500000000000002,
-        "profitMargins": 0.0024,
-        "operatingMargins": 0.0492,
-        "debtToEquity": 1.5,
-        "currentRatio": 1.09,
-        "revenueGrowth": 0.068,
-        "earningsGrowth": -0.0219,
-        "averageDailyVolume": 1890000
-      },
-      "scores": {
-        "fallOutRisk": 82.43827946942993,
-        "entryScore": null,
-        "undervaluedScore": 54.93572695035461,
-        "overvaluedScore": 41.25221631205674
-      },
-      "rank": 16,
-      "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
       "ticker": "EL",
@@ -827,16 +777,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.4,
-        "dividendYield": 0.0165,
+        "dividendYield": 0.016200000000000003,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 30620000000,
-        "price": 84.64,
+        "marketCap": 31320000000,
+        "price": 86.56,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 26.56,
-        "priceToBook": 7.67,
+        "forwardPE": 27.16,
+        "priceToBook": 7.84,
         "returnOnEquity": -0.059500000000000004,
         "profitMargins": -0.0167,
         "operatingMargins": 0.1038,
@@ -844,16 +794,66 @@
         "currentRatio": 1.27,
         "revenueGrowth": 0.05,
         "earningsGrowth": -0.4464,
-        "averageDailyVolume": 4510000
+        "averageDailyVolume": 4490000
       },
       "scores": {
-        "fallOutRisk": 82.39921293776084,
+        "fallOutRisk": 83.2124695414366,
         "entryScore": null,
-        "undervaluedScore": 18.473890692640694,
-        "overvaluedScore": 82.52083333333333
+        "undervaluedScore": 17.885146103896105,
+        "overvaluedScore": 82.95806277056278
+      },
+      "rank": 16,
+      "commentary": "thin profitability, negative earnings growth"
+    },
+    {
+      "ticker": "GPC",
+      "yahooTicker": "GPC",
+      "security": "Genuine Parts Company",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Distributors",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Atlanta, Georgia",
+      "cik": "0000040987",
+      "founded": "1925",
+      "currentMember": true,
+      "currentMemberSince": "1973-12-31",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1973-12-31",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.18,
+        "dividendYield": 0.0421,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 13680000000,
+        "price": 99.41,
+        "currency": "USD",
+        "trailingPE": 230.76,
+        "forwardPE": 11.87,
+        "priceToBook": 3.06,
+        "returnOnEquity": 0.013500000000000002,
+        "profitMargins": 0.0024,
+        "operatingMargins": 0.0492,
+        "debtToEquity": 1.5,
+        "currentRatio": 1.09,
+        "revenueGrowth": 0.068,
+        "earningsGrowth": -0.0219,
+        "averageDailyVolume": 1890000
+      },
+      "scores": {
+        "fallOutRisk": 82.43827946942993,
+        "entryScore": null,
+        "undervaluedScore": 54.93572695035461,
+        "overvaluedScore": 41.25221631205674
       },
       "rank": 17,
-      "commentary": "thin profitability, negative earnings growth"
+      "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
       "ticker": "VTRS",
@@ -877,16 +877,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.48,
-        "dividendYield": 0.0301,
+        "dividendYield": 0.0296,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 18550000000,
-        "price": 15.93,
+        "marketCap": 18870000000,
+        "price": 16.2,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 5.94,
-        "priceToBook": 1.27,
+        "forwardPE": 6.04,
+        "priceToBook": 1.29,
         "returnOnEquity": -0.0196,
         "profitMargins": -0.0204,
         "operatingMargins": 0.09,
@@ -894,16 +894,66 @@
         "currentRatio": 1.52,
         "revenueGrowth": 0.085,
         "earningsGrowth": 1.0588,
-        "averageDailyVolume": 10850000
+        "averageDailyVolume": 10830000
       },
       "scores": {
-        "fallOutRisk": 80.92058676634353,
+        "fallOutRisk": 81.01040712562495,
         "entryScore": null,
         "undervaluedScore": 73.43705739803744,
         "overvaluedScore": 23.720448250847525
       },
       "rank": 18,
       "commentary": "smaller market-cap profile, thin profitability"
+    },
+    {
+      "ticker": "SWKS",
+      "yahooTicker": "SWKS",
+      "security": "Skyworks Solutions",
+      "sector": "Information Technology",
+      "subIndustry": "Semiconductors",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Irvine, California",
+      "cik": "0000004127",
+      "founded": "2002",
+      "currentMember": true,
+      "currentMemberSince": "2015-03-12",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2015-03-12",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.84,
+        "dividendYield": 0.038599999999999995,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 11060000000,
+        "price": 73.56,
+        "currency": "USD",
+        "trailingPE": 30.58,
+        "forwardPE": 14.22,
+        "priceToBook": 1.92,
+        "returnOnEquity": 0.0617,
+        "profitMargins": 0.08929999999999999,
+        "operatingMargins": 0.0971,
+        "debtToEquity": 0.21,
+        "currentRatio": 2.38,
+        "revenueGrowth": -0.01,
+        "earningsGrowth": -0.4535,
+        "averageDailyVolume": 4130000
+      },
+      "scores": {
+        "fallOutRisk": 80.1757322017726,
+        "entryScore": null,
+        "undervaluedScore": 65.19196087759866,
+        "overvaluedScore": 26.739928968943275
+      },
+      "rank": 19,
+      "commentary": "smaller market-cap profile, negative earnings growth"
     },
     {
       "ticker": "HSIC",
@@ -931,12 +981,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8890000000,
-        "price": 78.05,
+        "marketCap": 9120000000,
+        "price": 80.03,
         "currency": "USD",
-        "trailingPE": 23.57,
-        "forwardPE": 13.21,
-        "priceToBook": 2.73,
+        "trailingPE": 24.17,
+        "forwardPE": 13.55,
+        "priceToBook": 2.8,
         "returnOnEquity": 0.1201,
         "profitMargins": 0.029500000000000002,
         "operatingMargins": 0.0588,
@@ -947,63 +997,13 @@
         "averageDailyVolume": 1370000
       },
       "scores": {
-        "fallOutRisk": 79.98704183145645,
+        "fallOutRisk": 79.91718155201532,
         "entryScore": null,
-        "undervaluedScore": 50.3905292630338,
-        "overvaluedScore": 49.872880698652025
-      },
-      "rank": 19,
-      "commentary": "smaller market-cap profile, thin profitability"
-    },
-    {
-      "ticker": "SWKS",
-      "yahooTicker": "SWKS",
-      "security": "Skyworks Solutions",
-      "sector": "Information Technology",
-      "subIndustry": "Semiconductors",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Irvine, California",
-      "cik": "0000004127",
-      "founded": "2002",
-      "currentMember": true,
-      "currentMemberSince": "2015-03-12",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2015-03-12",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.84,
-        "dividendYield": 0.0377,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 11340000000,
-        "price": 75.37,
-        "currency": "USD",
-        "trailingPE": 31.34,
-        "forwardPE": 14.57,
-        "priceToBook": 1.97,
-        "returnOnEquity": 0.0617,
-        "profitMargins": 0.08929999999999999,
-        "operatingMargins": 0.0971,
-        "debtToEquity": 0.21,
-        "currentRatio": 2.38,
-        "revenueGrowth": -0.01,
-        "earningsGrowth": -0.4535,
-        "averageDailyVolume": 4099999.9999999995
-      },
-      "scores": {
-        "fallOutRisk": 79.68671024568478,
-        "entryScore": null,
-        "undervaluedScore": 65.19196087759866,
-        "overvaluedScore": 26.739928968943275
+        "undervaluedScore": 49.68877487706888,
+        "overvaluedScore": 50.574635084616936
       },
       "rank": 20,
-      "commentary": "smaller market-cap profile, negative earnings growth"
+      "commentary": "smaller market-cap profile, thin profitability"
     },
     {
       "ticker": "CNC",
@@ -1031,12 +1031,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 32110000000,
-        "price": 65.03,
+        "marketCap": 32689999999.999996,
+        "price": 66.21,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 14.45,
-        "priceToBook": 1.5,
+        "forwardPE": 14.72,
+        "priceToBook": 1.53,
         "returnOnEquity": -0.2612,
         "profitMargins": -0.0325,
         "operatingMargins": 0.0002,
@@ -1044,13 +1044,13 @@
         "currentRatio": 1.12,
         "revenueGrowth": 0.0713,
         "earningsGrowth": 0.1816,
-        "averageDailyVolume": 6470000
+        "averageDailyVolume": 6500000
       },
       "scores": {
-        "fallOutRisk": 78.73232403451277,
+        "fallOutRisk": 78.75228411435307,
         "entryScore": null,
-        "undervaluedScore": 52.03642302780234,
-        "overvaluedScore": 43.84529423322527
+        "undervaluedScore": 51.51010723832866,
+        "overvaluedScore": 44.37161002269895
       },
       "rank": 21,
       "commentary": "thin profitability"
@@ -1077,16 +1077,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.1,
-        "dividendYield": 0.051399999999999994,
+        "dividendYield": 0.051699999999999996,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 6800000000,
-        "price": 21.38,
+        "marketCap": 6760000000,
+        "price": 21.28,
         "currency": "USD",
-        "trailingPE": 167.82,
-        "forwardPE": 11.82,
-        "priceToBook": 0.58,
+        "trailingPE": 167.03,
+        "forwardPE": 11.77,
+        "priceToBook": 0.57,
         "returnOnEquity": 0.0038,
         "profitMargins": 0.0036,
         "operatingMargins": 0.0885,
@@ -1094,13 +1094,13 @@
         "currentRatio": 1.25,
         "revenueGrowth": 0.1439,
         "earningsGrowth": -2.0842,
-        "averageDailyVolume": 9900000
+        "averageDailyVolume": 9850000
       },
       "scores": {
-        "fallOutRisk": 78.6251497005988,
+        "fallOutRisk": 78.69500998003991,
         "entryScore": null,
-        "undervaluedScore": 63.6,
-        "overvaluedScore": 32.2
+        "undervaluedScore": 64.8,
+        "overvaluedScore": 31
       },
       "rank": 22,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
@@ -1127,16 +1127,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.84,
-        "dividendYield": 0.030699999999999998,
+        "dividendYield": 0.030299999999999997,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 12210000000,
-        "price": 27.55,
+        "marketCap": 12370000000,
+        "price": 27.91,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 9.3,
-        "priceToBook": 1.25,
+        "forwardPE": 9.42,
+        "priceToBook": 1.27,
         "returnOnEquity": -0.0181,
         "profitMargins": -0.0984,
         "operatingMargins": 0.2071,
@@ -1144,13 +1144,13 @@
         "currentRatio": 1.25,
         "revenueGrowth": 0.16870000000000002,
         "earningsGrowth": 0.34729999999999994,
-        "averageDailyVolume": 5500000
+        "averageDailyVolume": 5440000
       },
       "scores": {
-        "fallOutRisk": 78.46150941360521,
+        "fallOutRisk": 78.41160921400441,
         "entryScore": null,
-        "undervaluedScore": 66.92358240593535,
-        "overvaluedScore": 28.2250662427133
+        "undervaluedScore": 66.52358240593536,
+        "overvaluedScore": 28.625066242713302
       },
       "rank": 23,
       "commentary": "smaller market-cap profile, thin profitability"
@@ -1177,16 +1177,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.36,
-        "dividendYield": 0.0113,
+        "dividendYield": 0.0108,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 14160000000,
-        "price": 119.96,
+        "marketCap": 14810000000,
+        "price": 125.44,
         "currency": "USD",
-        "trailingPE": 36.96,
-        "forwardPE": 14.42,
-        "priceToBook": 4.31,
+        "trailingPE": 38.65,
+        "forwardPE": 15.08,
+        "priceToBook": 4.5,
         "returnOnEquity": 0.11449999999999999,
         "profitMargins": 0.0296,
         "operatingMargins": 0.0487,
@@ -1194,13 +1194,13 @@
         "currentRatio": 1.43,
         "revenueGrowth": 0.2686,
         "earningsGrowth": -7.1163,
-        "averageDailyVolume": 1120000
+        "averageDailyVolume": 1130000
       },
       "scores": {
-        "fallOutRisk": 78.41803129707321,
+        "fallOutRisk": 78.27831073819098,
         "entryScore": null,
-        "undervaluedScore": 53.351064251064244,
-        "overvaluedScore": 47.86473616473617
+        "undervaluedScore": 51.8984357984358,
+        "overvaluedScore": 49.452499752499754
       },
       "rank": 24,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
@@ -1231,12 +1231,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 18890000000,
-        "price": 47.6,
+        "marketCap": 18940000000,
+        "price": 47.73,
         "currency": "USD",
         "trailingPE": null,
         "forwardPE": null,
-        "priceToBook": 2.55,
+        "priceToBook": 2.56,
         "returnOnEquity": -0.36560000000000004,
         "profitMargins": -1.4355000000000002,
         "operatingMargins": -1.5334999999999999,
@@ -1244,69 +1244,19 @@
         "currentRatio": 2.41,
         "revenueGrowth": 2.6019,
         "earningsGrowth": -0.35159999999999997,
-        "averageDailyVolume": 6890000
+        "averageDailyVolume": 6760000
       },
       "scores": {
-        "fallOutRisk": 78.05973464212158,
+        "fallOutRisk": 78.26931548044494,
         "entryScore": null,
-        "undervaluedScore": 46.73076923076923,
-        "overvaluedScore": 51.05769230769231
+        "undervaluedScore": 47.11538461538462,
+        "overvaluedScore": 50.57692307692308
       },
       "rank": 25,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     }
   ],
   "possibleEntrants": [
-    {
-      "ticker": "HL",
-      "yahooTicker": "HL",
-      "security": "Hecla Mining",
-      "sector": "Materials",
-      "subIndustry": "Silver",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Coeur d'Alene, Idaho",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.02,
-        "dividendYield": 0.0011,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 9990000000,
-        "price": 14.89,
-        "currency": "USD",
-        "trailingPE": 21.4,
-        "forwardPE": 12.49,
-        "priceToBook": 3.88,
-        "returnOnEquity": 0.19699999999999998,
-        "profitMargins": 0.2965,
-        "operatingMargins": 0.4483,
-        "debtToEquity": 0.11,
-        "currentRatio": 4.94,
-        "revenueGrowth": 0.5655,
-        "earningsGrowth": 4.6667000000000005,
-        "averageDailyVolume": 15380000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 92.9402033346491,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 1,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
     {
       "ticker": "MLI",
       "yahooTicker": "MLI",
@@ -1329,16 +1279,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.2,
-        "dividendYield": 0.009000000000000001,
+        "dividendYield": 0.0088,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 14730000000,
-        "price": 133.26,
+        "marketCap": 15000000000,
+        "price": 135.66,
         "currency": "USD",
-        "trailingPE": 17.46,
-        "forwardPE": 15.35,
-        "priceToBook": 4.42,
+        "trailingPE": 17.77,
+        "forwardPE": 15.63,
+        "priceToBook": 4.5,
         "returnOnEquity": 0.2822,
         "profitMargins": 0.1937,
         "operatingMargins": 0.218,
@@ -1346,7 +1296,7 @@
         "currentRatio": 5.35,
         "revenueGrowth": 0.1928,
         "earningsGrowth": 0.5478999999999999,
-        "averageDailyVolume": 696380
+        "averageDailyVolume": 688920
       },
       "scores": {
         "fallOutRisk": null,
@@ -1354,7 +1304,7 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 2,
+      "rank": 1,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1383,12 +1333,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 12530000000,
-        "price": 274.97,
+        "marketCap": 12920000000,
+        "price": 283.48,
         "currency": "USD",
-        "trailingPE": 92.09,
-        "forwardPE": 46.9,
-        "priceToBook": 16.62,
+        "trailingPE": 94.94,
+        "forwardPE": 47.95,
+        "priceToBook": 17.13,
         "returnOnEquity": 0.20489999999999997,
         "profitMargins": 0.32030000000000003,
         "operatingMargins": 0.12619999999999998,
@@ -1396,16 +1346,66 @@
         "currentRatio": 14.3,
         "revenueGrowth": 0.2022,
         "earningsGrowth": 6.836900000000001,
-        "averageDailyVolume": 900670
+        "averageDailyVolume": 899090
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.65654001073746,
+        "entryScore": 92.80446900482032,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 2,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "HL",
+      "yahooTicker": "HL",
+      "security": "Hecla Mining",
+      "sector": "Materials",
+      "subIndustry": "Silver",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Coeur d'Alene, Idaho",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.02,
+        "dividendYield": 0.0011,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 9730000000,
+        "price": 14.51,
+        "currency": "USD",
+        "trailingPE": 20.86,
+        "forwardPE": 12.17,
+        "priceToBook": 3.79,
+        "returnOnEquity": 0.19699999999999998,
+        "profitMargins": 0.2965,
+        "operatingMargins": 0.4483,
+        "debtToEquity": 0.11,
+        "currentRatio": 4.94,
+        "revenueGrowth": 0.5655,
+        "earningsGrowth": 4.6667000000000005,
+        "averageDailyVolume": 15430000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 92.61475954766685,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 3,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "RGLD",
@@ -1433,12 +1433,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 17460000000,
-        "price": 205.7,
+        "marketCap": 17380000000,
+        "price": 204.79,
         "currency": "USD",
-        "trailingPE": 24.48,
-        "forwardPE": 15.37,
-        "priceToBook": 2.35,
+        "trailingPE": 24.37,
+        "forwardPE": 15.3,
+        "priceToBook": 2.34,
         "returnOnEquity": 0.11939999999999999,
         "profitMargins": 0.4853,
         "operatingMargins": 0.6420999999999999,
@@ -1446,11 +1446,11 @@
         "currentRatio": 3.52,
         "revenueGrowth": 1.4252,
         "earningsGrowth": 0.9168000000000001,
-        "averageDailyVolume": 940480
+        "averageDailyVolume": 939080
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.05777346160765,
+        "entryScore": 90.99860186397451,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1479,16 +1479,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.8,
-        "dividendYield": 0.0016,
+        "dividendYield": 0.0015,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 24800000000,
-        "price": 499.09,
+        "marketCap": 26020000000,
+        "price": 523.77,
         "currency": "USD",
-        "trailingPE": 52.53,
-        "forwardPE": 39.76,
-        "priceToBook": 11.99,
+        "trailingPE": 55.13,
+        "forwardPE": 41.61,
+        "priceToBook": 12.59,
         "returnOnEquity": 0.2488,
         "profitMargins": 0.15810000000000002,
         "operatingMargins": 0.2141,
@@ -1496,11 +1496,11 @@
         "currentRatio": 3.73,
         "revenueGrowth": 0.1162,
         "earningsGrowth": 0.4739,
-        "averageDailyVolume": 692890
+        "averageDailyVolume": 691020
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.8541238676082,
+        "entryScore": 88.88370966642475,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1533,12 +1533,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 16399999999.999998,
-        "price": 163.12,
+        "marketCap": 16610000000,
+        "price": 165.24,
         "currency": "USD",
-        "trailingPE": 25.08,
-        "forwardPE": 17.12,
-        "priceToBook": 4.82,
+        "trailingPE": 25.4,
+        "forwardPE": 17.34,
+        "priceToBook": 4.88,
         "returnOnEquity": 0.225,
         "profitMargins": 0.2155,
         "operatingMargins": 0.2575,
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.10866516589998,
+        "entryScore": 88.22700836116624,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1579,16 +1579,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.04,
-        "dividendYield": 0.0118,
+        "dividendYield": 0.0115,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 10610000000,
-        "price": 88.24,
+        "marketCap": 10860000000,
+        "price": 90.26,
         "currency": "USD",
-        "trailingPE": 15.05,
-        "forwardPE": 13.24,
-        "priceToBook": 4.34,
+        "trailingPE": 15.4,
+        "forwardPE": 13.54,
+        "priceToBook": 4.43,
         "returnOnEquity": 0.3136,
         "profitMargins": 0.31170000000000003,
         "operatingMargins": 0.2818,
@@ -1596,11 +1596,11 @@
         "currentRatio": 4.52,
         "revenueGrowth": 0.12539999999999998,
         "earningsGrowth": 0.1974,
-        "averageDailyVolume": 880510
+        "averageDailyVolume": 872040
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.5911728909943,
+        "entryScore": 86.76868768389369,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1633,12 +1633,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 22350000000,
-        "price": 623.71,
+        "marketCap": 21000000000,
+        "price": 586,
         "currency": "USD",
-        "trailingPE": 53.63,
-        "forwardPE": 36.3,
-        "priceToBook": 9.7,
+        "trailingPE": 50.39,
+        "forwardPE": 34.11,
+        "priceToBook": 9.11,
         "returnOnEquity": 0.1999,
         "profitMargins": 0.09939999999999999,
         "operatingMargins": 0.0977,
@@ -1646,11 +1646,11 @@
         "currentRatio": 2.55,
         "revenueGrowth": 0.39289999999999997,
         "earningsGrowth": 0.5349,
-        "averageDailyVolume": 806090
+        "averageDailyVolume": 808180
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.14430915641849,
+        "entryScore": 86.05555175996878,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.69633840032023,
+        "entryScore": 85.63716680268709,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1758,6 +1758,56 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
+      "ticker": "OHI",
+      "yahooTicker": "OHI",
+      "security": "Omega Healthcare Investors",
+      "sector": "Real Estate",
+      "subIndustry": "Health Care REITs",
+      "sourceIndex": "S&P 400",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.68,
+        "dividendYield": 0.0587,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 13600000000,
+        "price": 45.67,
+        "currency": "USD",
+        "trailingPE": 22.14,
+        "forwardPE": 22.67,
+        "priceToBook": 2.62,
+        "returnOnEquity": 0.1242,
+        "profitMargins": 0.4954,
+        "operatingMargins": 0.6452,
+        "debtToEquity": 0.86,
+        "currentRatio": 2.46,
+        "revenueGrowth": 0.1685,
+        "earningsGrowth": 0.3925,
+        "averageDailyVolume": 2200000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 84.81949717100218,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 11,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
       "ticker": "STRL",
       "yahooTicker": "STRL",
       "security": "Sterling Infrastructure",
@@ -1783,12 +1833,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 27370000000,
-        "price": 891.86,
+        "marketCap": 25840000000,
+        "price": 842.01,
         "currency": "USD",
-        "trailingPE": 79.74,
-        "forwardPE": 37.83,
-        "priceToBook": 23,
+        "trailingPE": 75.28,
+        "forwardPE": 35.32,
+        "priceToBook": 21.72,
         "returnOnEquity": 0.3475,
         "profitMargins": 0.1202,
         "operatingMargins": 0.1741,
@@ -1796,15 +1846,15 @@
         "currentRatio": 1.1,
         "revenueGrowth": 0.9159,
         "earningsGrowth": 1.4186,
-        "averageDailyVolume": 584870
+        "averageDailyVolume": 583290
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.91302457753116,
+        "entryScore": 84.79468138226488,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 11,
+      "rank": 12,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1854,7 +1904,7 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 12,
+      "rank": 13,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
@@ -1883,12 +1933,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 16440000000.000002,
-        "price": 152.03,
+        "marketCap": 15880000000,
+        "price": 146.84,
         "currency": "USD",
-        "trailingPE": 72.26,
-        "forwardPE": 41.02,
-        "priceToBook": 11.8,
+        "trailingPE": 69.8,
+        "forwardPE": 39.62,
+        "priceToBook": 11.4,
         "returnOnEquity": 0.1802,
         "profitMargins": 0.3189,
         "operatingMargins": 0.3589,
@@ -1896,115 +1946,15 @@
         "currentRatio": 9.82,
         "revenueGrowth": 0.0812,
         "earningsGrowth": -0.0171,
-        "averageDailyVolume": 2360000
+        "averageDailyVolume": 2380000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.72279080259642,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 13,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "OHI",
-      "yahooTicker": "OHI",
-      "security": "Omega Healthcare Investors",
-      "sector": "Real Estate",
-      "subIndustry": "Health Care REITs",
-      "sourceIndex": "S&P 400",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.68,
-        "dividendYield": 0.061200000000000004,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 13040000000,
-        "price": 43.8,
-        "currency": "USD",
-        "trailingPE": 21.23,
-        "forwardPE": 21.74,
-        "priceToBook": 2.51,
-        "returnOnEquity": 0.1242,
-        "profitMargins": 0.4954,
-        "operatingMargins": 0.6452,
-        "debtToEquity": 0.86,
-        "currentRatio": 2.46,
-        "revenueGrowth": 0.1685,
-        "earningsGrowth": 0.3925,
-        "averageDailyVolume": 2160000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 84.58281078046964,
+        "entryScore": 84.57486180851359,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 14,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "MTSI",
-      "yahooTicker": "MTSI",
-      "security": "MACOM Technology Solutions",
-      "sector": "Information Technology",
-      "subIndustry": "Semiconductors",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Lowell, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 27610000000,
-        "price": 361.86,
-        "currency": "USD",
-        "trailingPE": 156.89,
-        "forwardPE": 52.87,
-        "priceToBook": 19.47,
-        "returnOnEquity": 0.1349,
-        "profitMargins": 0.1646,
-        "operatingMargins": 0.15960000000000002,
-        "debtToEquity": 0.29,
-        "currentRatio": 7.52,
-        "revenueGrowth": 0.225,
-        "earningsGrowth": 0.4288,
-        "averageDailyVolume": 1350000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 84.44076117204702,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 15,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2033,12 +1983,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 13010000000,
-        "price": 51.74,
+        "marketCap": 13320000000,
+        "price": 52.99,
         "currency": "USD",
-        "trailingPE": 17.15,
-        "forwardPE": 13.17,
-        "priceToBook": 6.78,
+        "trailingPE": 17.56,
+        "forwardPE": 13.39,
+        "priceToBook": 6.94,
         "returnOnEquity": 0.40990000000000004,
         "profitMargins": 0.3508,
         "operatingMargins": 0.4029,
@@ -2046,11 +1996,61 @@
         "currentRatio": 3.26,
         "revenueGrowth": 0.09970000000000001,
         "earningsGrowth": 0.4214,
-        "averageDailyVolume": 2620000
+        "averageDailyVolume": 2610000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.430635944708,
+        "entryScore": 84.46022174352457,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 15,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "MTSI",
+      "yahooTicker": "MTSI",
+      "security": "MACOM Technology Solutions",
+      "sector": "Information Technology",
+      "subIndustry": "Semiconductors",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Lowell, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 27370000000,
+        "price": 358.72,
+        "currency": "USD",
+        "trailingPE": 155.53,
+        "forwardPE": 52.41,
+        "priceToBook": 19.3,
+        "returnOnEquity": 0.1349,
+        "profitMargins": 0.1646,
+        "operatingMargins": 0.15960000000000002,
+        "debtToEquity": 0.29,
+        "currentRatio": 7.52,
+        "revenueGrowth": 0.225,
+        "earningsGrowth": 0.4288,
+        "averageDailyVolume": 1340000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 84.44076117204702,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2083,12 +2083,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 10620000000,
-        "price": 78.3,
+        "marketCap": 11200000000,
+        "price": 82.52,
         "currency": "USD",
-        "trailingPE": 18.24,
-        "forwardPE": 15.2,
-        "priceToBook": 2.24,
+        "trailingPE": 19.22,
+        "forwardPE": 16.02,
+        "priceToBook": 2.37,
         "returnOnEquity": 0.133,
         "profitMargins": 0.1892,
         "operatingMargins": 0.1955,
@@ -2096,66 +2096,16 @@
         "currentRatio": 4.56,
         "revenueGrowth": 0.2704,
         "earningsGrowth": 0.6659999999999999,
-        "averageDailyVolume": 1390000
+        "averageDailyVolume": 1400000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.68231422333145,
+        "entryScore": 83.97817221149712,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 17,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "GME",
-      "yahooTicker": "GME",
-      "security": "GameStop",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Computer & Electronics Retail",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Grapevine, Texas",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": "2016-04-25",
-      "membershipHistory": [
-        {
-          "enteredAt": "2007-12-13",
-          "leftAt": "2016-04-25"
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 9990000000,
-        "price": 22.26,
-        "currency": "USD",
-        "trailingPE": 16.93,
-        "forwardPE": 18.4,
-        "priceToBook": 1.83,
-        "returnOnEquity": 0.1409,
-        "profitMargins": 0.2045,
-        "operatingMargins": 0.10710000000000001,
-        "debtToEquity": 0.74,
-        "currentRatio": 12.4,
-        "revenueGrowth": 0.1405,
-        "earningsGrowth": 6.3333,
-        "averageDailyVolume": 7690000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 83.35287119518797,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 18,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "SN",
@@ -2200,12 +2150,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.33004961072426,
+        "entryScore": 83.46912446063571,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 18,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "GME",
+      "yahooTicker": "GME",
+      "security": "GameStop",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Computer & Electronics Retail",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Grapevine, Texas",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": "2016-04-25",
+      "membershipHistory": [
+        {
+          "enteredAt": "2007-12-13",
+          "leftAt": "2016-04-25"
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 10000000000,
+        "price": 22.28,
+        "currency": "USD",
+        "trailingPE": 16.94,
+        "forwardPE": 18.41,
+        "priceToBook": 1.83,
+        "returnOnEquity": 0.1409,
+        "profitMargins": 0.2045,
+        "operatingMargins": 0.10710000000000001,
+        "debtToEquity": 0.74,
+        "currentRatio": 12.4,
+        "revenueGrowth": 0.1405,
+        "earningsGrowth": 6.3333,
+        "averageDailyVolume": 7680000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.35287119518797,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 19,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "WTS",
@@ -2229,16 +2229,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.71,
-        "dividendYield": 0.0086,
+        "dividendYield": 0.0085,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 10530000000,
-        "price": 315.49,
+        "marketCap": 10680000000,
+        "price": 319.83,
         "currency": "USD",
-        "trailingPE": 28.85,
-        "forwardPE": 24.24,
-        "priceToBook": 5.03,
+        "trailingPE": 29.24,
+        "forwardPE": 24.57,
+        "priceToBook": 5.1,
         "returnOnEquity": 0.1894,
         "profitMargins": 0.1432,
         "operatingMargins": 0.1955,
@@ -2246,11 +2246,11 @@
         "currentRatio": 2.72,
         "revenueGrowth": 0.2138,
         "earningsGrowth": 0.34590000000000004,
-        "averageDailyVolume": 265600
+        "averageDailyVolume": 266750
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.14929293147907,
+        "entryScore": 83.17887873029562,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2279,16 +2279,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.88,
-        "dividendYield": 0.003,
+        "dividendYield": 0.0031,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8690000000,
-        "price": 619.98,
+        "marketCap": 8610000000,
+        "price": 613.93,
         "currency": "USD",
-        "trailingPE": 54.47,
-        "forwardPE": 39.67,
-        "priceToBook": 18.36,
+        "trailingPE": 53.94,
+        "forwardPE": 39.28,
+        "priceToBook": 18.18,
         "returnOnEquity": 0.38520000000000004,
         "profitMargins": 0.1548,
         "operatingMargins": 0.1495,
@@ -2296,11 +2296,11 @@
         "currentRatio": 1.53,
         "revenueGrowth": 0.5024000000000001,
         "earningsGrowth": 1.0305,
-        "averageDailyVolume": 424120
+        "averageDailyVolume": 430610
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.8961401660438,
+        "entryScore": 82.68903957432784,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2329,16 +2329,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.4,
-        "dividendYield": 0.0378,
+        "dividendYield": 0.037000000000000005,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8720000000,
-        "price": 36.92,
+        "marketCap": 8910000000,
+        "price": 37.7,
         "currency": "USD",
-        "trailingPE": 23.64,
-        "forwardPE": 23.07,
-        "priceToBook": 2.02,
+        "trailingPE": 24.14,
+        "forwardPE": 23.56,
+        "priceToBook": 2.07,
         "returnOnEquity": 0.0947,
         "profitMargins": 0.6395000000000001,
         "operatingMargins": 0.6627,
@@ -2346,11 +2346,11 @@
         "currentRatio": 3.73,
         "revenueGrowth": 0.4778,
         "earningsGrowth": 0.0217,
-        "averageDailyVolume": 2870000
+        "averageDailyVolume": 2910000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.18742080481212,
+        "entryScore": 82.33534979889495,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2379,16 +2379,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.77,
-        "dividendYield": 0.0104,
+        "dividendYield": 0.0105,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 11980000000,
-        "price": 74.02,
+        "marketCap": 11910000000,
+        "price": 73.59,
         "currency": "USD",
-        "trailingPE": 31.8,
-        "forwardPE": 23.15,
-        "priceToBook": 5.99,
+        "trailingPE": 31.61,
+        "forwardPE": 23.01,
+        "priceToBook": 5.95,
         "returnOnEquity": 0.1968,
         "profitMargins": 0.1318,
         "operatingMargins": 0.1684,
@@ -2396,66 +2396,16 @@
         "currentRatio": 1.6,
         "revenueGrowth": 0.12,
         "earningsGrowth": 0.775,
-        "averageDailyVolume": 2020000
+        "averageDailyVolume": 2009999.9999999998
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.03698341791987,
+        "entryScore": 81.85946862502047,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 23,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "PDD",
-      "yahooTicker": "PDD",
-      "security": "PDD Holdings",
-      "sector": "Technology",
-      "subIndustry": "EDP Services",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 117600000000,
-        "price": 82.62,
-        "currency": "USD",
-        "trailingPE": 9.01,
-        "forwardPE": 6.64,
-        "priceToBook": 1.92,
-        "returnOnEquity": 0.2552,
-        "profitMargins": 0.2186,
-        "operatingMargins": 0.2214,
-        "debtToEquity": 0.01,
-        "currentRatio": 2.54,
-        "revenueGrowth": 0.16690000000000002,
-        "earningsGrowth": -0.10369999999999999,
-        "averageDailyVolume": 8780000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 81.54907634171848,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 24,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "EVR",
@@ -2479,16 +2429,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 3.41,
-        "dividendYield": 0.01,
+        "dividendYield": 0.0095,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 13160000000,
-        "price": 340.15,
+        "marketCap": 13810000000,
+        "price": 357.11,
         "currency": "USD",
-        "trailingPE": 19.19,
-        "forwardPE": 14.78,
-        "priceToBook": 7.38,
+        "trailingPE": 20.15,
+        "forwardPE": 15.52,
+        "priceToBook": 7.75,
         "returnOnEquity": 0.4543,
         "profitMargins": 0.163,
         "operatingMargins": 0.22920000000000001,
@@ -2496,16 +2446,66 @@
         "currentRatio": 2.77,
         "revenueGrowth": 1.0034999999999998,
         "earningsGrowth": 1.0709,
-        "averageDailyVolume": 589910
+        "averageDailyVolume": 579810
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.46966241384419,
+        "entryScore": 81.73593460319333,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 24,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "FR",
+      "yahooTicker": "FR",
+      "security": "First Industrial Realty Trust",
+      "sector": "Real Estate",
+      "subIndustry": "Industrial REITs",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Chicago, Illinois",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.84,
+        "dividendYield": 0.0292,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 8620000000,
+        "price": 62.92,
+        "currency": "USD",
+        "trailingPE": 24.37,
+        "forwardPE": 33.24,
+        "priceToBook": 3.02,
+        "returnOnEquity": 0.1266,
+        "profitMargins": 0.4595,
+        "operatingMargins": 0.4121,
+        "debtToEquity": 0.94,
+        "currentRatio": 3.36,
+        "revenueGrowth": 0.1003,
+        "earningsGrowth": 1.9724000000000002,
+        "averageDailyVolume": 953380
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 81.68550128349459,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     }
   ],
   "undervalued": [
@@ -2531,16 +2531,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.78,
-        "dividendYield": 0.065,
+        "dividendYield": 0.0636,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 29290000000,
-        "price": 27.4,
+        "marketCap": 29950000000,
+        "price": 28.02,
         "currency": "USD",
-        "trailingPE": 9.4,
-        "forwardPE": 9.31,
-        "priceToBook": 1.04,
+        "trailingPE": 9.62,
+        "forwardPE": 9.52,
+        "priceToBook": 1.06,
         "returnOnEquity": 0.1133,
         "profitMargins": 0.7683,
         "operatingMargins": 0.9868000000000001,
@@ -2548,65 +2548,15 @@
         "currentRatio": 0.22,
         "revenueGrowth": 0.0349,
         "earningsGrowth": 0.5865,
-        "averageDailyVolume": 8390000
+        "averageDailyVolume": 8380000.000000001
       },
       "scores": {
-        "fallOutRisk": 40.7104125083167,
+        "fallOutRisk": 40.590652029274786,
         "entryScore": null,
         "undervaluedScore": 92.34656084656085,
         "overvaluedScore": 3.644179894179894
       },
       "rank": 1,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
-    },
-    {
-      "ticker": "EIX",
-      "yahooTicker": "EIX",
-      "security": "Edison International",
-      "sector": "Utilities",
-      "subIndustry": "Electric Utilities",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Rosemead, California",
-      "cik": "0000827052",
-      "founded": "1886",
-      "currentMember": true,
-      "currentMemberSince": "1957-03-04",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1957-03-04",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 3.41,
-        "dividendYield": 0.0482,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 27260000000,
-        "price": 70.84,
-        "currency": "USD",
-        "trailingPE": 7.69,
-        "forwardPE": 10.87,
-        "priceToBook": 1.58,
-        "returnOnEquity": 0.218,
-        "profitMargins": 0.1812,
-        "operatingMargins": 0.27899999999999997,
-        "debtToEquity": 2.47,
-        "currentRatio": 0.74,
-        "revenueGrowth": 0.0766,
-        "earningsGrowth": -0.6309,
-        "averageDailyVolume": 3000000
-      },
-      "scores": {
-        "fallOutRisk": 52.50099800399202,
-        "entryScore": null,
-        "undervaluedScore": 85.5,
-        "overvaluedScore": 16.333333333333332
-      },
-      "rank": 2,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
     },
     {
@@ -2631,16 +2581,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.3,
-        "dividendYield": 0.0254,
+        "dividendYield": 0.0259,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 21630000000,
-        "price": 90.42,
+        "marketCap": 21240000000,
+        "price": 88.78,
         "currency": "USD",
-        "trailingPE": 6.74,
-        "forwardPE": 9.89,
-        "priceToBook": 1.11,
+        "trailingPE": 6.62,
+        "forwardPE": 9.71,
+        "priceToBook": 1.09,
         "returnOnEquity": 0.1757,
         "profitMargins": 0.2503,
         "operatingMargins": 0.22399999999999998,
@@ -2648,15 +2598,15 @@
         "currentRatio": 1.11,
         "revenueGrowth": 0.4078,
         "earningsGrowth": 5.5324,
-        "averageDailyVolume": 3530000
+        "averageDailyVolume": 3540000
       },
       "scores": {
-        "fallOutRisk": 38.60528942115768,
+        "fallOutRisk": 39.02445109780439,
         "entryScore": null,
         "undervaluedScore": 85.25,
         "overvaluedScore": 13.75
       },
-      "rank": 3,
+      "rank": 2,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
     },
     {
@@ -2681,16 +2631,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.28,
-        "dividendYield": 0.0538,
+        "dividendYield": 0.0536,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 84880000000,
-        "price": 23.76,
+        "marketCap": 85200000000,
+        "price": 23.85,
         "currency": "USD",
-        "trailingPE": 4.67,
-        "forwardPE": 6.27,
-        "priceToBook": 0.96,
+        "trailingPE": 4.69,
+        "forwardPE": 6.29,
+        "priceToBook": 0.97,
         "returnOnEquity": 0.21489999999999998,
         "profitMargins": 0.15,
         "operatingMargins": 0.1547,
@@ -2698,13 +2648,63 @@
         "currentRatio": 0.87,
         "revenueGrowth": 0.0525,
         "earningsGrowth": -0.3262,
-        "averageDailyVolume": 33240000.000000004
+        "averageDailyVolume": 33270000.000000004
       },
       "scores": {
-        "fallOutRisk": 42.0043030821474,
+        "fallOutRisk": 42.07416336158852,
         "entryScore": null,
         "undervaluedScore": 85.17748917748915,
         "overvaluedScore": 13.5995670995671
+      },
+      "rank": 3,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+    },
+    {
+      "ticker": "EIX",
+      "yahooTicker": "EIX",
+      "security": "Edison International",
+      "sector": "Utilities",
+      "subIndustry": "Electric Utilities",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Rosemead, California",
+      "cik": "0000827052",
+      "founded": "1886",
+      "currentMember": true,
+      "currentMemberSince": "1957-03-04",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1957-03-04",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 3.41,
+        "dividendYield": 0.0479,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 27420000000,
+        "price": 71.26,
+        "currency": "USD",
+        "trailingPE": 7.73,
+        "forwardPE": 10.94,
+        "priceToBook": 1.59,
+        "returnOnEquity": 0.218,
+        "profitMargins": 0.1812,
+        "operatingMargins": 0.27899999999999997,
+        "debtToEquity": 2.47,
+        "currentRatio": 0.74,
+        "revenueGrowth": 0.0766,
+        "earningsGrowth": -0.6309,
+        "averageDailyVolume": 2970000
+      },
+      "scores": {
+        "fallOutRisk": 52.570858283433125,
+        "entryScore": null,
+        "undervaluedScore": 85.16666666666667,
+        "overvaluedScore": 16.666666666666664
       },
       "rank": 4,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
@@ -2731,16 +2731,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.64,
-        "dividendYield": 0.0415,
+        "dividendYield": 0.040999999999999995,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 20440000000,
-        "price": 39.54,
+        "marketCap": 20660000000,
+        "price": 39.98,
         "currency": "USD",
-        "trailingPE": 7.65,
-        "forwardPE": 5.78,
-        "priceToBook": 1.28,
+        "trailingPE": 7.73,
+        "forwardPE": 5.84,
+        "priceToBook": 1.29,
         "returnOnEquity": 0.1721,
         "profitMargins": 0.2335,
         "operatingMargins": 0.22899999999999998,
@@ -2748,7 +2748,7 @@
         "currentRatio": 0.59,
         "revenueGrowth": 0.3013,
         "earningsGrowth": 30.5614,
-        "averageDailyVolume": 6570000
+        "averageDailyVolume": 6590000
       },
       "scores": {
         "fallOutRisk": 48.758828289367216,
@@ -2785,11 +2785,11 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 25110000000,
-        "price": 52.99,
+        "marketCap": 25090000000,
+        "price": 52.94,
         "currency": "USD",
-        "trailingPE": 11.51,
-        "forwardPE": 8.56,
+        "trailingPE": 11.49,
+        "forwardPE": 8.55,
         "priceToBook": 1.67,
         "returnOnEquity": 0.14880000000000002,
         "profitMargins": 0.1041,
@@ -2798,66 +2798,16 @@
         "currentRatio": 2.23,
         "revenueGrowth": 0.0583,
         "earningsGrowth": 0.0361,
-        "averageDailyVolume": 7040000
+        "averageDailyVolume": 7110000
       },
       "scores": {
-        "fallOutRisk": 62.33602376915288,
+        "fallOutRisk": 62.405884048594,
         "entryScore": null,
-        "undervaluedScore": 78.64083953840878,
-        "overvaluedScore": 13.800825376453538
+        "undervaluedScore": 78.37768164367193,
+        "overvaluedScore": 14.063983271190379
       },
       "rank": 6,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
-    },
-    {
-      "ticker": "EOG",
-      "yahooTicker": "EOG",
-      "security": "EOG Resources",
-      "sector": "Energy",
-      "subIndustry": "Oil & Gas Exploration & Production",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Houston, Texas",
-      "cik": "0000821189",
-      "founded": "1999",
-      "currentMember": true,
-      "currentMemberSince": "2000-11-02",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2000-11-02",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.04,
-        "dividendYield": 0.0288,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 74650000000,
-        "price": 140.15,
-        "currency": "USD",
-        "trailingPE": 13.78,
-        "forwardPE": 9.43,
-        "priceToBook": 2.43,
-        "returnOnEquity": 0.1819,
-        "profitMargins": 0.2334,
-        "operatingMargins": 0.3233,
-        "debtToEquity": 0.27,
-        "currentRatio": 1.72,
-        "revenueGrowth": 0.1563,
-        "earningsGrowth": 0.39890000000000003,
-        "averageDailyVolume": 4290000
-      },
-      "scores": {
-        "fallOutRisk": 26.275948103792416,
-        "entryScore": null,
-        "undervaluedScore": 78.25,
-        "overvaluedScore": 23
-      },
-      "rank": 7,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
     },
     {
       "ticker": "GEN",
@@ -2881,16 +2831,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.5,
-        "dividendYield": 0.019299999999999998,
+        "dividendYield": 0.02,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 15580000000,
-        "price": 25.86,
+        "marketCap": 15040000000,
+        "price": 24.97,
         "currency": "USD",
-        "trailingPE": 16.34,
-        "forwardPE": 7.84,
-        "priceToBook": 5.92,
+        "trailingPE": 15.78,
+        "forwardPE": 7.57,
+        "priceToBook": 5.72,
         "returnOnEquity": 0.39880000000000004,
         "profitMargins": 0.1946,
         "operatingMargins": 0.431,
@@ -2898,220 +2848,116 @@
         "currentRatio": 0.4,
         "revenueGrowth": 0.2703,
         "earningsGrowth": 2.6938,
-        "averageDailyVolume": 7780000
+        "averageDailyVolume": 7830000
       },
       "scores": {
-        "fallOutRisk": 56.948147010582574,
+        "fallOutRisk": 57.29744840778817,
         "entryScore": null,
-        "undervaluedScore": 77.54616465485768,
-        "overvaluedScore": 25.684863303939906
+        "undervaluedScore": 78.37098790701792,
+        "overvaluedScore": 24.785413186108006
       },
-      "rank": 8,
+      "rank": 7,
       "commentary": "discounted sector-relative earnings multiple, quality support"
     },
     {
-      "ticker": "UHS",
-      "yahooTicker": "UHS",
-      "security": "Universal Health Services",
-      "sector": "Health Care",
-      "subIndustry": "Health Care Facilities",
+      "ticker": "EOG",
+      "yahooTicker": "EOG",
+      "security": "EOG Resources",
+      "sector": "Energy",
+      "subIndustry": "Oil & Gas Exploration & Production",
       "sourceIndex": "S&P 500",
-      "headquarters": "King of Prussia, Pennsylvania",
-      "cik": "0000352915",
-      "founded": "1979",
+      "headquarters": "Houston, Texas",
+      "cik": "0000821189",
+      "founded": "1999",
       "currentMember": true,
-      "currentMemberSince": "2014-09-20",
+      "currentMemberSince": "2000-11-02",
       "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "2014-09-20",
+          "enteredAt": "2000-11-02",
           "leftAt": null
         }
       ],
       "dividend": {
         "hasDividend": true,
-        "dividendRate": 0.8,
-        "dividendYield": 0.005600000000000001,
+        "dividendRate": 4.04,
+        "dividendYield": 0.0294,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8650000000,
-        "price": 142.87,
+        "marketCap": 73150000000,
+        "price": 137.33,
         "currency": "USD",
-        "trailingPE": 5.95,
-        "forwardPE": 5.63,
-        "priceToBook": 1.16,
-        "returnOnEquity": 0.2134,
-        "profitMargins": 0.08560000000000001,
-        "operatingMargins": 0.115,
-        "debtToEquity": 0.69,
-        "currentRatio": 1.08,
-        "revenueGrowth": 0.0965,
-        "earningsGrowth": 0.1791,
-        "averageDailyVolume": 931860
+        "trailingPE": 13.5,
+        "forwardPE": 9.24,
+        "priceToBook": 2.38,
+        "returnOnEquity": 0.1819,
+        "profitMargins": 0.2334,
+        "operatingMargins": 0.3233,
+        "debtToEquity": 0.27,
+        "currentRatio": 1.72,
+        "revenueGrowth": 0.1563,
+        "earningsGrowth": 0.39890000000000003,
+        "averageDailyVolume": 4220000
       },
       "scores": {
-        "fallOutRisk": 66.65084508260226,
+        "fallOutRisk": 26.715069860279442,
         "entryScore": null,
-        "undervaluedScore": 77.43426328045203,
-        "overvaluedScore": 21.58516397173385
+        "undervaluedScore": 78.25,
+        "overvaluedScore": 23
+      },
+      "rank": 8,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+    },
+    {
+      "ticker": "NEM",
+      "yahooTicker": "NEM",
+      "security": "Newmont",
+      "sector": "Materials",
+      "subIndustry": "Gold",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Denver, Colorado",
+      "cik": "0001164727",
+      "founded": "1921",
+      "currentMember": true,
+      "currentMemberSince": "1969-06-30",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1969-06-30",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.02,
+        "dividendYield": 0.0104,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 105200000000,
+        "price": 98.54,
+        "currency": "USD",
+        "trailingPE": 12.78,
+        "forwardPE": 8.59,
+        "priceToBook": 3.03,
+        "returnOnEquity": 0.2556,
+        "profitMargins": 0.3464,
+        "operatingMargins": 0.5262,
+        "debtToEquity": 0.16,
+        "currentRatio": 2.44,
+        "revenueGrowth": 0.4746,
+        "earningsGrowth": 0.7885,
+        "averageDailyVolume": 8930000
+      },
+      "scores": {
+        "fallOutRisk": 14.13972055888224,
+        "entryScore": null,
+        "undervaluedScore": 78,
+        "overvaluedScore": 24
       },
       "rank": 9,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
-    },
-    {
-      "ticker": "T",
-      "yahooTicker": "T",
-      "security": "AT&T",
-      "sector": "Communication Services",
-      "subIndustry": "Integrated Telecommunication Services",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Dallas, Texas",
-      "cik": "0000732717",
-      "founded": "1983 (1885)",
-      "currentMember": true,
-      "currentMemberSince": "1983-11-30",
-      "lastLeftAt": "2005-11-18",
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": "2005-11-18"
-        },
-        {
-          "enteredAt": "1983-11-30",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.11,
-        "dividendYield": 0.049400000000000006,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 156340000000,
-        "price": 22.5,
-        "currency": "USD",
-        "trailingPE": 7.55,
-        "forwardPE": 8.85,
-        "priceToBook": 1.43,
-        "returnOnEquity": 0.20120000000000002,
-        "profitMargins": 0.16820000000000002,
-        "operatingMargins": 0.20620000000000002,
-        "debtToEquity": 1.43,
-        "currentRatio": 0.81,
-        "revenueGrowth": 0.0287,
-        "earningsGrowth": -0.11220000000000001,
-        "averageDailyVolume": 40560000
-      },
-      "scores": {
-        "fallOutRisk": 39.598270990486554,
-        "entryScore": null,
-        "undervaluedScore": 77.37878787878789,
-        "overvaluedScore": 22.37229437229437
-      },
-      "rank": 10,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
-    },
-    {
-      "ticker": "CHTR",
-      "yahooTicker": "CHTR",
-      "security": "Charter Communications",
-      "sector": "Communication Services",
-      "subIndustry": "Cable & Satellite",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Stamford, Connecticut",
-      "cik": "0001091667",
-      "founded": "1993",
-      "currentMember": true,
-      "currentMemberSince": "2016-09-08",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2016-09-08",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 18310000000,
-        "price": 132.2,
-        "currency": "USD",
-        "trailingPE": 3.57,
-        "forwardPE": 2.93,
-        "priceToBook": 0.99,
-        "returnOnEquity": 0.3023,
-        "profitMargins": 0.09029999999999999,
-        "operatingMargins": 0.2421,
-        "debtToEquity": 5.81,
-        "currentRatio": 0.4,
-        "revenueGrowth": -0.01,
-        "earningsGrowth": 0.0892,
-        "averageDailyVolume": 2750000
-      },
-      "scores": {
-        "fallOutRisk": 70.15605153329705,
-        "entryScore": null,
-        "undervaluedScore": 77.00216450216452,
-        "overvaluedScore": 23.00865800865801
-      },
-      "rank": 11,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
-    },
-    {
-      "ticker": "ES",
-      "yahooTicker": "ES",
-      "security": "Eversource Energy",
-      "sector": "Utilities",
-      "subIndustry": "Electric Utilities",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Hartford, Connecticut",
-      "cik": "0000072741",
-      "founded": "1966",
-      "currentMember": true,
-      "currentMemberSince": "2009-07-24",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2009-07-24",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 3.08,
-        "dividendYield": 0.0452,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 25610000000,
-        "price": 68.09,
-        "currency": "USD",
-        "trailingPE": 14.57,
-        "forwardPE": 13.77,
-        "priceToBook": 1.55,
-        "returnOnEquity": 0.1097,
-        "profitMargins": 0.1255,
-        "operatingMargins": 0.22519999999999998,
-        "debtToEquity": 1.84,
-        "currentRatio": 0.65,
-        "revenueGrowth": 0.09369999999999999,
-        "earningsGrowth": 0.0757,
-        "averageDailyVolume": 2470000
-      },
-      "scores": {
-        "fallOutRisk": 59.97005988023951,
-        "entryScore": null,
-        "undervaluedScore": 76.66666666666667,
-        "overvaluedScore": 22.333333333333332
-      },
-      "rank": 12,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+      "commentary": "discounted sector-relative earnings multiple, quality support"
     },
     {
       "ticker": "FSLR",
@@ -3143,12 +2989,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 29590000000,
-        "price": 275.39,
+        "marketCap": 28170000000,
+        "price": 262.19,
         "currency": "USD",
-        "trailingPE": 17.79,
-        "forwardPE": 11.41,
-        "priceToBook": 3,
+        "trailingPE": 16.94,
+        "forwardPE": 10.87,
+        "priceToBook": 2.85,
         "returnOnEquity": 0.1844,
         "profitMargins": 0.3073,
         "operatingMargins": 0.3317,
@@ -3156,66 +3002,270 @@
         "currentRatio": 2.56,
         "revenueGrowth": 0.2364,
         "earningsGrowth": 0.6509999999999999,
-        "averageDailyVolume": 2380000
+        "averageDailyVolume": 2390000
       },
       "scores": {
-        "fallOutRisk": 39.114331773702965,
+        "fallOutRisk": 40.11233576571893,
         "entryScore": null,
-        "undervaluedScore": 76.63338238385538,
-        "overvaluedScore": 19.37986125709481
+        "undervaluedScore": 77.77696026907715,
+        "overvaluedScore": 18.16165650620139
       },
-      "rank": 13,
-      "commentary": "discounted sector-relative earnings multiple, quality support"
+      "rank": 10,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
     },
     {
-      "ticker": "NEM",
-      "yahooTicker": "NEM",
-      "security": "Newmont",
-      "sector": "Materials",
-      "subIndustry": "Gold",
+      "ticker": "UHS",
+      "yahooTicker": "UHS",
+      "security": "Universal Health Services",
+      "sector": "Health Care",
+      "subIndustry": "Health Care Facilities",
       "sourceIndex": "S&P 500",
-      "headquarters": "Denver, Colorado",
-      "cik": "0001164727",
-      "founded": "1921",
+      "headquarters": "King of Prussia, Pennsylvania",
+      "cik": "0000352915",
+      "founded": "1979",
       "currentMember": true,
-      "currentMemberSince": "1969-06-30",
+      "currentMemberSince": "2014-09-20",
       "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "1969-06-30",
+          "enteredAt": "2014-09-20",
           "leftAt": null
         }
       ],
       "dividend": {
         "hasDividend": true,
-        "dividendRate": 1.02,
-        "dividendYield": 0.0103,
+        "dividendRate": 0.8,
+        "dividendYield": 0.0055000000000000005,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 105680000000,
-        "price": 98.99,
+        "marketCap": 8870000000,
+        "price": 146.59,
         "currency": "USD",
-        "trailingPE": 12.84,
-        "forwardPE": 8.63,
-        "priceToBook": 3.04,
-        "returnOnEquity": 0.2556,
-        "profitMargins": 0.3464,
-        "operatingMargins": 0.5262,
-        "debtToEquity": 0.16,
-        "currentRatio": 2.44,
-        "revenueGrowth": 0.4746,
-        "earningsGrowth": 0.7885,
-        "averageDailyVolume": 8940000
+        "trailingPE": 6.11,
+        "forwardPE": 5.78,
+        "priceToBook": 1.19,
+        "returnOnEquity": 0.2134,
+        "profitMargins": 0.08560000000000001,
+        "operatingMargins": 0.115,
+        "debtToEquity": 0.69,
+        "currentRatio": 1.08,
+        "revenueGrowth": 0.0965,
+        "earningsGrowth": 0.1791,
+        "averageDailyVolume": 941890
       },
       "scores": {
-        "fallOutRisk": 14.049900199600797,
+        "fallOutRisk": 66.67080516244258,
         "entryScore": null,
-        "undervaluedScore": 76.39999999999999,
-        "overvaluedScore": 25.800000000000004
+        "undervaluedScore": 77.43426328045203,
+        "overvaluedScore": 21.58516397173385
+      },
+      "rank": 11,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
+    },
+    {
+      "ticker": "T",
+      "yahooTicker": "T",
+      "security": "AT&T",
+      "sector": "Communication Services",
+      "subIndustry": "Integrated Telecommunication Services",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Dallas, Texas",
+      "cik": "0000732717",
+      "founded": "1983 (1885)",
+      "currentMember": true,
+      "currentMemberSince": "1983-11-30",
+      "lastLeftAt": "2005-11-18",
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": "2005-11-18"
+        },
+        {
+          "enteredAt": "1983-11-30",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.11,
+        "dividendYield": 0.049,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 157800000000,
+        "price": 22.71,
+        "currency": "USD",
+        "trailingPE": 7.62,
+        "forwardPE": 8.93,
+        "priceToBook": 1.44,
+        "returnOnEquity": 0.20120000000000002,
+        "profitMargins": 0.16820000000000002,
+        "operatingMargins": 0.20620000000000002,
+        "debtToEquity": 1.43,
+        "currentRatio": 0.81,
+        "revenueGrowth": 0.0287,
+        "earningsGrowth": -0.11220000000000001,
+        "averageDailyVolume": 40620000
+      },
+      "scores": {
+        "fallOutRisk": 39.3886901521632,
+        "entryScore": null,
+        "undervaluedScore": 77.37878787878789,
+        "overvaluedScore": 22.37229437229437
+      },
+      "rank": 12,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+    },
+    {
+      "ticker": "APA",
+      "yahooTicker": "APA",
+      "security": "APA Corporation",
+      "sector": "Energy",
+      "subIndustry": "Oil & Gas Exploration & Production",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Houston, Texas",
+      "cik": "0001841666",
+      "founded": "1954",
+      "currentMember": true,
+      "currentMemberSince": "1997-07-28",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1997-07-28",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1,
+        "dividendYield": 0.0273,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 12940000000,
+        "price": 36.61,
+        "currency": "USD",
+        "trailingPE": 8.54,
+        "forwardPE": 8.54,
+        "priceToBook": 2,
+        "returnOnEquity": 0.25780000000000003,
+        "profitMargins": 0.17800000000000002,
+        "operatingMargins": 0.3471,
+        "debtToEquity": 0.7,
+        "currentRatio": 0.92,
+        "revenueGrowth": -0.11720000000000001,
+        "earningsGrowth": 0.32159999999999994,
+        "averageDailyVolume": 7820000
+      },
+      "scores": {
+        "fallOutRisk": 61.53942115768462,
+        "entryScore": null,
+        "undervaluedScore": 76.75,
+        "overvaluedScore": 22
+      },
+      "rank": 13,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+    },
+    {
+      "ticker": "ES",
+      "yahooTicker": "ES",
+      "security": "Eversource Energy",
+      "sector": "Utilities",
+      "subIndustry": "Electric Utilities",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Hartford, Connecticut",
+      "cik": "0000072741",
+      "founded": "1966",
+      "currentMember": true,
+      "currentMemberSince": "2009-07-24",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2009-07-24",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 3.08,
+        "dividendYield": 0.0444,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 26100000000,
+        "price": 69.41,
+        "currency": "USD",
+        "trailingPE": 14.85,
+        "forwardPE": 14.04,
+        "priceToBook": 1.58,
+        "returnOnEquity": 0.1097,
+        "profitMargins": 0.1255,
+        "operatingMargins": 0.22519999999999998,
+        "debtToEquity": 1.84,
+        "currentRatio": 0.65,
+        "revenueGrowth": 0.09369999999999999,
+        "earningsGrowth": 0.0757,
+        "averageDailyVolume": 2480000
+      },
+      "scores": {
+        "fallOutRisk": 59.78043912175648,
+        "entryScore": null,
+        "undervaluedScore": 76.66666666666667,
+        "overvaluedScore": 22.333333333333332
       },
       "rank": 14,
-      "commentary": "discounted sector-relative earnings multiple, quality support"
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+    },
+    {
+      "ticker": "CHTR",
+      "yahooTicker": "CHTR",
+      "security": "Charter Communications",
+      "sector": "Communication Services",
+      "subIndustry": "Cable & Satellite",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Stamford, Connecticut",
+      "cik": "0001091667",
+      "founded": "1993",
+      "currentMember": true,
+      "currentMemberSince": "2016-09-08",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2016-09-08",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 18750000000,
+        "price": 135.37,
+        "currency": "USD",
+        "trailingPE": 3.66,
+        "forwardPE": 3,
+        "priceToBook": 1.02,
+        "returnOnEquity": 0.3023,
+        "profitMargins": 0.09029999999999999,
+        "operatingMargins": 0.2421,
+        "debtToEquity": 5.81,
+        "currentRatio": 0.4,
+        "revenueGrowth": -0.01,
+        "earningsGrowth": 0.0892,
+        "averageDailyVolume": 2760000
+      },
+      "scores": {
+        "fallOutRisk": 70.10615133369625,
+        "entryScore": null,
+        "undervaluedScore": 76.04978354978357,
+        "overvaluedScore": 24.1991341991342
+      },
+      "rank": 15,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple"
     },
     {
       "ticker": "ACGL",
@@ -3243,12 +3293,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 31310000000,
-        "price": 89.61,
+        "marketCap": 31590000000,
+        "price": 90.41,
         "currency": "USD",
-        "trailingPE": 6.88,
-        "forwardPE": 9.02,
-        "priceToBook": 1.35,
+        "trailingPE": 6.94,
+        "forwardPE": 9.11,
+        "priceToBook": 1.37,
         "returnOnEquity": 0.21309999999999998,
         "profitMargins": 0.2521,
         "operatingMargins": 0.26239999999999997,
@@ -3256,15 +3306,15 @@
         "currentRatio": 0.47,
         "revenueGrowth": -0.056100000000000004,
         "earningsGrowth": 0.9521999999999999,
-        "averageDailyVolume": 2220000
+        "averageDailyVolume": 2230000
       },
       "scores": {
-        "fallOutRisk": 43.23331714948481,
+        "fallOutRisk": 43.253277229325136,
         "entryScore": null,
-        "undervaluedScore": 76.3099099099099,
-        "overvaluedScore": 18.688288288288287
+        "undervaluedScore": 76.03963963963963,
+        "overvaluedScore": 19.026126126126126
       },
-      "rank": 15,
+      "rank": 16,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
     },
     {
@@ -3289,16 +3339,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 0.96,
-        "dividendYield": 0.0213,
+        "dividendYield": 0.0218,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 52000000000,
-        "price": 45.08,
+        "marketCap": 50830000000,
+        "price": 44.07,
         "currency": "USD",
-        "trailingPE": 12.51,
-        "forwardPE": 8.23,
-        "priceToBook": 1.81,
+        "trailingPE": 12.23,
+        "forwardPE": 8.04,
+        "priceToBook": 1.77,
         "returnOnEquity": 0.15130000000000002,
         "profitMargins": 0.13449999999999998,
         "operatingMargins": 0.2048,
@@ -3306,16 +3356,116 @@
         "currentRatio": 1.01,
         "revenueGrowth": 0.030600000000000002,
         "earningsGrowth": -0.7464,
-        "averageDailyVolume": 15680000
+        "averageDailyVolume": 15670000
       },
       "scores": {
-        "fallOutRisk": 54.124750499002,
+        "fallOutRisk": 54.474051896207584,
         "entryScore": null,
         "undervaluedScore": 76,
         "overvaluedScore": 21.75
       },
-      "rank": 16,
+      "rank": 17,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
+    },
+    {
+      "ticker": "CF",
+      "yahooTicker": "CF",
+      "security": "CF Industries",
+      "sector": "Materials",
+      "subIndustry": "Fertilizers & Agricultural Chemicals",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Deerfield, Illinois",
+      "cik": "0001324404",
+      "founded": "1946",
+      "currentMember": true,
+      "currentMemberSince": "2008-08-27",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2008-08-27",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2,
+        "dividendYield": 0.0184,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 16680000000,
+        "price": 108.58,
+        "currency": "USD",
+        "trailingPE": 9.76,
+        "forwardPE": 9.62,
+        "priceToBook": 3.12,
+        "returnOnEquity": 0.34740000000000004,
+        "profitMargins": 0.2373,
+        "operatingMargins": 0.38,
+        "debtToEquity": 0.68,
+        "currentRatio": 3.54,
+        "revenueGrowth": 0.1942,
+        "earningsGrowth": 1.1537,
+        "averageDailyVolume": 4440000
+      },
+      "scores": {
+        "fallOutRisk": 39.223952095808386,
+        "entryScore": null,
+        "undervaluedScore": 75.4,
+        "overvaluedScore": 28.799999999999997
+      },
+      "rank": 18,
+      "commentary": "discounted sector-relative earnings multiple, quality support"
+    },
+    {
+      "ticker": "GIS",
+      "yahooTicker": "GIS",
+      "security": "General Mills",
+      "sector": "Consumer Staples",
+      "subIndustry": "Packaged Foods & Meats",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Golden Valley, Minnesota",
+      "cik": "0000040704",
+      "founded": "1856",
+      "currentMember": true,
+      "currentMemberSince": "1957-03-04",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1957-03-04",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.44,
+        "dividendYield": 0.0724,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 18000000000,
+        "price": 33.72,
+        "currency": "USD",
+        "trailingPE": 8.29,
+        "forwardPE": 10.66,
+        "priceToBook": 1.93,
+        "returnOnEquity": 0.2369,
+        "profitMargins": 0.12,
+        "operatingMargins": 0.1469,
+        "debtToEquity": 1.49,
+        "currentRatio": 0.56,
+        "revenueGrowth": -0.0837,
+        "earningsGrowth": -0.4996,
+        "averageDailyVolume": 9950000
+      },
+      "scores": {
+        "fallOutRisk": 68.89810476449698,
+        "entryScore": null,
+        "undervaluedScore": 75.19954004329004,
+        "overvaluedScore": 23.424242424242422
+      },
+      "rank": 19,
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
     },
     {
       "ticker": "LULU",
@@ -3343,12 +3493,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 13950000000,
-        "price": 117.55,
+        "marketCap": 14400000000,
+        "price": 121.36,
         "currency": "USD",
-        "trailingPE": 9.49,
-        "forwardPE": 10.03,
-        "priceToBook": 2.79,
+        "trailingPE": 9.8,
+        "forwardPE": 10.51,
+        "priceToBook": 2.88,
         "returnOnEquity": 0.32030000000000003,
         "profitMargins": 0.1303,
         "operatingMargins": 0.18469999999999998,
@@ -3356,166 +3506,16 @@
         "currentRatio": 2.23,
         "revenueGrowth": 0.0426,
         "earningsGrowth": -0.35119999999999996,
-        "averageDailyVolume": 3420000
+        "averageDailyVolume": 3460000
       },
       "scores": {
-        "fallOutRisk": 62.45392194334735,
+        "fallOutRisk": 62.52378222278847,
         "entryScore": null,
-        "undervaluedScore": 75.81855791962175,
-        "overvaluedScore": 19.55082742316785
-      },
-      "rank": 17,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
-    },
-    {
-      "ticker": "APA",
-      "yahooTicker": "APA",
-      "security": "APA Corporation",
-      "sector": "Energy",
-      "subIndustry": "Oil & Gas Exploration & Production",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Houston, Texas",
-      "cik": "0001841666",
-      "founded": "1954",
-      "currentMember": true,
-      "currentMemberSince": "1997-07-28",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1997-07-28",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1,
-        "dividendYield": 0.026600000000000002,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 13310000000,
-        "price": 37.66,
-        "currency": "USD",
-        "trailingPE": 8.78,
-        "forwardPE": 8.92,
-        "priceToBook": 2.06,
-        "returnOnEquity": 0.25780000000000003,
-        "profitMargins": 0.17800000000000002,
-        "operatingMargins": 0.3471,
-        "debtToEquity": 0.7,
-        "currentRatio": 0.92,
-        "revenueGrowth": -0.11720000000000001,
-        "earningsGrowth": 0.32159999999999994,
-        "averageDailyVolume": 7930000
-      },
-      "scores": {
-        "fallOutRisk": 61.170159680638726,
-        "entryScore": null,
-        "undervaluedScore": 75.75,
-        "overvaluedScore": 23.25
-      },
-      "rank": 18,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
-    },
-    {
-      "ticker": "GIS",
-      "yahooTicker": "GIS",
-      "security": "General Mills",
-      "sector": "Consumer Staples",
-      "subIndustry": "Packaged Foods & Meats",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Golden Valley, Minnesota",
-      "cik": "0000040704",
-      "founded": "1856",
-      "currentMember": true,
-      "currentMemberSince": "1957-03-04",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1957-03-04",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.44,
-        "dividendYield": 0.0736,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 17690000000,
-        "price": 33.14,
-        "currency": "USD",
-        "trailingPE": 8.15,
-        "forwardPE": 10.46,
-        "priceToBook": 1.89,
-        "returnOnEquity": 0.2369,
-        "profitMargins": 0.12,
-        "operatingMargins": 0.1469,
-        "debtToEquity": 1.49,
-        "currentRatio": 0.56,
-        "revenueGrowth": -0.0837,
-        "earningsGrowth": -0.4996,
-        "averageDailyVolume": 9890000
-      },
-      "scores": {
-        "fallOutRisk": 68.75838420561473,
-        "entryScore": null,
-        "undervaluedScore": 75.48525432900433,
-        "overvaluedScore": 23.138528138528137
-      },
-      "rank": 19,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
-    },
-    {
-      "ticker": "PNR",
-      "yahooTicker": "PNR",
-      "security": "Pentair",
-      "sector": "Industrials",
-      "subIndustry": "Industrial Machinery & Supplies & Components",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Worsley, United Kingdom",
-      "cik": "0000077360",
-      "founded": "1966",
-      "currentMember": true,
-      "currentMemberSince": "2012-10-01",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2012-10-01",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.04,
-        "dividendYield": 0.0143,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 11750000000,
-        "price": 72.72,
-        "currency": "USD",
-        "trailingPE": 17.85,
-        "forwardPE": 12.5,
-        "priceToBook": 3.08,
-        "returnOnEquity": 0.1761,
-        "profitMargins": 0.1597,
-        "operatingMargins": 0.21559999999999999,
-        "debtToEquity": 0.55,
-        "currentRatio": 1.88,
-        "revenueGrowth": 0.026000000000000002,
-        "earningsGrowth": 0.1308,
-        "averageDailyVolume": 1930000
-      },
-      "scores": {
-        "fallOutRisk": 63.152562235196974,
-        "entryScore": null,
-        "undervaluedScore": 75.03045243045243,
-        "overvaluedScore": 19.893248193248194
+        "undervaluedScore": 75.18026004728132,
+        "overvaluedScore": 20.189125295508273
       },
       "rank": 20,
-      "commentary": "discounted sector-relative earnings multiple, quality support"
+      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
     },
     {
       "ticker": "EG",
@@ -3543,11 +3543,11 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 13100000000,
-        "price": 330.93,
+        "marketCap": 13130000000,
+        "price": 331.85,
         "currency": "USD",
-        "trailingPE": 6.74,
-        "forwardPE": 5.46,
+        "trailingPE": 6.76,
+        "forwardPE": 5.47,
         "priceToBook": 0.86,
         "returnOnEquity": 0.1382,
         "profitMargins": 0.1162,
@@ -3556,13 +3556,13 @@
         "currentRatio": 0.39,
         "revenueGrowth": -0.045700000000000005,
         "earningsGrowth": 2.2957,
-        "averageDailyVolume": 354210
+        "averageDailyVolume": 357130
       },
       "scores": {
-        "fallOutRisk": 67.27900954847063,
+        "fallOutRisk": 67.34886982791174,
         "entryScore": null,
-        "undervaluedScore": 75.00927397986221,
-        "overvaluedScore": 18.09613142554319
+        "undervaluedScore": 75.15633280339163,
+        "overvaluedScore": 17.94907260201378
       },
       "rank": 21,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple"
@@ -3593,12 +3593,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 34180000000,
-        "price": 105.32,
+        "marketCap": 35580000000,
+        "price": 109.63,
         "currency": "USD",
-        "trailingPE": 9.4,
-        "forwardPE": 7.31,
-        "priceToBook": 2.15,
+        "trailingPE": 9.78,
+        "forwardPE": 7.61,
+        "priceToBook": 2.24,
         "returnOnEquity": 0.25730000000000003,
         "profitMargins": 0.060599999999999994,
         "operatingMargins": 0.084,
@@ -3606,10 +3606,10 @@
         "currentRatio": 0.7,
         "revenueGrowth": 0.1056,
         "earningsGrowth": 0.8404,
-        "averageDailyVolume": 7500000
+        "averageDailyVolume": 7390000
       },
       "scores": {
-        "fallOutRisk": 59.28220772592031,
+        "fallOutRisk": 59.16244724687838,
         "entryScore": null,
         "undervaluedScore": 74.80152460152462,
         "overvaluedScore": 25.66576576576577
@@ -3618,103 +3618,53 @@
       "commentary": "discounted sector-relative earnings multiple, contained book multiple"
     },
     {
-      "ticker": "ALL",
-      "yahooTicker": "ALL",
-      "security": "Allstate",
-      "sector": "Financials",
-      "subIndustry": "Property & Casualty Insurance",
+      "ticker": "PNR",
+      "yahooTicker": "PNR",
+      "security": "Pentair",
+      "sector": "Industrials",
+      "subIndustry": "Industrial Machinery & Supplies & Components",
       "sourceIndex": "S&P 500",
-      "headquarters": "Northbrook, Illinois",
-      "cik": "0000899051",
-      "founded": "1931",
+      "headquarters": "Worsley, United Kingdom",
+      "cik": "0000077360",
+      "founded": "1966",
       "currentMember": true,
-      "currentMemberSince": "1995-07-13",
+      "currentMemberSince": "2012-10-01",
       "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "1995-07-13",
+          "enteredAt": "2012-10-01",
           "leftAt": null
         }
       ],
       "dividend": {
         "hasDividend": true,
-        "dividendRate": 4.16,
-        "dividendYield": 0.019299999999999998,
+        "dividendRate": 1.04,
+        "dividendYield": 0.0139,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 55350000000,
-        "price": 215.02,
+        "marketCap": 12050000000,
+        "price": 74.58,
         "currency": "USD",
-        "trailingPE": 4.74,
-        "forwardPE": 8.23,
-        "priceToBook": 1.87,
-        "returnOnEquity": 0.4526,
-        "profitMargins": 0.1764,
-        "operatingMargins": 0.21109999999999998,
-        "debtToEquity": 0.24,
-        "currentRatio": 0.41,
-        "revenueGrowth": 0.0297,
-        "earningsGrowth": 3.3911000000000002,
-        "averageDailyVolume": 1510000
+        "trailingPE": 18.31,
+        "forwardPE": 12.82,
+        "priceToBook": 3.16,
+        "returnOnEquity": 0.1761,
+        "profitMargins": 0.1597,
+        "operatingMargins": 0.21559999999999999,
+        "debtToEquity": 0.55,
+        "currentRatio": 1.88,
+        "revenueGrowth": 0.026000000000000002,
+        "earningsGrowth": 0.1308,
+        "averageDailyVolume": 1940000
       },
       "scores": {
-        "fallOutRisk": 36.503193612774446,
+        "fallOutRisk": 63.1725223150373,
         "entryScore": null,
-        "undervaluedScore": 74.66120826709063,
-        "overvaluedScore": 24.23789083200848
+        "undervaluedScore": 74.76018216018217,
+        "overvaluedScore": 20.231086031086033
       },
       "rank": 23,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, quality support"
-    },
-    {
-      "ticker": "CF",
-      "yahooTicker": "CF",
-      "security": "CF Industries",
-      "sector": "Materials",
-      "subIndustry": "Fertilizers & Agricultural Chemicals",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Deerfield, Illinois",
-      "cik": "0001324404",
-      "founded": "1946",
-      "currentMember": true,
-      "currentMemberSince": "2008-08-27",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2008-08-27",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2,
-        "dividendYield": 0.0183,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 16809999999.999998,
-        "price": 109.45,
-        "currency": "USD",
-        "trailingPE": 9.84,
-        "forwardPE": 9.72,
-        "priceToBook": 3.15,
-        "returnOnEquity": 0.34740000000000004,
-        "profitMargins": 0.2373,
-        "operatingMargins": 0.38,
-        "debtToEquity": 0.68,
-        "currentRatio": 3.54,
-        "revenueGrowth": 0.1942,
-        "earningsGrowth": 1.1537,
-        "averageDailyVolume": 4520000
-      },
-      "scores": {
-        "fallOutRisk": 38.9944111776447,
-        "entryScore": null,
-        "undervaluedScore": 74.60000000000001,
-        "overvaluedScore": 29.799999999999997
-      },
-      "rank": 24,
       "commentary": "discounted sector-relative earnings multiple, quality support"
     },
     {
@@ -3739,16 +3689,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.42,
-        "dividendYield": 0.0248,
+        "dividendYield": 0.024,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 7900000000,
-        "price": 57.33,
+        "marketCap": 8160000000,
+        "price": 59.23,
         "currency": "USD",
-        "trailingPE": 15.29,
-        "forwardPE": 13.78,
-        "priceToBook": 4.21,
+        "trailingPE": 15.8,
+        "forwardPE": 14.23,
+        "priceToBook": 4.35,
         "returnOnEquity": 0.2827,
         "profitMargins": 0.1384,
         "operatingMargins": 0.1848,
@@ -3756,16 +3706,66 @@
         "currentRatio": 1.56,
         "revenueGrowth": -0.019,
         "earningsGrowth": -0.1036,
-        "averageDailyVolume": 1600000
+        "averageDailyVolume": 1610000
       },
       "scores": {
-        "fallOutRisk": 67.36176130068345,
+        "fallOutRisk": 67.43162158012457,
         "entryScore": null,
-        "undervaluedScore": 74.41036531036531,
-        "overvaluedScore": 21.007444807444806
+        "undervaluedScore": 74.68063558063557,
+        "overvaluedScore": 20.669606969606967
+      },
+      "rank": 24,
+      "commentary": "discounted sector-relative earnings multiple, dividend support, quality support"
+    },
+    {
+      "ticker": "LDOS",
+      "yahooTicker": "LDOS",
+      "security": "Leidos",
+      "sector": "Industrials",
+      "subIndustry": "Diversified Support Services",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Reston, Virginia",
+      "cik": "0001336920",
+      "founded": "1969",
+      "currentMember": true,
+      "currentMemberSince": "2019-08-09",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2019-08-09",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.66,
+        "dividendYield": 0.0134,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 15540000000,
+        "price": 123.52,
+        "currency": "USD",
+        "trailingPE": 11.3,
+        "forwardPE": 9.39,
+        "priceToBook": 3.1,
+        "returnOnEquity": 0.3049,
+        "profitMargins": 0.0815,
+        "operatingMargins": 0.12179999999999999,
+        "debtToEquity": 1.39,
+        "currentRatio": 1.4,
+        "revenueGrowth": 0.0365,
+        "earningsGrowth": -0.07519999999999999,
+        "averageDailyVolume": 1170000
+      },
+      "scores": {
+        "fallOutRisk": 71.96044418439628,
+        "entryScore": null,
+        "undervaluedScore": 74.54670824670825,
+        "overvaluedScore": 24.592376992376995
       },
       "rank": 25,
-      "commentary": "discounted sector-relative earnings multiple, dividend support, quality support"
+      "commentary": "discounted sector-relative earnings multiple"
     }
   ],
   "overvalued": [
@@ -3795,12 +3795,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 38910000000,
-        "price": 87.35,
+        "marketCap": 38460000000,
+        "price": 86.33,
         "currency": "USD",
-        "trailingPE": 37.55,
-        "forwardPE": 30.41,
-        "priceToBook": 6.97,
+        "trailingPE": 37.12,
+        "forwardPE": 30.05,
+        "priceToBook": 6.89,
         "returnOnEquity": 0.20579999999999998,
         "profitMargins": 0.0965,
         "operatingMargins": 0.8659,
@@ -3808,10 +3808,10 @@
         "currentRatio": 1.05,
         "revenueGrowth": 0.1406,
         "earningsGrowth": 0.2286,
-        "averageDailyVolume": 4970000
+        "averageDailyVolume": 4960000
       },
       "scores": {
-        "fallOutRisk": 55.09677941414467,
+        "fallOutRisk": 55.605761450072826,
         "entryScore": null,
         "undervaluedScore": 15.800211976682563,
         "overvaluedScore": 90.77276099629042
@@ -3845,12 +3845,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 170210000000,
-        "price": 215.92,
+        "marketCap": 169100000000,
+        "price": 214.51,
         "currency": "USD",
-        "trailingPE": 111.01,
-        "forwardPE": 52.48,
-        "priceToBook": 28.44,
+        "trailingPE": 110.29,
+        "forwardPE": 52.14,
+        "priceToBook": 28.26,
         "returnOnEquity": 1.7031999999999998,
         "profitMargins": 0.0209,
         "operatingMargins": -0.0583,
@@ -3858,10 +3858,10 @@
         "currentRatio": 1.18,
         "revenueGrowth": 0.13949999999999999,
         "earningsGrowth": 0.3007,
-        "averageDailyVolume": 7130000
+        "averageDailyVolume": 7020000
       },
       "scores": {
-        "fallOutRisk": 39.405051435590366,
+        "fallOutRisk": 39.42501151543068,
         "entryScore": null,
         "undervaluedScore": 19.161538461538463,
         "overvaluedScore": 89.81025641025641
@@ -3895,12 +3895,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 33799999999.999996,
-        "price": 116.62,
+        "marketCap": 33840000000.000004,
+        "price": 116.77,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 64.86,
-        "priceToBook": 5.99,
+        "forwardPE": 64.95,
+        "priceToBook": 6,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -3908,13 +3908,13 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 6780000
+        "averageDailyVolume": 6900000
       },
       "scores": {
-        "fallOutRisk": 86.09666381522668,
+        "fallOutRisk": 86.4659252922726,
         "entryScore": null,
-        "undervaluedScore": 12.359307359307362,
-        "overvaluedScore": 86.42857142857143
+        "undervaluedScore": 14.264069264069267,
+        "overvaluedScore": 84.52380952380952
       },
       "rank": 3,
       "commentary": "stretched sector-relative earnings multiple"
@@ -3945,12 +3945,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 104110000000,
-        "price": 693.81,
+        "marketCap": 103830000000,
+        "price": 691.95,
         "currency": "USD",
-        "trailingPE": 95.19,
-        "forwardPE": 42.35,
-        "priceToBook": 11.51,
+        "trailingPE": 94.93,
+        "forwardPE": 42.23,
+        "priceToBook": 11.48,
         "returnOnEquity": 0.13390000000000002,
         "profitMargins": 0.036699999999999997,
         "operatingMargins": 0.0592,
@@ -3961,10 +3961,10 @@
         "averageDailyVolume": 1140000
       },
       "scores": {
-        "fallOutRisk": 44.515992547130274,
+        "fallOutRisk": 44.67567318585282,
         "entryScore": null,
-        "undervaluedScore": 16.985932085932088,
-        "overvaluedScore": 84.83603603603603
+        "undervaluedScore": 17.37054747054747,
+        "overvaluedScore": 84.45142065142065
       },
       "rank": 4,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
@@ -3991,16 +3991,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.52,
-        "dividendYield": 0.0233,
+        "dividendYield": 0.023,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 49500000000,
-        "price": 108.11,
+        "marketCap": 50210000000,
+        "price": 109.66,
         "currency": "USD",
-        "trailingPE": 27.54,
-        "forwardPE": 21.35,
-        "priceToBook": 2.85,
+        "trailingPE": 27.93,
+        "forwardPE": 21.66,
+        "priceToBook": 2.89,
         "returnOnEquity": 0.1093,
         "profitMargins": 0.1341,
         "operatingMargins": 0.22399999999999998,
@@ -4008,65 +4008,15 @@
         "currentRatio": 0.9,
         "revenueGrowth": 0.14859999999999998,
         "earningsGrowth": 0.0165,
-        "averageDailyVolume": 3450000
+        "averageDailyVolume": 3460000
       },
       "scores": {
-        "fallOutRisk": 49.11776447105788,
+        "fallOutRisk": 48.99800399201597,
         "entryScore": null,
-        "undervaluedScore": 20.5,
-        "overvaluedScore": 84.00000000000001
+        "undervaluedScore": 20.16666666666667,
+        "overvaluedScore": 84.33333333333334
       },
       "rank": 5,
-      "commentary": "premium valuation versus the universe"
-    },
-    {
-      "ticker": "CNP",
-      "yahooTicker": "CNP",
-      "security": "CenterPoint Energy",
-      "sector": "Utilities",
-      "subIndustry": "Multi-Utilities",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Houston, Texas",
-      "cik": "0001130310",
-      "founded": "1882",
-      "currentMember": true,
-      "currentMemberSince": "1985-07-31",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1985-07-31",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.9,
-        "dividendYield": 0.0215,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 27380000000,
-        "price": 41.85,
-        "currency": "USD",
-        "trailingPE": 25.63,
-        "forwardPE": 20.1,
-        "priceToBook": 2.39,
-        "returnOnEquity": 0.0956,
-        "profitMargins": 0.11380000000000001,
-        "operatingMargins": 0.22510000000000002,
-        "debtToEquity": 2.21,
-        "currentRatio": 1.16,
-        "revenueGrowth": 0.018799999999999997,
-        "earningsGrowth": 0.0541,
-        "averageDailyVolume": 4890000
-      },
-      "scores": {
-        "fallOutRisk": 69.92415169660678,
-        "entryScore": null,
-        "undervaluedScore": 16.333333333333336,
-        "overvaluedScore": 83.16666666666667
-      },
-      "rank": 6,
       "commentary": "premium valuation versus the universe"
     },
     {
@@ -4091,16 +4041,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.4,
-        "dividendYield": 0.0165,
+        "dividendYield": 0.016200000000000003,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 30620000000,
-        "price": 84.64,
+        "marketCap": 31320000000,
+        "price": 86.56,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 26.56,
-        "priceToBook": 7.67,
+        "forwardPE": 27.16,
+        "priceToBook": 7.84,
         "returnOnEquity": -0.059500000000000004,
         "profitMargins": -0.0167,
         "operatingMargins": 0.1038,
@@ -4108,16 +4058,66 @@
         "currentRatio": 1.27,
         "revenueGrowth": 0.05,
         "earningsGrowth": -0.4464,
-        "averageDailyVolume": 4510000
+        "averageDailyVolume": 4490000
       },
       "scores": {
-        "fallOutRisk": 82.39921293776084,
+        "fallOutRisk": 83.2124695414366,
         "entryScore": null,
-        "undervaluedScore": 18.473890692640694,
-        "overvaluedScore": 82.52083333333333
+        "undervaluedScore": 17.885146103896105,
+        "overvaluedScore": 82.95806277056278
+      },
+      "rank": 6,
+      "commentary": "elevated book multiple"
+    },
+    {
+      "ticker": "CNP",
+      "yahooTicker": "CNP",
+      "security": "CenterPoint Energy",
+      "sector": "Utilities",
+      "subIndustry": "Multi-Utilities",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Houston, Texas",
+      "cik": "0001130310",
+      "founded": "1882",
+      "currentMember": true,
+      "currentMemberSince": "1985-07-31",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1985-07-31",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.9,
+        "dividendYield": 0.0212,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 27730000000,
+        "price": 42.39,
+        "currency": "USD",
+        "trailingPE": 25.96,
+        "forwardPE": 20.36,
+        "priceToBook": 2.42,
+        "returnOnEquity": 0.0956,
+        "profitMargins": 0.11380000000000001,
+        "operatingMargins": 0.22510000000000002,
+        "debtToEquity": 2.21,
+        "currentRatio": 1.16,
+        "revenueGrowth": 0.018799999999999997,
+        "earningsGrowth": 0.0541,
+        "averageDailyVolume": 4860000
+      },
+      "scores": {
+        "fallOutRisk": 70.08383233532933,
+        "entryScore": null,
+        "undervaluedScore": 17,
+        "overvaluedScore": 82.33333333333333
       },
       "rank": 7,
-      "commentary": "elevated book multiple"
+      "commentary": "premium valuation versus the universe"
     },
     {
       "ticker": "CRWD",
@@ -4145,12 +4145,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 167700000000,
-        "price": 658.79,
+        "marketCap": 164180000000,
+        "price": 644.93,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 105.61,
-        "priceToBook": 36.19,
+        "forwardPE": 103.38,
+        "priceToBook": 35.43,
         "returnOnEquity": -0.011200000000000002,
         "profitMargins": -0.0089,
         "operatingMargins": -0.0218,
@@ -4158,10 +4158,10 @@
         "currentRatio": 1.45,
         "revenueGrowth": 0.2557,
         "earningsGrowth": 1.2428,
-        "averageDailyVolume": 3550000
+        "averageDailyVolume": 3530000
       },
       "scores": {
-        "fallOutRisk": 49.56699843953044,
+        "fallOutRisk": 49.656818798811884,
         "entryScore": null,
         "undervaluedScore": 16.654404036157246,
         "overvaluedScore": 81.95816691191928
@@ -4191,16 +4191,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 19.7,
-        "dividendYield": 0.018500000000000003,
+        "dividendYield": 0.018600000000000002,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 104810000000,
-        "price": 1062.74,
+        "marketCap": 104530000000,
+        "price": 1059.84,
         "currency": "USD",
-        "trailingPE": 73.5,
-        "forwardPE": 56.4,
-        "priceToBook": 7.33,
+        "trailingPE": 73.29,
+        "forwardPE": 56.25,
+        "priceToBook": 7.31,
         "returnOnEquity": 0.1009,
         "profitMargins": 0.1507,
         "operatingMargins": 0.0285,
@@ -4208,10 +4208,10 @@
         "currentRatio": 1.18,
         "revenueGrowth": 0.0984,
         "earningsGrowth": 0.1996,
-        "averageDailyVolume": 567730
+        "averageDailyVolume": 563300
       },
       "scores": {
-        "fallOutRisk": 41.51359978455787,
+        "fallOutRisk": 41.673280423280424,
         "entryScore": null,
         "undervaluedScore": 24.18053274949827,
         "overvaluedScore": 81.4160280970626
@@ -4245,12 +4245,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 432280000000,
-        "price": 974.75,
+        "marketCap": 429550000000,
+        "price": 968.59,
         "currency": "USD",
-        "trailingPE": 49.03,
-        "forwardPE": 43.06,
-        "priceToBook": 12.9,
+        "trailingPE": 48.72,
+        "forwardPE": 42.79,
+        "priceToBook": 12.82,
         "returnOnEquity": 0.2915,
         "profitMargins": 0.0301,
         "operatingMargins": 0.0382,
@@ -4258,10 +4258,10 @@
         "currentRatio": 1.07,
         "revenueGrowth": 0.1158,
         "earningsGrowth": 0.1527,
-        "averageDailyVolume": 1990000
+        "averageDailyVolume": 1980000
       },
       "scores": {
-        "fallOutRisk": 27.178404554527308,
+        "fallOutRisk": 27.268224913808744,
         "entryScore": null,
         "undervaluedScore": 21.883252164502167,
         "overvaluedScore": 81.02069805194806
@@ -4270,54 +4270,54 @@
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
-      "ticker": "VRT",
-      "yahooTicker": "VRT",
-      "security": "Vertiv",
-      "sector": "Industrials",
-      "subIndustry": "Electrical Components & Equipment",
+      "ticker": "ARES",
+      "yahooTicker": "ARES",
+      "security": "Ares Management",
+      "sector": "Financials",
+      "subIndustry": "Asset Management & Custody Banks",
       "sourceIndex": "S&P 500",
-      "headquarters": "Westerville, Ohio",
-      "cik": "0001674101",
-      "founded": "2016",
+      "headquarters": "Los Angeles, California",
+      "cik": "0001176948",
+      "founded": "1977",
       "currentMember": true,
-      "currentMemberSince": "2026-03-23",
+      "currentMemberSince": "2025-12-11",
       "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "2026-03-23",
+          "enteredAt": "2025-12-11",
           "leftAt": null
         }
       ],
       "dividend": {
         "hasDividend": true,
-        "dividendRate": 0.2,
-        "dividendYield": 0.0007000000000000001,
+        "dividendRate": 4.71,
+        "dividendYield": 0.0361,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 115450000000,
-        "price": 300.57,
+        "marketCap": 43080000000,
+        "price": 130.61,
         "currency": "USD",
-        "trailingPE": 75.45,
-        "forwardPE": 34.36,
-        "priceToBook": 27.19,
-        "returnOnEquity": 0.451,
-        "profitMargins": 0.1437,
-        "operatingMargins": 0.1906,
-        "debtToEquity": 0.77,
-        "currentRatio": 1.49,
-        "revenueGrowth": 0.3013,
-        "earningsGrowth": 1.359,
-        "averageDailyVolume": 7520000
+        "trailingPE": 60.46,
+        "forwardPE": 17.58,
+        "priceToBook": 11.48,
+        "returnOnEquity": 0.1363,
+        "profitMargins": 0.0699,
+        "operatingMargins": 0.2913,
+        "debtToEquity": 3.51,
+        "currentRatio": 0.47,
+        "revenueGrowth": 0.30260000000000004,
+        "earningsGrowth": 7.7973,
+        "averageDailyVolume": 3460000
       },
       "scores": {
-        "fallOutRisk": 23.94579614160453,
+        "fallOutRisk": 54.15940011868155,
         "entryScore": null,
-        "undervaluedScore": 25.921582021582026,
-        "overvaluedScore": 80.71778041778042
+        "undervaluedScore": 25.52469528351881,
+        "overvaluedScore": 80.89692633810282
       },
       "rank": 11,
-      "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
+      "commentary": "elevated book multiple"
     },
     {
       "ticker": "DDOG",
@@ -4345,12 +4345,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 82470000000,
-        "price": 231.68,
+        "marketCap": 80920000000,
+        "price": 227.34,
         "currency": "USD",
-        "trailingPE": 618.31,
-        "forwardPE": 81.85,
-        "priceToBook": 20.67,
+        "trailingPE": 606.73,
+        "forwardPE": 80.32,
+        "priceToBook": 20.28,
         "returnOnEquity": 0.0393,
         "profitMargins": 0.0369,
         "operatingMargins": -0.006500000000000001,
@@ -4358,116 +4358,16 @@
         "currentRatio": 3.35,
         "revenueGrowth": 0.3215,
         "earningsGrowth": 1.1545999999999998,
-        "averageDailyVolume": 5640000
+        "averageDailyVolume": 5670000
       },
       "scores": {
-        "fallOutRisk": 44.24052672456223,
+        "fallOutRisk": 44.33034708384366,
         "entryScore": null,
-        "undervaluedScore": 18.831196132015975,
-        "overvaluedScore": 80.43199495480344
+        "undervaluedScore": 18.53268866932941,
+        "overvaluedScore": 80.80512928316165
       },
       "rank": 12,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
-    },
-    {
-      "ticker": "TSLA",
-      "yahooTicker": "TSLA",
-      "security": "Tesla, Inc.",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Automobile Manufacturers",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Austin, Texas",
-      "cik": "0001318605",
-      "founded": "2003",
-      "currentMember": true,
-      "currentMemberSince": "2020-12-21",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2020-12-21",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 1535900000000,
-        "price": 408.95,
-        "currency": "USD",
-        "trailingPE": 373.61,
-        "forwardPE": 169,
-        "priceToBook": 18.26,
-        "returnOnEquity": 0.048600000000000004,
-        "profitMargins": 0.0395,
-        "operatingMargins": 0.0541,
-        "debtToEquity": 0.19,
-        "currentRatio": 2.04,
-        "revenueGrowth": 0.1578,
-        "earningsGrowth": 0.16010000000000002,
-        "averageDailyVolume": 59660000
-      },
-      "scores": {
-        "fallOutRisk": 35.28285627326906,
-        "entryScore": null,
-        "undervaluedScore": 18.971631205673763,
-        "overvaluedScore": 80.38120567375887
-      },
-      "rank": 13,
-      "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
-    },
-    {
-      "ticker": "ARES",
-      "yahooTicker": "ARES",
-      "security": "Ares Management",
-      "sector": "Financials",
-      "subIndustry": "Asset Management & Custody Banks",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Los Angeles, California",
-      "cik": "0001176948",
-      "founded": "1977",
-      "currentMember": true,
-      "currentMemberSince": "2025-12-11",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2025-12-11",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.71,
-        "dividendYield": 0.0371,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 41850000000,
-        "price": 126.87,
-        "currency": "USD",
-        "trailingPE": 58.73,
-        "forwardPE": 17.08,
-        "priceToBook": 11.15,
-        "returnOnEquity": 0.1363,
-        "profitMargins": 0.0699,
-        "operatingMargins": 0.2913,
-        "debtToEquity": 3.51,
-        "currentRatio": 0.47,
-        "revenueGrowth": 0.30260000000000004,
-        "earningsGrowth": 7.7973,
-        "averageDailyVolume": 3500000
-      },
-      "scores": {
-        "fallOutRisk": 54.22926039812267,
-        "entryScore": null,
-        "undervaluedScore": 26.058028616852148,
-        "overvaluedScore": 80.36359300476948
-      },
-      "rank": 14,
-      "commentary": "elevated book multiple"
     },
     {
       "ticker": "MCO",
@@ -4491,16 +4391,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 3.94,
-        "dividendYield": 0.0089,
+        "dividendYield": 0.0088,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 77520000000,
-        "price": 443.76,
+        "marketCap": 78600000000,
+        "price": 449.94,
         "currency": "USD",
-        "trailingPE": 31.82,
-        "forwardPE": 23.8,
-        "priceToBook": 25.89,
+        "trailingPE": 32.26,
+        "forwardPE": 24.13,
+        "priceToBook": 26.25,
         "returnOnEquity": 0.7454000000000001,
         "profitMargins": 0.3169,
         "operatingMargins": 0.44799999999999995,
@@ -4508,15 +4408,15 @@
         "currentRatio": 1.12,
         "revenueGrowth": 0.0806,
         "earningsGrowth": 0.0779,
-        "averageDailyVolume": 1120000
+        "averageDailyVolume": 1110000
       },
       "scores": {
-        "fallOutRisk": 34.48328747909586,
+        "fallOutRisk": 34.293666720612826,
         "entryScore": null,
-        "undervaluedScore": 26.4402225755167,
-        "overvaluedScore": 80.34896661367249
+        "undervaluedScore": 26.573555908850032,
+        "overvaluedScore": 80.21563328033916
       },
-      "rank": 15,
+      "rank": 13,
       "commentary": "elevated book multiple"
     },
     {
@@ -4545,12 +4445,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 56690000000,
-        "price": 264.13,
+        "marketCap": 56700000000,
+        "price": 264.17,
         "currency": "USD",
         "trailingPE": 26.91,
-        "forwardPE": 21.54,
-        "priceToBook": 18.08,
+        "forwardPE": 21.55,
+        "priceToBook": 18.09,
         "returnOnEquity": 0.7587,
         "profitMargins": 0.12710000000000002,
         "operatingMargins": 0.2259,
@@ -4558,15 +4458,15 @@
         "currentRatio": 0.72,
         "revenueGrowth": -0.106,
         "earningsGrowth": 1.4355000000000002,
-        "averageDailyVolume": 1330000
+        "averageDailyVolume": 1310000
       },
       "scores": {
-        "fallOutRisk": 45.39920159680639,
+        "fallOutRisk": 45.62874251497006,
         "entryScore": null,
         "undervaluedScore": 25.5,
         "overvaluedScore": 80
       },
-      "rank": 16,
+      "rank": 14,
       "commentary": "elevated book multiple"
     },
     {
@@ -4595,12 +4495,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 953620000000,
-        "price": 119.83,
+        "marketCap": 946060000000,
+        "price": 118.88,
         "currency": "USD",
-        "trailingPE": 42.21,
-        "forwardPE": 36.51,
-        "priceToBook": 10.11,
+        "trailingPE": 41.88,
+        "forwardPE": 36.22,
+        "priceToBook": 10.03,
         "returnOnEquity": 0.2553,
         "profitMargins": 0.0313,
         "operatingMargins": 0.0416,
@@ -4608,66 +4508,16 @@
         "currentRatio": 0.77,
         "revenueGrowth": 0.0733,
         "earningsGrowth": 0.1956,
-        "averageDailyVolume": 20390000
+        "averageDailyVolume": 20360000
       },
       "scores": {
-        "fallOutRisk": 34.515896777872825,
+        "fallOutRisk": 34.53585685771314,
         "entryScore": null,
-        "undervaluedScore": 22.808441558441558,
-        "overvaluedScore": 79.90435606060606
+        "undervaluedScore": 22.5762987012987,
+        "overvaluedScore": 79.98024891774892
       },
-      "rank": 17,
+      "rank": 15,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
-    },
-    {
-      "ticker": "LLY",
-      "yahooTicker": "LLY",
-      "security": "Lilly (Eli)",
-      "sector": "Health Care",
-      "subIndustry": "Pharmaceuticals",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Indianapolis, Indiana",
-      "cik": "0000059478",
-      "founded": "1876",
-      "currentMember": true,
-      "currentMemberSince": "1970-12-31",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1970-12-31",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 6.46,
-        "dividendYield": 0.005600000000000001,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 1082200000000,
-        "price": 1149.15,
-        "currency": "USD",
-        "trailingPE": 41.36,
-        "forwardPE": 25.78,
-        "priceToBook": 34.75,
-        "returnOnEquity": 1.0764,
-        "profitMargins": 0.34979999999999994,
-        "operatingMargins": 0.473,
-        "debtToEquity": 1.39,
-        "currentRatio": 1.5,
-        "revenueGrowth": 0.5555,
-        "earningsGrowth": 1.6945,
-        "averageDailyVolume": 3120000
-      },
-      "scores": {
-        "fallOutRisk": 14.38421565357349,
-        "entryScore": null,
-        "undervaluedScore": 29.185786023354083,
-        "overvaluedScore": 79.78709932884159
-      },
-      "rank": 18,
-      "commentary": "elevated book multiple"
     },
     {
       "ticker": "VTR",
@@ -4691,16 +4541,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 1.96,
-        "dividendYield": 0.0246,
+        "dividendYield": 0.023799999999999998,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 39620000000,
-        "price": 79.62,
+        "marketCap": 41030000000,
+        "price": 82.47,
         "currency": "USD",
-        "trailingPE": 144.21,
-        "forwardPE": 77.8,
-        "priceToBook": 2.95,
+        "trailingPE": 149.38,
+        "forwardPE": 80.59,
+        "priceToBook": 3.05,
         "returnOnEquity": 0.0212,
         "profitMargins": 0.0425,
         "operatingMargins": 0.1519,
@@ -4708,66 +4558,66 @@
         "currentRatio": 0.34,
         "revenueGrowth": 0.22010000000000002,
         "earningsGrowth": 0.0943,
-        "averageDailyVolume": 4019999.9999999995
+        "averageDailyVolume": 4040000
       },
       "scores": {
-        "fallOutRisk": 59.316454392801695,
+        "fallOutRisk": 59.05697335487755,
         "entryScore": null,
         "undervaluedScore": 21.183725597518702,
         "overvaluedScore": 79.75939609560298
       },
-      "rank": 19,
+      "rank": 16,
       "commentary": "stretched sector-relative earnings multiple"
     },
     {
-      "ticker": "MA",
-      "yahooTicker": "MA",
-      "security": "Mastercard",
-      "sector": "Financials",
-      "subIndustry": "Transaction & Payment Processing Services",
+      "ticker": "TSLA",
+      "yahooTicker": "TSLA",
+      "security": "Tesla, Inc.",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Automobile Manufacturers",
       "sourceIndex": "S&P 500",
-      "headquarters": "Harrison, New York",
-      "cik": "0001141391",
-      "founded": "1966",
+      "headquarters": "Austin, Texas",
+      "cik": "0001318605",
+      "founded": "2003",
       "currentMember": true,
-      "currentMemberSince": "2008-07-18",
+      "currentMemberSince": "2020-12-21",
       "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "2008-07-18",
+          "enteredAt": "2020-12-21",
           "leftAt": null
         }
       ],
       "dividend": {
-        "hasDividend": true,
-        "dividendRate": 3.26,
-        "dividendYield": 0.0067,
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 429130000000,
-        "price": 485.67,
+        "marketCap": 1489820000000,
+        "price": 396.68,
         "currency": "USD",
-        "trailingPE": 28.11,
-        "forwardPE": 21.29,
-        "priceToBook": 64.12,
-        "returnOnEquity": 2.3256,
-        "profitMargins": 0.4578,
-        "operatingMargins": 0.5946,
-        "debtToEquity": 2.82,
-        "currentRatio": 0.98,
-        "revenueGrowth": 0.162,
-        "earningsGrowth": 0.2114,
-        "averageDailyVolume": 3550000
+        "trailingPE": 362.4,
+        "forwardPE": 163.93,
+        "priceToBook": 17.71,
+        "returnOnEquity": 0.048600000000000004,
+        "profitMargins": 0.0395,
+        "operatingMargins": 0.0541,
+        "debtToEquity": 0.19,
+        "currentRatio": 2.04,
+        "revenueGrowth": 0.1578,
+        "earningsGrowth": 0.16010000000000002,
+        "averageDailyVolume": 59440000
       },
       "scores": {
-        "fallOutRisk": 21.016928305551062,
+        "fallOutRisk": 35.30281635310938,
         "entryScore": null,
-        "undervaluedScore": 28.980816110227877,
-        "overvaluedScore": 79.47954425013248
+        "undervaluedScore": 19.527186761229316,
+        "overvaluedScore": 79.68676122931441
       },
-      "rank": 20,
-      "commentary": "elevated book multiple"
+      "rank": 17,
+      "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
       "ticker": "ECL",
@@ -4791,16 +4641,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.76,
-        "dividendYield": 0.010700000000000001,
+        "dividendYield": 0.0104,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 72440000000,
-        "price": 257.41,
+        "marketCap": 74420000000,
+        "price": 264.44,
         "currency": "USD",
-        "trailingPE": 34.81,
-        "forwardPE": 26.98,
-        "priceToBook": 7.24,
+        "trailingPE": 35.76,
+        "forwardPE": 27.71,
+        "priceToBook": 7.44,
         "returnOnEquity": 0.2231,
         "profitMargins": 0.128,
         "operatingMargins": 0.1819,
@@ -4808,15 +4658,215 @@
         "currentRatio": 0.99,
         "revenueGrowth": 0.10039999999999999,
         "earningsGrowth": 0.0808,
-        "averageDailyVolume": 1610000
+        "averageDailyVolume": 1620000
       },
       "scores": {
-        "fallOutRisk": 39.395209580838326,
+        "fallOutRisk": 38.996007984031934,
         "entryScore": null,
-        "undervaluedScore": 25.800000000000004,
-        "overvaluedScore": 79.2
+        "undervaluedScore": 25.400000000000006,
+        "overvaluedScore": 79.60000000000001
+      },
+      "rank": 18,
+      "commentary": "elevated book multiple"
+    },
+    {
+      "ticker": "VRT",
+      "yahooTicker": "VRT",
+      "security": "Vertiv",
+      "sector": "Industrials",
+      "subIndustry": "Electrical Components & Equipment",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Westerville, Ohio",
+      "cik": "0001674101",
+      "founded": "2016",
+      "currentMember": true,
+      "currentMemberSince": "2026-03-23",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2026-03-23",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.2,
+        "dividendYield": 0.0007000000000000001,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 111210000000,
+        "price": 289.52,
+        "currency": "USD",
+        "trailingPE": 72.68,
+        "forwardPE": 33.03,
+        "priceToBook": 26.19,
+        "returnOnEquity": 0.451,
+        "profitMargins": 0.1437,
+        "operatingMargins": 0.1906,
+        "debtToEquity": 0.77,
+        "currentRatio": 1.49,
+        "revenueGrowth": 0.3013,
+        "earningsGrowth": 1.359,
+        "averageDailyVolume": 7460000
+      },
+      "scores": {
+        "fallOutRisk": 24.1753370597682,
+        "entryScore": null,
+        "undervaluedScore": 27.07542817542818,
+        "overvaluedScore": 79.56393426393426
+      },
+      "rank": 19,
+      "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
+    },
+    {
+      "ticker": "MA",
+      "yahooTicker": "MA",
+      "security": "Mastercard",
+      "sector": "Financials",
+      "subIndustry": "Transaction & Payment Processing Services",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Harrison, New York",
+      "cik": "0001141391",
+      "founded": "1966",
+      "currentMember": true,
+      "currentMemberSince": "2008-07-18",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2008-07-18",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 3.26,
+        "dividendYield": 0.0066,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 437590000000,
+        "price": 495.24,
+        "currency": "USD",
+        "trailingPE": 28.66,
+        "forwardPE": 21.71,
+        "priceToBook": 65.38,
+        "returnOnEquity": 2.3256,
+        "profitMargins": 0.4578,
+        "operatingMargins": 0.5946,
+        "debtToEquity": 2.82,
+        "currentRatio": 0.98,
+        "revenueGrowth": 0.162,
+        "earningsGrowth": 0.2114,
+        "averageDailyVolume": 3550000
+      },
+      "scores": {
+        "fallOutRisk": 20.967028105950263,
+        "entryScore": null,
+        "undervaluedScore": 28.980816110227877,
+        "overvaluedScore": 79.47954425013248
+      },
+      "rank": 20,
+      "commentary": "elevated book multiple"
+    },
+    {
+      "ticker": "HWM",
+      "yahooTicker": "HWM",
+      "security": "Howmet Aerospace",
+      "sector": "Industrials",
+      "subIndustry": "Aerospace & Defense",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Pittsburgh, Pennsylvania",
+      "cik": "0000004281",
+      "founded": "1888",
+      "currentMember": true,
+      "currentMemberSince": "2020-04-01",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2020-04-01",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.48,
+        "dividendYield": 0.0019,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 102890000000,
+        "price": 257.16,
+        "currency": "USD",
+        "trailingPE": 59.66,
+        "forwardPE": 42.8,
+        "priceToBook": 18.67,
+        "returnOnEquity": 0.3382,
+        "profitMargins": 0.2021,
+        "operatingMargins": 0.2667,
+        "debtToEquity": 0.88,
+        "currentRatio": 2.44,
+        "revenueGrowth": 0.191,
+        "earningsGrowth": 0.7076,
+        "averageDailyVolume": 2380000
+      },
+      "scores": {
+        "fallOutRisk": 24.89070175657002,
+        "entryScore": null,
+        "undervaluedScore": 26.206237006237004,
+        "overvaluedScore": 78.78080388080389
       },
       "rank": 21,
+      "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
+    },
+    {
+      "ticker": "CL",
+      "yahooTicker": "CL",
+      "security": "Colgate-Palmolive",
+      "sector": "Consumer Staples",
+      "subIndustry": "Household Products",
+      "sourceIndex": "S&P 500",
+      "headquarters": "New York City, New York",
+      "cik": "0000021665",
+      "founded": "1806",
+      "currentMember": true,
+      "currentMemberSince": "1957-03-04",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1957-03-04",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.09,
+        "dividendYield": 0.023799999999999998,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 70260000000,
+        "price": 87.8,
+        "currency": "USD",
+        "trailingPE": 34.07,
+        "forwardPE": 21.81,
+        "priceToBook": 484.52,
+        "returnOnEquity": 8.2165,
+        "profitMargins": 0.10039999999999999,
+        "operatingMargins": 0.2186,
+        "debtToEquity": 54.99,
+        "currentRatio": 1.02,
+        "revenueGrowth": 0.08410000000000001,
+        "earningsGrowth": -0.052199999999999996,
+        "averageDailyVolume": 5780000
+      },
+      "scores": {
+        "fallOutRisk": 44.11579438525546,
+        "entryScore": null,
+        "undervaluedScore": 29.835497835497833,
+        "overvaluedScore": 78.72727272727273
+      },
+      "rank": 22,
       "commentary": "elevated book multiple"
     },
     {
@@ -4845,12 +4895,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 421780000000,
-        "price": 915.64,
+        "marketCap": 421340000000,
+        "price": 914.7,
         "currency": "USD",
-        "trailingPE": 45.55,
-        "forwardPE": 30.41,
-        "priceToBook": 22.6,
+        "trailingPE": 45.51,
+        "forwardPE": 30.38,
+        "priceToBook": 22.58,
         "returnOnEquity": 0.5135000000000001,
         "profitMargins": 0.1333,
         "operatingMargins": 0.17120000000000002,
@@ -4858,83 +4908,87 @@
         "currentRatio": 1.35,
         "revenueGrowth": 0.22219999999999998,
         "earningsGrowth": 0.3035,
-        "averageDailyVolume": 2530000
+        "averageDailyVolume": 2510000
       },
       "scores": {
-        "fallOutRisk": 26.8555334237969,
+        "fallOutRisk": 26.875493503637216,
         "entryScore": null,
-        "undervaluedScore": 29.224215424215426,
-        "overvaluedScore": 79.11549351549351
+        "undervaluedScore": 29.622690822690824,
+        "overvaluedScore": 78.64945054945055
       },
-      "rank": 22,
+      "rank": 23,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
-      "ticker": "CL",
-      "yahooTicker": "CL",
-      "security": "Colgate-Palmolive",
-      "sector": "Consumer Staples",
-      "subIndustry": "Household Products",
+      "ticker": "LLY",
+      "yahooTicker": "LLY",
+      "security": "Lilly (Eli)",
+      "sector": "Health Care",
+      "subIndustry": "Pharmaceuticals",
       "sourceIndex": "S&P 500",
-      "headquarters": "New York City, New York",
-      "cik": "0000021665",
-      "founded": "1806",
+      "headquarters": "Indianapolis, Indiana",
+      "cik": "0000059478",
+      "founded": "1876",
       "currentMember": true,
-      "currentMemberSince": "1957-03-04",
+      "currentMemberSince": "1970-12-31",
       "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "1957-03-04",
+          "enteredAt": "1970-12-31",
           "leftAt": null
         }
       ],
       "dividend": {
         "hasDividend": true,
-        "dividendRate": 2.09,
-        "dividendYield": 0.024300000000000002,
+        "dividendRate": 6.46,
+        "dividendYield": 0.005600000000000001,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 68870000000,
-        "price": 86.07,
+        "marketCap": 1077990000000,
+        "price": 1144.68,
         "currency": "USD",
-        "trailingPE": 33.4,
-        "forwardPE": 21.38,
-        "priceToBook": 474.97,
-        "returnOnEquity": 8.2165,
-        "profitMargins": 0.10039999999999999,
-        "operatingMargins": 0.2186,
-        "debtToEquity": 54.99,
-        "currentRatio": 1.02,
-        "revenueGrowth": 0.08410000000000001,
-        "earningsGrowth": -0.052199999999999996,
-        "averageDailyVolume": 5800000
+        "trailingPE": 41.2,
+        "forwardPE": 25.68,
+        "priceToBook": 34.62,
+        "returnOnEquity": 1.0764,
+        "profitMargins": 0.34979999999999994,
+        "operatingMargins": 0.473,
+        "debtToEquity": 1.39,
+        "currentRatio": 1.5,
+        "revenueGrowth": 0.5555,
+        "earningsGrowth": 1.6945,
+        "averageDailyVolume": 3150000
       },
       "scores": {
-        "fallOutRisk": 44.37527542317961,
+        "fallOutRisk": 14.38421565357349,
         "entryScore": null,
-        "undervaluedScore": 29.835497835497833,
-        "overvaluedScore": 78.72727272727273
+        "undervaluedScore": 30.68412646906295,
+        "overvaluedScore": 78.28875888313273
       },
-      "rank": 23,
+      "rank": 24,
       "commentary": "elevated book multiple"
     },
     {
-      "ticker": "COIN",
-      "yahooTicker": "COIN",
-      "security": "Coinbase",
-      "sector": "Financials",
-      "subIndustry": "Financial Exchanges & Data",
+      "ticker": "CIEN",
+      "yahooTicker": "CIEN",
+      "security": "Ciena",
+      "sector": "Information Technology",
+      "subIndustry": "Communications Equipment",
       "sourceIndex": "S&P 500",
-      "headquarters": "New York City, New York",
-      "cik": "0001679788",
-      "founded": "2012",
+      "headquarters": "Hanover, Maryland",
+      "cik": "0000936395",
+      "founded": "1992",
       "currentMember": true,
-      "currentMemberSince": "2025-05-19",
-      "lastLeftAt": null,
+      "currentMemberSince": "2026-02-09",
+      "lastLeftAt": "2009-12-18",
       "membershipHistory": [
         {
-          "enteredAt": "2025-05-19",
+          "enteredAt": null,
+          "leftAt": "2009-12-18"
+        },
+        {
+          "enteredAt": "2026-02-09",
           "leftAt": null
         }
       ],
@@ -4945,76 +4999,26 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 42710000000,
-        "price": 162.11,
+        "marketCap": 62190000000,
+        "price": 439.34,
         "currency": "USD",
-        "trailingPE": 60.96,
-        "forwardPE": 31.69,
-        "priceToBook": 3.17,
-        "returnOnEquity": 0.0669,
-        "profitMargins": 0.1209,
-        "operatingMargins": 0.0538,
-        "debtToEquity": 0.59,
-        "currentRatio": 2.14,
-        "revenueGrowth": -0.2747,
-        "earningsGrowth": -7.1534,
-        "averageDailyVolume": 10400000
+        "trailingPE": 146.24,
+        "forwardPE": 45.65,
+        "priceToBook": 21.51,
+        "returnOnEquity": 0.15460000000000002,
+        "profitMargins": 0.0787,
+        "operatingMargins": 0.11199999999999999,
+        "debtToEquity": 0.55,
+        "currentRatio": 2.73,
+        "revenueGrowth": 0.3951,
+        "earningsGrowth": 23.0937,
+        "averageDailyVolume": 2740000
       },
       "scores": {
-        "fallOutRisk": 67.60850191508874,
+        "fallOutRisk": 43.2534048992618,
         "entryScore": null,
-        "undervaluedScore": 17.865765765765765,
-        "overvaluedScore": 78.0801801801802
-      },
-      "rank": 24,
-      "commentary": "stretched sector-relative earnings multiple"
-    },
-    {
-      "ticker": "HOOD",
-      "yahooTicker": "HOOD",
-      "security": "Robinhood Markets",
-      "sector": "Financials",
-      "subIndustry": "Investment Banking & Brokerage",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Menlo Park, California",
-      "cik": "0001783879",
-      "founded": "2013",
-      "currentMember": true,
-      "currentMemberSince": "2025-09-22",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2025-09-22",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 76650000000,
-        "price": 85.04,
-        "currency": "USD",
-        "trailingPE": 41.13,
-        "forwardPE": 33.5,
-        "priceToBook": 8.22,
-        "returnOnEquity": 0.2192,
-        "profitMargins": 0.40740000000000004,
-        "operatingMargins": 0.44049999999999995,
-        "debtToEquity": 1.87,
-        "currentRatio": 1.22,
-        "revenueGrowth": 0.1522,
-        "earningsGrowth": 0.0233,
-        "averageDailyVolume": 29190000
-      },
-      "scores": {
-        "fallOutRisk": 35.54060527593462,
-        "entryScore": null,
-        "undervaluedScore": 28.595495495495495,
-        "overvaluedScore": 77.90720720720721
+        "undervaluedScore": 23.92684464998949,
+        "overvaluedScore": 78.22156821526171
       },
       "rank": 25,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"

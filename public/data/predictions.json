@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T09:24:57.287Z",
+  "generatedAt": "2026-06-12T11:17:27.505Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.96978913346568,
+        "entryScore": 92.8514459381994,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.87808130260392,
+        "entryScore": 92.84849550378736,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1633,12 +1633,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 9210000000,
-        "price": 312.41,
+        "marketCap": 9480000000,
+        "price": 321.55,
         "currency": "USD",
-        "trailingPE": 41.76,
-        "forwardPE": 32.17,
-        "priceToBook": 7.2,
+        "trailingPE": 42.98,
+        "forwardPE": 33.11,
+        "priceToBook": 7.41,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1646,11 +1646,11 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 279450
+        "averageDailyVolume": 284350
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.98231496556102,
+        "entryScore": 86.07107236201071,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.92732714177761,
+        "entryScore": 85.89774134296104,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1729,16 +1729,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 8.79,
-        "dividendYield": 0.0051,
+        "dividendYield": 0.0046,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 668390000000,
-        "price": 1734.19,
+        "marketCap": 732100000000,
+        "price": 1899.48,
         "currency": "USD",
-        "trailingPE": 57.82,
-        "forwardPE": 34.88,
-        "priceToBook": 27.85,
+        "trailingPE": 63.33,
+        "forwardPE": 38.2,
+        "priceToBook": 30.5,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -1746,7 +1746,7 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1760000
+        "averageDailyVolume": 1790000
       },
       "scores": {
         "fallOutRisk": null,
@@ -1833,12 +1833,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 38880000000,
-        "price": 291.22,
+        "marketCap": 38640000000,
+        "price": 289.39,
         "currency": "USD",
-        "trailingPE": 69.19,
-        "forwardPE": 27.3,
-        "priceToBook": 36.14,
+        "trailingPE": 68.76,
+        "forwardPE": 27.13,
+        "priceToBook": 35.91,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.3331668192963,
+        "entryScore": 83.21482362403003,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.91584454193546,
+        "entryScore": 82.85667294430232,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.08878198543752,
+        "entryScore": 82.02961038780438,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.84958720209556,
+        "entryScore": 81.820001403279,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2458,13 +2458,13 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "FR",
-      "yahooTicker": "FR",
-      "security": "First Industrial Realty Trust",
-      "sector": "Real Estate",
-      "subIndustry": "Industrial REITs",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Chicago, Illinois",
+      "ticker": "PDD",
+      "yahooTicker": "PDD",
+      "security": "PDD Holdings",
+      "sector": "Technology",
+      "subIndustry": "EDP Services",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
       "cik": "",
       "founded": "",
       "currentMember": false,
@@ -2477,35 +2477,35 @@
         }
       ],
       "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.84,
-        "dividendYield": 0.0292,
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8600000000,
-        "price": 62.79,
+        "marketCap": 115720000000,
+        "price": 81.3,
         "currency": "USD",
-        "trailingPE": 24.32,
-        "forwardPE": 33.17,
-        "priceToBook": 3.02,
-        "returnOnEquity": 0.1266,
-        "profitMargins": 0.4595,
-        "operatingMargins": 0.4121,
-        "debtToEquity": 0.94,
-        "currentRatio": 3.36,
-        "revenueGrowth": 0.1003,
-        "earningsGrowth": 1.9724000000000002,
-        "averageDailyVolume": 950180
+        "trailingPE": 8.86,
+        "forwardPE": 6.53,
+        "priceToBook": 1.89,
+        "returnOnEquity": 0.2552,
+        "profitMargins": 0.2186,
+        "operatingMargins": 0.2214,
+        "debtToEquity": 0.01,
+        "currentRatio": 2.54,
+        "revenueGrowth": 0.16690000000000002,
+        "earningsGrowth": -0.10369999999999999,
+        "averageDailyVolume": 8850000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.61644826293656,
+        "entryScore": 81.53919491879358,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     }
   ],
   "undervalued": [

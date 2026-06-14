@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T05:34:57.526Z",
+  "generatedAt": "2026-06-14T07:36:23.381Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -143,7 +143,7 @@
         "averageDailyVolume": 10610000
       },
       "scores": {
-        "fallOutRisk": 92.89008994997018,
+        "fallOutRisk": 92.9100500298105,
         "entryScore": null,
         "undervaluedScore": 59.556277056277054,
         "overvaluedScore": 36.298701298701296
@@ -202,56 +202,6 @@
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
-      "ticker": "TAP",
-      "yahooTicker": "TAP",
-      "security": "Molson Coors Beverage Company",
-      "sector": "Consumer Staples",
-      "subIndustry": "Brewers",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Chicago, Illinois",
-      "cik": "0000024545",
-      "founded": "2005 (Molson 1786, Coors 1873)",
-      "currentMember": true,
-      "currentMemberSince": "1976-06-30",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1976-06-30",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.37,
-        "dividendYield": 0.057,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 7840000000,
-        "price": 41.58,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 8.39,
-        "priceToBook": 0.74,
-        "returnOnEquity": -0.18230000000000002,
-        "profitMargins": -0.1885,
-        "operatingMargins": 0.1369,
-        "debtToEquity": 0.64,
-        "currentRatio": 0.54,
-        "revenueGrowth": 0.0204,
-        "earningsGrowth": 0.3468,
-        "averageDailyVolume": 3160000
-      },
-      "scores": {
-        "fallOutRisk": 91.52851439977186,
-        "entryScore": null,
-        "undervaluedScore": 73.18127705627705,
-        "overvaluedScore": 19.796401515151516
-      },
-      "rank": 5,
-      "commentary": "smaller market-cap profile, thin profitability"
-    },
-    {
       "ticker": "LYB",
       "yahooTicker": "LYB",
       "security": "LyondellBasell",
@@ -298,7 +248,7 @@
         "undervaluedScore": 67.4,
         "overvaluedScore": 28.800000000000004
       },
-      "rank": 6,
+      "rank": 5,
       "commentary": "thin profitability, negative earnings growth"
     },
     {
@@ -352,8 +302,58 @@
         "undervaluedScore": 57.8,
         "overvaluedScore": 37.6
       },
-      "rank": 7,
+      "rank": 6,
       "commentary": "thin profitability, negative earnings growth"
+    },
+    {
+      "ticker": "TAP",
+      "yahooTicker": "TAP",
+      "security": "Molson Coors Beverage Company",
+      "sector": "Consumer Staples",
+      "subIndustry": "Brewers",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Chicago, Illinois",
+      "cik": "0000024545",
+      "founded": "2005 (Molson 1786, Coors 1873)",
+      "currentMember": true,
+      "currentMemberSince": "1976-06-30",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1976-06-30",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.37,
+        "dividendYield": 0.057,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 7840000000,
+        "price": 41.58,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 8.39,
+        "priceToBook": 0.74,
+        "returnOnEquity": -0.18230000000000002,
+        "profitMargins": -0.1885,
+        "operatingMargins": 0.1369,
+        "debtToEquity": 0.64,
+        "currentRatio": 0.54,
+        "revenueGrowth": 0.0204,
+        "earningsGrowth": 0.3468,
+        "averageDailyVolume": 3160000
+      },
+      "scores": {
+        "fallOutRisk": 91.2359744796122,
+        "entryScore": null,
+        "undervaluedScore": 73.19466991341992,
+        "overvaluedScore": 19.483901515151516
+      },
+      "rank": 7,
+      "commentary": "smaller market-cap profile, thin profitability"
     },
     {
       "ticker": "CAG",
@@ -3343,7 +3343,7 @@
         "price": 34.51,
         "currency": "USD",
         "trailingPE": 8.48,
-        "forwardPE": 10.91,
+        "forwardPE": 10.93,
         "priceToBook": 1.97,
         "returnOnEquity": 0.2369,
         "profitMargins": 0.12,

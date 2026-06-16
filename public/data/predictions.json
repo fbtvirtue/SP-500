@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T11:48:19.082Z",
+  "generatedAt": "2026-06-16T13:45:52.916Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.76860570151301,
+        "entryScore": 93.70943410387987,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.11552048843019,
+        "entryScore": 88.08593468961362,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.56158709217772,
+        "entryScore": 86.47282969572802,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1633,12 +1633,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 9370000000,
-        "price": 317.97,
+        "marketCap": 9630000000,
+        "price": 326.57,
         "currency": "USD",
-        "trailingPE": 42.5,
-        "forwardPE": 32.74,
-        "priceToBook": 7.33,
+        "trailingPE": 43.65,
+        "forwardPE": 33.63,
+        "priceToBook": 7.53,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1646,11 +1646,11 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 286140
+        "averageDailyVolume": 285780
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.13125057773887,
+        "entryScore": 86.30876537063827,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1733,12 +1733,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 718250000000,
-        "price": 1863.55,
+        "marketCap": 721040000000,
+        "price": 1870.8,
         "currency": "USD",
-        "trailingPE": 62.14,
-        "forwardPE": 37.48,
-        "priceToBook": 29.93,
+        "trailingPE": 62.38,
+        "forwardPE": 37.62,
+        "priceToBook": 30.04,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -1746,7 +1746,7 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1800000
+        "averageDailyVolume": 1820000
       },
       "scores": {
         "fallOutRisk": null,
@@ -1833,12 +1833,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 37760000000,
-        "price": 282.85,
+        "marketCap": 38190000000,
+        "price": 286.03,
         "currency": "USD",
-        "trailingPE": 67.21,
-        "forwardPE": 26.52,
-        "priceToBook": 35.1,
+        "trailingPE": 67.96,
+        "forwardPE": 26.81,
+        "priceToBook": 35.49,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -1846,7 +1846,7 @@
         "currentRatio": 3.13,
         "revenueGrowth": 0.9643,
         "earningsGrowth": 4.4032,
-        "averageDailyVolume": 1110000
+        "averageDailyVolume": 1120000
       },
       "scores": {
         "fallOutRisk": null,
@@ -2108,56 +2108,6 @@
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
-      "ticker": "WTS",
-      "yahooTicker": "WTS",
-      "security": "Watts Water Technologies",
-      "sector": "Industrials",
-      "subIndustry": "Building Products",
-      "sourceIndex": "S&P 400",
-      "headquarters": "North Andover, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.19,
-        "dividendYield": 0.0066,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 11130000000,
-        "price": 333.28,
-        "currency": "USD",
-        "trailingPE": 30.47,
-        "forwardPE": 25.61,
-        "priceToBook": 5.31,
-        "returnOnEquity": 0.1894,
-        "profitMargins": 0.1432,
-        "operatingMargins": 0.1955,
-        "debtToEquity": 0.09,
-        "currentRatio": 2.72,
-        "revenueGrowth": 0.2138,
-        "earningsGrowth": 0.34590000000000004,
-        "averageDailyVolume": 290790
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 83.42544654375305,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 18,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
       "ticker": "SN",
       "yahooTicker": "SN",
       "security": "SharkNinja",
@@ -2201,6 +2151,56 @@
       "scores": {
         "fallOutRisk": null,
         "entryScore": 83.40995286300257,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 18,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "WTS",
+      "yahooTicker": "WTS",
+      "security": "Watts Water Technologies",
+      "sector": "Industrials",
+      "subIndustry": "Building Products",
+      "sourceIndex": "S&P 400",
+      "headquarters": "North Andover, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.19,
+        "dividendYield": 0.0066,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 11130000000,
+        "price": 333.28,
+        "currency": "USD",
+        "trailingPE": 30.47,
+        "forwardPE": 25.61,
+        "priceToBook": 5.31,
+        "returnOnEquity": 0.1894,
+        "profitMargins": 0.1432,
+        "operatingMargins": 0.1955,
+        "debtToEquity": 0.09,
+        "currentRatio": 2.72,
+        "revenueGrowth": 0.2138,
+        "earningsGrowth": 0.34590000000000004,
+        "averageDailyVolume": 290790
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.36627494611992,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.30342233017818,
+        "entryScore": 83.24425073254504,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.0099060119127,
+        "entryScore": 81.95073441427957,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2433,12 +2433,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 7580000000,
-        "price": 49.52,
+        "marketCap": 7720000000,
+        "price": 50.4,
         "currency": "USD",
-        "trailingPE": 17.26,
-        "forwardPE": 19.55,
-        "priceToBook": 13,
+        "trailingPE": 17.57,
+        "forwardPE": 19.9,
+        "priceToBook": 13.23,
         "returnOnEquity": 1.126,
         "profitMargins": 0.6595,
         "operatingMargins": 0.21350000000000002,
@@ -2446,11 +2446,11 @@
         "currentRatio": 5.81,
         "revenueGrowth": 0.6956,
         "earningsGrowth": 2.9743,
-        "averageDailyVolume": 2170000
+        "averageDailyVolume": 2180000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.81692777679399,
+        "entryScore": 81.87609937442713,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

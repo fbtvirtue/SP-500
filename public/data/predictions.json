@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T01:54:50.292Z",
+  "generatedAt": "2026-06-16T03:09:56.351Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.9175485243454,
+        "entryScore": 92.92742994727031,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 90.96901606515796,
+        "entryScore": 90.97889748808286,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.94288126405789,
+        "entryScore": 88.9527626869828,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.01990776945027,
+        "entryScore": 88.05634889079705,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1608,56 +1608,6 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "FN",
-      "yahooTicker": "FN",
-      "security": "Fabrinet",
-      "sector": "Information Technology",
-      "subIndustry": "Electronic Manufacturing Services",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Santa Clara, California",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 21890000000,
-        "price": 611.01,
-        "currency": "USD",
-        "trailingPE": 52.54,
-        "forwardPE": 35.56,
-        "priceToBook": 9.5,
-        "returnOnEquity": 0.1999,
-        "profitMargins": 0.09939999999999999,
-        "operatingMargins": 0.0977,
-        "debtToEquity": 0,
-        "currentRatio": 2.55,
-        "revenueGrowth": 0.39289999999999997,
-        "earningsGrowth": 0.5349,
-        "averageDailyVolume": 824310
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 86.02596596115221,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 8,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
       "ticker": "KRYS",
       "yahooTicker": "KRYS",
       "security": "Krystal Biotech, Inc.",
@@ -1700,12 +1650,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.96261058966934,
+        "entryScore": 86.1016647789223,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 8,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+    },
+    {
+      "ticker": "FN",
+      "yahooTicker": "FN",
+      "security": "Fabrinet",
+      "sector": "Information Technology",
+      "subIndustry": "Electronic Manufacturing Services",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Santa Clara, California",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 21890000000,
+        "price": 611.01,
+        "currency": "USD",
+        "trailingPE": 52.54,
+        "forwardPE": 35.56,
+        "priceToBook": 9.5,
+        "returnOnEquity": 0.1999,
+        "profitMargins": 0.09939999999999999,
+        "operatingMargins": 0.0977,
+        "debtToEquity": 0,
+        "currentRatio": 2.55,
+        "revenueGrowth": 0.39289999999999997,
+        "earningsGrowth": 0.5349,
+        "averageDailyVolume": 824310
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 86.03584738407712,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 9,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "ASML",
@@ -1750,7 +1750,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.26143421795595,
+        "entryScore": 85.27131564088086,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1808,56 +1808,6 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "ALNY",
-      "yahooTicker": "ALNY",
-      "security": "Alnylam Pharmaceuticals",
-      "sector": "Health Care",
-      "subIndustry": "Biotechnology",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 37760000000,
-        "price": 282.85,
-        "currency": "USD",
-        "trailingPE": 67.21,
-        "forwardPE": 26.52,
-        "priceToBook": 35.1,
-        "returnOnEquity": 0.9693999999999999,
-        "profitMargins": 0.1346,
-        "operatingMargins": 0.1754,
-        "debtToEquity": 2.76,
-        "currentRatio": 3.13,
-        "revenueGrowth": 0.9643,
-        "earningsGrowth": 4.4032,
-        "averageDailyVolume": 1110000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 84.75317590664342,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 12,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
-    },
-    {
       "ticker": "OHI",
       "yahooTicker": "OHI",
       "security": "Omega Healthcare Investors",
@@ -1900,12 +1850,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.73073977455248,
+        "entryScore": 84.74062119747738,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 12,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "ALNY",
+      "yahooTicker": "ALNY",
+      "security": "Alnylam Pharmaceuticals",
+      "sector": "Health Care",
+      "subIndustry": "Biotechnology",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 37760000000,
+        "price": 282.85,
+        "currency": "USD",
+        "trailingPE": 67.21,
+        "forwardPE": 26.52,
+        "priceToBook": 35.1,
+        "returnOnEquity": 0.9693999999999999,
+        "profitMargins": 0.1346,
+        "operatingMargins": 0.1754,
+        "debtToEquity": 2.76,
+        "currentRatio": 3.13,
+        "revenueGrowth": 0.9643,
+        "earningsGrowth": 4.4032,
+        "averageDailyVolume": 1110000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 84.68748475604662,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 13,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "RMBS",
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.51569021088045,
+        "entryScore": 84.52557163380536,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.47034697086357,
+        "entryScore": 84.48022839378848,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.46022174352457,
+        "entryScore": 84.39876400077068,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.72178144507292,
+        "entryScore": 83.77679511124327,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.41556512082818,
+        "entryScore": 83.42544654375305,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.01448336131006,
+        "entryScore": 83.02436478423496,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2308,6 +2308,56 @@
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
+      "ticker": "NYT",
+      "yahooTicker": "NYT",
+      "security": "New York Times Company",
+      "sector": "Communication Services",
+      "subIndustry": "Publishing",
+      "sourceIndex": "S&P 400",
+      "headquarters": "New York City, New York",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": "2010-12-17",
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": "2010-12-17"
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.77,
+        "dividendYield": 0.0105,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 11880000000,
+        "price": 73.38,
+        "currency": "USD",
+        "trailingPE": 31.52,
+        "forwardPE": 22.95,
+        "priceToBook": 5.94,
+        "returnOnEquity": 0.1968,
+        "profitMargins": 0.1318,
+        "operatingMargins": 0.1684,
+        "debtToEquity": 0,
+        "currentRatio": 1.6,
+        "revenueGrowth": 0.12,
+        "earningsGrowth": 0.775,
+        "averageDailyVolume": 2020000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.12360549149847,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 22,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
       "ticker": "CTRE",
       "yahooTicker": "CTRE",
       "security": "CareTrust REIT",
@@ -2354,7 +2404,7 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 22,
+      "rank": 23,
       "commentary": "solid profitability, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2400,62 +2450,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.66332648458602,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 23,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
-    },
-    {
-      "ticker": "NYT",
-      "yahooTicker": "NYT",
-      "security": "New York Times Company",
-      "sector": "Communication Services",
-      "subIndustry": "Publishing",
-      "sourceIndex": "S&P 400",
-      "headquarters": "New York City, New York",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": "2010-12-17",
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": "2010-12-17"
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.77,
-        "dividendYield": 0.0105,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 11880000000,
-        "price": 73.38,
-        "currency": "USD",
-        "trailingPE": 31.52,
-        "forwardPE": 22.95,
-        "priceToBook": 5.94,
-        "returnOnEquity": 0.1968,
-        "profitMargins": 0.1318,
-        "operatingMargins": 0.1684,
-        "debtToEquity": 0,
-        "currentRatio": 1.6,
-        "revenueGrowth": 0.12,
-        "earningsGrowth": 0.775,
-        "averageDailyVolume": 2020000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 81.6523680333045,
+        "entryScore": 81.66899878271116,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 24,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
       "ticker": "EVR",
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.6471772067436,
+        "entryScore": 81.65705862966851,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

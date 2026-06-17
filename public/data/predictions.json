@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T13:15:22.169Z",
+  "generatedAt": "2026-06-17T15:05:45.717Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -193,7 +193,7 @@
         "averageDailyVolume": 2520000
       },
       "scores": {
-        "fallOutRisk": 92.08619725206552,
+        "fallOutRisk": 92.13731701837516,
         "entryScore": null,
         "undervaluedScore": 59.533749133749126,
         "overvaluedScore": 34.716839916839916
@@ -547,7 +547,7 @@
         "averageDailyVolume": 1880000
       },
       "scores": {
-        "fallOutRisk": 86.05440885381005,
+        "fallOutRisk": 86.07794017480973,
         "entryScore": null,
         "undervaluedScore": 64.52544302544302,
         "overvaluedScore": 28.996732996732998
@@ -1147,7 +1147,7 @@
         "averageDailyVolume": 1180000
       },
       "scores": {
-        "fallOutRisk": 78.34817101763208,
+        "fallOutRisk": 78.38711941101086,
         "entryScore": null,
         "undervaluedScore": 52.14019404019404,
         "overvaluedScore": 49.210741510741514
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.76860570151301,
+        "entryScore": 93.73901990269646,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.43565220289314,
+        "entryScore": 93.46523800170971,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.92742994727031,
+        "entryScore": 92.95701574608687,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.99717729316393,
+        "entryScore": 88.02676309198048,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.5911728909943,
+        "entryScore": 86.62075868981086,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1633,12 +1633,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 9630000000,
-        "price": 326.57,
+        "marketCap": 9920000000,
+        "price": 336.42,
         "currency": "USD",
-        "trailingPE": 43.65,
-        "forwardPE": 33.63,
-        "priceToBook": 7.53,
+        "trailingPE": 44.97,
+        "forwardPE": 34.64,
+        "priceToBook": 7.76,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1646,11 +1646,11 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 285780
+        "averageDailyVolume": 287980
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.27917957182171,
+        "entryScore": 86.60462335880396,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.94708998762741,
+        "entryScore": 85.91750418881084,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1729,16 +1729,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 8.79,
-        "dividendYield": 0.004699999999999999,
+        "dividendYield": 0.0046,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 721040000000,
-        "price": 1870.8,
+        "marketCap": 740580000000,
+        "price": 1921.48,
         "currency": "USD",
-        "trailingPE": 62.38,
-        "forwardPE": 37.62,
-        "priceToBook": 30.04,
+        "trailingPE": 64.07,
+        "forwardPE": 38.43,
+        "priceToBook": 30.86,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -1746,7 +1746,7 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1820000
+        "averageDailyVolume": 1830000
       },
       "scores": {
         "fallOutRisk": null,
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.78479995933998,
+        "entryScore": 84.79468138226488,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.71103539866081,
+        "entryScore": 84.74062119747738,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1883,12 +1883,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 38190000000,
-        "price": 286.03,
+        "marketCap": 37740000000,
+        "price": 282.68,
         "currency": "USD",
-        "trailingPE": 67.96,
-        "forwardPE": 26.81,
-        "priceToBook": 35.49,
+        "trailingPE": 67.17,
+        "forwardPE": 26.5,
+        "priceToBook": 35.08,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.2804208055044,
+        "entryScore": 84.31000660432099,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.7344239558326,
+        "entryScore": 83.70483815701604,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.48461814138619,
+        "entryScore": 83.51420394020278,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.27383653136161,
+        "entryScore": 83.33300812899475,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2308,54 +2308,54 @@
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "NYT",
-      "yahooTicker": "NYT",
-      "security": "New York Times Company",
-      "sector": "Communication Services",
-      "subIndustry": "Publishing",
-      "sourceIndex": "S&P 400",
-      "headquarters": "New York City, New York",
-      "cik": "",
+      "ticker": "TGTX",
+      "yahooTicker": "TGTX",
+      "security": "TG Therapeutics, Inc.",
+      "sector": "Health Care",
+      "subIndustry": "Biotechnology",
+      "sourceIndex": "S&P 600",
+      "headquarters": "Morrisville, North Carolina",
+      "cik": "0001001316",
       "founded": "",
       "currentMember": false,
       "currentMemberSince": null,
-      "lastLeftAt": "2010-12-17",
+      "lastLeftAt": null,
       "membershipHistory": [
         {
           "enteredAt": null,
-          "leftAt": "2010-12-17"
+          "leftAt": null
         }
       ],
       "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.77,
-        "dividendYield": 0.0104,
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 11950000000,
-        "price": 73.83,
+        "marketCap": 7930000000,
+        "price": 51.78,
         "currency": "USD",
-        "trailingPE": 31.71,
-        "forwardPE": 23.09,
-        "priceToBook": 5.97,
-        "returnOnEquity": 0.1968,
-        "profitMargins": 0.1318,
-        "operatingMargins": 0.1684,
-        "debtToEquity": 0,
-        "currentRatio": 1.6,
-        "revenueGrowth": 0.12,
-        "earningsGrowth": 0.775,
-        "averageDailyVolume": 2000000
+        "trailingPE": 18.04,
+        "forwardPE": 20.45,
+        "priceToBook": 13.59,
+        "returnOnEquity": 1.126,
+        "profitMargins": 0.6595,
+        "operatingMargins": 0.21350000000000002,
+        "debtToEquity": 1.29,
+        "currentRatio": 5.81,
+        "revenueGrowth": 0.6956,
+        "earningsGrowth": 2.9743,
+        "averageDailyVolume": 2180000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.21236288794817,
+        "entryScore": 82.31988635667565,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 22,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
       "ticker": "CTRE",
@@ -2400,62 +2400,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 81.92114861546301,
+        "entryScore": 82.03949181072926,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 23,
       "commentary": "solid profitability, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "TGTX",
-      "yahooTicker": "TGTX",
-      "security": "TG Therapeutics, Inc.",
-      "sector": "Health Care",
-      "subIndustry": "Biotechnology",
-      "sourceIndex": "S&P 600",
-      "headquarters": "Morrisville, North Carolina",
-      "cik": "0001001316",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 7720000000,
-        "price": 50.4,
-        "currency": "USD",
-        "trailingPE": 17.57,
-        "forwardPE": 19.9,
-        "priceToBook": 13.23,
-        "returnOnEquity": 1.126,
-        "profitMargins": 0.6595,
-        "operatingMargins": 0.21350000000000002,
-        "debtToEquity": 1.29,
-        "currentRatio": 5.81,
-        "revenueGrowth": 0.6956,
-        "earningsGrowth": 2.9743,
-        "averageDailyVolume": 2180000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 81.90568517324371,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 24,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
       "ticker": "EVR",
@@ -2504,8 +2454,58 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 25,
+      "rank": 24,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "DUOL",
+      "yahooTicker": "DUOL",
+      "security": "Duolingo",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Education Services",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Pittsburgh, Pennsylvania",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 5970000000,
+        "price": 128.07,
+        "currency": "USD",
+        "trailingPE": 14.91,
+        "forwardPE": 37.63,
+        "priceToBook": 4.31,
+        "returnOnEquity": 0.3696,
+        "profitMargins": 0.38439999999999996,
+        "operatingMargins": 0.1478,
+        "debtToEquity": 0.07,
+        "currentRatio": 2.62,
+        "revenueGrowth": 0.26530000000000004,
+        "earningsGrowth": 0.22460000000000002,
+        "averageDailyVolume": 1710000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 81.68399447422381,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 25,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     }
   ],
   "undervalued": [
@@ -3455,7 +3455,7 @@
         "averageDailyVolume": 1210000
       },
       "scores": {
-        "fallOutRisk": 72.3995659408833,
+        "fallOutRisk": 72.43770290940002,
         "entryScore": null,
         "undervaluedScore": 75.78688248688249,
         "overvaluedScore": 23.217067617067617
@@ -3659,7 +3659,7 @@
         "averageDailyVolume": 1560000
       },
       "scores": {
-        "fallOutRisk": 59.0981471568298,
+        "fallOutRisk": 59.11031852976067,
         "entryScore": null,
         "undervaluedScore": 75.28879318879319,
         "overvaluedScore": 27.361518661518662
@@ -3759,7 +3759,7 @@
         "averageDailyVolume": 1960000
       },
       "scores": {
-        "fallOutRisk": 63.12262211543649,
+        "fallOutRisk": 63.175364731470246,
         "entryScore": null,
         "undervaluedScore": 74.74553014553014,
         "overvaluedScore": 20.245738045738047
@@ -3861,7 +3861,7 @@
         "averageDailyVolume": 6780000
       },
       "scores": {
-        "fallOutRisk": 39.235390756947645,
+        "fallOutRisk": 39.26297920225761,
         "entryScore": null,
         "undervaluedScore": 19.161538461538463,
         "overvaluedScore": 89.81025641025641
@@ -3911,7 +3911,7 @@
         "averageDailyVolume": 1110000
       },
       "scores": {
-        "fallOutRisk": 44.34633186848755,
+        "fallOutRisk": 44.369863189487226,
         "entryScore": null,
         "undervaluedScore": 16.715661815661818,
         "overvaluedScore": 85.17387387387387
@@ -4311,7 +4311,7 @@
         "averageDailyVolume": 7110000
       },
       "scores": {
-        "fallOutRisk": 24.1753370597682,
+        "fallOutRisk": 24.217531152595203,
         "entryScore": null,
         "undervaluedScore": 25.921582021582026,
         "overvaluedScore": 80.71778041778042
@@ -4761,7 +4761,7 @@
         "averageDailyVolume": 2530000
       },
       "scores": {
-        "fallOutRisk": 27.015214062519448,
+        "fallOutRisk": 27.050916756449993,
         "entryScore": null,
         "undervaluedScore": 28.967013167013167,
         "overvaluedScore": 79.30512820512821
@@ -4911,7 +4911,7 @@
         "averageDailyVolume": 2390000
       },
       "scores": {
-        "fallOutRisk": 24.26195924159996,
+        "fallOutRisk": 24.31957040680606,
         "entryScore": null,
         "undervaluedScore": 26.063379863379865,
         "overvaluedScore": 78.92366102366103
@@ -5011,7 +5011,7 @@
         "averageDailyVolume": 5800000
       },
       "scores": {
-        "fallOutRisk": 26.925497030886255,
+        "fallOutRisk": 26.939291253541235,
         "entryScore": null,
         "undervaluedScore": 28.83577863577864,
         "overvaluedScore": 78.28605088605089

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T12:36:57.517Z",
+  "generatedAt": "2026-06-20T13:34:11.019Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -735,7 +735,7 @@
         "price": 36.82,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 13.99,
+        "forwardPE": 13.91,
         "priceToBook": 1.32,
         "returnOnEquity": -0.1604,
         "profitMargins": -0.1336,
@@ -4470,6 +4470,56 @@
       "commentary": "elevated book multiple"
     },
     {
+      "ticker": "ARES",
+      "yahooTicker": "ARES",
+      "security": "Ares Management",
+      "sector": "Financials",
+      "subIndustry": "Asset Management & Custody Banks",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Los Angeles, California",
+      "cik": "0001176948",
+      "founded": "1977",
+      "currentMember": true,
+      "currentMemberSince": "2025-12-11",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2025-12-11",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 4.94,
+        "dividendYield": 0.0382,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 42660000000,
+        "price": 129.34,
+        "currency": "USD",
+        "trailingPE": 59.88,
+        "forwardPE": 17.41,
+        "priceToBook": 11.37,
+        "returnOnEquity": 0.1363,
+        "profitMargins": 0.0699,
+        "operatingMargins": 0.2913,
+        "debtToEquity": 3.51,
+        "currentRatio": 0.47,
+        "revenueGrowth": 0.30260000000000004,
+        "earningsGrowth": 7.7973,
+        "averageDailyVolume": 3100000
+      },
+      "scores": {
+        "fallOutRisk": 54.543353327801164,
+        "entryScore": null,
+        "undervaluedScore": 26.246263910969795,
+        "overvaluedScore": 80.17535771065184
+      },
+      "rank": 15,
+      "commentary": "elevated book multiple"
+    },
+    {
       "ticker": "VTR",
       "yahooTicker": "VTR",
       "security": "Ventas",
@@ -4516,58 +4566,8 @@
         "undervaluedScore": 20.826582740375844,
         "overvaluedScore": 80.11653895274583
       },
-      "rank": 15,
-      "commentary": "stretched sector-relative earnings multiple"
-    },
-    {
-      "ticker": "ARES",
-      "yahooTicker": "ARES",
-      "security": "Ares Management",
-      "sector": "Financials",
-      "subIndustry": "Asset Management & Custody Banks",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Los Angeles, California",
-      "cik": "0001176948",
-      "founded": "1977",
-      "currentMember": true,
-      "currentMemberSince": "2025-12-11",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2025-12-11",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 4.94,
-        "dividendYield": 0.0382,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 42660000000,
-        "price": 129.34,
-        "currency": "USD",
-        "trailingPE": 59.88,
-        "forwardPE": 17.41,
-        "priceToBook": 11.37,
-        "returnOnEquity": 0.1363,
-        "profitMargins": 0.0699,
-        "operatingMargins": 0.2913,
-        "debtToEquity": 3.51,
-        "currentRatio": 0.47,
-        "revenueGrowth": 0.30260000000000004,
-        "earningsGrowth": 7.7973,
-        "averageDailyVolume": 3100000
-      },
-      "scores": {
-        "fallOutRisk": 54.543353327801164,
-        "entryScore": null,
-        "undervaluedScore": 26.646263910969793,
-        "overvaluedScore": 79.77535771065183
-      },
       "rank": 16,
-      "commentary": "elevated book multiple"
+      "commentary": "stretched sector-relative earnings multiple"
     },
     {
       "ticker": "CL",
@@ -4649,7 +4649,7 @@
         "price": 400.49,
         "currency": "USD",
         "trailingPE": 365.88,
-        "forwardPE": 165.42,
+        "forwardPE": 166.07,
         "priceToBook": 17.88,
         "returnOnEquity": 0.048600000000000004,
         "profitMargins": 0.0395,

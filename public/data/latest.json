@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-21T23:30:06.596Z",
+  "generatedAt": "2026-06-22T00:46:11.087Z",
   "schedule": {
-    "nextSnapshotAt": "2026-06-22T00:30:06.596Z"
+    "nextSnapshotAt": "2026-06-22T01:46:11.087Z"
   },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
@@ -95,11 +95,6 @@
         "date": "2026-06-01",
         "ticker": "FDXF",
         "security": "FedEx Freight"
-      },
-      {
-        "date": "2026-05-07",
-        "ticker": "VEEV",
-        "security": "Veeva Systems"
       }
     ],
     "leftLast45Days": [
@@ -117,11 +112,6 @@
         "date": "2026-06-02",
         "ticker": "EPAM",
         "security": "EPAM Systems"
-      },
-      {
-        "date": "2026-05-07",
-        "ticker": "CTRA",
-        "security": "Coterra Energy"
       }
     ]
   }

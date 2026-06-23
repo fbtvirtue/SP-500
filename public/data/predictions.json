@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T18:42:02.536Z",
+  "generatedAt": "2026-06-23T19:36:41.767Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.65120326980403,
+        "entryScore": 93.68090624010105,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.82753131451892,
+        "entryScore": 92.85723428481595,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.45662628087538,
+        "entryScore": 92.48632925117242,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1529,16 +1529,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 8.79,
-        "dividendYield": 0.0046,
+        "dividendYield": 0.005,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 729040000000,
-        "price": 1891.54,
+        "marketCap": 683010000000,
+        "price": 1772.13,
         "currency": "USD",
-        "trailingPE": 63.07,
-        "forwardPE": 37.78,
-        "priceToBook": 30.38,
+        "trailingPE": 59.09,
+        "forwardPE": 35.41,
+        "priceToBook": 28.46,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -1546,7 +1546,7 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1860000
+        "averageDailyVolume": 1850000
       },
       "scores": {
         "fallOutRisk": null,
@@ -1683,12 +1683,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 430320000000,
-        "price": 404.43,
+        "marketCap": 390760000000,
+        "price": 367.26,
         "currency": "USD",
-        "trailingPE": 477.83,
-        "forwardPE": 133.67,
-        "priceToBook": 51.93,
+        "trailingPE": 433.91,
+        "forwardPE": 121.38,
+        "priceToBook": 47.16,
         "returnOnEquity": 0.1195,
         "profitMargins": 0.1837,
         "operatingMargins": 0.1827,
@@ -1696,7 +1696,7 @@
         "currentRatio": 6,
         "revenueGrowth": 0.2006,
         "earningsGrowth": 0.4863,
-        "averageDailyVolume": 11490000
+        "averageDailyVolume": 11570000
       },
       "scores": {
         "fallOutRisk": null,
@@ -1706,56 +1706,6 @@
       },
       "rank": 9,
       "commentary": "large-cap size, solid profitability, manageable leverage, Nasdaq-100 candidate"
-    },
-    {
-      "ticker": "KRYS",
-      "yahooTicker": "KRYS",
-      "security": "Krystal Biotech, Inc.",
-      "sector": "Health Care",
-      "subIndustry": "Biotechnology",
-      "sourceIndex": "S&P 600",
-      "headquarters": "Pittsburgh, Pennsylvania",
-      "cik": "0001711279",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 10150000000,
-        "price": 344.4,
-        "currency": "USD",
-        "trailingPE": 46.03,
-        "forwardPE": 35.48,
-        "priceToBook": 7.94,
-        "returnOnEquity": 0.19899999999999998,
-        "profitMargins": 0.5392,
-        "operatingMargins": 0.42810000000000004,
-        "debtToEquity": 0.01,
-        "currentRatio": 9.46,
-        "revenueGrowth": 0.3195,
-        "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 301500
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 86.68804916205906,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 10,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
       "ticker": "PDD",
@@ -1783,12 +1733,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 111420000000,
-        "price": 78.27,
+        "marketCap": 108990000000,
+        "price": 76.57,
         "currency": "USD",
-        "trailingPE": 8.53,
-        "forwardPE": 6.27,
-        "priceToBook": 1.82,
+        "trailingPE": 8.35,
+        "forwardPE": 6.15,
+        "priceToBook": 1.78,
         "returnOnEquity": 0.2552,
         "profitMargins": 0.2186,
         "operatingMargins": 0.2214,
@@ -1796,7 +1746,7 @@
         "currentRatio": 2.54,
         "revenueGrowth": 0.16690000000000002,
         "earningsGrowth": -0.10369999999999999,
-        "averageDailyVolume": 9000000
+        "averageDailyVolume": 8950000
       },
       "scores": {
         "fallOutRisk": null,
@@ -1804,8 +1754,58 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 11,
+      "rank": 10,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+    },
+    {
+      "ticker": "KRYS",
+      "yahooTicker": "KRYS",
+      "security": "Krystal Biotech, Inc.",
+      "sector": "Health Care",
+      "subIndustry": "Biotechnology",
+      "sourceIndex": "S&P 600",
+      "headquarters": "Pittsburgh, Pennsylvania",
+      "cik": "0001711279",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 9960000000,
+        "price": 337.91,
+        "currency": "USD",
+        "trailingPE": 45.17,
+        "forwardPE": 34.81,
+        "priceToBook": 7.79,
+        "returnOnEquity": 0.19899999999999998,
+        "profitMargins": 0.5392,
+        "operatingMargins": 0.42810000000000004,
+        "debtToEquity": 0.01,
+        "currentRatio": 9.46,
+        "revenueGrowth": 0.3195,
+        "earningsGrowth": 0.5327000000000001,
+        "averageDailyVolume": 295780
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 86.50983134027688,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 11,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
       "ticker": "SEIC",
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.46544839510025,
+        "entryScore": 86.49515136539728,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1983,12 +1983,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 37770000000,
-        "price": 282.88,
+        "marketCap": 38430000000,
+        "price": 287.84,
         "currency": "USD",
-        "trailingPE": 67.21,
-        "forwardPE": 26.52,
-        "priceToBook": 35.1,
+        "trailingPE": 68.39,
+        "forwardPE": 26.98,
+        "priceToBook": 35.72,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -1996,11 +1996,11 @@
         "currentRatio": 3.13,
         "revenueGrowth": 0.9643,
         "earningsGrowth": 4.4032,
-        "averageDailyVolume": 1130000
+        "averageDailyVolume": 1120000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.7329750832226,
+        "entryScore": 84.76267805351964,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.18876025124095,
+        "entryScore": 84.21846322153797,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2233,12 +2233,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 139160000000,
-        "price": 107.24,
+        "marketCap": 139850000000,
+        "price": 107.77,
         "currency": "USD",
-        "trailingPE": 105.42,
-        "forwardPE": 45.46,
-        "priceToBook": 11.16,
+        "trailingPE": 105.94,
+        "forwardPE": 45.68,
+        "priceToBook": 11.21,
         "returnOnEquity": 0.1131,
         "profitMargins": 0.10769999999999999,
         "operatingMargins": 0.1703,
@@ -2246,7 +2246,7 @@
         "currentRatio": 6.2,
         "revenueGrowth": 0.3432,
         "earningsGrowth": 0.1533,
-        "averageDailyVolume": 10080000
+        "averageDailyVolume": 10070000
       },
       "scores": {
         "fallOutRisk": null,
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.63697262583402,
+        "entryScore": 83.69637856642808,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.54208767485872,
+        "entryScore": 83.57179064515576,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2483,12 +2483,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8470000000.000001,
-        "price": 55.31,
+        "marketCap": 8230000000,
+        "price": 53.75,
         "currency": "USD",
-        "trailingPE": 19.27,
-        "forwardPE": 20.77,
-        "priceToBook": 14.52,
+        "trailingPE": 18.73,
+        "forwardPE": 20.19,
+        "priceToBook": 14.11,
         "returnOnEquity": 1.126,
         "profitMargins": 0.6595,
         "operatingMargins": 0.21350000000000002,
@@ -2496,11 +2496,11 @@
         "currentRatio": 5.81,
         "revenueGrowth": 0.6956,
         "earningsGrowth": 2.9743,
-        "averageDailyVolume": 2230000
+        "averageDailyVolume": 2190000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.86163080593775,
+        "entryScore": 82.65371001385853,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

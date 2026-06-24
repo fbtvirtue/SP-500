@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T19:32:57.164Z",
+  "generatedAt": "2026-06-24T20:34:49.711Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.97192996010286,
+        "entryScore": 92.96200932518222,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.87103686538798,
+        "entryScore": 92.900739835685,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.95167578582588,
+        "entryScore": 91.94175515090525,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 90.42291920068357,
+        "entryScore": 90.41299856576293,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.08483588640095,
+        "entryScore": 89.07491525148032,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1583,12 +1583,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 683010000000,
-        "price": 1772.13,
+        "marketCap": 679410000000,
+        "price": 1762.77,
         "currency": "USD",
-        "trailingPE": 59.09,
-        "forwardPE": 35.41,
-        "priceToBook": 28.46,
+        "trailingPE": 58.78,
+        "forwardPE": 35.22,
+        "priceToBook": 28.31,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -1596,11 +1596,11 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1850000
+        "averageDailyVolume": 1860000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.08338774808583,
+        "entryScore": 89.0734671131652,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1683,12 +1683,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 390760000000,
-        "price": 367.26,
+        "marketCap": 382060000000,
+        "price": 359.08,
         "currency": "USD",
-        "trailingPE": 433.91,
-        "forwardPE": 121.38,
-        "priceToBook": 47.16,
+        "trailingPE": 424.24,
+        "forwardPE": 118.59,
+        "priceToBook": 46.11,
         "returnOnEquity": 0.1195,
         "profitMargins": 0.1837,
         "operatingMargins": 0.1827,
@@ -1696,66 +1696,16 @@
         "currentRatio": 6,
         "revenueGrowth": 0.2006,
         "earningsGrowth": 0.4863,
-        "averageDailyVolume": 11570000
+        "averageDailyVolume": 11620000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.33525505636342,
+        "entryScore": 87.31993329946863,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 9,
       "commentary": "large-cap size, solid profitability, manageable leverage, Nasdaq-100 candidate"
-    },
-    {
-      "ticker": "PDD",
-      "yahooTicker": "PDD",
-      "security": "PDD Holdings",
-      "sector": "Technology",
-      "subIndustry": "EDP Services",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 108990000000,
-        "price": 76.57,
-        "currency": "USD",
-        "trailingPE": 8.35,
-        "forwardPE": 6.15,
-        "priceToBook": 1.78,
-        "returnOnEquity": 0.2552,
-        "profitMargins": 0.2186,
-        "operatingMargins": 0.2214,
-        "debtToEquity": 0.01,
-        "currentRatio": 2.54,
-        "revenueGrowth": 0.16690000000000002,
-        "earningsGrowth": -0.10369999999999999,
-        "averageDailyVolume": 8950000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 86.63761423131861,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 10,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "KRYS",
@@ -1783,12 +1733,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 9960000000,
-        "price": 337.91,
+        "marketCap": 10250000000,
+        "price": 347.63,
         "currency": "USD",
-        "trailingPE": 45.17,
-        "forwardPE": 34.81,
-        "priceToBook": 7.79,
+        "trailingPE": 46.47,
+        "forwardPE": 35.81,
+        "priceToBook": 8.02,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1796,16 +1746,66 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 295780
+        "averageDailyVolume": 295760
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.59894025116797,
+        "entryScore": 86.88604931921763,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 10,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+    },
+    {
+      "ticker": "PDD",
+      "yahooTicker": "PDD",
+      "security": "PDD Holdings",
+      "sector": "Technology",
+      "subIndustry": "EDP Services",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 107810000000,
+        "price": 75.74,
+        "currency": "USD",
+        "trailingPE": 8.26,
+        "forwardPE": 6.11,
+        "priceToBook": 1.76,
+        "returnOnEquity": 0.2552,
+        "profitMargins": 0.2186,
+        "operatingMargins": 0.2214,
+        "debtToEquity": 0.01,
+        "currentRatio": 2.54,
+        "revenueGrowth": 0.16690000000000002,
+        "earningsGrowth": -0.10369999999999999,
+        "averageDailyVolume": 8960000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 86.63761423131861,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 11,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "SEIC",
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.31693354361511,
+        "entryScore": 86.27730993839742,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.90180061239208,
+        "entryScore": 85.89187997747143,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.82543264411237,
+        "entryScore": 84.8743355386035,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.77284453467824,
+        "entryScore": 84.76292389975761,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2033,12 +2033,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 38430000000,
-        "price": 287.84,
+        "marketCap": 39260000000,
+        "price": 294.06,
         "currency": "USD",
-        "trailingPE": 68.39,
-        "forwardPE": 26.98,
-        "priceToBook": 35.72,
+        "trailingPE": 69.87,
+        "forwardPE": 27.57,
+        "priceToBook": 36.49,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.76267805351964,
+        "entryScore": 84.75275741859899,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.46018421949896,
+        "entryScore": 84.46018421949897,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2150,7 +2150,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.28054591173404,
+        "entryScore": 84.2706252768134,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.27042980076195,
+        "entryScore": 84.23080619554429,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2233,12 +2233,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 139850000000,
-        "price": 107.77,
+        "marketCap": 148150000000,
+        "price": 114.17,
         "currency": "USD",
-        "trailingPE": 105.94,
-        "forwardPE": 45.68,
-        "priceToBook": 11.21,
+        "trailingPE": 112.23,
+        "forwardPE": 48.4,
+        "priceToBook": 11.88,
         "returnOnEquity": 0.1131,
         "profitMargins": 0.10769999999999999,
         "operatingMargins": 0.1703,
@@ -2246,11 +2246,11 @@
         "currentRatio": 6.2,
         "revenueGrowth": 0.3432,
         "earningsGrowth": 0.1533,
-        "averageDailyVolume": 10070000
+        "averageDailyVolume": 10100000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.03259177722728,
+        "entryScore": 84.01771082484633,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.87459638821025,
+        "entryScore": 83.86467575328962,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.67822912607093,
+        "entryScore": 82.66830849115028,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

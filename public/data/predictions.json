@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T21:31:08.525Z",
+  "generatedAt": "2026-06-24T22:28:47.760Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1308,56 +1308,6 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "CDE",
-      "yahooTicker": "CDE",
-      "security": "Coeur Mining",
-      "sector": "Materials",
-      "subIndustry": "Gold",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Chicago, Illinois",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.02,
-        "dividendYield": 0.0012,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 16879999999.999998,
-        "price": 16.32,
-        "currency": "USD",
-        "trailingPE": 13.49,
-        "forwardPE": 8.45,
-        "priceToBook": 1.62,
-        "returnOnEquity": 0.1215,
-        "profitMargins": 0.3116,
-        "operatingMargins": 0.40869999999999995,
-        "debtToEquity": 0.07,
-        "currentRatio": 3.73,
-        "revenueGrowth": 1.3776,
-        "earningsGrowth": 4.5188,
-        "averageDailyVolume": 29600000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 92.96200932518222,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 2,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
       "ticker": "MLI",
       "yahooTicker": "MLI",
       "security": "Mueller Industries",
@@ -1401,6 +1351,56 @@
       "scores": {
         "fallOutRisk": null,
         "entryScore": 92.900739835685,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 2,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "CDE",
+      "yahooTicker": "CDE",
+      "security": "Coeur Mining",
+      "sector": "Materials",
+      "subIndustry": "Gold",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Chicago, Illinois",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.02,
+        "dividendYield": 0.0013,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 16000000000,
+        "price": 15.47,
+        "currency": "USD",
+        "trailingPE": 12.79,
+        "forwardPE": 8.01,
+        "priceToBook": 1.54,
+        "returnOnEquity": 0.1215,
+        "profitMargins": 0.3116,
+        "operatingMargins": 0.40869999999999995,
+        "debtToEquity": 0.07,
+        "currentRatio": 3.73,
+        "revenueGrowth": 1.3776,
+        "earningsGrowth": 4.5188,
+        "averageDailyVolume": 28240000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 92.78379150340004,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.30374644607318,
+        "entryScore": 88.33344941637021,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

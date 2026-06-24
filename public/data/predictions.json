@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T09:06:27.186Z",
+  "generatedAt": "2026-06-24T11:02:04.300Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.68090624010105,
+        "entryScore": 93.70515256889504,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.85723428481595,
+        "entryScore": 92.87103686538798,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1508,56 +1508,6 @@
       "commentary": "large-cap size, solid profitability, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "ASML",
-      "yahooTicker": "ASML",
-      "security": "ASML Holding",
-      "sector": "Technology",
-      "subIndustry": "Industrial Machinery",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 8.79,
-        "dividendYield": 0.005,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 683010000000,
-        "price": 1772.13,
-        "currency": "USD",
-        "trailingPE": 59.09,
-        "forwardPE": 35.41,
-        "priceToBook": 28.46,
-        "returnOnEquity": 0.5412,
-        "profitMargins": 0.29710000000000003,
-        "operatingMargins": 0.3479,
-        "debtToEquity": 0.13,
-        "currentRatio": 1.36,
-        "revenueGrowth": 0.2588,
-        "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1850000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 89.09338774808583,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 6,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
-    },
-    {
       "ticker": "CRS",
       "yahooTicker": "CRS",
       "security": "Carpenter Technology",
@@ -1600,12 +1550,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.047169042793,
+        "entryScore": 89.08483588640095,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 6,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "ASML",
+      "yahooTicker": "ASML",
+      "security": "ASML Holding",
+      "sector": "Technology",
+      "subIndustry": "Industrial Machinery",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 8.79,
+        "dividendYield": 0.005,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 683010000000,
+        "price": 1772.13,
+        "currency": "USD",
+        "trailingPE": 59.09,
+        "forwardPE": 35.41,
+        "priceToBook": 28.46,
+        "returnOnEquity": 0.5412,
+        "profitMargins": 0.29710000000000003,
+        "operatingMargins": 0.3479,
+        "debtToEquity": 0.13,
+        "currentRatio": 1.36,
+        "revenueGrowth": 0.2588,
+        "earningsGrowth": 0.32420000000000004,
+        "averageDailyVolume": 1850000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 89.08338774808583,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 7,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "NBIX",
@@ -1750,7 +1750,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.6476142313186,
+        "entryScore": 86.63761423131861,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.82591888397528,
+        "entryScore": 84.85513561440939,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.68843355378007,
+        "entryScore": 84.56492374259905,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.21846322153797,
+        "entryScore": 84.2110238601679,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.90099360220516,
+        "entryScore": 83.89107296728453,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.57179064515576,
+        "entryScore": 83.62645100507245,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

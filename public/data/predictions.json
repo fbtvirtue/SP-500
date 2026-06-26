@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T20:34:38.475Z",
+  "generatedAt": "2026-06-26T21:30:03.242Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,61 +1300,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.21998440922194,
+        "entryScore": 93.25960801443959,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 1,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "CDE",
-      "yahooTicker": "CDE",
-      "security": "Coeur Mining",
-      "sector": "Materials",
-      "subIndustry": "Gold",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Chicago, Illinois",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.02,
-        "dividendYield": 0.0013,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 16540000000,
-        "price": 15.99,
-        "currency": "USD",
-        "trailingPE": 13.22,
-        "forwardPE": 8.32,
-        "priceToBook": 1.59,
-        "returnOnEquity": 0.1215,
-        "profitMargins": 0.3116,
-        "operatingMargins": 0.40869999999999995,
-        "debtToEquity": 0.07,
-        "currentRatio": 3.73,
-        "revenueGrowth": 1.3776,
-        "earningsGrowth": 4.5188,
-        "averageDailyVolume": 27370000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 92.50737202471748,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 2,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1400,7 +1350,57 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.50611158654881,
+        "entryScore": 92.5754381620635,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 2,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "CDE",
+      "yahooTicker": "CDE",
+      "security": "Coeur Mining",
+      "sector": "Materials",
+      "subIndustry": "Gold",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Chicago, Illinois",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.02,
+        "dividendYield": 0.0013,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 16540000000,
+        "price": 15.99,
+        "currency": "USD",
+        "trailingPE": 13.22,
+        "forwardPE": 8.32,
+        "priceToBook": 1.59,
+        "returnOnEquity": 0.1215,
+        "profitMargins": 0.3116,
+        "operatingMargins": 0.40869999999999995,
+        "debtToEquity": 0.07,
+        "currentRatio": 3.73,
+        "revenueGrowth": 1.3776,
+        "earningsGrowth": 4.5188,
+        "averageDailyVolume": 27370000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 92.51729265963812,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.4650569816853,
+        "entryScore": 92.50468058690295,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 90.472404506357,
+        "entryScore": 90.48232514127763,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.04521228118327,
+        "entryScore": 89.05513291610393,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1579,16 +1579,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 8.79,
-        "dividendYield": 0.0048,
+        "dividendYield": 0.0049,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 709630000000,
-        "price": 1841.18,
+        "marketCap": 691680000000,
+        "price": 1794.62,
         "currency": "USD",
-        "trailingPE": 61.39,
-        "forwardPE": 36.69,
-        "priceToBook": 29.57,
+        "trailingPE": 59.84,
+        "forwardPE": 35.76,
+        "priceToBook": 28.82,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -1596,11 +1596,11 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1860000
+        "averageDailyVolume": 1870000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.04370520840328,
+        "entryScore": 89.05362584332393,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1658,56 +1658,6 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "ARM",
-      "yahooTicker": "ARM",
-      "security": "Arm Holdings",
-      "sector": "Technology",
-      "subIndustry": "Semiconductors",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 369960000000,
-        "price": 347.71,
-        "currency": "USD",
-        "trailingPE": 410.81,
-        "forwardPE": 114.84,
-        "priceToBook": 44.65,
-        "returnOnEquity": 0.1195,
-        "profitMargins": 0.1837,
-        "operatingMargins": 0.1827,
-        "debtToEquity": 0.06,
-        "currentRatio": 6,
-        "revenueGrowth": 0.2006,
-        "earningsGrowth": 0.4863,
-        "averageDailyVolume": 11580000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 87.28477027273257,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 9,
-      "commentary": "large-cap size, solid profitability, manageable leverage, Nasdaq-100 candidate"
-    },
-    {
       "ticker": "KRYS",
       "yahooTicker": "KRYS",
       "security": "Krystal Biotech, Inc.",
@@ -1733,12 +1683,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 10610000000,
-        "price": 359.93,
+        "marketCap": 10970000000,
+        "price": 372.25,
         "currency": "USD",
-        "trailingPE": 48.11,
-        "forwardPE": 37.08,
-        "priceToBook": 8.3,
+        "trailingPE": 49.76,
+        "forwardPE": 38.4,
+        "priceToBook": 8.58,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1746,16 +1696,66 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 297450
+        "averageDailyVolume": 298890
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.93553462489106,
+        "entryScore": 87.36129684397011,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 9,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+    },
+    {
+      "ticker": "ARM",
+      "yahooTicker": "ARM",
+      "security": "Arm Holdings",
+      "sector": "Technology",
+      "subIndustry": "Semiconductors",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 355660000000,
+        "price": 334.27,
+        "currency": "USD",
+        "trailingPE": 394.93,
+        "forwardPE": 110.4,
+        "priceToBook": 42.92,
+        "returnOnEquity": 0.1195,
+        "profitMargins": 0.1837,
+        "operatingMargins": 0.1827,
+        "debtToEquity": 0.06,
+        "currentRatio": 6,
+        "revenueGrowth": 0.2006,
+        "earningsGrowth": 0.4863,
+        "averageDailyVolume": 11250000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 87.2946909076532,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 10,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+      "commentary": "large-cap size, solid profitability, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "PDD",
@@ -1783,12 +1783,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 104340000000,
-        "price": 73.3,
+        "marketCap": 108960000000,
+        "price": 76.55,
         "currency": "USD",
-        "trailingPE": 7.99,
-        "forwardPE": 5.91,
-        "priceToBook": 1.7,
+        "trailingPE": 8.34,
+        "forwardPE": 6.17,
+        "priceToBook": 1.78,
         "returnOnEquity": 0.2552,
         "profitMargins": 0.2186,
         "operatingMargins": 0.2214,
@@ -1796,11 +1796,11 @@
         "currentRatio": 2.54,
         "revenueGrowth": 0.16690000000000002,
         "earningsGrowth": -0.10369999999999999,
-        "averageDailyVolume": 8920000
+        "averageDailyVolume": 8860000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.63761423131861,
+        "entryScore": 86.64753486623925,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.95057726513011,
+        "entryScore": 86.01990384064482,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.68395918539224,
+        "entryScore": 85.69387982031287,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.83219154080744,
+        "entryScore": 84.8718151460251,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.82485023293009,
+        "entryScore": 84.83477086785072,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2033,12 +2033,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 39140000000,
-        "price": 293.17,
+        "marketCap": 38900000000,
+        "price": 291.37,
         "currency": "USD",
-        "trailingPE": 69.66,
-        "forwardPE": 27.48,
-        "priceToBook": 36.38,
+        "trailingPE": 69.23,
+        "forwardPE": 27.31,
+        "priceToBook": 36.16,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.75275741859899,
+        "entryScore": 84.76267805351964,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.45870479905133,
+        "entryScore": 84.46862543397197,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2150,7 +2150,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.45020465011345,
+        "entryScore": 84.46012528503408,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.26050916584131,
+        "entryScore": 84.300132771059,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2233,12 +2233,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 144840000000,
-        "price": 111.62,
+        "marketCap": 151640000000,
+        "price": 116.86,
         "currency": "USD",
-        "trailingPE": 109.72,
-        "forwardPE": 47.31,
-        "priceToBook": 11.61,
+        "trailingPE": 114.87,
+        "forwardPE": 49.54,
+        "priceToBook": 12.16,
         "returnOnEquity": 0.1131,
         "profitMargins": 0.10769999999999999,
         "operatingMargins": 0.1703,
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.04295321666176,
+        "entryScore": 84.05287385158239,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.96364636463646,
+        "entryScore": 84.00326996985413,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.80460989238975,
+        "entryScore": 83.8442334976074,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.6508694296928,
+        "entryScore": 83.63108709431641,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2450,7 +2450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.23760762074988,
+        "entryScore": 83.24752825567052,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2458,22 +2458,22 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "GME",
-      "yahooTicker": "GME",
-      "security": "GameStop",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Computer & Electronics Retail",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Grapevine, Texas",
-      "cik": "",
+      "ticker": "TGTX",
+      "yahooTicker": "TGTX",
+      "security": "TG Therapeutics, Inc.",
+      "sector": "Health Care",
+      "subIndustry": "Biotechnology",
+      "sourceIndex": "S&P 600",
+      "headquarters": "Morrisville, North Carolina",
+      "cik": "0001001316",
       "founded": "",
       "currentMember": false,
       "currentMemberSince": null,
-      "lastLeftAt": "2016-04-25",
+      "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "2007-12-13",
-          "leftAt": "2016-04-25"
+          "enteredAt": null,
+          "leftAt": null
         }
       ],
       "dividend": {
@@ -2483,29 +2483,29 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 9640000000,
-        "price": 21.49,
+        "marketCap": 8550000000.000001,
+        "price": 55.83,
         "currency": "USD",
-        "trailingPE": 16.37,
-        "forwardPE": 17.76,
-        "priceToBook": 1.65,
-        "returnOnEquity": 0.1409,
-        "profitMargins": 0.2045,
-        "operatingMargins": 0.10710000000000001,
-        "debtToEquity": 0.74,
-        "currentRatio": 12.4,
-        "revenueGrowth": 0.1405,
-        "earningsGrowth": 6.3088999999999995,
-        "averageDailyVolume": 7630000
+        "trailingPE": 19.46,
+        "forwardPE": 20.97,
+        "priceToBook": 14.66,
+        "returnOnEquity": 1.126,
+        "profitMargins": 0.6595,
+        "operatingMargins": 0.21350000000000002,
+        "debtToEquity": 1.29,
+        "currentRatio": 5.81,
+        "revenueGrowth": 0.6956,
+        "earningsGrowth": 2.9743,
+        "averageDailyVolume": 2240000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.66830849115028,
+        "entryScore": 82.77252189504665,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     }
   ],
   "undervalued": [

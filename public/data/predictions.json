@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T00:43:16.049Z",
+  "generatedAt": "2026-06-26T01:43:53.088Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -431,12 +431,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 28940000000,
-        "price": 99.86,
+        "marketCap": 28170000000,
+        "price": 97.19,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 27.06,
-        "priceToBook": 5.13,
+        "forwardPE": 36.71,
+        "priceToBook": 4.99,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -444,13 +444,13 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8330000
+        "averageDailyVolume": 8390000
       },
       "scores": {
-        "fallOutRisk": 88.267700228456,
+        "fallOutRisk": 88.82546915275879,
         "entryScore": null,
-        "undervaluedScore": 17.12121212121212,
-        "overvaluedScore": 81.66666666666666
+        "undervaluedScore": 16.645021645021643,
+        "overvaluedScore": 82.14285714285714
       },
       "rank": 9,
       "commentary": "thin profitability"
@@ -2551,7 +2551,7 @@
         "averageDailyVolume": 8470000
       },
       "scores": {
-        "fallOutRisk": 41.593327952329076,
+        "fallOutRisk": 41.52360683679123,
         "entryScore": null,
         "undervaluedScore": 92.34656084656085,
         "overvaluedScore": 3.644179894179894
@@ -2751,7 +2751,7 @@
         "averageDailyVolume": 2710000
       },
       "scores": {
-        "fallOutRisk": 52.05684646642969,
+        "fallOutRisk": 51.98712535089184,
         "entryScore": null,
         "undervaluedScore": 85.16666666666667,
         "overvaluedScore": 16.666666666666664
@@ -4116,6 +4116,56 @@
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
+      "ticker": "ECHO",
+      "yahooTicker": "ECHO",
+      "security": "EchoStar",
+      "sector": "Communication Services",
+      "subIndustry": "Wireless Telecommunication Services",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Englewood, Colorado",
+      "cik": "0001415404",
+      "founded": "2008",
+      "currentMember": true,
+      "currentMemberSince": "2026-03-23",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2026-03-23",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 28170000000,
+        "price": 97.19,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 36.71,
+        "priceToBook": 4.99,
+        "returnOnEquity": -1.1265,
+        "profitMargins": -0.9756,
+        "operatingMargins": 0.0219,
+        "debtToEquity": 5.2,
+        "currentRatio": 0.3,
+        "revenueGrowth": -0.052300000000000006,
+        "earningsGrowth": 0.2816,
+        "averageDailyVolume": 8390000
+      },
+      "scores": {
+        "fallOutRisk": 88.82546915275879,
+        "entryScore": null,
+        "undervaluedScore": 16.645021645021643,
+        "overvaluedScore": 82.14285714285714
+      },
+      "rank": 8,
+      "commentary": "stretched sector-relative earnings multiple"
+    },
+    {
       "ticker": "CNP",
       "yahooTicker": "CNP",
       "security": "CenterPoint Energy",
@@ -4157,12 +4207,12 @@
         "averageDailyVolume": 5110000
       },
       "scores": {
-        "fallOutRisk": 69.65978004151061,
+        "fallOutRisk": 69.59005892597276,
         "entryScore": null,
         "undervaluedScore": 17.333333333333332,
         "overvaluedScore": 82
       },
-      "rank": 8,
+      "rank": 9,
       "commentary": "premium valuation versus the universe"
     },
     {
@@ -4212,58 +4262,8 @@
         "undervaluedScore": 18.48790322580645,
         "overvaluedScore": 81.9194734345351
       },
-      "rank": 9,
-      "commentary": "elevated book multiple"
-    },
-    {
-      "ticker": "ECHO",
-      "yahooTicker": "ECHO",
-      "security": "EchoStar",
-      "sector": "Communication Services",
-      "subIndustry": "Wireless Telecommunication Services",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Englewood, Colorado",
-      "cik": "0001415404",
-      "founded": "2008",
-      "currentMember": true,
-      "currentMemberSince": "2026-03-23",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2026-03-23",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 28940000000,
-        "price": 99.86,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 27.06,
-        "priceToBook": 5.13,
-        "returnOnEquity": -1.1265,
-        "profitMargins": -0.9756,
-        "operatingMargins": 0.0219,
-        "debtToEquity": 5.2,
-        "currentRatio": 0.3,
-        "revenueGrowth": -0.052300000000000006,
-        "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8330000
-      },
-      "scores": {
-        "fallOutRisk": 88.267700228456,
-        "entryScore": null,
-        "undervaluedScore": 17.12121212121212,
-        "overvaluedScore": 81.66666666666666
-      },
       "rank": 10,
-      "commentary": "premium valuation versus the universe"
+      "commentary": "elevated book multiple"
     },
     {
       "ticker": "VRT",

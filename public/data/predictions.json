@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T03:07:56.790Z",
+  "generatedAt": "2026-06-28T05:31:44.201Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.5566377174099,
+        "entryScore": 93.51005952720529,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.57669860023218,
+        "entryScore": 92.5119158797241,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.51603222146944,
+        "entryScore": 92.42831894703642,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,12 +1450,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.38586870571486,
+        "entryScore": 92.31497876028126,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 4,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "ALAB",
+      "yahooTicker": "ALAB",
+      "security": "Astera Labs",
+      "sector": "Technology",
+      "subIndustry": "Semiconductors",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 67150000000.00001,
+        "price": 391.74,
+        "currency": "USD",
+        "trailingPE": 264.05,
+        "forwardPE": 89.04,
+        "priceToBook": 44.91,
+        "returnOnEquity": 0.21109999999999998,
+        "profitMargins": 0.2672,
+        "operatingMargins": 0.2236,
+        "debtToEquity": 0.03,
+        "currentRatio": 11.3,
+        "revenueGrowth": 0.934,
+        "earningsGrowth": 1.4821,
+        "averageDailyVolume": 6080000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 91.24781826008687,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 5,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "RGLD",
@@ -1500,11 +1550,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 90.48232514127763,
+        "entryScore": 90.41021653290126,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 5,
+      "rank": 6,
       "commentary": "large-cap size, solid profitability, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1550,62 +1600,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 89.11453885669798,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 6,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "ASML",
-      "yahooTicker": "ASML",
-      "security": "ASML Holding",
-      "sector": "Technology",
-      "subIndustry": "Industrial Machinery",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 8.79,
-        "dividendYield": 0.0049,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 691680000000,
-        "price": 1794.62,
-        "currency": "USD",
-        "trailingPE": 59.84,
-        "forwardPE": 35.76,
-        "priceToBook": 28.82,
-        "returnOnEquity": 0.5412,
-        "profitMargins": 0.29710000000000003,
-        "operatingMargins": 0.3479,
-        "debtToEquity": 0.13,
-        "currentRatio": 1.36,
-        "revenueGrowth": 0.2588,
-        "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1870000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 89.05362584332393,
+        "entryScore": 88.89077131897258,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 7,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "NBIX",
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.37307302158789,
+        "entryScore": 88.27315371491432,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.30189090337605,
+        "entryScore": 87.16662645982926,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1708,11 +1708,11 @@
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
-      "ticker": "ARM",
-      "yahooTicker": "ARM",
-      "security": "Arm Holdings",
+      "ticker": "NBIS",
+      "yahooTicker": "NBIS",
+      "security": "Nebius Group",
       "sector": "Technology",
-      "subIndustry": "Semiconductors",
+      "subIndustry": "Computer Services",
       "sourceIndex": "Nasdaq-100",
       "headquarters": "",
       "cik": "",
@@ -1733,78 +1733,28 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 355660000000,
-        "price": 334.27,
+        "marketCap": 60470000000,
+        "price": 240.3,
         "currency": "USD",
-        "trailingPE": 394.93,
-        "forwardPE": 110.4,
-        "priceToBook": 42.92,
-        "returnOnEquity": 0.1195,
-        "profitMargins": 0.1837,
-        "operatingMargins": 0.1827,
-        "debtToEquity": 0.06,
-        "currentRatio": 6,
-        "revenueGrowth": 0.2006,
-        "earningsGrowth": 0.4863,
-        "averageDailyVolume": 11250000
+        "trailingPE": 80.17,
+        "forwardPE": null,
+        "priceToBook": 8.43,
+        "returnOnEquity": 0.1451,
+        "profitMargins": 0.9527,
+        "operatingMargins": -0.6879000000000001,
+        "debtToEquity": 1.31,
+        "currentRatio": 8.33,
+        "revenueGrowth": 6.215199999999999,
+        "earningsGrowth": 5.2139999999999995,
+        "averageDailyVolume": 17470000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.27936915075843,
+        "entryScore": 86.78129280319337,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 10,
-      "commentary": "large-cap size, solid profitability, manageable leverage, Nasdaq-100 candidate"
-    },
-    {
-      "ticker": "PDD",
-      "yahooTicker": "PDD",
-      "security": "PDD Holdings",
-      "sector": "Technology",
-      "subIndustry": "EDP Services",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 108960000000,
-        "price": 76.55,
-        "currency": "USD",
-        "trailingPE": 8.34,
-        "forwardPE": 6.17,
-        "priceToBook": 1.78,
-        "returnOnEquity": 0.2552,
-        "profitMargins": 0.2186,
-        "operatingMargins": 0.2214,
-        "debtToEquity": 0.01,
-        "currentRatio": 2.54,
-        "revenueGrowth": 0.16690000000000002,
-        "earningsGrowth": -0.10369999999999999,
-        "averageDailyVolume": 8860000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 86.64753486623925,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 11,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
@@ -1850,11 +1800,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.07930978123886,
+        "entryScore": 86.00462172237087,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 12,
+      "rank": 11,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1900,21 +1850,21 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.63447387971881,
+        "entryScore": 85.5350605998815,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 13,
+      "rank": 12,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "STRL",
-      "yahooTicker": "STRL",
-      "security": "Sterling Infrastructure",
-      "sector": "Industrials",
-      "subIndustry": "Construction & Engineering",
+      "ticker": "OHI",
+      "yahooTicker": "OHI",
+      "security": "Omega Healthcare Investors",
+      "sector": "Real Estate",
+      "subIndustry": "Health Care REITs",
       "sourceIndex": "S&P 400",
-      "headquarters": "The Woodlands, Texas",
+      "headquarters": "",
       "cik": "",
       "founded": "",
       "currentMember": false,
@@ -1927,34 +1877,34 @@
         }
       ],
       "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
+        "hasDividend": true,
+        "dividendRate": 2.68,
+        "dividendYield": 0.0558,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 24690000000,
-        "price": 804.76,
+        "marketCap": 14310000000,
+        "price": 48.06,
         "currency": "USD",
-        "trailingPE": 71.95,
-        "forwardPE": 33.46,
-        "priceToBook": 20.76,
-        "returnOnEquity": 0.3475,
-        "profitMargins": 0.1202,
-        "operatingMargins": 0.1741,
-        "debtToEquity": 0.29,
-        "currentRatio": 1.1,
-        "revenueGrowth": 0.9159,
-        "earningsGrowth": 1.4186,
-        "averageDailyVolume": 628440
+        "trailingPE": 23.3,
+        "forwardPE": 23.87,
+        "priceToBook": 2.76,
+        "returnOnEquity": 0.1242,
+        "profitMargins": 0.4954,
+        "operatingMargins": 0.6452,
+        "debtToEquity": 0.86,
+        "currentRatio": 2.46,
+        "revenueGrowth": 0.1685,
+        "earningsGrowth": 0.3925,
+        "averageDailyVolume": 2310000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.80506789755367,
+        "entryScore": 84.67988461756853,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 14,
+      "rank": 13,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2000,21 +1950,21 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.76267805351964,
+        "entryScore": 84.65099298506452,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 15,
+      "rank": 14,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
-      "ticker": "OHI",
-      "yahooTicker": "OHI",
-      "security": "Omega Healthcare Investors",
-      "sector": "Real Estate",
-      "subIndustry": "Health Care REITs",
+      "ticker": "STRL",
+      "yahooTicker": "STRL",
+      "security": "Sterling Infrastructure",
+      "sector": "Industrials",
+      "subIndustry": "Construction & Engineering",
       "sourceIndex": "S&P 400",
-      "headquarters": "",
+      "headquarters": "The Woodlands, Texas",
       "cik": "",
       "founded": "",
       "currentMember": false,
@@ -2027,34 +1977,34 @@
         }
       ],
       "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.68,
-        "dividendYield": 0.0558,
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 14310000000,
-        "price": 48.06,
+        "marketCap": 24690000000,
+        "price": 804.76,
         "currency": "USD",
-        "trailingPE": 23.3,
-        "forwardPE": 23.87,
-        "priceToBook": 2.76,
-        "returnOnEquity": 0.1242,
-        "profitMargins": 0.4954,
-        "operatingMargins": 0.6452,
-        "debtToEquity": 0.86,
-        "currentRatio": 2.46,
-        "revenueGrowth": 0.1685,
-        "earningsGrowth": 0.3925,
-        "averageDailyVolume": 2310000
+        "trailingPE": 71.95,
+        "forwardPE": 33.46,
+        "priceToBook": 20.76,
+        "returnOnEquity": 0.3475,
+        "profitMargins": 0.1202,
+        "operatingMargins": 0.1741,
+        "debtToEquity": 0.29,
+        "currentRatio": 1.1,
+        "revenueGrowth": 0.9159,
+        "earningsGrowth": 1.4186,
+        "averageDailyVolume": 628440
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.75300326483698,
+        "entryScore": 84.62143516954765,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 16,
+      "rank": 15,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2100,11 +2050,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.46862543397197,
+        "entryScore": 84.41801261528994,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 17,
+      "rank": 16,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2150,11 +2100,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.46012528503408,
+        "entryScore": 84.32211645309499,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 18,
+      "rank": 17,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2200,62 +2150,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.35953871165304,
+        "entryScore": 84.25712415604742,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 19,
+      "rank": 18,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
-    },
-    {
-      "ticker": "SHOP",
-      "yahooTicker": "SHOP",
-      "security": "Shopify",
-      "sector": "Technology",
-      "subIndustry": "Computer Software",
-      "sourceIndex": "Nasdaq-100",
-      "headquarters": "",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 151640000000,
-        "price": 116.86,
-        "currency": "USD",
-        "trailingPE": 114.87,
-        "forwardPE": 49.54,
-        "priceToBook": 12.16,
-        "returnOnEquity": 0.1131,
-        "profitMargins": 0.10769999999999999,
-        "operatingMargins": 0.1703,
-        "debtToEquity": 0.01,
-        "currentRatio": 6.2,
-        "revenueGrowth": 0.3432,
-        "earningsGrowth": 0.1533,
-        "averageDailyVolume": 10200000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 84.03755209468761,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 20,
-      "commentary": "large-cap size, solid profitability, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "GMED",
@@ -2300,12 +2200,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.03297294015115,
+        "entryScore": 83.8408870553988,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 21,
+      "rank": 19,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "ASML",
+      "yahooTicker": "ASML",
+      "security": "ASML Holding",
+      "sector": "Technology",
+      "subIndustry": "Industrial Machinery",
+      "sourceIndex": "Nasdaq-100",
+      "headquarters": "",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 8.79,
+        "dividendYield": 0.0049,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 691680000000,
+        "price": 1794.62,
+        "currency": "USD",
+        "trailingPE": 59.84,
+        "forwardPE": 35.76,
+        "priceToBook": 28.82,
+        "returnOnEquity": 0.5412,
+        "profitMargins": 0.29710000000000003,
+        "operatingMargins": 0.3479,
+        "debtToEquity": 0.13,
+        "currentRatio": 1.36,
+        "revenueGrowth": 0.2588,
+        "earningsGrowth": 0.32420000000000004,
+        "averageDailyVolume": 1870000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.64480198019803,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 20,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
     },
     {
       "ticker": "WTS",
@@ -2350,11 +2300,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.7551245867163,
+        "entryScore": 83.61223127547024,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 22,
+      "rank": 21,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2400,11 +2350,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.69049303491046,
+        "entryScore": 83.61011768371074,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 23,
+      "rank": 22,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2450,12 +2400,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.06931043388833,
+        "entryScore": 82.99848324247354,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 23,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "GME",
+      "yahooTicker": "GME",
+      "security": "GameStop",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Computer & Electronics Retail",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Grapevine, Texas",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": "2016-04-25",
+      "membershipHistory": [
+        {
+          "enteredAt": "2007-12-13",
+          "leftAt": "2016-04-25"
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 9760000000,
+        "price": 21.76,
+        "currency": "USD",
+        "trailingPE": 16.58,
+        "forwardPE": 17.98,
+        "priceToBook": 1.67,
+        "returnOnEquity": 0.1409,
+        "profitMargins": 0.2045,
+        "operatingMargins": 0.10710000000000001,
+        "debtToEquity": 0.74,
+        "currentRatio": 12.4,
+        "revenueGrowth": 0.1405,
+        "earningsGrowth": 6.3088999999999995,
+        "averageDailyVolume": 7630000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.67527836515632,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 24,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "TGTX",
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.74281892474963,
+        "entryScore": 82.67499261432387,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

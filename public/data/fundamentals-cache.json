@@ -32382,14 +32382,14 @@
     }
   },
   "ECHO": {
-    "fetchedAt": "2026-06-29T03:08:57.624Z",
+    "fetchedAt": "2026-06-30T05:23:40.249Z",
     "metrics": {
-      "marketCap": 28200000000,
-      "price": 97.3,
+      "marketCap": 29220000000,
+      "price": 100.84,
       "currency": "USD",
       "trailingPE": null,
-      "forwardPE": 36.75,
-      "priceToBook": 5,
+      "forwardPE": 38.09,
+      "priceToBook": 5.18,
       "returnOnEquity": -1.1265,
       "profitMargins": -0.9756,
       "operatingMargins": 0.0219,
@@ -32397,7 +32397,7 @@
       "currentRatio": 0.3,
       "revenueGrowth": -0.052300000000000006,
       "earningsGrowth": 0.2816,
-      "averageDailyVolume": 8320000,
+      "averageDailyVolume": 8560000,
       "dividendRate": null,
       "dividendYield": null
     }
@@ -32482,6 +32482,27 @@
       "revenueGrowth": 0.6346,
       "earningsGrowth": 0.3795,
       "averageDailyVolume": 27180000,
+      "dividendRate": null,
+      "dividendYield": null
+    }
+  },
+  "HONA": {
+    "fetchedAt": "2026-06-30T05:23:41.005Z",
+    "metrics": {
+      "marketCap": null,
+      "price": 220.19,
+      "currency": "USD",
+      "trailingPE": null,
+      "forwardPE": null,
+      "priceToBook": null,
+      "returnOnEquity": null,
+      "profitMargins": null,
+      "operatingMargins": null,
+      "debtToEquity": null,
+      "currentRatio": null,
+      "revenueGrowth": null,
+      "earningsGrowth": null,
+      "averageDailyVolume": 450590,
       "dividendRate": null,
       "dividendYield": null
     }

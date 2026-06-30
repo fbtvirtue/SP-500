@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-29T23:22:44.713Z",
+  "generatedAt": "2026-06-30T00:41:06.452Z",
   "schedule": {
-    "nextSnapshotAt": "2026-06-30T00:22:44.713Z"
+    "nextSnapshotAt": "2026-06-30T01:41:06.452Z"
   },
   "methodology": {
     "disclaimer": "This dashboard uses transparent heuristics inspired by common bank and sell-side screening practice. It is not an official S&P Dow Jones methodology and is not investment advice.",
@@ -56,30 +56,8 @@
     }
   ],
   "recentChanges": {
-    "joinedLast7Days": [
-      {
-        "date": "2026-06-22",
-        "ticker": "MRVL",
-        "security": "Marvell Technology"
-      },
-      {
-        "date": "2026-06-22",
-        "ticker": "FLEX",
-        "security": "Flex Ltd."
-      }
-    ],
-    "leftLast7Days": [
-      {
-        "date": "2026-06-22",
-        "ticker": "POOL",
-        "security": "Pool Corporation"
-      },
-      {
-        "date": "2026-06-22",
-        "ticker": "CPB",
-        "security": "Campbell's"
-      }
-    ],
+    "joinedLast7Days": [],
+    "leftLast7Days": [],
     "joinedLast45Days": [
       {
         "date": "2026-06-22",

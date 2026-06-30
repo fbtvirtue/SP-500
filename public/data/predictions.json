@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T14:52:46.895Z",
+  "generatedAt": "2026-06-30T15:51:15.083Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,7 +1300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 93.95472355882585,
+        "entryScore": 93.94482256872683,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.04818034130894,
+        "entryScore": 92.03827935120994,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.83148278142318,
+        "entryScore": 88.82158179132418,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.94533318482146,
+        "entryScore": 85.93543219472244,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.67988461756853,
+        "entryScore": 84.6699836274695,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.35872407774053,
+        "entryScore": 84.34882308764152,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2150,7 +2150,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.32211645309499,
+        "entryScore": 84.31221546299598,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.61011768371074,
+        "entryScore": 83.60021669361173,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,61 +2300,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.5320800804182,
+        "entryScore": 83.5221790903192,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 21,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "WTS",
-      "yahooTicker": "WTS",
-      "security": "Watts Water Technologies",
-      "sector": "Industrials",
-      "subIndustry": "Building Products",
-      "sourceIndex": "S&P 400",
-      "headquarters": "North Andover, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.19,
-        "dividendYield": 0.0060999999999999995,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 11970000000,
-        "price": 358.37,
-        "currency": "USD",
-        "trailingPE": 32.77,
-        "forwardPE": 27.54,
-        "priceToBook": 5.71,
-        "returnOnEquity": 0.1894,
-        "profitMargins": 0.1432,
-        "operatingMargins": 0.1955,
-        "debtToEquity": 0.09,
-        "currentRatio": 2.72,
-        "revenueGrowth": 0.2138,
-        "earningsGrowth": 0.34590000000000004,
-        "averageDailyVolume": 375710
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 83.52329846914611,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 22,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2404,6 +2354,56 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
+      "rank": 22,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "WTS",
+      "yahooTicker": "WTS",
+      "security": "Watts Water Technologies",
+      "sector": "Industrials",
+      "subIndustry": "Building Products",
+      "sourceIndex": "S&P 400",
+      "headquarters": "North Andover, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.19,
+        "dividendYield": 0.0060999999999999995,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 11970000000,
+        "price": 358.37,
+        "currency": "USD",
+        "trailingPE": 32.77,
+        "forwardPE": 27.54,
+        "priceToBook": 5.71,
+        "returnOnEquity": 0.1894,
+        "profitMargins": 0.1432,
+        "operatingMargins": 0.1955,
+        "debtToEquity": 0.09,
+        "currentRatio": 2.72,
+        "revenueGrowth": 0.2138,
+        "earningsGrowth": 0.34590000000000004,
+        "averageDailyVolume": 375710
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.51339747904711,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
       "rank": 23,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
@@ -2450,7 +2450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.82349970902985,
+        "entryScore": 82.81359871893083,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

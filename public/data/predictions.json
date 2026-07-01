@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T00:43:19.230Z",
+  "generatedAt": "2026-07-01T01:46:48.330Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1333,11 +1333,11 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 16890000000,
-        "price": 16.33,
+        "marketCap": 16879999999.999998,
+        "price": 16.32,
         "currency": "USD",
-        "trailingPE": 13.5,
-        "forwardPE": 8.5,
+        "trailingPE": 13.49,
+        "forwardPE": 8.49,
         "priceToBook": 1.62,
         "returnOnEquity": 0.1215,
         "profitMargins": 0.3116,
@@ -1346,7 +1346,7 @@
         "currentRatio": 3.73,
         "revenueGrowth": 1.3776,
         "earningsGrowth": 4.5188,
-        "averageDailyVolume": 29200000
+        "averageDailyVolume": 29220000
       },
       "scores": {
         "fallOutRisk": null,
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.70302522243071,
+        "entryScore": 85.67338095365602,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

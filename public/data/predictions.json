@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T01:41:52.327Z",
+  "generatedAt": "2026-07-02T05:54:40.867Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -381,12 +381,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 29420000000,
-        "price": 101.5,
+        "marketCap": 29240000000,
+        "price": 100.88,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 38.34,
-        "priceToBook": 5.21,
+        "forwardPE": 38.11,
+        "priceToBook": 5.18,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -394,13 +394,13 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8630000
+        "averageDailyVolume": 8700000
       },
       "scores": {
-        "fallOutRisk": 88.19937838608496,
+        "fallOutRisk": 88.26923866552607,
         "entryScore": null,
-        "undervaluedScore": 15.21645021645022,
-        "overvaluedScore": 83.57142857142856
+        "undervaluedScore": 16.645021645021643,
+        "overvaluedScore": 82.14285714285714
       },
       "rank": 8,
       "commentary": "thin profitability"
@@ -1333,12 +1333,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 16879999999.999998,
-        "price": 16.32,
+        "marketCap": 17110000000,
+        "price": 16.54,
         "currency": "USD",
-        "trailingPE": 13.49,
-        "forwardPE": 8.49,
-        "priceToBook": 1.62,
+        "trailingPE": 13.67,
+        "forwardPE": 8.61,
+        "priceToBook": 1.64,
         "returnOnEquity": 0.1215,
         "profitMargins": 0.3116,
         "operatingMargins": 0.40869999999999995,
@@ -1346,11 +1346,11 @@
         "currentRatio": 3.73,
         "revenueGrowth": 1.3776,
         "earningsGrowth": 4.5188,
-        "averageDailyVolume": 29220000
+        "averageDailyVolume": 29000000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.64039394492193,
+        "entryScore": 92.67003821369663,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2851,7 +2851,7 @@
         "averageDailyVolume": 8189999.999999999
       },
       "scores": {
-        "fallOutRisk": 14.484071856287427,
+        "fallOutRisk": 14.553932135728543,
         "entryScore": null,
         "undervaluedScore": 78.8,
         "overvaluedScore": 22.800000000000004
@@ -3970,56 +3970,6 @@
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
     },
     {
-      "ticker": "ECHO",
-      "yahooTicker": "ECHO",
-      "security": "EchoStar",
-      "sector": "Communication Services",
-      "subIndustry": "Wireless Telecommunication Services",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Englewood, Colorado",
-      "cik": "0001415404",
-      "founded": "2008",
-      "currentMember": true,
-      "currentMemberSince": "2026-03-23",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2026-03-23",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 29420000000,
-        "price": 101.5,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 38.34,
-        "priceToBook": 5.21,
-        "returnOnEquity": -1.1265,
-        "profitMargins": -0.9756,
-        "operatingMargins": 0.0219,
-        "debtToEquity": 5.2,
-        "currentRatio": 0.3,
-        "revenueGrowth": -0.052300000000000006,
-        "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8630000
-      },
-      "scores": {
-        "fallOutRisk": 88.19937838608496,
-        "entryScore": null,
-        "undervaluedScore": 15.21645021645022,
-        "overvaluedScore": 83.57142857142856
-      },
-      "rank": 5,
-      "commentary": "stretched sector-relative earnings multiple"
-    },
-    {
       "ticker": "CNP",
       "yahooTicker": "CNP",
       "security": "CenterPoint Energy",
@@ -4066,7 +4016,7 @@
         "undervaluedScore": 16,
         "overvaluedScore": 83.33333333333333
       },
-      "rank": 6,
+      "rank": 5,
       "commentary": "premium valuation versus the universe"
     },
     {
@@ -4116,7 +4066,7 @@
         "undervaluedScore": 15.683938852491563,
         "overvaluedScore": 83.04248560651183
       },
-      "rank": 7,
+      "rank": 6,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
@@ -4166,8 +4116,58 @@
         "undervaluedScore": 17.33472304943419,
         "overvaluedScore": 82.38237045860632
       },
-      "rank": 8,
+      "rank": 7,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
+    },
+    {
+      "ticker": "ECHO",
+      "yahooTicker": "ECHO",
+      "security": "EchoStar",
+      "sector": "Communication Services",
+      "subIndustry": "Wireless Telecommunication Services",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Englewood, Colorado",
+      "cik": "0001415404",
+      "founded": "2008",
+      "currentMember": true,
+      "currentMemberSince": "2026-03-23",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2026-03-23",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 29240000000,
+        "price": 100.88,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 38.11,
+        "priceToBook": 5.18,
+        "returnOnEquity": -1.1265,
+        "profitMargins": -0.9756,
+        "operatingMargins": 0.0219,
+        "debtToEquity": 5.2,
+        "currentRatio": 0.3,
+        "revenueGrowth": -0.052300000000000006,
+        "earningsGrowth": 0.2816,
+        "averageDailyVolume": 8700000
+      },
+      "scores": {
+        "fallOutRisk": 88.26923866552607,
+        "entryScore": null,
+        "undervaluedScore": 16.645021645021643,
+        "overvaluedScore": 82.14285714285714
+      },
+      "rank": 8,
+      "commentary": "stretched sector-relative earnings multiple"
     },
     {
       "ticker": "VTR",
@@ -4361,7 +4361,7 @@
         "averageDailyVolume": 577590
       },
       "scores": {
-        "fallOutRisk": 41.96082533346006,
+        "fallOutRisk": 42.03068561290118,
         "entryScore": null,
         "undervaluedScore": 24.525360335705166,
         "overvaluedScore": 81.07120051085569

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T01:41:52.327Z",
+  "generatedAt": "2026-07-02T05:54:40.867Z",
   "currentMembers": [
     {
       "ticker": "MMM",
@@ -3295,16 +3295,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.12,
-        "dividendYield": 0.0147,
+        "dividendYield": 0.014499999999999999,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 99260000000,
-        "price": 144.61,
+        "marketCap": 100230000000,
+        "price": 146.02,
         "currency": "USD",
-        "trailingPE": 17.92,
-        "forwardPE": 14.85,
-        "priceToBook": 2.52,
+        "trailingPE": 18.09,
+        "forwardPE": 14.99,
+        "priceToBook": 2.54,
         "returnOnEquity": 0.1356,
         "profitMargins": 0.1406,
         "operatingMargins": 0.18100000000000002,
@@ -3312,13 +3312,13 @@
         "currentRatio": 1.47,
         "revenueGrowth": 0.012,
         "earningsGrowth": 0.4164,
-        "averageDailyVolume": 3940000
+        "averageDailyVolume": 3930000
       },
       "scores": {
-        "fallOutRisk": 47.160959162755574,
+        "fallOutRisk": 47.02123860387333,
         "entryScore": null,
-        "undervaluedScore": 36.92511923688394,
-        "overvaluedScore": 62.92713301536831
+        "undervaluedScore": 36.77806041335453,
+        "overvaluedScore": 63.07419183889772
       }
     },
     {
@@ -4037,8 +4037,8 @@
       "scores": {
         "fallOutRisk": 47.47137077196957,
         "entryScore": null,
-        "undervaluedScore": 58.093375728669855,
-        "overvaluedScore": 38.93455219925808
+        "undervaluedScore": 58.24043455219926,
+        "overvaluedScore": 38.78749337572867
       }
     },
     {
@@ -7879,12 +7879,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 29420000000,
-        "price": 101.5,
+        "marketCap": 29240000000,
+        "price": 100.88,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 38.34,
-        "priceToBook": 5.21,
+        "forwardPE": 38.11,
+        "priceToBook": 5.18,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -7892,13 +7892,13 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8630000
+        "averageDailyVolume": 8700000
       },
       "scores": {
-        "fallOutRisk": 88.19937838608496,
+        "fallOutRisk": 88.26923866552607,
         "entryScore": null,
-        "undervaluedScore": 15.21645021645022,
-        "overvaluedScore": 83.57142857142856
+        "undervaluedScore": 16.645021645021643,
+        "overvaluedScore": 82.14285714285714
       }
     },
     {
@@ -8475,7 +8475,7 @@
         "averageDailyVolume": 577590
       },
       "scores": {
-        "fallOutRisk": 41.96082533346006,
+        "fallOutRisk": 42.03068561290118,
         "entryScore": null,
         "undervaluedScore": 24.525360335705166,
         "overvaluedScore": 81.07120051085569
@@ -11352,7 +11352,7 @@
       },
       "metrics": {
         "marketCap": null,
-        "price": 221.08,
+        "price": 227.29,
         "currency": "USD",
         "trailingPE": null,
         "forwardPE": null,
@@ -11364,7 +11364,7 @@
         "currentRatio": null,
         "revenueGrowth": null,
         "earningsGrowth": null,
-        "averageDailyVolume": 1340000
+        "averageDailyVolume": 1810000
       },
       "scores": {
         "fallOutRisk": 58,
@@ -15983,7 +15983,7 @@
         "averageDailyVolume": 8189999.999999999
       },
       "scores": {
-        "fallOutRisk": 14.484071856287427,
+        "fallOutRisk": 14.553932135728543,
         "entryScore": null,
         "undervaluedScore": 78.8,
         "overvaluedScore": 22.800000000000004
@@ -21429,8 +21429,8 @@
       "scores": {
         "fallOutRisk": 53.03751354433989,
         "entryScore": null,
-        "undervaluedScore": 27.670995670995676,
-        "overvaluedScore": 76.07359307359309
+        "undervaluedScore": 26.24242424242425,
+        "overvaluedScore": 77.5021645021645
       }
     },
     {

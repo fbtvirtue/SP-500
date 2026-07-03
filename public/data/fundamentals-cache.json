@@ -3045,14 +3045,14 @@
     }
   },
   "FLO": {
-    "fetchedAt": "2026-07-02T11:30:05.686Z",
+    "fetchedAt": "2026-07-03T12:53:08.542Z",
     "metrics": {
-      "marketCap": 1780000000,
-      "price": 8.41,
+      "marketCap": 1830000000,
+      "price": 8.63,
       "currency": "USD",
-      "trailingPE": 24.6,
-      "forwardPE": 10.16,
-      "priceToBook": 1.37,
+      "trailingPE": 25.24,
+      "forwardPE": 10.42,
+      "priceToBook": 1.4,
       "returnOnEquity": 0.0536,
       "profitMargins": 0.0138,
       "operatingMargins": 0.067,
@@ -3062,7 +3062,7 @@
       "earningsGrowth": -0.2082,
       "averageDailyVolume": 7910000,
       "dividendRate": 0.87,
-      "dividendYield": 0.1033
+      "dividendYield": 0.1007
     }
   },
   "FLR": {
@@ -23940,14 +23940,14 @@
     }
   },
   "CAG": {
-    "fetchedAt": "2026-06-29T19:35:20.104Z",
+    "fetchedAt": "2026-07-03T12:53:07.294Z",
     "metrics": {
-      "marketCap": 6770000000,
-      "price": 14.15,
+      "marketCap": 6860000000,
+      "price": 14.34,
       "currency": "USD",
       "trailingPE": null,
-      "forwardPE": 9.01,
-      "priceToBook": 0.83,
+      "forwardPE": 9.07,
+      "priceToBook": 0.84,
       "returnOnEquity": -0.0051,
       "profitMargins": -0.0039000000000000003,
       "operatingMargins": 0.1206,
@@ -23955,9 +23955,9 @@
       "currentRatio": 0.9,
       "revenueGrowth": -0.0187,
       "earningsGrowth": 0.37560000000000004,
-      "averageDailyVolume": 15370000,
+      "averageDailyVolume": 17510000,
       "dividendRate": 1.4,
-      "dividendYield": 0.0989
+      "dividendYield": 0.09759999999999999
     }
   },
   "COP": {
@@ -31941,14 +31941,14 @@
     }
   },
   "LFST": {
-    "fetchedAt": "2026-07-02T11:30:06.309Z",
+    "fetchedAt": "2026-07-03T12:53:09.168Z",
     "metrics": {
-      "marketCap": 4430000000,
-      "price": 11.43,
+      "marketCap": 4370000000,
+      "price": 11.27,
       "currency": "USD",
-      "trailingPE": 193.07,
-      "forwardPE": 57.26,
-      "priceToBook": 3,
+      "trailingPE": 190.37,
+      "forwardPE": 56.45,
+      "priceToBook": 2.96,
       "returnOnEquity": 0.0158,
       "profitMargins": 0.0155,
       "operatingMargins": 0.0311,
@@ -32025,14 +32025,14 @@
     }
   },
   "SN": {
-    "fetchedAt": "2026-07-02T11:30:03.709Z",
+    "fetchedAt": "2026-07-03T12:53:06.043Z",
     "metrics": {
-      "marketCap": 21490000000,
-      "price": 151.84,
+      "marketCap": 21440000000,
+      "price": 151.47,
       "currency": "USD",
-      "trailingPE": 30.61,
-      "forwardPE": 21.56,
-      "priceToBook": 7.78,
+      "trailingPE": 30.53,
+      "forwardPE": 21.51,
+      "priceToBook": 7.76,
       "returnOnEquity": 0.2937,
       "profitMargins": 0.107,
       "operatingMargins": 0.1439,
@@ -32088,14 +32088,14 @@
     }
   },
   "ALHC": {
-    "fetchedAt": "2026-07-02T11:30:04.348Z",
+    "fetchedAt": "2026-07-03T12:53:06.685Z",
     "metrics": {
-      "marketCap": 4960000000,
-      "price": 24.01,
+      "marketCap": 4920000000,
+      "price": 23.8,
       "currency": "USD",
-      "trailingPE": 262.69,
-      "forwardPE": 56,
-      "priceToBook": 23.99,
+      "trailingPE": 260.39,
+      "forwardPE": 55.51,
+      "priceToBook": 23.78,
       "returnOnEquity": 0.1257,
       "profitMargins": 0.004699999999999999,
       "operatingMargins": 0.0084,
@@ -32109,14 +32109,14 @@
     }
   },
   "FG": {
-    "fetchedAt": "2026-07-02T11:30:04.995Z",
+    "fetchedAt": "2026-07-03T12:53:07.911Z",
     "metrics": {
-      "marketCap": 3610000000,
-      "price": 27.27,
+      "marketCap": 3700000000,
+      "price": 27.94,
       "currency": "USD",
-      "trailingPE": 7.31,
-      "forwardPE": 5.29,
-      "priceToBook": 0.79,
+      "trailingPE": 7.49,
+      "forwardPE": 5.39,
+      "priceToBook": 0.81,
       "returnOnEquity": 0.1186,
       "profitMargins": 0.0858,
       "operatingMargins": 0.142,
@@ -32126,7 +32126,7 @@
       "earningsGrowth": 9.8478,
       "averageDailyVolume": 791000,
       "dividendRate": 0.97,
-      "dividendYield": 0.0356
+      "dividendYield": 0.0347
     }
   },
   "EFOR": {
@@ -32526,6 +32526,27 @@
       "averageDailyVolume": 1860000,
       "dividendRate": 0.87,
       "dividendYield": 0.0404
+    }
+  },
+  "NHI": {
+    "fetchedAt": "2026-07-03T12:53:09.780Z",
+    "metrics": {
+      "marketCap": 3760000000,
+      "price": 77.49,
+      "currency": "USD",
+      "trailingPE": 25.01,
+      "forwardPE": 22.99,
+      "priceToBook": 2.47,
+      "returnOnEquity": 0.1007,
+      "profitMargins": 0.3657,
+      "operatingMargins": 0.48950000000000005,
+      "debtToEquity": 0.84,
+      "currentRatio": 1.57,
+      "revenueGrowth": 0.287,
+      "earningsGrowth": 0.10869999999999999,
+      "averageDailyVolume": 598510,
+      "dividendRate": 3.68,
+      "dividendYield": 0.0475
     }
   }
 }

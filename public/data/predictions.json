@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T10:37:45.848Z",
+  "generatedAt": "2026-07-03T12:53:04.107Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.67011901141457,
+        "entryScore": 92.66021802131557,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.62111390795755,
+        "entryScore": 91.61121291785852,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.85122606009887,
+        "entryScore": 88.84132506999985,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.33064997737029,
+        "entryScore": 86.31084799717226,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.5350605998815,
+        "entryScore": 85.51982983843989,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.96842965730181,
+        "entryScore": 84.82339353206766,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.61562150661386,
+        "entryScore": 84.60572051651485,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.07506131279835,
+        "entryScore": 84.1325733173054,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2150,7 +2150,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.74065063914574,
+        "entryScore": 83.72084865894772,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2183,12 +2183,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 21490000000,
-        "price": 151.84,
+        "marketCap": 21440000000,
+        "price": 151.47,
         "currency": "USD",
-        "trailingPE": 30.61,
-        "forwardPE": 21.56,
-        "priceToBook": 7.78,
+        "trailingPE": 30.53,
+        "forwardPE": 21.51,
+        "priceToBook": 7.76,
         "returnOnEquity": 0.2937,
         "profitMargins": 0.107,
         "operatingMargins": 0.1439,
@@ -2200,7 +2200,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.67924850983682,
+        "entryScore": 83.6495455395398,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.63490099009901,
+        "entryScore": 83.61509900990099,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.18871314235533,
+        "entryScore": 83.1788121522563,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,11 +2400,61 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.11004140667787,
+        "entryScore": 83.10014041657885,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 23,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "RMBS",
+      "yahooTicker": "RMBS",
+      "security": "Rambus",
+      "sector": "Information Technology",
+      "subIndustry": "Semiconductors",
+      "sourceIndex": "S&P 400",
+      "headquarters": "San Jose, California",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 12210000000,
+        "price": 112.92,
+        "currency": "USD",
+        "trailingPE": 53.67,
+        "forwardPE": 30.23,
+        "priceToBook": 8.76,
+        "returnOnEquity": 0.1802,
+        "profitMargins": 0.3189,
+        "operatingMargins": 0.3589,
+        "debtToEquity": 0.02,
+        "currentRatio": 9.82,
+        "revenueGrowth": 0.0812,
+        "earningsGrowth": -0.0171,
+        "averageDailyVolume": 2910000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.73762348913162,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 24,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2450,62 +2500,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.83155748007233,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 24,
-      "commentary": "solid profitability, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "RMBS",
-      "yahooTicker": "RMBS",
-      "security": "Rambus",
-      "sector": "Information Technology",
-      "subIndustry": "Semiconductors",
-      "sourceIndex": "S&P 400",
-      "headquarters": "San Jose, California",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 12210000000,
-        "price": 112.92,
-        "currency": "USD",
-        "trailingPE": 53.67,
-        "forwardPE": 30.23,
-        "priceToBook": 8.76,
-        "returnOnEquity": 0.1802,
-        "profitMargins": 0.3189,
-        "operatingMargins": 0.3589,
-        "debtToEquity": 0.02,
-        "currentRatio": 9.82,
-        "revenueGrowth": 0.0812,
-        "earningsGrowth": -0.0171,
-        "averageDailyVolume": 2910000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 82.80081564962731,
+        "entryScore": 82.60905279717161,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 25,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, manageable leverage, S&P 400 candidate"
     }
   ],
   "undervalued": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T00:00:57.796Z",
+  "generatedAt": "2026-07-03T04:37:53.897Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1300,11 +1300,61 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.72476163478345,
+        "entryScore": 92.81369444110756,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 1,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "VICR",
+      "yahooTicker": "VICR",
+      "security": "Vicor Corporation",
+      "sector": "Industrials",
+      "subIndustry": "Electrical Components & Equipment",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Andover, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 12900000000,
+        "price": 282.95,
+        "currency": "USD",
+        "trailingPE": 94.76,
+        "forwardPE": 47.51,
+        "priceToBook": 17.1,
+        "returnOnEquity": 0.20489999999999997,
+        "profitMargins": 0.32030000000000003,
+        "operatingMargins": 0.12619999999999998,
+        "debtToEquity": 0.01,
+        "currentRatio": 14.3,
+        "revenueGrowth": 0.2022,
+        "earningsGrowth": 6.836900000000001,
+        "averageDailyVolume": 882610
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 92.67011901141457,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 2,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1354,56 +1404,6 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 2,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "VICR",
-      "yahooTicker": "VICR",
-      "security": "Vicor Corporation",
-      "sector": "Industrials",
-      "subIndustry": "Electrical Components & Equipment",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Andover, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 12900000000,
-        "price": 282.95,
-        "currency": "USD",
-        "trailingPE": 94.76,
-        "forwardPE": 47.51,
-        "priceToBook": 17.1,
-        "returnOnEquity": 0.20489999999999997,
-        "profitMargins": 0.32030000000000003,
-        "operatingMargins": 0.12619999999999998,
-        "debtToEquity": 0.01,
-        "currentRatio": 14.3,
-        "revenueGrowth": 0.2022,
-        "earningsGrowth": 6.836900000000001,
-        "averageDailyVolume": 882610
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 92.61083047386518,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
       "rank": 3,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.59146963918283,
+        "entryScore": 91.62111390795755,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1683,12 +1683,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 10950000000,
-        "price": 371.58,
+        "marketCap": 11060000000,
+        "price": 375.07,
         "currency": "USD",
-        "trailingPE": 49.67,
-        "forwardPE": 38.33,
-        "priceToBook": 8.57,
+        "trailingPE": 50.13,
+        "forwardPE": 38.69,
+        "priceToBook": 8.65,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1696,11 +1696,11 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 313320
+        "averageDailyVolume": 312670
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.04804938473045,
+        "entryScore": 87.22591499737867,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.27136143982088,
+        "entryScore": 86.33064997737029,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1933,12 +1933,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 40280000000,
-        "price": 301.67,
+        "marketCap": 41760000000,
+        "price": 312.78,
         "currency": "USD",
-        "trailingPE": 71.68,
-        "forwardPE": 28.67,
-        "priceToBook": 37.43,
+        "trailingPE": 74.32,
+        "forwardPE": 29.73,
+        "priceToBook": 38.81,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -1946,7 +1946,7 @@
         "currentRatio": 3.13,
         "revenueGrowth": 0.9643,
         "earningsGrowth": 4.4032,
-        "averageDailyVolume": 1130000
+        "averageDailyVolume": 1140000
       },
       "scores": {
         "fallOutRisk": null,
@@ -2150,7 +2150,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.71100637037102,
+        "entryScore": 83.74065063914574,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2229,16 +2229,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 8.79,
-        "dividendYield": 0.0048,
+        "dividendYield": 0.005,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 710340000000,
-        "price": 1843.04,
+        "marketCap": 681930000000,
+        "price": 1769.32,
         "currency": "USD",
-        "trailingPE": 61.45,
-        "forwardPE": 35.99,
-        "priceToBook": 29.6,
+        "trailingPE": 58.99,
+        "forwardPE": 34.52,
+        "priceToBook": 28.41,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -2246,7 +2246,7 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1900000
+        "averageDailyVolume": 1920000
       },
       "scores": {
         "fallOutRisk": null,
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.48637316790514,
+        "entryScore": 83.54566170545455,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.0997803360312,
+        "entryScore": 83.18871314235533,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.08039713790316,
+        "entryScore": 83.11004140667787,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2450,7 +2450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.77226894252293,
+        "entryScore": 82.83155748007233,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.7711713808526,
+        "entryScore": 82.80081564962731,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

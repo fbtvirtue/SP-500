@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T04:37:53.897Z",
+  "generatedAt": "2026-07-03T07:57:52.827Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -381,12 +381,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 29240000000,
-        "price": 100.88,
+        "marketCap": 29420000000,
+        "price": 101.5,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 38.11,
-        "priceToBook": 5.18,
+        "forwardPE": 38.34,
+        "priceToBook": 5.21,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -394,7 +394,7 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8700000
+        "averageDailyVolume": 8580000
       },
       "scores": {
         "fallOutRisk": 88.54867978329055,
@@ -1258,6 +1258,56 @@
   ],
   "possibleEntrants": [
     {
+      "ticker": "CDE",
+      "yahooTicker": "CDE",
+      "security": "Coeur Mining",
+      "sector": "Materials",
+      "subIndustry": "Gold",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Chicago, Illinois",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.02,
+        "dividendYield": 0.0012,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 17830000000,
+        "price": 17.3,
+        "currency": "USD",
+        "trailingPE": 14.3,
+        "forwardPE": 9,
+        "priceToBook": 1.72,
+        "returnOnEquity": 0.1215,
+        "profitMargins": 0.3116,
+        "operatingMargins": 0.40869999999999995,
+        "debtToEquity": 0.07,
+        "currentRatio": 3.73,
+        "revenueGrowth": 1.3776,
+        "earningsGrowth": 4.5188,
+        "averageDailyVolume": 28770000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 92.90719236389427,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 1,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
       "ticker": "HL",
       "yahooTicker": "HL",
       "security": "Hecla Mining",
@@ -1304,7 +1354,7 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 1,
+      "rank": 2,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1351,56 +1401,6 @@
       "scores": {
         "fallOutRisk": null,
         "entryScore": 92.67011901141457,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 2,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "CDE",
-      "yahooTicker": "CDE",
-      "security": "Coeur Mining",
-      "sector": "Materials",
-      "subIndustry": "Gold",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Chicago, Illinois",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.02,
-        "dividendYield": 0.0012,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 17110000000,
-        "price": 16.54,
-        "currency": "USD",
-        "trailingPE": 13.67,
-        "forwardPE": 8.61,
-        "priceToBook": 1.64,
-        "returnOnEquity": 0.1215,
-        "profitMargins": 0.3116,
-        "operatingMargins": 0.40869999999999995,
-        "debtToEquity": 0.07,
-        "currentRatio": 3.73,
-        "revenueGrowth": 1.3776,
-        "earningsGrowth": 4.5188,
-        "averageDailyVolume": 29000000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 92.67003821369663,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 90.44976179177499,
+        "entryScore": 90.42011752300027,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.45101932756253,
+        "entryScore": 88.42137505878783,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -3961,7 +3961,7 @@
         "averageDailyVolume": 1230000
       },
       "scores": {
-        "fallOutRisk": 44.876410095674856,
+        "fallOutRisk": 44.94627037511597,
         "entryScore": null,
         "undervaluedScore": 18.13977823977824,
         "overvaluedScore": 83.68218988218987
@@ -3995,12 +3995,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 29240000000,
-        "price": 100.88,
+        "marketCap": 29420000000,
+        "price": 101.5,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 38.11,
-        "priceToBook": 5.18,
+        "forwardPE": 38.34,
+        "priceToBook": 5.21,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -4008,7 +4008,7 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8700000
+        "averageDailyVolume": 8580000
       },
       "scores": {
         "fallOutRisk": 88.54867978329055,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T04:37:53.897Z",
+  "generatedAt": "2026-07-03T07:57:52.827Z",
   "currentMembers": [
     {
       "ticker": "MMM",
@@ -3299,12 +3299,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 100230000000,
-        "price": 146.02,
+        "marketCap": 100640000000,
+        "price": 146.62,
         "currency": "USD",
-        "trailingPE": 18.09,
-        "forwardPE": 14.99,
-        "priceToBook": 2.54,
+        "trailingPE": 18.17,
+        "forwardPE": 15,
+        "priceToBook": 2.55,
         "returnOnEquity": 0.1356,
         "profitMargins": 0.1406,
         "operatingMargins": 0.18100000000000002,
@@ -3312,10 +3312,10 @@
         "currentRatio": 1.47,
         "revenueGrowth": 0.012,
         "earningsGrowth": 0.4164,
-        "averageDailyVolume": 3930000
+        "averageDailyVolume": 3900000
       },
       "scores": {
-        "fallOutRisk": 47.23081944219669,
+        "fallOutRisk": 47.160959162755574,
         "entryScore": null,
         "undervaluedScore": 37.848330683624795,
         "overvaluedScore": 61.93635400105988
@@ -7879,12 +7879,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 29240000000,
-        "price": 100.88,
+        "marketCap": 29420000000,
+        "price": 101.5,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 38.11,
-        "priceToBook": 5.18,
+        "forwardPE": 38.34,
+        "priceToBook": 5.21,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -7892,7 +7892,7 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8700000
+        "averageDailyVolume": 8580000
       },
       "scores": {
         "fallOutRisk": 88.54867978329055,
@@ -11352,7 +11352,7 @@
       },
       "metrics": {
         "marketCap": null,
-        "price": 227.29,
+        "price": 247.15,
         "currency": "USD",
         "trailingPE": null,
         "forwardPE": null,
@@ -11364,7 +11364,7 @@
         "currentRatio": null,
         "revenueGrowth": null,
         "earningsGrowth": null,
-        "averageDailyVolume": 1810000
+        "averageDailyVolume": 2230000
       },
       "scores": {
         "fallOutRisk": 58,
@@ -12281,8 +12281,8 @@
       "scores": {
         "fallOutRisk": 32.32122997248746,
         "entryScore": null,
-        "undervaluedScore": 47.03163751987282,
-        "overvaluedScore": 54.80259671436143
+        "undervaluedScore": 47.30190779014308,
+        "overvaluedScore": 54.46475887652359
       }
     },
     {
@@ -18435,7 +18435,7 @@
         "averageDailyVolume": 1230000
       },
       "scores": {
-        "fallOutRisk": 44.876410095674856,
+        "fallOutRisk": 44.94627037511597,
         "entryScore": null,
         "undervaluedScore": 18.13977823977824,
         "overvaluedScore": 83.68218988218987

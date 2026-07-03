@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T20:58:25.884Z",
+  "generatedAt": "2026-07-03T22:07:48.322Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -43,7 +43,7 @@
         "averageDailyVolume": 884350
       },
       "scores": {
-        "fallOutRisk": 99.93231161020134,
+        "fallOutRisk": 99.91231161020134,
         "entryScore": null,
         "undervaluedScore": 34.85857105185599,
         "overvaluedScore": 62.49480354289792
@@ -93,7 +93,7 @@
         "averageDailyVolume": 7200000
       },
       "scores": {
-        "fallOutRisk": 98.89798341425018,
+        "fallOutRisk": 98.87798341425018,
         "entryScore": null,
         "undervaluedScore": 56.431524537241415,
         "overvaluedScore": 40.19265269038409
@@ -147,7 +147,7 @@
         "averageDailyVolume": 12930000
       },
       "scores": {
-        "fallOutRisk": 94.60355289421157,
+        "fallOutRisk": 94.60355289421156,
         "entryScore": null,
         "undervaluedScore": 61.800000000000004,
         "overvaluedScore": 32.8
@@ -197,7 +197,7 @@
         "averageDailyVolume": 5890000
       },
       "scores": {
-        "fallOutRisk": 93.65145708582834,
+        "fallOutRisk": 93.67145708582834,
         "entryScore": null,
         "undervaluedScore": 68.2,
         "overvaluedScore": 27.800000000000004
@@ -256,6 +256,56 @@
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
+      "ticker": "GIS",
+      "yahooTicker": "GIS",
+      "security": "General Mills",
+      "sector": "Consumer Staples",
+      "subIndustry": "Packaged Foods & Meats",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Golden Valley, Minnesota",
+      "cik": "0000040704",
+      "founded": "1856",
+      "currentMember": true,
+      "currentMemberSince": "1957-03-04",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1957-03-04",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.44,
+        "dividendYield": 0.0649,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 20050000000,
+        "price": 37.57,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 11.69,
+        "priceToBook": 2.72,
+        "returnOnEquity": -0.0106,
+        "profitMargins": -0.0048,
+        "operatingMargins": 0.1533,
+        "debtToEquity": 1.89,
+        "currentRatio": 0.68,
+        "revenueGrowth": 0.011699999999999999,
+        "earningsGrowth": -8.2644,
+        "averageDailyVolume": 9890000
+      },
+      "scores": {
+        "fallOutRisk": 93.25214813774211,
+        "entryScore": null,
+        "undervaluedScore": 63.88123167155425,
+        "overvaluedScore": 32.85483870967742
+      },
+      "rank": 6,
+      "commentary": "thin profitability, negative earnings growth"
+    },
+    {
       "ticker": "BLDR",
       "yahooTicker": "BLDR",
       "security": "Builders FirstSource",
@@ -297,12 +347,12 @@
         "averageDailyVolume": 2630000
       },
       "scores": {
-        "fallOutRisk": 92.22605953334522,
+        "fallOutRisk": 92.1361992539041,
         "entryScore": null,
         "undervaluedScore": 57.98142758142757,
         "overvaluedScore": 36.33672903672904
       },
-      "rank": 6,
+      "rank": 7,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -331,7 +381,7 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 7510000000,
+        "marketCap": 7500000000,
         "price": 39.78,
         "currency": "USD",
         "trailingPE": null,
@@ -352,7 +402,7 @@
         "undervaluedScore": 73.90664711632452,
         "overvaluedScore": 18.32062561094819
       },
-      "rank": 7,
+      "rank": 8,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -397,12 +447,12 @@
         "averageDailyVolume": 8580000
       },
       "scores": {
-        "fallOutRisk": 88.54867978329055,
+        "fallOutRisk": 88.56867978329055,
         "entryScore": null,
         "undervaluedScore": 15.21645021645022,
         "overvaluedScore": 83.57142857142856
       },
-      "rank": 8,
+      "rank": 9,
       "commentary": "thin profitability"
     },
     {
@@ -452,7 +502,7 @@
         "undervaluedScore": 50.09747545582048,
         "overvaluedScore": 51.84351833299941
       },
-      "rank": 9,
+      "rank": 10,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -485,7 +535,7 @@
         "price": 47.1,
         "currency": "USD",
         "trailingPE": 64.97,
-        "forwardPE": 22.41,
+        "forwardPE": 21.62,
         "priceToBook": 4.95,
         "returnOnEquity": 0.071,
         "profitMargins": 0.0106,
@@ -497,12 +547,12 @@
         "averageDailyVolume": 4860000
       },
       "scores": {
-        "fallOutRisk": 86.58242149241889,
+        "fallOutRisk": 86.56242149241888,
         "entryScore": null,
-        "undervaluedScore": 31.54968944099379,
-        "overvaluedScore": 66.71428571428572
+        "undervaluedScore": 33.506211180124225,
+        "overvaluedScore": 64.75776397515529
       },
-      "rank": 10,
+      "rank": 11,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -552,7 +602,7 @@
         "undervaluedScore": 53.333333333333336,
         "overvaluedScore": 38.511904761904766
       },
-      "rank": 11,
+      "rank": 12,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -602,7 +652,7 @@
         "undervaluedScore": 62.089545589545594,
         "overvaluedScore": 31.432630432630436
       },
-      "rank": 12,
+      "rank": 13,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -649,10 +699,10 @@
       "scores": {
         "fallOutRisk": 86.05584127931819,
         "entryScore": null,
-        "undervaluedScore": 63.579667644183765,
-        "overvaluedScore": 34.31329423264907
+        "undervaluedScore": 64.54936461388074,
+        "overvaluedScore": 33.17693059628543
       },
-      "rank": 13,
+      "rank": 14,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -702,7 +752,7 @@
         "undervaluedScore": 52.6,
         "overvaluedScore": 42.4
       },
-      "rank": 14,
+      "rank": 15,
       "commentary": "thin profitability"
     },
     {
@@ -752,7 +802,7 @@
         "undervaluedScore": 19.223362658846533,
         "overvaluedScore": 81.0386119257087
       },
-      "rank": 15,
+      "rank": 16,
       "commentary": "thin profitability, negative earnings growth"
     },
     {
@@ -802,7 +852,7 @@
         "undervaluedScore": 74.2336434577814,
         "overvaluedScore": 22.92386219110357
       },
-      "rank": 16,
+      "rank": 17,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -847,12 +897,12 @@
         "averageDailyVolume": 4800000
       },
       "scores": {
-        "fallOutRisk": 81.07165057615562,
+        "fallOutRisk": 81.09165057615562,
         "entryScore": null,
         "undervaluedScore": 67.13855927673676,
         "overvaluedScore": 24.665093691299766
       },
-      "rank": 17,
+      "rank": 18,
       "commentary": "smaller market-cap profile, negative earnings growth"
     },
     {
@@ -902,7 +952,7 @@
         "undervaluedScore": 48.534928723222734,
         "overvaluedScore": 52.01694277692463
       },
-      "rank": 18,
+      "rank": 19,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -947,12 +997,12 @@
         "averageDailyVolume": 1710000
       },
       "scores": {
-        "fallOutRisk": 79.89097556439914,
+        "fallOutRisk": 79.87097556439916,
         "entryScore": null,
         "undervaluedScore": 46.53265878581446,
         "overvaluedScore": 49.60088158685634
       },
-      "rank": 19,
+      "rank": 20,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -997,12 +1047,12 @@
         "averageDailyVolume": 5700000
       },
       "scores": {
-        "fallOutRisk": 79.2312499325673,
+        "fallOutRisk": 79.16458326590062,
         "entryScore": null,
         "undervaluedScore": 70.39093799682036,
         "overvaluedScore": 24.487440381558027
       },
-      "rank": 20,
+      "rank": 21,
       "commentary": "smaller market-cap profile, thin profitability"
     },
     {
@@ -1035,7 +1085,7 @@
         "price": 21.13,
         "currency": "USD",
         "trailingPE": 165.86,
-        "forwardPE": 11.3,
+        "forwardPE": 11.28,
         "priceToBook": 0.57,
         "returnOnEquity": 0.0038,
         "profitMargins": 0.0036,
@@ -1047,12 +1097,12 @@
         "averageDailyVolume": 9210000
       },
       "scores": {
-        "fallOutRisk": 78.86,
+        "fallOutRisk": 78.84,
         "entryScore": null,
         "undervaluedScore": 63.2,
         "overvaluedScore": 32.6
       },
-      "rank": 21,
+      "rank": 22,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -1097,12 +1147,12 @@
         "averageDailyVolume": 1260000
       },
       "scores": {
-        "fallOutRisk": 78.68401103317194,
+        "fallOutRisk": 78.66401103317195,
         "entryScore": null,
         "undervaluedScore": 51.94362934362935,
         "overvaluedScore": 49.40730620730621
       },
-      "rank": 22,
+      "rank": 23,
       "commentary": "smaller market-cap profile, thin profitability, negative earnings growth"
     },
     {
@@ -1152,7 +1202,7 @@
         "undervaluedScore": 52.353562029151874,
         "overvaluedScore": 43.62430907802959
       },
-      "rank": 23,
+      "rank": 24,
       "commentary": "thin profitability"
     },
     {
@@ -1202,58 +1252,8 @@
         "undervaluedScore": 52.4895771292436,
         "overvaluedScore": 43.72245384157237
       },
-      "rank": 24,
-      "commentary": "smaller market-cap profile, negative earnings growth"
-    },
-    {
-      "ticker": "KHC",
-      "yahooTicker": "KHC",
-      "security": "Kraft Heinz",
-      "sector": "Consumer Staples",
-      "subIndustry": "Packaged Foods & Meats",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Chicago, Illinois; Pittsburgh, Pennsylvania",
-      "cik": "0001637459",
-      "founded": "2015 (1869)",
-      "currentMember": true,
-      "currentMemberSince": "2015-07-06",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2015-07-06",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.6,
-        "dividendYield": 0.06309999999999999,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 30080000000,
-        "price": 25.37,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 12.23,
-        "priceToBook": 0.72,
-        "returnOnEquity": -0.1261,
-        "profitMargins": -0.2305,
-        "operatingMargins": 0.18230000000000002,
-        "debtToEquity": 0.5,
-        "currentRatio": 1.2,
-        "revenueGrowth": 0.008,
-        "earningsGrowth": 0.1264,
-        "averageDailyVolume": 14290000
-      },
-      "scores": {
-        "fallOutRisk": 77.36696554105863,
-        "entryScore": null,
-        "undervaluedScore": 68.5,
-        "overvaluedScore": 23.418866080156405
-      },
       "rank": 25,
-      "commentary": "thin profitability"
+      "commentary": "smaller market-cap profile, negative earnings growth"
     }
   ],
   "possibleEntrants": [
@@ -1445,7 +1445,7 @@
         "debtToEquity": 0.01,
         "currentRatio": 5.35,
         "revenueGrowth": 0.1928,
-        "earningsGrowth": 0.5478999999999999,
+        "earningsGrowth": 0.5477000000000001,
         "averageDailyVolume": 1420000
       },
       "scores": {
@@ -2651,7 +2651,7 @@
         "averageDailyVolume": 2630000
       },
       "scores": {
-        "fallOutRisk": 52.34111776447105,
+        "fallOutRisk": 52.32111776447105,
         "entryScore": null,
         "undervaluedScore": 85.83333333333333,
         "overvaluedScore": 15.833333333333332
@@ -2701,10 +2701,10 @@
         "averageDailyVolume": 6670000
       },
       "scores": {
-        "fallOutRisk": 48.48138317958677,
+        "fallOutRisk": 48.28138317958677,
         "entryScore": null,
-        "undervaluedScore": 84.1561738208797,
-        "overvaluedScore": 18.1447270800212
+        "undervaluedScore": 84.28950715421304,
+        "overvaluedScore": 18.011393746687865
       },
       "rank": 4,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
@@ -2739,7 +2739,7 @@
         "price": 90.72,
         "currency": "USD",
         "trailingPE": 6.76,
-        "forwardPE": 10.1,
+        "forwardPE": 10.17,
         "priceToBook": 1.11,
         "returnOnEquity": 0.1757,
         "profitMargins": 0.2503,
@@ -3097,7 +3097,7 @@
         "price": 110.54,
         "currency": "USD",
         "trailingPE": 9.94,
-        "forwardPE": 9.57,
+        "forwardPE": 9.55,
         "priceToBook": 3.18,
         "returnOnEquity": 0.34740000000000004,
         "profitMargins": 0.2373,
@@ -3147,7 +3147,7 @@
         "price": 130.78,
         "currency": "USD",
         "trailingPE": 12.86,
-        "forwardPE": 8.85,
+        "forwardPE": 8.86,
         "priceToBook": 2.26,
         "returnOnEquity": 0.1819,
         "profitMargins": 0.2334,
@@ -3209,7 +3209,7 @@
         "averageDailyVolume": 1430000
       },
       "scores": {
-        "fallOutRisk": 73.56201968126172,
+        "fallOutRisk": 73.5420196812617,
         "entryScore": null,
         "undervaluedScore": 77.07304227304228,
         "overvaluedScore": 21.863340263340266
@@ -3309,7 +3309,7 @@
         "averageDailyVolume": 396380
       },
       "scores": {
-        "fallOutRisk": 67.02020715326104,
+        "fallOutRisk": 67.04020715326105,
         "entryScore": null,
         "undervaluedScore": 76.268097509274,
         "overvaluedScore": 16.837307896131428
@@ -3359,7 +3359,7 @@
         "averageDailyVolume": 3480000
       },
       "scores": {
-        "fallOutRisk": 70.46607149337689,
+        "fallOutRisk": 70.48607149337688,
         "entryScore": null,
         "undervaluedScore": 76.04978354978357,
         "overvaluedScore": 24.1991341991342
@@ -3568,56 +3568,6 @@
       "commentary": "discounted sector-relative earnings multiple, dividend support, quality support"
     },
     {
-      "ticker": "GIS",
-      "yahooTicker": "GIS",
-      "security": "General Mills",
-      "sector": "Consumer Staples",
-      "subIndustry": "Packaged Foods & Meats",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Golden Valley, Minnesota",
-      "cik": "0000040704",
-      "founded": "1856",
-      "currentMember": true,
-      "currentMemberSince": "1957-03-04",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1957-03-04",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.44,
-        "dividendYield": 0.0649,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 20050000000,
-        "price": 37.57,
-        "currency": "USD",
-        "trailingPE": 9.24,
-        "forwardPE": 11.72,
-        "priceToBook": 2.15,
-        "returnOnEquity": 0.2369,
-        "profitMargins": 0.12,
-        "operatingMargins": 0.1469,
-        "debtToEquity": 1.49,
-        "currentRatio": 0.56,
-        "revenueGrowth": -0.0837,
-        "earningsGrowth": -0.4996,
-        "averageDailyVolume": 9890000
-      },
-      "scores": {
-        "fallOutRisk": 69.0213563488858,
-        "entryScore": null,
-        "undervaluedScore": 75.3108504398827,
-        "overvaluedScore": 22.905180840664713
-      },
-      "rank": 22,
-      "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support"
-    },
-    {
       "ticker": "DVN",
       "yahooTicker": "DVN",
       "security": "Devon Energy",
@@ -3647,7 +3597,7 @@
         "price": 40.47,
         "currency": "USD",
         "trailingPE": 11.23,
-        "forwardPE": 7.35,
+        "forwardPE": 7.36,
         "priceToBook": 1.63,
         "returnOnEquity": 0.15130000000000002,
         "profitMargins": 0.13449999999999998,
@@ -3659,12 +3609,12 @@
         "averageDailyVolume": 14510000
       },
       "scores": {
-        "fallOutRisk": 55.696047904191616,
+        "fallOutRisk": 55.67604790419161,
         "entryScore": null,
         "undervaluedScore": 75,
         "overvaluedScore": 23
       },
-      "rank": 23,
+      "rank": 22,
       "commentary": "discounted sector-relative earnings multiple, contained book multiple, dividend support, quality support"
     },
     {
@@ -3714,7 +3664,7 @@
         "undervaluedScore": 74.61706449199005,
         "overvaluedScore": 28.66663612345566
       },
-      "rank": 24,
+      "rank": 23,
       "commentary": "discounted sector-relative earnings multiple, quality support"
     },
     {
@@ -3764,6 +3714,56 @@
         "undervaluedScore": 74.48282707961087,
         "overvaluedScore": 27.836013500099266
       },
+      "rank": 24,
+      "commentary": "discounted sector-relative earnings multiple, quality support"
+    },
+    {
+      "ticker": "PNR",
+      "yahooTicker": "PNR",
+      "security": "Pentair",
+      "sector": "Industrials",
+      "subIndustry": "Industrial Machinery & Supplies & Components",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Worsley, United Kingdom",
+      "cik": "0000077360",
+      "founded": "1966",
+      "currentMember": true,
+      "currentMemberSince": "2012-10-01",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2012-10-01",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.04,
+        "dividendYield": 0.013600000000000001,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 12400000000,
+        "price": 76.72,
+        "currency": "USD",
+        "trailingPE": 18.83,
+        "forwardPE": 13.17,
+        "priceToBook": 3.25,
+        "returnOnEquity": 0.1761,
+        "profitMargins": 0.1597,
+        "operatingMargins": 0.21559999999999999,
+        "debtToEquity": 0.55,
+        "currentRatio": 1.88,
+        "revenueGrowth": 0.026000000000000002,
+        "earningsGrowth": 0.1308,
+        "averageDailyVolume": 2120000
+      },
+      "scores": {
+        "fallOutRisk": 63.25265016061197,
+        "entryScore": null,
+        "undervaluedScore": 74.31854271854273,
+        "overvaluedScore": 20.807860607860608
+      },
       "rank": 25,
       "commentary": "discounted sector-relative earnings multiple, quality support"
     }
@@ -3811,7 +3811,7 @@
         "averageDailyVolume": 4940000
       },
       "scores": {
-        "fallOutRisk": 55.44077143011274,
+        "fallOutRisk": 55.37410476344608,
         "entryScore": null,
         "undervaluedScore": 15.933545310015898,
         "overvaluedScore": 90.63942766295708
@@ -4011,7 +4011,7 @@
         "averageDailyVolume": 8580000
       },
       "scores": {
-        "fallOutRisk": 88.54867978329055,
+        "fallOutRisk": 88.56867978329055,
         "entryScore": null,
         "undervaluedScore": 15.21645021645022,
         "overvaluedScore": 83.57142857142856
@@ -4249,7 +4249,7 @@
         "price": 300.53,
         "currency": "USD",
         "trailingPE": 75.44,
-        "forwardPE": 34.19,
+        "forwardPE": 34.17,
         "priceToBook": 27.18,
         "returnOnEquity": 0.451,
         "profitMargins": 0.1437,
@@ -4268,56 +4268,6 @@
       },
       "rank": 10,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
-    },
-    {
-      "ticker": "COST",
-      "yahooTicker": "COST",
-      "security": "Costco",
-      "sector": "Consumer Staples",
-      "subIndustry": "Consumer Staples Merchandise Retail",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Issaquah, Washington",
-      "cik": "0000909832",
-      "founded": "1976",
-      "currentMember": true,
-      "currentMemberSince": "1993-10-01",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1993-10-01",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 5.37,
-        "dividendYield": 0.005600000000000001,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 422050000000,
-        "price": 951.67,
-        "currency": "USD",
-        "trailingPE": 47.87,
-        "forwardPE": 41.95,
-        "priceToBook": 12.6,
-        "returnOnEquity": 0.2915,
-        "profitMargins": 0.0301,
-        "operatingMargins": 0.0382,
-        "debtToEquity": 0.25,
-        "currentRatio": 1.07,
-        "revenueGrowth": 0.1158,
-        "earningsGrowth": 0.1527,
-        "averageDailyVolume": 2250000
-      },
-      "scores": {
-        "fallOutRisk": 27.992626243114945,
-        "entryScore": null,
-        "undervaluedScore": 21.544965786901273,
-        "overvaluedScore": 81.0738025415445
-      },
-      "rank": 11,
-      "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
       "ticker": "EQIX",
@@ -4366,7 +4316,7 @@
         "undervaluedScore": 24.525360335705166,
         "overvaluedScore": 81.07120051085569
       },
-      "rank": 12,
+      "rank": 11,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
@@ -4416,8 +4366,58 @@
         "undervaluedScore": 19.223362658846533,
         "overvaluedScore": 81.0386119257087
       },
-      "rank": 13,
+      "rank": 12,
       "commentary": "elevated book multiple"
+    },
+    {
+      "ticker": "COST",
+      "yahooTicker": "COST",
+      "security": "Costco",
+      "sector": "Consumer Staples",
+      "subIndustry": "Consumer Staples Merchandise Retail",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Issaquah, Washington",
+      "cik": "0000909832",
+      "founded": "1976",
+      "currentMember": true,
+      "currentMemberSince": "1993-10-01",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1993-10-01",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 5.37,
+        "dividendYield": 0.005600000000000001,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 422050000000,
+        "price": 951.67,
+        "currency": "USD",
+        "trailingPE": 47.87,
+        "forwardPE": 41.95,
+        "priceToBook": 12.6,
+        "returnOnEquity": 0.2915,
+        "profitMargins": 0.0301,
+        "operatingMargins": 0.0382,
+        "debtToEquity": 0.25,
+        "currentRatio": 1.07,
+        "revenueGrowth": 0.1158,
+        "earningsGrowth": 0.1527,
+        "averageDailyVolume": 2250000
+      },
+      "scores": {
+        "fallOutRisk": 27.53808078856949,
+        "entryScore": null,
+        "undervaluedScore": 21.847996089931577,
+        "overvaluedScore": 80.77077223851418
+      },
+      "rank": 13,
+      "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
       "ticker": "MCO",
@@ -4461,7 +4461,7 @@
         "averageDailyVolume": 1060000
       },
       "scores": {
-        "fallOutRisk": 33.658457139774505,
+        "fallOutRisk": 33.591790473107835,
         "entryScore": null,
         "undervaluedScore": 26.159830418653954,
         "overvaluedScore": 80.62935877053523
@@ -4561,7 +4561,7 @@
         "averageDailyVolume": 2250000
       },
       "scores": {
-        "fallOutRisk": 40.931137724550894,
+        "fallOutRisk": 40.9111377245509,
         "entryScore": null,
         "undervaluedScore": 26.400000000000002,
         "overvaluedScore": 80.2
@@ -4670,56 +4670,6 @@
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
-      "ticker": "CL",
-      "yahooTicker": "CL",
-      "security": "Colgate-Palmolive",
-      "sector": "Consumer Staples",
-      "subIndustry": "Household Products",
-      "sourceIndex": "S&P 500",
-      "headquarters": "New York City, New York",
-      "cik": "0000021665",
-      "founded": "1806",
-      "currentMember": true,
-      "currentMemberSince": "1957-03-04",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1957-03-04",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 2.09,
-        "dividendYield": 0.022000000000000002,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 76120000000,
-        "price": 95.13,
-        "currency": "USD",
-        "trailingPE": 36.91,
-        "forwardPE": 23.59,
-        "priceToBook": 524.97,
-        "returnOnEquity": 8.2165,
-        "profitMargins": 0.10039999999999999,
-        "operatingMargins": 0.2186,
-        "debtToEquity": 54.99,
-        "currentRatio": 1.02,
-        "revenueGrowth": 0.08410000000000001,
-        "earningsGrowth": -0.052199999999999996,
-        "averageDailyVolume": 5410000
-      },
-      "scores": {
-        "fallOutRisk": 43.37953418675845,
-        "entryScore": null,
-        "undervaluedScore": 28.734115347018573,
-        "overvaluedScore": 79.58944281524927
-      },
-      "rank": 19,
-      "commentary": "elevated book multiple"
-    },
-    {
       "ticker": "TSLA",
       "yahooTicker": "TSLA",
       "security": "Tesla, Inc.",
@@ -4766,7 +4716,7 @@
         "undervaluedScore": 19.65217391304348,
         "overvaluedScore": 79.54658385093168
       },
-      "rank": 20,
+      "rank": 19,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
@@ -4816,8 +4766,58 @@
         "undervaluedScore": 20.760429660429665,
         "overvaluedScore": 79.37636867636867
       },
-      "rank": 21,
+      "rank": 20,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
+    },
+    {
+      "ticker": "CL",
+      "yahooTicker": "CL",
+      "security": "Colgate-Palmolive",
+      "sector": "Consumer Staples",
+      "subIndustry": "Household Products",
+      "sourceIndex": "S&P 500",
+      "headquarters": "New York City, New York",
+      "cik": "0000021665",
+      "founded": "1806",
+      "currentMember": true,
+      "currentMemberSince": "1957-03-04",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1957-03-04",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 2.09,
+        "dividendYield": 0.022000000000000002,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 76120000000,
+        "price": 95.13,
+        "currency": "USD",
+        "trailingPE": 36.91,
+        "forwardPE": 23.59,
+        "priceToBook": 524.97,
+        "returnOnEquity": 8.2165,
+        "profitMargins": 0.10039999999999999,
+        "operatingMargins": 0.2186,
+        "debtToEquity": 54.99,
+        "currentRatio": 1.02,
+        "revenueGrowth": 0.08410000000000001,
+        "earningsGrowth": -0.052199999999999996,
+        "averageDailyVolume": 5410000
+      },
+      "scores": {
+        "fallOutRisk": 42.90498873221299,
+        "entryScore": null,
+        "undervaluedScore": 29.037145650048878,
+        "overvaluedScore": 79.28641251221896
+      },
+      "rank": 21,
+      "commentary": "elevated book multiple"
     },
     {
       "ticker": "TRGP",
@@ -4870,56 +4870,6 @@
       "commentary": "elevated book multiple"
     },
     {
-      "ticker": "WMT",
-      "yahooTicker": "WMT",
-      "security": "Walmart",
-      "sector": "Consumer Staples",
-      "subIndustry": "Consumer Staples Merchandise Retail",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Bentonville, Arkansas",
-      "cik": "0000104169",
-      "founded": "1962",
-      "currentMember": true,
-      "currentMemberSince": "1982-08-31",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "1982-08-31",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.97,
-        "dividendYield": 0.0086,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 890030000000,
-        "price": 111.84,
-        "currency": "USD",
-        "trailingPE": 39.4,
-        "forwardPE": 34.08,
-        "priceToBook": 9.44,
-        "returnOnEquity": 0.2553,
-        "profitMargins": 0.0313,
-        "operatingMargins": 0.0416,
-        "debtToEquity": 0.79,
-        "currentRatio": 0.77,
-        "revenueGrowth": 0.0733,
-        "earningsGrowth": 0.1956,
-        "averageDailyVolume": 21190000
-      },
-      "scores": {
-        "fallOutRisk": 35.48773397486552,
-        "entryScore": null,
-        "undervaluedScore": 23.187683284457478,
-        "overvaluedScore": 79.06842619745846
-      },
-      "rank": 23,
-      "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
-    },
-    {
       "ticker": "GE",
       "yahooTicker": "GE",
       "security": "GE Aerospace",
@@ -4966,7 +4916,7 @@
         "undervaluedScore": 28.16624096624097,
         "overvaluedScore": 79.02315612315611
       },
-      "rank": 24,
+      "rank": 23,
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
     },
     {
@@ -5011,13 +4961,63 @@
         "averageDailyVolume": 3800000
       },
       "scores": {
-        "fallOutRisk": 20.87125964287641,
+        "fallOutRisk": 20.80459297620974,
         "entryScore": null,
         "undervaluedScore": 29.51414944356121,
         "overvaluedScore": 78.94621091679915
       },
-      "rank": 25,
+      "rank": 24,
       "commentary": "elevated book multiple"
+    },
+    {
+      "ticker": "WMT",
+      "yahooTicker": "WMT",
+      "security": "Walmart",
+      "sector": "Consumer Staples",
+      "subIndustry": "Consumer Staples Merchandise Retail",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Bentonville, Arkansas",
+      "cik": "0000104169",
+      "founded": "1962",
+      "currentMember": true,
+      "currentMemberSince": "1982-08-31",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "1982-08-31",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.97,
+        "dividendYield": 0.0086,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 890030000000,
+        "price": 111.84,
+        "currency": "USD",
+        "trailingPE": 39.4,
+        "forwardPE": 34.08,
+        "priceToBook": 9.44,
+        "returnOnEquity": 0.2553,
+        "profitMargins": 0.0313,
+        "operatingMargins": 0.0416,
+        "debtToEquity": 0.79,
+        "currentRatio": 0.77,
+        "revenueGrowth": 0.0733,
+        "earningsGrowth": 0.1956,
+        "averageDailyVolume": 21190000
+      },
+      "scores": {
+        "fallOutRisk": 35.03318852032007,
+        "entryScore": null,
+        "undervaluedScore": 23.49071358748778,
+        "overvaluedScore": 78.76539589442817
+      },
+      "rank": 25,
+      "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     }
   ]
 }

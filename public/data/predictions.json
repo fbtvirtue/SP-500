@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T00:13:42.976Z",
+  "generatedAt": "2026-07-06T05:07:00.434Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.73493293650571,
+        "entryScore": 92.72503194640672,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1400,7 +1400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.68390542673413,
+        "entryScore": 92.61121270358393,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.62437403849854,
+        "entryScore": 91.54127662324808,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.82065051317576,
+        "entryScore": 88.7619139745853,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.42137505878783,
+        "entryScore": 88.41147406868882,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.22591499737867,
+        "entryScore": 87.21601400727964,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.28995564411434,
+        "entryScore": 86.28005465401532,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.51982983843989,
+        "entryScore": 85.50992884834088,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.8144976498841,
+        "entryScore": 84.8045966597851,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.60572051651485,
+        "entryScore": 84.59581952641584,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.38433100704998,
+        "entryScore": 84.32813947503597,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,7 +2100,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.1325733173054,
+        "entryScore": 84.12267232720639,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2150,61 +2150,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.7749215005561,
+        "entryScore": 83.64752307399891,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 18,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "SN",
-      "yahooTicker": "SN",
-      "security": "SharkNinja",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Household Appliances",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Needham, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 21440000000,
-        "price": 151.47,
-        "currency": "USD",
-        "trailingPE": 30.53,
-        "forwardPE": 21.51,
-        "priceToBook": 7.76,
-        "returnOnEquity": 0.2937,
-        "profitMargins": 0.107,
-        "operatingMargins": 0.1439,
-        "debtToEquity": 0.31,
-        "currentRatio": 2.38,
-        "revenueGrowth": 0.1555,
-        "earningsGrowth": 0.0294,
-        "averageDailyVolume": 1990000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 83.65944652963881,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 19,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2250,12 +2200,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.61509900990099,
+        "entryScore": 83.60519801980197,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 19,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+    },
+    {
+      "ticker": "SN",
+      "yahooTicker": "SN",
+      "security": "SharkNinja",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Household Appliances",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Needham, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 21440000000,
+        "price": 151.47,
+        "currency": "USD",
+        "trailingPE": 30.53,
+        "forwardPE": 21.51,
+        "priceToBook": 7.76,
+        "returnOnEquity": 0.2937,
+        "profitMargins": 0.107,
+        "operatingMargins": 0.1439,
+        "debtToEquity": 0.31,
+        "currentRatio": 2.38,
+        "revenueGrowth": 0.1555,
+        "earningsGrowth": 0.0294,
+        "averageDailyVolume": 1990000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.58658035994237,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 20,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "AGX",
@@ -2300,7 +2300,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.53838862687769,
+        "entryScore": 83.52129561767123,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2350,7 +2350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.1788121522563,
+        "entryScore": 83.1689111621573,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2400,7 +2400,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.07049614780415,
+        "entryScore": 82.98143921277538,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2450,7 +2450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.74752447923063,
+        "entryScore": 82.73762348913162,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.71746051317461,
+        "entryScore": 82.70755952307559,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

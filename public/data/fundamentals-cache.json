@@ -32403,14 +32403,14 @@
     }
   },
   "ALAB": {
-    "fetchedAt": "2026-07-05T12:11:20.156Z",
+    "fetchedAt": "2026-07-06T14:21:41.515Z",
     "metrics": {
-      "marketCap": 69660000000,
-      "price": 406.42,
+      "marketCap": 77400000000,
+      "price": 451.55,
       "currency": "USD",
-      "trailingPE": 273.94,
-      "forwardPE": 91.14,
-      "priceToBook": 46.59,
+      "trailingPE": 304.36,
+      "forwardPE": 101.26,
+      "priceToBook": 51.77,
       "returnOnEquity": 0.21109999999999998,
       "profitMargins": 0.2672,
       "operatingMargins": 0.2236,
@@ -32418,20 +32418,20 @@
       "currentRatio": 11.3,
       "revenueGrowth": 0.934,
       "earningsGrowth": 1.4821,
-      "averageDailyVolume": 6240000,
+      "averageDailyVolume": 6280000,
       "dividendRate": null,
       "dividendYield": null
     }
   },
   "CRWV": {
-    "fetchedAt": "2026-07-05T12:11:20.793Z",
+    "fetchedAt": "2026-07-06T14:21:42.186Z",
     "metrics": {
-      "marketCap": 44600000000,
-      "price": 81.75,
+      "marketCap": 46880000000,
+      "price": 85.93,
       "currency": "USD",
       "trailingPE": null,
       "forwardPE": null,
-      "priceToBook": 9.14,
+      "priceToBook": 9.61,
       "returnOnEquity": -0.4069,
       "profitMargins": -0.25579999999999997,
       "operatingMargins": -0.026000000000000002,
@@ -32439,20 +32439,20 @@
       "currentRatio": 0.31,
       "revenueGrowth": 1.1169,
       "earningsGrowth": -0.7643000000000001,
-      "averageDailyVolume": 31450000,
+      "averageDailyVolume": 31640000,
       "dividendRate": null,
       "dividendYield": null
     }
   },
   "NBIS": {
-    "fetchedAt": "2026-07-05T12:11:21.395Z",
+    "fetchedAt": "2026-07-06T14:21:42.817Z",
     "metrics": {
-      "marketCap": 54260000000,
-      "price": 215.62,
+      "marketCap": 54900000000,
+      "price": 218.17,
       "currency": "USD",
-      "trailingPE": 71.94,
+      "trailingPE": 72.79,
       "forwardPE": null,
-      "priceToBook": 7.56,
+      "priceToBook": 7.65,
       "returnOnEquity": 0.1451,
       "profitMargins": 0.9527,
       "operatingMargins": -0.6879000000000001,
@@ -32460,20 +32460,20 @@
       "currentRatio": 8.33,
       "revenueGrowth": 6.215199999999999,
       "earningsGrowth": 5.2139999999999995,
-      "averageDailyVolume": 17630000,
+      "averageDailyVolume": 17820000,
       "dividendRate": null,
       "dividendYield": null
     }
   },
   "RKLB": {
-    "fetchedAt": "2026-07-05T12:11:22.021Z",
+    "fetchedAt": "2026-07-06T14:21:43.474Z",
     "metrics": {
-      "marketCap": 60090000000,
-      "price": 100.46,
+      "marketCap": 59050000000,
+      "price": 98.72,
       "currency": "USD",
       "trailingPE": null,
-      "forwardPE": 11494.28,
-      "priceToBook": 25.54,
+      "forwardPE": 11295.19,
+      "priceToBook": 25.1,
       "returnOnEquity": -0.1355,
       "profitMargins": -0.2687,
       "operatingMargins": -0.332,
@@ -32481,7 +32481,7 @@
       "currentRatio": 4.47,
       "revenueGrowth": 0.6346,
       "earningsGrowth": 0.3795,
-      "averageDailyVolume": 27830000,
+      "averageDailyVolume": 27660000,
       "dividendRate": null,
       "dividendYield": null
     }
@@ -32568,6 +32568,48 @@
       "averageDailyVolume": 935480,
       "dividendRate": 1.12,
       "dividendYield": 0.0096
+    }
+  },
+  "GPOR": {
+    "fetchedAt": "2026-07-06T14:21:40.140Z",
+    "metrics": {
+      "marketCap": 2990000000,
+      "price": 166.52,
+      "currency": "USD",
+      "trailingPE": 5.69,
+      "forwardPE": 5.59,
+      "priceToBook": 1.67,
+      "returnOnEquity": 0.3281,
+      "profitMargins": 0.3508,
+      "operatingMargins": 0.4524,
+      "debtToEquity": 0.46,
+      "currentRatio": 0.56,
+      "revenueGrowth": 0.6498,
+      "earningsGrowth": 120.5404,
+      "averageDailyVolume": 378530,
+      "dividendRate": null,
+      "dividendYield": null
+    }
+  },
+  "MBGL": {
+    "fetchedAt": "2026-07-06T14:21:40.788Z",
+    "metrics": {
+      "marketCap": null,
+      "price": 18.99,
+      "currency": "USD",
+      "trailingPE": null,
+      "forwardPE": null,
+      "priceToBook": null,
+      "returnOnEquity": null,
+      "profitMargins": null,
+      "operatingMargins": null,
+      "debtToEquity": null,
+      "currentRatio": null,
+      "revenueGrowth": null,
+      "earningsGrowth": null,
+      "averageDailyVolume": 25050000,
+      "dividendRate": null,
+      "dividendYield": null
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T08:17:54.212Z",
+  "generatedAt": "2026-07-08T10:59:33.145Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -431,12 +431,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 28490000000,
-        "price": 98.29,
+        "marketCap": 28380000000,
+        "price": 97.91,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 37.13,
-        "priceToBook": 5.05,
+        "forwardPE": 77.47,
+        "priceToBook": 5.03,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -444,13 +444,13 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8470000
+        "averageDailyVolume": 8490000
       },
       "scores": {
-        "fallOutRisk": 89.05770173937837,
+        "fallOutRisk": 89.1275620188195,
         "entryScore": null,
-        "undervaluedScore": 15.21645021645022,
-        "overvaluedScore": 83.57142857142856
+        "undervaluedScore": 11.883116883116886,
+        "overvaluedScore": 86.9047619047619
       },
       "rank": 9,
       "commentary": "thin profitability"
@@ -1283,12 +1283,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 17510000000,
-        "price": 16.99,
+        "marketCap": 16530000000.000002,
+        "price": 16.04,
         "currency": "USD",
-        "trailingPE": 14.04,
-        "forwardPE": 8.8,
-        "priceToBook": 1.69,
+        "trailingPE": 13.26,
+        "forwardPE": 8.31,
+        "priceToBook": 1.59,
         "returnOnEquity": 0.1215,
         "profitMargins": 0.3116,
         "operatingMargins": 0.40869999999999995,
@@ -1296,11 +1296,11 @@
         "currentRatio": 3.73,
         "revenueGrowth": 1.3776,
         "earningsGrowth": 4.5188,
-        "averageDailyVolume": 29010000
+        "averageDailyVolume": 29040000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.62932506169967,
+        "entryScore": 92.48110371782616,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1350,7 +1350,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.34862541274691,
+        "entryScore": 92.37826968152163,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1450,7 +1450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.48712028978822,
+        "entryScore": 91.51676455856293,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 90.2135802471233,
+        "entryScore": 90.243224515898,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1683,12 +1683,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 11050000000,
-        "price": 374.68,
+        "marketCap": 10870000000,
+        "price": 368.6,
         "currency": "USD",
-        "trailingPE": 50.08,
-        "forwardPE": 38.65,
-        "priceToBook": 8.64,
+        "trailingPE": 49.27,
+        "forwardPE": 38.02,
+        "priceToBook": 8.5,
         "returnOnEquity": 0.19899999999999998,
         "profitMargins": 0.5392,
         "operatingMargins": 0.42810000000000004,
@@ -1696,11 +1696,11 @@
         "currentRatio": 9.46,
         "revenueGrowth": 0.3195,
         "earningsGrowth": 0.5327000000000001,
-        "averageDailyVolume": 312420
+        "averageDailyVolume": 312890
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.23777365865448,
+        "entryScore": 87.03026377723154,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1750,7 +1750,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.7863330019346,
+        "entryScore": 86.80606646793427,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.27911386138263,
+        "entryScore": 85.30875813015733,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.80891441176541,
+        "entryScore": 84.79900360899039,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.6440168348295,
+        "entryScore": 84.63410603205448,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1983,12 +1983,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 41790000000,
-        "price": 313.04,
+        "marketCap": 42940000000,
+        "price": 321.59,
         "currency": "USD",
-        "trailingPE": 74.38,
-        "forwardPE": 29.62,
-        "priceToBook": 38.85,
+        "trailingPE": 76.41,
+        "forwardPE": 30.43,
+        "priceToBook": 39.91,
         "returnOnEquity": 0.9693999999999999,
         "profitMargins": 0.1346,
         "operatingMargins": 0.1754,
@@ -2150,7 +2150,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.58806224855438,
+        "entryScore": 83.57815144577935,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2179,16 +2179,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 8.79,
-        "dividendYield": 0.0048,
+        "dividendYield": 0.005,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 703420000000,
-        "price": 1825.07,
+        "marketCap": 673440000000,
+        "price": 1747.28,
         "currency": "USD",
-        "trailingPE": 60.85,
-        "forwardPE": 35.63,
-        "priceToBook": 29.31,
+        "trailingPE": 58.26,
+        "forwardPE": 34,
+        "priceToBook": 28.06,
         "returnOnEquity": 0.5412,
         "profitMargins": 0.29710000000000003,
         "operatingMargins": 0.3479,
@@ -2196,11 +2196,11 @@
         "currentRatio": 1.36,
         "revenueGrowth": 0.2588,
         "earningsGrowth": 0.32420000000000004,
-        "averageDailyVolume": 1940000
+        "averageDailyVolume": 1950000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.55075711873769,
+        "entryScore": 83.54084631596267,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2250,7 +2250,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.53349925510477,
+        "entryScore": 83.43884268961787,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2300,62 +2300,12 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.95642833599838,
+        "entryScore": 82.98607260477309,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 21,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "AGX",
-      "yahooTicker": "AGX",
-      "security": "Argan, Inc.",
-      "sector": "Industrials",
-      "subIndustry": "Construction & Engineering",
-      "sourceIndex": "S&P 600",
-      "headquarters": "Arlington County, Virginia",
-      "cik": "0000100591",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.88,
-        "dividendYield": 0.0028000000000000004,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 9300000000,
-        "price": 663.18,
-        "currency": "USD",
-        "trailingPE": 58.27,
-        "forwardPE": 42.43,
-        "priceToBook": 19.64,
-        "returnOnEquity": 0.38520000000000004,
-        "profitMargins": 0.1548,
-        "operatingMargins": 0.1495,
-        "debtToEquity": 0.02,
-        "currentRatio": 1.53,
-        "revenueGrowth": 0.5024000000000001,
-        "earningsGrowth": 1.0305,
-        "averageDailyVolume": 332700
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 82.81734003876349,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 22,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
       "ticker": "GME",
@@ -2400,12 +2350,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.75109523426585,
+        "entryScore": 82.81038377181525,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 22,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "AGX",
+      "yahooTicker": "AGX",
+      "security": "Argan, Inc.",
+      "sector": "Industrials",
+      "subIndustry": "Construction & Engineering",
+      "sourceIndex": "S&P 600",
+      "headquarters": "Arlington County, Virginia",
+      "cik": "0000100591",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.88,
+        "dividendYield": 0.0028000000000000004,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 9300000000,
+        "price": 663.18,
+        "currency": "USD",
+        "trailingPE": 58.27,
+        "forwardPE": 42.43,
+        "priceToBook": 19.64,
+        "returnOnEquity": 0.38520000000000004,
+        "profitMargins": 0.1548,
+        "operatingMargins": 0.1495,
+        "debtToEquity": 0.02,
+        "currentRatio": 1.53,
+        "revenueGrowth": 0.5024000000000001,
+        "earningsGrowth": 1.0305,
+        "averageDailyVolume": 332700
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.78769576998879,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 23,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
       "ticker": "CTRE",
@@ -2450,7 +2450,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.71084694407435,
+        "entryScore": 82.73058041007403,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2483,12 +2483,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 8490000000,
-        "price": 55.47,
+        "marketCap": 8890000000,
+        "price": 58.06,
         "currency": "USD",
-        "trailingPE": 19.33,
-        "forwardPE": 20.83,
-        "priceToBook": 14.56,
+        "trailingPE": 20.23,
+        "forwardPE": 21.12,
+        "priceToBook": 15.24,
         "returnOnEquity": 1.126,
         "profitMargins": 0.6595,
         "operatingMargins": 0.21350000000000002,
@@ -2496,11 +2496,11 @@
         "currentRatio": 5.81,
         "revenueGrowth": 0.6956,
         "earningsGrowth": 2.9743,
-        "averageDailyVolume": 2360000
+        "averageDailyVolume": 2380000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.32571531849695,
+        "entryScore": 82.7110908125681,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2751,7 +2751,7 @@
         "averageDailyVolume": 6650000
       },
       "scores": {
-        "fallOutRisk": 48.00194206182229,
+        "fallOutRisk": 47.932081782381175,
         "entryScore": null,
         "undervaluedScore": 84.03656597774246,
         "overvaluedScore": 18.264334923158454
@@ -3870,6 +3870,56 @@
       "commentary": "stretched sector-relative earnings multiple, elevated book multiple"
     },
     {
+      "ticker": "ECHO",
+      "yahooTicker": "ECHO",
+      "security": "EchoStar",
+      "sector": "Communication Services",
+      "subIndustry": "Wireless Telecommunication Services",
+      "sourceIndex": "S&P 500",
+      "headquarters": "Englewood, Colorado",
+      "cik": "0001415404",
+      "founded": "2008",
+      "currentMember": true,
+      "currentMemberSince": "2026-03-23",
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": "2026-03-23",
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 28380000000,
+        "price": 97.91,
+        "currency": "USD",
+        "trailingPE": null,
+        "forwardPE": 77.47,
+        "priceToBook": 5.03,
+        "returnOnEquity": -1.1265,
+        "profitMargins": -0.9756,
+        "operatingMargins": 0.0219,
+        "debtToEquity": 5.2,
+        "currentRatio": 0.3,
+        "revenueGrowth": -0.052300000000000006,
+        "earningsGrowth": 0.2816,
+        "averageDailyVolume": 8490000
+      },
+      "scores": {
+        "fallOutRisk": 89.1275620188195,
+        "entryScore": null,
+        "undervaluedScore": 11.883116883116886,
+        "overvaluedScore": 86.9047619047619
+      },
+      "rank": 3,
+      "commentary": "stretched sector-relative earnings multiple"
+    },
+    {
       "ticker": "ETR",
       "yahooTicker": "ETR",
       "security": "Entergy",
@@ -3916,7 +3966,7 @@
         "undervaluedScore": 20.5,
         "overvaluedScore": 84.00000000000001
       },
-      "rank": 3,
+      "rank": 4,
       "commentary": "premium valuation versus the universe"
     },
     {
@@ -3966,58 +4016,8 @@
         "undervaluedScore": 18.13977823977824,
         "overvaluedScore": 83.68218988218987
       },
-      "rank": 4,
-      "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
-    },
-    {
-      "ticker": "ECHO",
-      "yahooTicker": "ECHO",
-      "security": "EchoStar",
-      "sector": "Communication Services",
-      "subIndustry": "Wireless Telecommunication Services",
-      "sourceIndex": "S&P 500",
-      "headquarters": "Englewood, Colorado",
-      "cik": "0001415404",
-      "founded": "2008",
-      "currentMember": true,
-      "currentMemberSince": "2026-03-23",
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": "2026-03-23",
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 28490000000,
-        "price": 98.29,
-        "currency": "USD",
-        "trailingPE": null,
-        "forwardPE": 37.13,
-        "priceToBook": 5.05,
-        "returnOnEquity": -1.1265,
-        "profitMargins": -0.9756,
-        "operatingMargins": 0.0219,
-        "debtToEquity": 5.2,
-        "currentRatio": 0.3,
-        "revenueGrowth": -0.052300000000000006,
-        "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8470000
-      },
-      "scores": {
-        "fallOutRisk": 89.05770173937837,
-        "entryScore": null,
-        "undervaluedScore": 15.21645021645022,
-        "overvaluedScore": 83.57142857142856
-      },
       "rank": 5,
-      "commentary": "stretched sector-relative earnings multiple"
+      "commentary": "stretched sector-relative earnings multiple, elevated book multiple, limited income support"
     },
     {
       "ticker": "CNP",

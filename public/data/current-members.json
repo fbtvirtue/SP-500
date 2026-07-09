@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T08:23:04.303Z",
+  "generatedAt": "2026-07-09T11:52:38.000Z",
   "currentMembers": [
     {
       "ticker": "MMM",
@@ -3295,16 +3295,16 @@
       "dividend": {
         "hasDividend": true,
         "dividendRate": 2.12,
-        "dividendYield": 0.0139,
+        "dividendYield": 0.0141,
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 104950000000,
-        "price": 152.91,
+        "marketCap": 103050000000,
+        "price": 150.14,
         "currency": "USD",
-        "trailingPE": 18.94,
-        "forwardPE": 15.59,
-        "priceToBook": 2.66,
+        "trailingPE": 18.6,
+        "forwardPE": 15.26,
+        "priceToBook": 2.61,
         "returnOnEquity": 0.1356,
         "profitMargins": 0.1406,
         "operatingMargins": 0.18100000000000002,
@@ -3312,13 +3312,13 @@
         "currentRatio": 1.47,
         "revenueGrowth": 0.012,
         "earningsGrowth": 0.4164,
-        "averageDailyVolume": 3900000
+        "averageDailyVolume": 3890000
       },
       "scores": {
-        "fallOutRisk": 46.741797486108865,
+        "fallOutRisk": 46.8815180449911,
         "entryScore": null,
-        "undervaluedScore": 35.45484896661367,
-        "overvaluedScore": 64.46497085320614
+        "undervaluedScore": 36.92511923688394,
+        "overvaluedScore": 62.92713301536831
       }
     },
     {
@@ -3939,7 +3939,7 @@
         "averageDailyVolume": 2520000
       },
       "scores": {
-        "fallOutRisk": 35.747149346334126,
+        "fallOutRisk": 35.67728906689301,
         "entryScore": null,
         "undervaluedScore": 34.4887830057574,
         "overvaluedScore": 65.94798491165376
@@ -5143,7 +5143,7 @@
         "averageDailyVolume": 768770
       },
       "scores": {
-        "fallOutRisk": 40.74032907158656,
+        "fallOutRisk": 40.67046879214544,
         "entryScore": null,
         "undervaluedScore": 54.502596714361424,
         "overvaluedScore": 43.964069952305245
@@ -7879,12 +7879,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 28380000000,
-        "price": 97.91,
+        "marketCap": 27900000000,
+        "price": 96.28,
         "currency": "USD",
         "trailingPE": null,
-        "forwardPE": 77.47,
-        "priceToBook": 5.03,
+        "forwardPE": 74,
+        "priceToBook": 4.95,
         "returnOnEquity": -1.1265,
         "profitMargins": -0.9756,
         "operatingMargins": 0.0219,
@@ -7892,13 +7892,13 @@
         "currentRatio": 0.3,
         "revenueGrowth": -0.052300000000000006,
         "earningsGrowth": 0.2816,
-        "averageDailyVolume": 8490000
+        "averageDailyVolume": 8460000
       },
       "scores": {
-        "fallOutRisk": 88.91798118049614,
+        "fallOutRisk": 89.1275620188195,
         "entryScore": null,
-        "undervaluedScore": 11.883116883116886,
-        "overvaluedScore": 86.9047619047619
+        "undervaluedScore": 13.78787878787879,
+        "overvaluedScore": 84.99999999999999
       }
     },
     {
@@ -8907,7 +8907,7 @@
         "averageDailyVolume": 3400000
       },
       "scores": {
-        "fallOutRisk": 39.02620758483034,
+        "fallOutRisk": 38.95634730538922,
         "entryScore": null,
         "undervaluedScore": 85.25,
         "overvaluedScore": 13.75
@@ -9003,7 +9003,7 @@
         "averageDailyVolume": 1180000
       },
       "scores": {
-        "fallOutRisk": 57.24656840375933,
+        "fallOutRisk": 57.17670812431822,
         "entryScore": null,
         "undervaluedScore": 41.52349272349272,
         "overvaluedScore": 57.86645876645877
@@ -9419,8 +9419,8 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 21550000000,
-        "price": 144.72,
+        "marketCap": 21340000000,
+        "price": 143.3,
         "currency": "USD",
         "trailingPE": null,
         "forwardPE": null,
@@ -9432,10 +9432,10 @@
         "currentRatio": 167.41,
         "revenueGrowth": null,
         "earningsGrowth": null,
-        "averageDailyVolume": 2330000
+        "averageDailyVolume": 2300000
       },
       "scores": {
-        "fallOutRisk": 64.89620758483034,
+        "fallOutRisk": 64.96606786427145,
         "entryScore": null,
         "undervaluedScore": 50,
         "overvaluedScore": 50
@@ -9533,8 +9533,8 @@
       "scores": {
         "fallOutRisk": 57.60704428979878,
         "entryScore": null,
-        "undervaluedScore": 57.924059353471115,
-        "overvaluedScore": 40.53269740328564
+        "undervaluedScore": 57.790726020137775,
+        "overvaluedScore": 40.66603073661898
       }
     },
     {
@@ -10370,7 +10370,7 @@
       "yahooTicker": "GNRC",
       "security": "Generac",
       "sector": "Industrials",
-      "subIndustry": "Electrical Components & Equipment",
+      "subIndustry": "Heavy Electrical Equipment",
       "sourceIndex": "S&P 500",
       "headquarters": "Waukesha, Wisconsin",
       "cik": "0001474735",
@@ -10841,8 +10841,8 @@
       "scores": {
         "fallOutRisk": 41.48405998813185,
         "entryScore": null,
-        "undervaluedScore": 37.4268680445151,
-        "overvaluedScore": 66.181240063593
+        "undervaluedScore": 36.89353471118177,
+        "overvaluedScore": 66.71457339692633
       }
     },
     {
@@ -11352,7 +11352,7 @@
       },
       "metrics": {
         "marketCap": null,
-        "price": 238.14,
+        "price": 224.35,
         "currency": "USD",
         "trailingPE": null,
         "forwardPE": null,
@@ -11364,7 +11364,7 @@
         "currentRatio": null,
         "revenueGrowth": null,
         "earningsGrowth": null,
-        "averageDailyVolume": 3040000
+        "averageDailyVolume": 3110000
       },
       "scores": {
         "fallOutRisk": 58,
@@ -12281,8 +12281,8 @@
       "scores": {
         "fallOutRisk": 31.206659114204026,
         "entryScore": null,
-        "undervaluedScore": 46.364970853206145,
-        "overvaluedScore": 55.469263381028085
+        "undervaluedScore": 45.69470058293587,
+        "overvaluedScore": 56.20710121886593
       }
     },
     {
@@ -14013,8 +14013,8 @@
       "scores": {
         "fallOutRisk": 74.07437125748503,
         "entryScore": null,
-        "undervaluedScore": 25.562770562770563,
-        "overvaluedScore": 73.07359307359306
+        "undervaluedScore": 23.658008658008658,
+        "overvaluedScore": 74.97835497835497
       }
     },
     {
@@ -14571,12 +14571,12 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 201820000000,
-        "price": 230.7,
+        "marketCap": 202700000000,
+        "price": 231.71,
         "currency": "USD",
-        "trailingPE": 78.83,
-        "forwardPE": 37.31,
-        "priceToBook": 11.09,
+        "trailingPE": 79.18,
+        "forwardPE": 37.48,
+        "priceToBook": 11.14,
         "returnOnEquity": 0.1603,
         "profitMargins": 0.2899,
         "operatingMargins": 0.1641,
@@ -14584,7 +14584,7 @@
         "currentRatio": 3.28,
         "revenueGrowth": 0.2757,
         "earningsGrowth": -0.81,
-        "averageDailyVolume": 43150000
+        "averageDailyVolume": 43090000
       },
       "scores": {
         "fallOutRisk": 31.239080813952793,
@@ -16369,8 +16369,8 @@
       "scores": {
         "fallOutRisk": 57.08134541727356,
         "entryScore": null,
-        "undervaluedScore": 39.799311075781674,
-        "overvaluedScore": 61.72140964493906
+        "undervaluedScore": 39.665977742448334,
+        "overvaluedScore": 61.85474297827239
       }
     },
     {
@@ -20843,7 +20843,7 @@
         "averageDailyVolume": 2510000
       },
       "scores": {
-        "fallOutRisk": 47.5645288305377,
+        "fallOutRisk": 47.49466855109657,
         "entryScore": null,
         "undervaluedScore": 36.955620116209175,
         "overvaluedScore": 71.28972149869766
@@ -21571,7 +21571,7 @@
         "averageDailyVolume": 1370000
       },
       "scores": {
-        "fallOutRisk": 38.52462652788582,
+        "fallOutRisk": 38.454766248444706,
         "entryScore": null,
         "undervaluedScore": 35.16730026730027,
         "overvaluedScore": 65.42078012078012
@@ -24019,7 +24019,7 @@
         "averageDailyVolume": 2150000
       },
       "scores": {
-        "fallOutRisk": 61.72676360692127,
+        "fallOutRisk": 61.65690332748015,
         "entryScore": null,
         "undervaluedScore": 58.81923571923572,
         "overvaluedScore": 33.348747648747654

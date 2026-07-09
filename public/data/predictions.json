@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T11:52:38.000Z",
+  "generatedAt": "2026-07-09T14:45:39.282Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -1258,106 +1258,6 @@
   ],
   "possibleEntrants": [
     {
-      "ticker": "HL",
-      "yahooTicker": "HL",
-      "security": "Hecla Mining",
-      "sector": "Materials",
-      "subIndustry": "Silver",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Coeur d'Alene, Idaho",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.02,
-        "dividendYield": 0.0011,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 10120000000,
-        "price": 15.09,
-        "currency": "USD",
-        "trailingPE": 21.69,
-        "forwardPE": 12.55,
-        "priceToBook": 3.94,
-        "returnOnEquity": 0.19699999999999998,
-        "profitMargins": 0.2965,
-        "operatingMargins": 0.4483,
-        "debtToEquity": 0.11,
-        "currentRatio": 4.94,
-        "revenueGrowth": 0.5655,
-        "earningsGrowth": 4.6667000000000005,
-        "averageDailyVolume": 20180000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 92.26914129835416,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 1,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "CDE",
-      "yahooTicker": "CDE",
-      "security": "Coeur Mining",
-      "sector": "Materials",
-      "subIndustry": "Gold",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Chicago, Illinois",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 0.02,
-        "dividendYield": 0.0013,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 15710000000,
-        "price": 15.24,
-        "currency": "USD",
-        "trailingPE": 12.6,
-        "forwardPE": 7.88,
-        "priceToBook": 1.51,
-        "returnOnEquity": 0.1215,
-        "profitMargins": 0.3116,
-        "operatingMargins": 0.40869999999999995,
-        "debtToEquity": 0.07,
-        "currentRatio": 3.73,
-        "revenueGrowth": 1.3776,
-        "earningsGrowth": 4.5188,
-        "averageDailyVolume": 29230000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 92.22373432649395,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 2,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
       "ticker": "VICR",
       "yahooTicker": "VICR",
       "security": "Vicor Corporation",
@@ -1400,11 +1300,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 92.1046887258656,
+        "entryScore": 92.05829786896376,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 3,
+      "rank": 1,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -1450,7 +1350,107 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.63257880074528,
+        "entryScore": 91.55385485203405,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 2,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "CDE",
+      "yahooTicker": "CDE",
+      "security": "Coeur Mining",
+      "sector": "Materials",
+      "subIndustry": "Gold",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Chicago, Illinois",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.02,
+        "dividendYield": 0.0013,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 15710000000,
+        "price": 15.24,
+        "currency": "USD",
+        "trailingPE": 12.6,
+        "forwardPE": 7.88,
+        "priceToBook": 1.51,
+        "returnOnEquity": 0.1215,
+        "profitMargins": 0.3116,
+        "operatingMargins": 0.40869999999999995,
+        "debtToEquity": 0.07,
+        "currentRatio": 3.73,
+        "revenueGrowth": 1.3776,
+        "earningsGrowth": 4.5188,
+        "averageDailyVolume": 29230000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 91.35781709138112,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 3,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+    },
+    {
+      "ticker": "HL",
+      "yahooTicker": "HL",
+      "security": "Hecla Mining",
+      "sector": "Materials",
+      "subIndustry": "Silver",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Coeur d'Alene, Idaho",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 0.02,
+        "dividendYield": 0.0011,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 10120000000,
+        "price": 15.09,
+        "currency": "USD",
+        "trailingPE": 21.69,
+        "forwardPE": 12.55,
+        "priceToBook": 3.94,
+        "returnOnEquity": 0.19699999999999998,
+        "profitMargins": 0.2965,
+        "operatingMargins": 0.4483,
+        "debtToEquity": 0.11,
+        "currentRatio": 4.94,
+        "revenueGrowth": 0.5655,
+        "earningsGrowth": 4.6667000000000005,
+        "averageDailyVolume": 20180000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 91.34315953488505,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1500,7 +1500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 91.21520783741235,
+        "entryScore": 91.19084719461534,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1550,7 +1550,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 90.10291804924066,
+        "entryScore": 89.53721061670149,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1600,7 +1600,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.67361318957019,
+        "entryScore": 88.62495724743835,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1650,7 +1650,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 88.4506542159447,
+        "entryScore": 88.42333600200462,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1700,7 +1700,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 87.32388463918846,
+        "entryScore": 87.11494655928175,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1750,7 +1750,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.75076890255197,
+        "entryScore": 86.75395357749198,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1800,7 +1800,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 86.74091264913538,
+        "entryScore": 86.72302891243883,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1850,7 +1850,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 85.33559040528753,
+        "entryScore": 85.10639359052644,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1900,7 +1900,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.76604590714506,
+        "entryScore": 84.68455369662864,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -1950,7 +1950,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.55280087774717,
+        "entryScore": 84.55836254670727,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2000,7 +2000,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.54191878553341,
+        "entryScore": 84.52091291616263,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2050,7 +2050,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 84.20645875175555,
+        "entryScore": 84.21406584719611,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
@@ -2100,61 +2100,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.80898154387631,
+        "entryScore": 83.70250478839968,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 17,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "SN",
-      "yahooTicker": "SN",
-      "security": "SharkNinja",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Household Appliances",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Needham, Massachusetts",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 20800000000,
-        "price": 147.01,
-        "currency": "USD",
-        "trailingPE": 29.63,
-        "forwardPE": 20.87,
-        "priceToBook": 7.53,
-        "returnOnEquity": 0.2937,
-        "profitMargins": 0.107,
-        "operatingMargins": 0.1439,
-        "debtToEquity": 0.31,
-        "currentRatio": 2.38,
-        "revenueGrowth": 0.1555,
-        "earningsGrowth": 0.0294,
-        "averageDailyVolume": 1980000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 83.61537571840931,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 18,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2200,12 +2150,62 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.53717892565008,
+        "entryScore": 83.45340889085689,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 18,
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+    },
+    {
+      "ticker": "SN",
+      "yahooTicker": "SN",
+      "security": "SharkNinja",
+      "sector": "Consumer Discretionary",
+      "subIndustry": "Household Appliances",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Needham, Massachusetts",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 20800000000,
+        "price": 147.01,
+        "currency": "USD",
+        "trailingPE": 29.63,
+        "forwardPE": 20.87,
+        "priceToBook": 7.53,
+        "returnOnEquity": 0.2937,
+        "profitMargins": 0.107,
+        "operatingMargins": 0.1439,
+        "debtToEquity": 0.31,
+        "currentRatio": 2.38,
+        "revenueGrowth": 0.1555,
+        "earningsGrowth": 0.0294,
+        "averageDailyVolume": 1980000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 83.33539411391735,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 19,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, Nasdaq-100 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "WTS",
@@ -2250,111 +2250,11 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 83.25741784025878,
+        "entryScore": 83.2457849001169,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 20,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "AGX",
-      "yahooTicker": "AGX",
-      "security": "Argan, Inc.",
-      "sector": "Industrials",
-      "subIndustry": "Construction & Engineering",
-      "sourceIndex": "S&P 600",
-      "headquarters": "Arlington County, Virginia",
-      "cik": "0000100591",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.88,
-        "dividendYield": 0.0028000000000000004,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 9330000000,
-        "price": 665.46,
-        "currency": "USD",
-        "trailingPE": 58.47,
-        "forwardPE": 42.58,
-        "priceToBook": 19.7,
-        "returnOnEquity": 0.38520000000000004,
-        "profitMargins": 0.1548,
-        "operatingMargins": 0.1495,
-        "debtToEquity": 0.02,
-        "currentRatio": 1.53,
-        "revenueGrowth": 0.5024000000000001,
-        "earningsGrowth": 1.0305,
-        "averageDailyVolume": 334590
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 82.88467127142201,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 21,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
-    },
-    {
-      "ticker": "GMED",
-      "yahooTicker": "GMED",
-      "security": "Globus Medical",
-      "sector": "Health Care",
-      "subIndustry": "Health Care Equipment",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Audubon, Pennsylvania",
-      "cik": "",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": false,
-        "dividendRate": null,
-        "dividendYield": null,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 10340000000,
-        "price": 76.2,
-        "currency": "USD",
-        "trailingPE": 17.75,
-        "forwardPE": 14.8,
-        "priceToBook": 2.18,
-        "returnOnEquity": 0.133,
-        "profitMargins": 0.1892,
-        "operatingMargins": 0.1955,
-        "debtToEquity": 0.02,
-        "currentRatio": 4.56,
-        "revenueGrowth": 0.2704,
-        "earningsGrowth": 0.6659999999999999,
-        "averageDailyVolume": 1670000
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 82.86502766112612,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
-      "rank": 22,
       "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
@@ -2400,30 +2300,80 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.77399951484853,
+        "entryScore": 83.08714931165383,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 23,
+      "rank": 21,
       "commentary": "solid profitability, manageable leverage, S&P 400 candidate"
     },
     {
-      "ticker": "GME",
-      "yahooTicker": "GME",
-      "security": "GameStop",
-      "sector": "Consumer Discretionary",
-      "subIndustry": "Computer & Electronics Retail",
-      "sourceIndex": "S&P 400",
-      "headquarters": "Grapevine, Texas",
-      "cik": "",
+      "ticker": "AGX",
+      "yahooTicker": "AGX",
+      "security": "Argan, Inc.",
+      "sector": "Industrials",
+      "subIndustry": "Construction & Engineering",
+      "sourceIndex": "S&P 600",
+      "headquarters": "Arlington County, Virginia",
+      "cik": "0000100591",
       "founded": "",
       "currentMember": false,
       "currentMemberSince": null,
-      "lastLeftAt": "2016-04-25",
+      "lastLeftAt": null,
       "membershipHistory": [
         {
-          "enteredAt": "2007-12-13",
-          "leftAt": "2016-04-25"
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.88,
+        "dividendYield": 0.0028000000000000004,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 9330000000,
+        "price": 665.46,
+        "currency": "USD",
+        "trailingPE": 58.47,
+        "forwardPE": 42.58,
+        "priceToBook": 19.7,
+        "returnOnEquity": 0.38520000000000004,
+        "profitMargins": 0.1548,
+        "operatingMargins": 0.1495,
+        "debtToEquity": 0.02,
+        "currentRatio": 1.53,
+        "revenueGrowth": 0.5024000000000001,
+        "earningsGrowth": 1.0305,
+        "averageDailyVolume": 334590
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.93530585494814,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 22,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+    },
+    {
+      "ticker": "TGTX",
+      "yahooTicker": "TGTX",
+      "security": "TG Therapeutics, Inc.",
+      "sector": "Health Care",
+      "subIndustry": "Biotechnology",
+      "sourceIndex": "S&P 600",
+      "headquarters": "Morrisville, North Carolina",
+      "cik": "0001001316",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
         }
       ],
       "dividend": {
@@ -2433,29 +2383,79 @@
         "currency": "USD"
       },
       "metrics": {
-        "marketCap": 9740000000,
-        "price": 21.7,
+        "marketCap": 8760000000,
+        "price": 57.23,
         "currency": "USD",
-        "trailingPE": 16.53,
-        "forwardPE": 17.93,
-        "priceToBook": 1.67,
-        "returnOnEquity": 0.1409,
-        "profitMargins": 0.2045,
-        "operatingMargins": 0.10710000000000001,
-        "debtToEquity": 0.74,
-        "currentRatio": 12.4,
-        "revenueGrowth": 0.1405,
-        "earningsGrowth": 6.3088999999999995,
-        "averageDailyVolume": 7470000
+        "trailingPE": 19.94,
+        "forwardPE": 20.82,
+        "priceToBook": 15.03,
+        "returnOnEquity": 1.126,
+        "profitMargins": 0.6595,
+        "operatingMargins": 0.21350000000000002,
+        "debtToEquity": 1.29,
+        "currentRatio": 5.81,
+        "revenueGrowth": 0.6956,
+        "earningsGrowth": 2.9743,
+        "averageDailyVolume": 2380000
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.7310536128545,
+        "entryScore": 82.74345327412985,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 23,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+    },
+    {
+      "ticker": "GMED",
+      "yahooTicker": "GMED",
+      "security": "Globus Medical",
+      "sector": "Health Care",
+      "subIndustry": "Health Care Equipment",
+      "sourceIndex": "S&P 400",
+      "headquarters": "Audubon, Pennsylvania",
+      "cik": "",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": false,
+        "dividendRate": null,
+        "dividendYield": null,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 10340000000,
+        "price": 76.2,
+        "currency": "USD",
+        "trailingPE": 17.75,
+        "forwardPE": 14.8,
+        "priceToBook": 2.18,
+        "returnOnEquity": 0.133,
+        "profitMargins": 0.1892,
+        "operatingMargins": 0.1955,
+        "debtToEquity": 0.02,
+        "currentRatio": 4.56,
+        "revenueGrowth": 0.2704,
+        "earningsGrowth": 0.6659999999999999,
+        "averageDailyVolume": 1670000
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.71264555954279,
         "undervaluedScore": null,
         "overvaluedScore": null
       },
       "rank": 24,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "RMBS",
@@ -2500,7 +2500,7 @@
       },
       "scores": {
         "fallOutRisk": null,
-        "entryScore": 82.67108079385845,
+        "entryScore": 82.5124360697342,
         "undervaluedScore": null,
         "overvaluedScore": null
       },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T04:47:03.563Z",
+  "generatedAt": "2026-07-09T08:23:04.303Z",
   "possibleFallOut": [
     {
       "ticker": "CRL",
@@ -2308,6 +2308,56 @@
       "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
     },
     {
+      "ticker": "AGX",
+      "yahooTicker": "AGX",
+      "security": "Argan, Inc.",
+      "sector": "Industrials",
+      "subIndustry": "Construction & Engineering",
+      "sourceIndex": "S&P 600",
+      "headquarters": "Arlington County, Virginia",
+      "cik": "0000100591",
+      "founded": "",
+      "currentMember": false,
+      "currentMemberSince": null,
+      "lastLeftAt": null,
+      "membershipHistory": [
+        {
+          "enteredAt": null,
+          "leftAt": null
+        }
+      ],
+      "dividend": {
+        "hasDividend": true,
+        "dividendRate": 1.88,
+        "dividendYield": 0.0028000000000000004,
+        "currency": "USD"
+      },
+      "metrics": {
+        "marketCap": 9330000000,
+        "price": 665.46,
+        "currency": "USD",
+        "trailingPE": 58.47,
+        "forwardPE": 42.58,
+        "priceToBook": 19.7,
+        "returnOnEquity": 0.38520000000000004,
+        "profitMargins": 0.1548,
+        "operatingMargins": 0.1495,
+        "debtToEquity": 0.02,
+        "currentRatio": 1.53,
+        "revenueGrowth": 0.5024000000000001,
+        "earningsGrowth": 1.0305,
+        "averageDailyVolume": 334590
+      },
+      "scores": {
+        "fallOutRisk": null,
+        "entryScore": 82.8469843075382,
+        "undervaluedScore": null,
+        "overvaluedScore": null
+      },
+      "rank": 22,
+      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+    },
+    {
       "ticker": "GMED",
       "yahooTicker": "GMED",
       "security": "Globus Medical",
@@ -2354,58 +2404,8 @@
         "undervaluedScore": null,
         "overvaluedScore": null
       },
-      "rank": 22,
-      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
-    },
-    {
-      "ticker": "AGX",
-      "yahooTicker": "AGX",
-      "security": "Argan, Inc.",
-      "sector": "Industrials",
-      "subIndustry": "Construction & Engineering",
-      "sourceIndex": "S&P 600",
-      "headquarters": "Arlington County, Virginia",
-      "cik": "0000100591",
-      "founded": "",
-      "currentMember": false,
-      "currentMemberSince": null,
-      "lastLeftAt": null,
-      "membershipHistory": [
-        {
-          "enteredAt": null,
-          "leftAt": null
-        }
-      ],
-      "dividend": {
-        "hasDividend": true,
-        "dividendRate": 1.88,
-        "dividendYield": 0.0028000000000000004,
-        "currency": "USD"
-      },
-      "metrics": {
-        "marketCap": 9330000000,
-        "price": 665.46,
-        "currency": "USD",
-        "trailingPE": 58.47,
-        "forwardPE": 42.58,
-        "priceToBook": 19.7,
-        "returnOnEquity": 0.38520000000000004,
-        "profitMargins": 0.1548,
-        "operatingMargins": 0.1495,
-        "debtToEquity": 0.02,
-        "currentRatio": 1.53,
-        "revenueGrowth": 0.5024000000000001,
-        "earningsGrowth": 1.0305,
-        "averageDailyVolume": 334590
-      },
-      "scores": {
-        "fallOutRisk": null,
-        "entryScore": 82.81734003876349,
-        "undervaluedScore": null,
-        "overvaluedScore": null
-      },
       "rank": 23,
-      "commentary": "solid profitability, healthy return on equity, manageable leverage, S&P 600 candidate"
+      "commentary": "large-cap size, solid profitability, healthy return on equity, manageable leverage, S&P 400 candidate"
     },
     {
       "ticker": "CTRE",
